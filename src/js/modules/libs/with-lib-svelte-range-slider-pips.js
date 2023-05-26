@@ -1,106 +1,93 @@
-import RangeSlider from "/node_modules/svelte-range-slider-pips/dist/svelte-range-slider-pips.mjs";
-if (window.location.toString().indexOf('archive-catalog') > 0) { //добавляє виконання скрипту лиш на певній сторінці
-	let PriceSlider = new RangeSlider({
-		target: document.getElementById("price-slider"),
+import RangeSlider from "../../../../node_modules/svelte-range-slider-pips/dist/svelte-range-slider-pips.mjs";
+
+//? price-slider-casco
+
+// if (window.location.toString().indexOf('casco') === 0) { //добавляє виконання скрипту на сторінках з таким вмістом
+if (window.location.pathname === "/casco.html") { //добавляє виконання скрипту лиш на певній сторінці
+	var PriceSliderCasco = new RangeSlider({
+		target: document.getElementById("price-slider-casco"),
 		props: {
 			min: 0,
-			max: 10000,
-			values: [0, 10000],
+			max: 50000,
+			values: [0],
 			step: 1,
-			range: true,
+			range: "min",
 			float: true,
-			suffix: " грн",
-			// pushy: true, // чи штовхає один іншого  default false
-			// pips: true,
-			// pipstep: 1000,
-			// all: "label",
-			// first: "label",
-			// last: "label",
-			// rest: "label"
-			// all: "label",
-			// hoverable: false,
-			// prefix: "$"
+			suffix: " $",
+			pushy: false,
+			pips: false,
 		}
 	});
 
-	let PriceSliderFull = new RangeSlider({
-		target: document.getElementById("price-slider-full"),
-		props: {
-			min: 0,
-			max: 10000,
-			values: [0, 10000],
-			step: 1,
-			range: true,
-			float: true,
-			suffix: " грн",
-		}
-	});
+	var PriceSliderCascoValue = document.querySelector(".casco-page .calculation-data .price-car .price-value");
 
-	let PriceSliderFullMobile = new RangeSlider({
-		target: document.getElementById("price-slider-full-m"),
-		props: {
-			min: 0,
-			max: 10000,
-			values: [0, 10000],
-			step: 1,
-			range: true,
-			float: true,
-			suffix: " грн",
-		}
-	});
-
-	let CurrencyFirst = document.querySelector(".currency-first");
-	let CurrencyLast = document.querySelector(".currency-last");
-	let CurrencyFirstFull = document.querySelector(".currency-first-full");
-	let CurrencyLastFull = document.querySelector(".currency-last-full");
-	let CurrencyFirstFullMobile = document.querySelector(".currency-first-full-m");
-	let CurrencyLastFullMobile = document.querySelector(".currency-last-full-m");
-
-	//? #price-slider
 	//змінює значення при використанні повзунка
-	PriceSlider.$on('change', function (e) {
-		CurrencyFirst.value = e.detail.values[0];
-		CurrencyLast.value = e.detail.values[1];
+	PriceSliderCasco.$on('change', function (e) {
+		PriceSliderCascoValue.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
-	CurrencyFirst.addEventListener("change", (e) => {
-		PriceSlider.$set({ values: [CurrencyFirst.value, CurrencyLast.value] });
+	PriceSliderCascoValue.addEventListener("change", (e) => {
+		PriceSliderCasco.$set({ values: [PriceSliderCascoValue.value] });
+	});
+}
+
+// //? price-slider-minicasco
+if (window.location.pathname === "/minicasco.html") { //добавляє виконання скрипту на сторінках з таким вмістом
+	let PriceSliderMiniCasco = new RangeSlider({
+		target: document.getElementById("price-slider-minicasco"),
+		props: {
+			min: 0,
+			max: 50000,
+			values: [0],
+			step: 1,
+			range: "min",
+			float: true,
+			suffix: " $",
+			pushy: false,
+			pips: false,
+		}
 	});
 
-	CurrencyLast.addEventListener("change", (e) => {
-		PriceSlider.$set({ values: [CurrencyFirst.value, CurrencyLast.value] });
-	});
+	let PriceSliderMiniCascoValue = document.querySelector(".minicasco-page .calculation-data .price-car .price-value");
 
-	//? #price-slider-full
 	//змінює значення при використанні повзунка
-	PriceSliderFull.$on('change', function (e) {
-		CurrencyFirstFull.value = e.detail.values[0];
-		CurrencyLastFull.value = e.detail.values[1];
+	PriceSliderMiniCasco.$on('change', function (e) {
+		PriceSliderMiniCascoValue.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
-	CurrencyFirstFull.addEventListener("change", (e) => {
-		PriceSliderFull.$set({ values: [CurrencyFirstFull.value, CurrencyLastFull.value] });
+	PriceSliderMiniCascoValue.addEventListener("change", (e) => {
+		PriceSliderMiniCasco.$set({ values: [PriceSliderMiniCascoValue.value] });
+	});
+}
+
+//? price-slider-eurocasco 
+if (window.location.pathname === "/eurocasco.html") { //добавляє виконання скрипту лиш на певній сторінці
+	let PriceSliderEuroCasco = new RangeSlider({
+		target: document.getElementById("price-slider-eurocasco"),
+		props: {
+			min: 0,
+			max: 50000,
+			values: [0],
+			step: 1,
+			range: "min",
+			float: true,
+			suffix: " $",
+			pushy: false,
+			pips: false,
+		}
 	});
 
-	CurrencyLastFull.addEventListener("change", (e) => {
-		PriceSliderFull.$set({ values: [CurrencyFirstfULL.value, CurrencyLastFull.value] });
-	});
+	let PriceSliderEuroCascoValue = document.querySelector(".eurocasco-page .calculation-data .price-car .price-value");
 
-	//? #price-slider-full-m
-	PriceSliderFullMobile.$on('change', function (e) {
-		CurrencyFirstFullMobile.value = e.detail.values[0];
-		CurrencyLastFullMobile.value = e.detail.values[1];
+	//змінює значення при використанні повзунка
+	PriceSliderEuroCasco.$on('change', function (e) {
+		PriceSliderEuroCascoValue.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
-	CurrencyFirstFullMobile.addEventListener("change", (e) => {
-		PriceSliderFullMobile.$set({ values: [CurrencyFirstFullMobile.value, CurrencyLastFullMobile.value] });
+	PriceSliderEuroCascoValue.addEventListener("change", (e) => {
+		PriceSliderEuroCasco.$set({ values: [PriceSliderEuroCascoValue.value] });
 	});
-
-	CurrencyLastFullMobile.addEventListener("change", (e) => {
-		PriceSliderFullMobile.$set({ values: [CurrencyFirstFullMobile.value, CurrencyLastFullMobile.value] });
-	});
-
 }

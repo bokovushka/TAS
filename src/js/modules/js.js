@@ -11,13 +11,40 @@ $(".submenu-lvl-1 .head").click(function () {
 	}
 });
 
-//? select-city-wrap //active //foter
-setInterval(function () {
-	if ($('.footer .fstElement').hasClass('fstActive')) {
-		$('.footer .select-wrap').addClass('active');
+$(document).mouseup(function (e) {
+	if (!$(".submenu-lvl-1 .head").is(e.target) // если клик был не по нашему блоку
+		&& $(".submenu-lvl-1 .head").has(e.target).length === 0) { // и не по его дочерним элементам
+		$(".submenu-lvl-1 .head").removeClass('active');
 	}
-	else {
-		$('.footer .select-wrap').removeClass('active');
+});
+
+//? mobile menu lock body
+$(document).ready(function () {
+	let body_lock = document.querySelector('body');
+	let menuBtn = document.querySelector('.navbar-toggler');
+	let bgBody = document.querySelector('.popup-bg-body');
+
+	menuBtn.addEventListener('click', function () {
+		body_lock.classList.toggle('lock');
+		bgBody.classList.toggle('open')
+	})
+});
+
+//?  закриття меню поза областю
+$(document).mouseup(function (e) {
+	if (!$(".header").is(e.target) // если клик был не по нашему блоку
+		&& $(".header").has(e.target).length === 0) { // и не по его дочерним элементам
+		$('.popup-bg-body').removeClass("open");
+		$('body').removeClass("lock");
+	}
+});
+
+//? закриття popup-bg-body і мобільного меню при поворотах наприклад на планшетці
+setInterval(function () {
+	if (window.innerWidth >= 1024) {
+		if ($(".navbar-collapse").hasClass("show")) {
+			$('.navbar-toggler').click()
+		}
 	}
 }, 100);
 
@@ -48,22 +75,6 @@ $(window).resize(function () {
 });
 
 //? star rating
-// let stars = document.querySelectorAll(".popup-reviews-preview-card .card-review--star .star");
-// document.querySelector(".popup-reviews-preview-card .card-review--star").addEventListener("click", starRating);
-// let rating = document.querySelector(".star");
-
-// function starRating(e) {
-// 	stars.forEach((star) => star.classList.remove("star-paint"));
-// 	const i = [...stars].indexOf(e.target);
-// 	if (i > -1) {
-// 		stars[i].classList.add("star-paint");
-// 		rating.textContent = `${stars.length - i}/5`;
-// 	} else {
-// 		rating.textContent = `${0}/5`;
-// 	}
-// }
-
-//? star rating
 const stars = document.querySelectorAll('.popup-write-review .star');
 
 for (let i = 0; i < stars.length; i++) {
@@ -81,3 +92,18 @@ function changeStarrt(num) {
 		stars[i].classList.remove('star-paint');
 	}
 }
+
+//? questions--inner click add active
+
+$('.questions--inner .btn-more').click(function () {
+	if ($(this).closest(".questions--inner").hasClass("active")) {
+		$(this).closest(".questions--inner").removeClass("active");
+		$(this).closest(".questions--inner").find(".btn-link").addClass("collapsed").attr("aria-expanded", false);
+		$(this).closest(".questions--inner").find(".collapse").removeClass("show");
+		$(this).text("Детальніше");
+	}
+	else {
+		$(this).text("Згорнути");
+		$(this).closest(".questions--inner").addClass("active");
+	}
+});

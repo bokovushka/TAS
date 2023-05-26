@@ -1,6 +1,7 @@
 //? main styles
 
 @import "styles/fonts";
+@import "styles/fonts-icon";
 @import "styles/mixins";
 
 html,
@@ -16,6 +17,9 @@ body {
 }
 main {
 	flex: 1 1 auto;
+	@include md-max {
+		margin-top: 109px;
+	}
 }
 
 @import "typografy";

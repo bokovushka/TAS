@@ -48,10 +48,10 @@ var ReviewsPreviewSwiper = new Swiper('.reviews-preview--swiper', {
 	slidesPerView: 3,
 	spaceBetween: 24,
 	loop: true,
-	// autoplay: {
-	// 	delay: 5000,
-	// 	disableOnInteraction: false,
-	// },
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+	},
 	speed: 800,
 	grabCursor: true,
 	navigation: {
@@ -98,6 +98,76 @@ $(document).mouseup(function (e) {
 // sliderReviewsPreview.addEventListener("mouseleave", function (e) {
 // 	ReviewsPreviewSwiper.autoplay.start();
 // });
+
+
+//? about-packages-preview--swiper
+var AboutPackagesPreviewSwiper = new Swiper('.about-packages-preview--swiper', {
+	grabCursor: true,
+	spaceBetween: 24,
+	slidesPerView: 4,
+	navigation: {
+		nextEl: ".about-packages-preview .swiper-buttons .button-slider-next",
+		prevEl: ".about-packages-preview .swiper-buttons .button-slider-prev",
+	},
+	breakpoints: {
+		1200: {
+		},
+		1024: {
+			slidesPerView: 2.3,
+		},
+		768: {
+			slidesPerView: 1.8,
+		},
+		576: {
+			slidesPerView: 1.5,
+		},
+		440: {
+			slidesPerView: 1,
+			grid: {
+				rows: 4,
+				fill: "row",
+			},
+		}
+	},
+});
+
+
+//? about-program-preview--swiper
+var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
+	grabCursor: true,
+	spaceBetween: 24,
+	slidesPerView: 3,
+	navigation: {
+		nextEl: ".about-program-preview .swiper-buttons .button-slider-next",
+		prevEl: ".about-program-preview .swiper-buttons .button-slider-prev",
+	},
+	breakpoints: {
+		1200: {
+		},
+		1024: {
+			slidesPerView: 2.3,
+		},
+		768: {
+			slidesPerView: 1.8,
+		},
+		576: {
+			slidesPerView: 1.5,
+		},
+		440: {
+			slidesPerView: 1,
+			grid: {
+				rows: 3,
+				fill: "row",
+			},
+		}
+	},
+});
+
+
+
+
+
+
 
 
 // // ?swiper-wallpaper-collection

@@ -1,17 +1,15 @@
 import $ from 'jquery';
-//menu
-showMenu($(".header-top--languages .current-lang svg"), $(".header-top--languages .current-lang .submenu"), $(".header-top--languages .current-lang"));
-showMenu($(".footer-bottom--languages .current-lang svg"), $(".footer-bottom--languages .current-lang .submenu"), $(".footer-bottom--languages .current-lang"));
+//? languages
+showMenu($(".header-top--languages .current-lang .current-lang--inner"), $(".header-top--languages .current-lang .submenu"), $(".header-top--languages .current-lang"));
+showMenu($(".footer-bottom--languages .current-lang .current-lang--inner"), $(".footer-bottom--languages .current-lang .submenu"), $(".footer-bottom--languages .current-lang"));
 
-showMenu($(".menu-for-you .nav-link svg"), $(".menu-for-you .nav-link .submenu"), $(".menu-for-you .nav-link"));
-showMenu($(".menu-for-business .nav-link svg"), $(".menu-for-business .nav-link .submenu"), $(".menu-for-business .nav-link"));
+//? menu-phones
+showMenu($(".header-main .menu-phones .submenu"), $(".header-main .menu-phones .submenu"), $(".header-main .menu-phones .current-phone"));
+showMenu($(".header-top .menu-phones .submenu"), $(".header-top .menu-phones .submenu"), $(".header-top .menu-phones .current-phone"));
 
-
-showMenu($(".header-main-menu .brand-menu .nolink"), $(".header-main-menu .brand-menu .submenu"), $(".header-main-menu .brand-menu"));
-
-
-showMenu($(".header-main .menu-phones .i-arrow-down"), $(".header-main .menu-phones .submenu"), $(".header-main .menu-phones .current-phone"));
-showMenu($(".header-top .menu-phones .i-arrow-down"), $(".header-top .menu-phones .submenu"), $(".header-top .menu-phones .current-phone"));
+//? submenu // submenu-lvl-1
+showMenu($(".menu-for-you .nav-link .nav-link--inner"), $(".menu-for-you .nav-link .submenu"), $(".menu-for-you .nav-link"));
+showMenu($(".menu-for-business .nav-link .nav-link--inner"), $(".menu-for-business .nav-link .submenu"), $(".menu-for-business .nav-link"));
 
 function showMenu(link, menu, burger) {
 	$(document).mouseup(function (e) {

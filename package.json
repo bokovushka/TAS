@@ -45,6 +45,7 @@
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
 		"sass": "latest",
+		"svelte-range-slider-pips": "^2.1.1",
 		"swiper": "latest",
 		"vinyl-ftp": "latest",
 		"webp-converter": "2.2.3",
