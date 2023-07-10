@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Автоцивілка"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top my-8 mt-lg-11 mb-lg-8">
+					<div class="container mx-auto">
+						<div class="row">
+							<div class="col">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+									<ol class="breadcrumb mb-0">
+										<li class="breadcrumb-item"><a href="##">Головна</a></li>
+										<li class="breadcrumb-item"><a href="##">Для Вас</a></li>
+										<li class="breadcrumb-item"><a href="##">Автострахування</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Автоцивілка</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="calculation-data mb-16 mb-lg-24">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="rounded bg-light-blue px-3 px-lg-6 px-xxl-0 py-6 py-lg-12">
+									<div class="row">
+										<div class="col col-xxl-10 mx-auto">
+											<div class="text-center">
+												<div class="h2 mb-5 mb-lg-8">Оформлення електронного поліса <br> “Автоцивілки” №1</div>
+												<div class="h4 font-m mb-8"><a href="##" class="text-main-blue rounded-0 p-0">Калькулятор автоцивілки - ОСЦПВ онлайн</a></div>
+											</div>
+											<form class="form-osago-data choose-car-1 rounded">
+												<div class="row">
+													<div class="col">
+														<div class="form-osago-data--help-info alert alert-dismissible d-flex text-red px-4 py-3 rounded-sm mb-8">
+															<button type="button" class="close position-relative p-0 h-100" data-dismiss="alert">
+																<svg class="i-close mr-2">
+																	<use xlink:href="img/icons/icons.svg#i-close"></use>
+																</svg>
+															</button>
+															<p class="mb-0">Не вдалося знайти авто по держ. номеру АА1234АВ. Доя розрахунку вартості виконайте пошук за параметрами.</p>
+														</div>
+													</div>
+												</div>
+												<div class="fields-choose-car">
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field field-2 field-choose-car">
+															<div class="field--help-info text-red mb-1">Оберіть транспортний засіб</div>
+															<label for="select-choose-car" class="text-black mb-1">Транспортний засіб</label>
+															<div class="select-wrap">
+																<select class="select-choose-car" name="select-choose-car">
+																	<option value="0">Легковий автомобіль</option>
+																	<option value="1">Електромобіль</option>
+																	<option value="2">Грузовий автомобіль</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field field-2 field-carrying-capacity">
+															<div class="field--help-info text-red mb-1">Оберіть вантажопідйомність</div>
+															<label for="select-carrying-capacity" class="text-black mb-1">Вантажопідйомність</label>
+															<div class="select-wrap">
+																<select class="select-carrying-capacity" name="select-carrying-capacity">
+																	<option value="0">Менше 2-х тонн</option>
+																	<option value="1">Більше 2-х тонн</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field field-2 field-engine-capacity">
+															<div class="field--help-info text-red mb-1">Оберіть об’єм двигуна</div>
+															<label for="select-engine-capacity" class="text-black mb-1">Об’єм двигуна</label>
+															<div class="select-wrap">
+																<select class="select-engine-capacity" name="select-engine-capacity">
+																	<option value="0">до 1600 см^3 включно</option>
+																	<option value="1">до 1800 см^3 включно</option>
+																	<option value="2">до 1900 см^3 включно</option>
+																	<option value="3">до 2000 см^3 включно</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="mb-3">
+															<div class="field field-2 mb-2">
+																<div class="d-flex align-items-center mb-1">
+																	<div class="field--help-info text-red mb-0">Введіть коректно місто</div>
+																	<label for="city" class="text-black mb-0">Місто реєстрації власника</label>
+																	<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Місто прописки власника транспортного засобу по тех. паспорту</span>">?</div>
+																</div>
+																<div class="position-relative">
+																	<input type="text" id="city" class="form-control" placeholder="Місто">
+																</div>
+															</div>
+															<div class="popular-city small-txt">
+																<div class="popular-city--item">Дніпро</div>
+																<div class="popular-city--item">Київ</div>
+																<div class="popular-city--item">Львів</div>
+																<div class="popular-city--item">Одеса</div>
+																<div class="popular-city--item">Харків</div>
+															</div>
+														</div>
+														<div class="custom-control custom-checkbox position-relative">
+															<input type="checkbox" class="custom-control-input" id="form-subscribe-check">
+															<label class="custom-control-label" for="form-subscribe-check">
+																<span class="custom-checkbox--info">На закордонних номерах</span>
+																<span class="custom-checkbox--help-info small-txt mt-1">Необхідний Ваш дозвіл</span>
+															</label>
+														</div>
+													</div>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field field-2 field-otk">
+															<div class="field--help-info text-red mb-1">Оберіть ОТК</div>
+															<label for="select-otk" class="text-black mb-1">ОТК</label>
+															<div class="select-wrap">
+																<select class="select-otk" name="select-otk">
+																	<option value="0">Так</option>
+																	<option value="1">Ні</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field field-2 d-flex flex-column">
+															<div class="field--help-info small-txt text-red mb-1">Оберіть дату ОТК</div>
+															<label for="datepicker-otk" class="text-black mb-1">Дата наст. ОТК</label>
+															<div class="datepicker datepicker-otk">
+																<input id="datepicker-otk" class="flatpickr-input form-control" type="text" placeholder="Оберіть дату" data-input>
+																<a class="input-button" title="toggle" data-toggle>
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																	</svg>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="mb-5 mt-n5 mt-lg-n14 mt-xl-n9 checkbox--wrap">
+													<div class="field-wrap">
+														<div class="d-flex align-items-center mb-3 benefits-check">
+															<div class="custom-control custom-checkbox position-relative mb-0">
+																<input type="checkbox" class="custom-control-input" id="form-calculation-data-check">
+																<label class="custom-control-label" for="form-calculation-data-check">
+																	<span class="custom-checkbox--info">Є пільги</span>
+																	<span class="custom-checkbox--help-info small-txt mt-1">Ваш дозвіл на обробку персональних даних необхідна для подальщого оформлення страхової послуги</span>
+																</label>
+															</div>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="" data-original-title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+													</div>
+												</div>
+												<div class="buttons">
+													<div class="row justify-content-center">
+														<div class="col-auto mb-5 mb-lg-0"><button type="button" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</button></div>
+														<div class="col-auto"><a href="##" class="btn-default btn-indent btn btn-block btn-outline-main-blue  rounded-lg">Розрахувати за параметрами</a></div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+
+	@@include('html/scripts.html',{})
+</body>
+
+</html>

@@ -1,22 +1,24 @@
-import { Fancybox } from "@fancyapps/ui/dist/fancybox/fancybox.esm.js";
+// import { Fancybox } from "@fancyapps/ui/dist/fancybox/fancybox.esm.js";
+import { Fancybox } from "@fancyapps/ui";
 
-//? single-wallpaper-gallery
-Fancybox.bind('[data-fancybox="single-wallpaper-gallery"]', {
+// //? single-wallpaper-gallery
+Fancybox.bind('[data-fancybox="gallery"]', {
 	Toolbar: {
-		items: {
-			close_custom: {
-				tpl: `<button class="f-button btn-fancybox-close" data-fancybox-close><svg><use xlink:href="../img/icons/icons.svg#i-close"></use></svg></button>`,
-			},
-		},
 		display: {
 			left: [],
-			right: ["close_custom"],
+			right: ["iterateZoom", "close"],
 		},
 	},
 	Carousel: {
 		Navigation: {
-			nextTpl: `<svg><use xlink:href="img/icons/icons.svg#i-arrow-circle"></use></svg>`,
-			prevTpl: `<svg><use xlink:href="img/icons/icons.svg#i-arrow-circle"></use></svg>`,
+			nextTpl: `<svg><use xlink:href="img/icons/icons.svg#i-arrow-one-right"></use></svg>`,
+			prevTpl: `<svg><use xlink:href="img/icons/icons.svg#i-arrow-one-right"></use></svg>`,
+		},
+	},
+	contentClick: "iterateZoom",
+	Images: {
+		Panzoom: {
+			maxScale: 2,
 		},
 	},
 	Thumbs: false,

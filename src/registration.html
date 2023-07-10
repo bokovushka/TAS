@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Реєстрація"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top my-8 mt-lg-11 mb-lg-8">
+					<div class="container mx-auto">
+						<div class="row">
+							<div class="col">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+									<ol class="breadcrumb mb-0">
+										<li class="breadcrumb-item"><a href="##">Головна</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Реєстрація</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="registration mb-24">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-md-10 col-lg-8 col-xxl-6 mx-auto">
+								<div class="login-registration px-3 px-md-6 py-6 rounded bg-light-blue">
+									<form action="" class="form-login">
+										<div class="h3 text-center mb-8">Реєстрація</div>
+										<div class="nav-wrapper rounded bg-white mb-8">
+											<ul class="nav nav-pills row">
+												<li class="nav-item col-6">
+													<a href="/login.html" class="nav-link">Я клієнт ТАС</a>
+												</li>
+												<li class="nav-item col-6">
+													<div class="nav-link active">Я новий користувач</div>
+												</li>
+											</ul>
+										</div>
+										<div class="text-main-blue text-center mb-3">Зареєструватися швидко через</div>
+										<div class="row mb-8">
+											<div class="col-6">
+												<button type="button" class="btn-google btn-default btn d-flex align-items-center justify-content-center w-100">Google</button>
+											</div>
+											<div class="col-6">
+												<button type="button" class="btn-diia btn-default btn btn-main-blue d-flex align-items-center justify-content-center w-100">Дія</button>
+											</div>
+										</div>
+										<div class="dividing-line mb-8 text-main-blue text-center">
+											<span>або</span>
+											<div class="line"></div>
+										</div>
+										<div class="head mb-8">Особисті дані</div>
+										<div class="row mb-0 mb-md-5">
+											<div class="col-12 col-md-4 mb-5 mb-md-0">
+												<div class="field field-2">
+													<div class="field--help-info small-txt text-red mb-1">Введіть Ваше прізвище українськими літерами (кирилицею)</div>
+													<label for="surname" class="small-txt mb-1">Прізвище</label>
+													<input type="text" id="surname" class="form-control" placeholder="Прізвище">
+												</div>
+											</div>
+											<div class="col-12 col-md-4 mb-5 mb-md-0">
+												<div class="field field-2">
+													<div class="field--help-info small-txt text-red mb-1">Введіть Ваше ім’я українськими літерами (кирилицею)</div>
+													<label for="name" class="small-txt mb-1">Ім’я</label>
+													<input type="text" id="name" class="form-control" placeholder="Ім’я">
+												</div>
+											</div>
+											<div class="col-12 col-md-4 mb-5 mb-md-0">
+												<div class="field field-2">
+													<div class="field--help-info small-txt text-red mb-1">Введіть Ваше по-батькові українськими літерами (кирилицею)</div>
+													<label for="patronymic" class="small-txt mb-1">По-батькові</label>
+													<input type="text" id="patronymic" class="form-control" placeholder="По-батькові">
+												</div>
+											</div>
+										</div>
+										<div class="field field-2 mb-5">
+											<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш номер телефону</div>
+											<label for="name" class="small-txt mb-1">Номер телефону</label>
+											<input type="phone" id="name" class="form-control" placeholder="Номер телефону">
+										</div>
+										<div class="field field-2 mb-5">
+											<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш Email</div>
+											<label for="name" class="small-txt mb-1">Email</label>
+											<input type="text" id="name" class="form-control" placeholder="Email">
+										</div>
+										<div class="field field-2 field-password mb-5">
+											<div class="field--help-info small-txt text-red mb-1">Введіть коректно пароль</div>
+											<label for="password" class="small-txt mb-1">Введіть пароль</label>
+											<div class="position-relative">
+												<input type="password" id="password" class="form-control" placeholder="Пароль">
+												<button type="button" class="btn p-0 btn-toggle-password"></button>
+											</div>
+										</div>
+										<div class="field field-2 field-password mb-5">
+											<div class="field--help-info small-txt text-red mb-1">Введіть коректно пароль</div>
+											<label for="password-repeat" class="small-txt mb-1">Повторіть пароль</label>
+											<div class="position-relative">
+												<input type="password" id="password-repeat" class="form-control" placeholder="Повторіть пароль">
+												<button type="button" class="btn p-0 btn-toggle-password"></button>
+											</div>
+										</div>
+										<button type="button" class="btn-default btn btn-block btn-main-blue" data-toggle="modal" data-target="#popup-registration-completed">Зареєструватися</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+	@@include('html/popup/popup-reviews-preview-card.html',{})
+	@@include('html/popup/popup-write-review.html',{})
+	@@include('html/popup/popup-registration-completed.html',{})
+
+	@@include('html/scripts.html',{})
+</body>
+
+</html>

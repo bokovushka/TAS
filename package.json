@@ -14,13 +14,16 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"gulp-cli": "^2.3.0"
+		"gulp-cli": "^2.3.0",
+		"readmore-js": "^2.2.1"
 	},
 	"devDependencies": {
+		"@fancyapps/ui": "^5.0.19",
 		"bootstrap": "^4.6.2",
 		"browser-sync": "latest",
 		"del": "latest",
 		"fastselect": "^0.7.3",
+		"flatpickr": "^4.6.13",
 		"gulp": "latest",
 		"gulp-autoprefixer": "latest",
 		"gulp-clean-css": "latest",

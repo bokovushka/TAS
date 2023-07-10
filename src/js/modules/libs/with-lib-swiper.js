@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 
-//? banner-top--swiper
-var BannerTopSwiper = new Swiper('.banner-top--swiper', {
+//? section-top--swiper
+var BannerTopSwiper = new Swiper('.section-top--swiper', {
 	loop: true,
 	autoplay: {
 		delay: 5000,
@@ -11,8 +11,8 @@ var BannerTopSwiper = new Swiper('.banner-top--swiper', {
 	grabCursor: true,
 	autoHeight: true,
 	navigation: {
-		nextEl: ".banner-top--swiper .swiper-buttons .button-slider-next",
-		prevEl: ".banner-top--swiper .swiper-buttons .button-slider-prev",
+		nextEl: ".section-top--swiper .swiper-buttons .button-slider-next",
+		prevEl: ".section-top--swiper .swiper-buttons .button-slider-prev",
 	},
 });
 
@@ -39,6 +39,39 @@ var ArticlesPreviewSwiper = new Swiper('.articles-preview--swiper', {
 		},
 		440: {
 			slidesPerView: 1,
+		}
+	},
+});
+
+//? articles-preview-two--swiper
+var ArticlesPreviewTwoSwiper = new Swiper('.articles-preview-two--swiper', {
+	slidesPerView: 3,
+	spaceBetween: 24,
+	loop: true,
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+	},
+	speed: 800,
+	grabCursor: true,
+	navigation: {
+		nextEl: ".articles-preview .swiper-buttons .button-slider-next",
+		prevEl: ".articles-preview .swiper-buttons .button-slider-prev",
+	},
+	breakpoints: {
+		1024: {
+		},
+		768: {
+			slidesPerView: 2,
+		},
+		440: {
+			slidesPerView: 1,
+			grid: {
+				rows: 3,
+				fill: "row",
+			},
+			autoplay: false,
+			allowTouchMove: false,
 		}
 	},
 });
@@ -163,7 +196,23 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 	},
 });
 
-
+//? news-category--swiper //news.html
+var NewsCategorySwiper = new Swiper('.news-category--swiper', {
+	grabCursor: true,
+	spaceBetween: 16,
+	slidesPerView: 5,
+	navigation: {
+		nextEl: ".news .swiper-buttons .button-slider-next",
+		prevEl: ".news .swiper-buttons .button-slider-prev",
+	},
+	breakpoints: {
+		1300: {
+		},
+		1024: {
+			slidesPerView: 4,
+		},
+	},
+});
 
 
 
@@ -175,8 +224,8 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 // 	grabCursor: true,
 // 	slidesPerView: 1,
 // 	navigation: {
-// 		nextEl: ".banner-top .swiper-buttons .button-slider-next",
-// 		prevEl: ".banner-top .swiper-buttons .button-slider-prev",
+// 		nextEl: ".section-top .swiper-buttons .button-slider-next",
+// 		prevEl: ".section-top .swiper-buttons .button-slider-prev",
 // 	},
 // 	thumbs: {
 // 		swiper: SwiperWallpaperCollectionThumbs,
@@ -268,8 +317,8 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 // // 	});
 // // }
 
-// //? blog-p swiper-blog-banner-top
-// var SwiperBlogBannerTop = new Swiper('.blog-p .swiper-blog-banner-top', {
+// //? blog-p swiper-blog-section-top
+// var SwiperBlogBannerTop = new Swiper('.blog-p .swiper-blog-section-top', {
 // 	grabCursor: true,
 // 	slidesPerView: 1.5,
 // 	centeredSlides: true,
@@ -277,11 +326,11 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 // 	// initialSlide: 1,
 // 	loop: true,
 // 	navigation: {
-// 		nextEl: ".blog-p .blog-banner-top .swiper-buttons .button-slider-next",
-// 		prevEl: ".blog-p .blog-banner-top .swiper-buttons .button-slider-prev",
+// 		nextEl: ".blog-p .blog-section-top .swiper-buttons .button-slider-next",
+// 		prevEl: ".blog-p .blog-section-top .swiper-buttons .button-slider-prev",
 // 	},
 // 	pagination: {
-// 		el: ".blog-p .blog-banner-top .swiper-pagination",
+// 		el: ".blog-p .blog-section-top .swiper-pagination",
 // 		clickable: true,
 // 	},
 // 	breakpoints: {
@@ -296,8 +345,8 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 // 	}
 // });
 
-// //? collection-p swiper-blog-banner-top
-// var SwiperBlogBannerTop = new Swiper('.collection-p .swiper-blog-banner-top', {
+// //? collection-p swiper-blog-section-top
+// var SwiperBlogBannerTop = new Swiper('.collection-p .swiper-blog-section-top', {
 // 	grabCursor: true,
 // 	slidesPerView: 1.5,
 // 	centeredSlides: true,
@@ -305,11 +354,11 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 // 	// initialSlide: 1,
 // 	loop: true,
 // 	navigation: {
-// 		nextEl: ".collection-p .blog-banner-top .swiper-buttons .button-slider-next",
-// 		prevEl: ".collection-p .blog-banner-top .swiper-buttons .button-slider-prev",
+// 		nextEl: ".collection-p .blog-section-top .swiper-buttons .button-slider-next",
+// 		prevEl: ".collection-p .blog-section-top .swiper-buttons .button-slider-prev",
 // 	},
 // 	pagination: {
-// 		el: ".collection-p .blog-banner-top .swiper-pagination",
+// 		el: ".collection-p .blog-section-top .swiper-pagination",
 // 		clickable: true,
 // 	},
 // 	breakpoints: {

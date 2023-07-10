@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Центр врегулювання СГ “ТАС” - Вінниця"
+})
+
+<body class="contacts-page">
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top mt-8 mt-lg-11 mb-16 mb-lg-24">
+					<div class="container-wrap mx-auto">
+						<div class="row">
+							<div class="col">
+								<div class="section-top--item">
+									<div class="container">
+										<div class="row">
+											<div class="col-12 col-lg-5">
+												<div class="section-top--content d-flex flex-column text-center text-lg-left">
+													<div class="section-top--info mb-8 mb-lg-0">
+														<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+															<ol class="breadcrumb mb-0">
+																<li class="breadcrumb-item"><a href="##">Головна</a></li>
+																<li class="breadcrumb-item"><a href="##">Контакти</a></li>
+																<li class="breadcrumb-item active" aria-current="page">Центр врегулювання СГ “ТАС” - Вінниця</li>
+															</ol>
+														</nav>
+														<div class="contacts-info bg-light-blue p-4 rounded h-100">
+															<div class="h4 mb-5">Центр врегулювання СГ “ТАС” - Вінниця</div>
+															<div class="contacts-info--item d-flex flex-column flex-xl-row align-items-start text-left mb-5">
+																<div class="d-flex align-items-center flex-grow-1 mb-3 mb-xl-0">
+																	<svg class="mr-2">
+																		<use xlink:href="img/icons/icons.svg#i-location"></use>
+																	</svg>
+																	<span>Адреса:</span>
+																</div>
+																<div class="contacts-info--descr small-txt col-12 col-xl-8 px-0 pl-xl-3">
+																	<p class="mb-0">03117, Україна, Київ, Пр. Перемоги, 65.<br>
+																		Служба клієнтських сервисів в Києві: м. Київ, вул. В.Хвойки, 21, прохідна 3, оф. 133</p>
+																</div>
+															</div>
+															<div class="contacts-info--item d-flex flex-column flex-xl-row align-items-start text-left mb-5">
+																<div class="d-flex align-items-center flex-grow-1 mb-3 mb-xl-0">
+																	<svg class="i-phone mr-2">
+																		<use xlink:href="img/icons/icons.svg#i-phone"></use>
+																	</svg>
+																	<span>Телефон:</span>
+																</div>
+																<div class="contacts-info--descr small-txt col-12 col-xl-8 px-0 pl-xl-3">
+																	<div class="spoiler--contacts-info">
+																		<p class="mb-3">(093) 654 77 77, (095) 654 77 77, (097) 654 77 77. <br>(044) 454 27 50 Служба клієнтських сервисів в Києві: (044) 586 54 25</p>
+																		<p class="mb-0">Паблік екаунт у вайбері - СГ ТАС: виклик лікаря додому, передача медичної документації, завантаження документів в справу, перевірка статусу справи та виплати, відгуки по роботі асистанса</p>
+																	</div>
+																</div>
+															</div>
+															<div class="contacts-info--item email d-flex flex-column flex-xl-row align-items-xl-center text-left mb-5">
+																<div class="d-flex align-items-center flex-grow-1 mb-3 mb-xl-0">
+																	<svg class="mr-2">
+																		<use xlink:href="img/icons/icons.svg#i-email"></use>
+																	</svg>
+																	<span>Email:</span>
+																</div>
+																<div class="contacts-info--descr small-txt col-12 col-xl-8 px-0 pl-xl-3">
+																	<a href="mailto:tac@gmail.com">tac@gmail.com</a>
+																</div>
+															</div>
+															<div class="contacts-info--item d-flex flex-column flex-xl-row align-items-xl-center text-left">
+																<div class="d-flex align-items-center flex-grow-1 mb-3 mb-xl-0">
+																	<svg class="mr-2">
+																		<use xlink:href="img/icons/icons.svg#i-time"></use>
+																	</svg>
+																	<span>Години роботи:</span>
+																</div>
+																<div class="contacts-info--descr small-txt col-12 col-xl-8 px-0 pl-xl-3">
+																	<p class="mb-0">9:00 - 18:00</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg-7">
+												<div class="section-top--img">
+													<div class="wrap-img">
+														<div id="map" class="map"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+	@@include('html/scripts.html',{})
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgMBbn1eBSqj8V9kKOn6CqiwTZhoTQP6s&callback=initMap&libraries=marker&v=beta" defer></script>
+	<script>
+		function initMap() {
+			var centerMap = new google.maps.LatLng(50.45668411158, 30.50518209469263);
+			const map = new google.maps.Map(document.getElementById("map"), {
+				center: centerMap,
+				zoom: 10.1,
+				disableDefaultUI: true,
+				// fullscreenControl: false,
+				// mapTypeControl: false,
+				scaleControl: true,
+				zoomControl: true,
+				scrollwheel: false,
+				mapId: "cd19383a34cacd50",
+				styles: [
+					{
+						"featureType": "administrative.province",
+						"elementType": "geometry.stroke",
+						"stylers": [
+							{
+								"visibility": "off"
+							}
+						]
+					}
+				]
+			});
+
+			const tourStops = [
+				{
+					position: { lat: 50.45853652359974, lng: 30.411489795412983 },
+					title: "Головний офіс СГ “ТАС” м.Київ",
+				},
+			];
+
+			const infoWindow = new google.maps.InfoWindow();
+
+			const mapMarkerPlace = document.createElement("div");
+			mapMarkerPlace.className = "map-marker-place";
+
+			tourStops.forEach(({ position, title }, i) => {
+				const pinView = new google.maps.marker.PinView();
+				const marker = new google.maps.marker.AdvancedMarkerView({
+					position,
+					map,
+					title: `${title}`,
+					// content: pinView.element,
+					content: mapMarkerPlace,
+				});
+
+				// Add a click listener for each marker, and set up the info window.
+				marker.addListener("click", ({ domEvent, latLng }) => {
+					const { target } = domEvent;
+
+					infoWindow.close();
+					infoWindow.setContent(marker.title);
+					infoWindow.open(marker.map, marker);
+				});
+			});
+
+			// tourStops.forEach(([position, title], i) => {
+			// 	const marker = new google.maps.marker.AdvancedMarkerView({
+			// 		position,
+			// 		map,
+			// 		title: `${title}`,
+			// 		// animation: google.maps.Animation.BOUNCE,
+			// 		content: mapMarkerPlace
+			// 	});
+
+			// 	marker.addListener("click", () => {
+			// 		infoWindow.close();
+			// 		infoWindow.setContent(marker.getTitle());
+			// 		infoWindow.open(marker.getMap(), marker);
+			// 	});
+			// });
+
+			map.data.loadGeoJson(
+				"./assets/json/kyiv.json"
+			);
+			map.data.setStyle({
+				strokeColor: "#FF0000",
+				strokeOpacity: 0.5,
+				strokeWeight: 1.5,
+				fillColor: "#dce2ff",
+				fillOpacity: 0.25,
+			});
+		}
+
+		// window.initMap = initMap;
+	</script>
+</body>
+
+</html>

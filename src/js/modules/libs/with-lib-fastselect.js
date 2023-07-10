@@ -3,9 +3,6 @@ import "../../../../node_modules/fastselect/dist/fastselect.standalone.js";
 
 //? select-city //footer
 $('.footer .select-city').fastselect({
-	// placeholder: 'Введіть назву міста',
-	// noResultsText: 'Не знайдено',
-	// elementClass: 'fstElement fstSelect-city',
 }
 );
 
@@ -21,8 +18,6 @@ setInterval(function () {
 
 //? select-program //casco page
 $('.calculation-data .select-program').fastselect({
-	// placeholder: 'Тип програми',
-	// noResultsText: 'Не знайдено',
 }
 );
 
@@ -36,9 +31,93 @@ setInterval(function () {
 	}
 }, 100);
 
-//? select-program wrap //active  //casco page
+//? select-currency //casco page
 $('.calculation-data .select-currency').fastselect({
-	// placeholder: 'Тип програми',
-	// noResultsText: 'Не знайдено',
 }
 );
+
+//? select-year //rehuliarna-richna-zvitnist.html
+$('.financial-info .select-year').fastselect({
+}
+);
+
+//? select-accordion //rehuliarna-richna-zvitnist.html
+$('.insurance-case-tablist-nav .select-accordion').fastselect({
+}
+);
+
+//? select-year   //news.html
+$('.news .select-year').fastselect({
+}
+);
+
+//? select-news-category
+$('.news .select-news-category').fastselect({
+}
+);
+
+//? select-accordion //parntners.html
+$('.partners-tablist-nav .select-accordion').fastselect({
+}
+);
+
+//? select-accordion //user.html
+$('.user-profile-nav .select-accordion').fastselect({
+}
+);
+
+//? select-service //user.html
+$('.user-profile .select-service').fastselect({
+}
+);
+
+//? select-choose-car //avtotsyvilka-2.html
+$('.field-choose-car .select-choose-car').fastselect({
+}
+);
+
+//? select-engine-capacity //avtotsyvilka-2.html
+$('.field-engine-capacity .select-engine-capacity').fastselect({
+}
+);
+
+//? select-carrying-capacity //avtotsyvilka-2.html
+$('.field-carrying-capacity .select-carrying-capacity').fastselect({
+}
+);
+
+$('.select-choose-car').change(function () {
+	if ($(this).val() == '1') {
+		$('.form-osago-data').addClass("choose-car-2");
+		$('.form-osago-data').removeClass("choose-car-1");
+		$('.form-osago-data').removeClass("choose-car-3");
+		$('.form-osago-data').removeClass("otk-no");
+	}
+	else {
+		if (($(this).val() == '2')) {
+			$('.form-osago-data').addClass("choose-car-3");
+			$('.form-osago-data').removeClass("choose-car-1");
+			$('.form-osago-data').removeClass("choose-car-2");
+		}
+		else {
+			$('.form-osago-data').addClass("choose-car-1");
+			$('.form-osago-data').removeClass("choose-car-2");
+			$('.form-osago-data').removeClass("choose-car-3");
+			$('.form-osago-data').removeClass("otk-no");
+		}
+	}
+});
+
+//? select-otk //avtotsyvilka-2.html
+$('.field-otk .select-otk').fastselect({
+}
+);
+
+// $('.select-otk').change(function () {
+// 	if ($(this).val() == '1') {
+// 		$('.form-osago-data').addClass("otk-no");
+// 	}
+// 	else {
+// 		$('.form-osago-data').removeClass("otk-no");
+// 	}
+// });

@@ -1,14 +1,23 @@
+import $ from 'jquery';
+
 import flatpickr from "flatpickr";
-import { Russian } from "flatpickr/dist/l10n/ru.js"
+import { Ukrainian } from "flatpickr/dist/l10n/uk.js"
 
-flatpickr.localize(Russian); //default
+flatpickr.localize(Ukrainian); //default
 
-flatpickr(".datepicker", {
+flatpickr(".datepicker-birthday, .datepicker-issue-date", {
 	minDate: "today",
-	// enableTime: true,
-	// time_24hr: true,
+	dateFormat: "d/m/Y",
 	disableMobile: "true",
 	wrap: true,
+	"locale": Ukrainian,
+	static: true,
+});
+
+flatpickr(".datepicker-otk", {
+	minDate: "today",
 	dateFormat: "d/m/Y",
-	"locale": Russian,
+	disableMobile: "true",
+	wrap: true,
+	"locale": Ukrainian,
 });

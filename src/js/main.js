@@ -9,6 +9,6 @@ import * as MultiLevelPushMenu from "./modules/multi-level-push-menu.js";
 
 import * as ShowMenu from "./modules/show-menu.js";
 // import * as CheckboxActive from "./modules/checkbox-active.js";
-// import * as Pagination from "./modules/pagination.js";
+import * as Pagination from "./modules/pagination.js";
 import * as ReadMore from "./modules/read-more.js";
 import * as JS from "./modules/js.js";

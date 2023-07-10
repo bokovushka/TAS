@@ -107,3 +107,72 @@ $('.questions--inner .btn-more').click(function () {
 		$(this).closest(".questions--inner").addClass("active");
 	}
 });
+
+//? клік поза областю акардеона закриває його
+$(document).mouseup(function (e) {
+	if (!$("#accordion-financial-info--nav").is(e.target) // если клик был не по нашему блоку
+		&& $("#accordion-financial-info--nav").has(e.target).length === 0) { // и не по его дочерним элементам
+		if ($("#collapse-accordion-financial-info--nav-1").hasClass("show")) {
+			$('.card-header .btn').click()
+		}
+	}
+});
+
+//? news category // active class
+$(".news .swiper-slide").click(function () {
+	$('.news .swiper-slide').removeClass('active');
+	$(this).addClass('active');
+});
+
+
+//? select mobile // partners.html
+setInterval(function () {
+	if (window.innerWidth < 1024) {
+		if ($(".partners-tablist-nav .fstElement").hasClass("fstActive")) {
+			function resize() {
+				$('.partners-tablist-nav .fstActive .fstToggleBtn').width($('.partners-tablist-nav .fstActive .fstResults').width());
+			}
+			resize();
+			$(window).resize(function () {
+				resize()
+			});
+		}
+		else {
+			$(".partners-tablist-nav .fstElement .fstToggleBtn").removeAttr("style");
+		}
+	}
+}, 100);
+
+//? toggle password //user.html
+$(".btn-toggle-password").on("click", function () {
+	var input = $(this).parent().children('input');
+	var icon = $(this);
+
+	if ($(icon).hasClass("active")) {
+		// Password is visible
+		$(icon).removeClass("active");
+		$(input).attr("type", "password");
+	} else {
+		// Password is not visible
+		$(icon).addClass("active");
+		$(input).attr("type", "text");
+	}
+});
+
+
+//?  edit image //user.html
+setInterval(function () {
+	if (window.innerWidth < 1024) {
+		if ($("#user-profile-nav--pills-4-tab").hasClass("active")) {
+			$('.user-profile-nav').addClass('edit');
+		} else {
+			$('.user-profile-nav').removeClass('edit');
+		}
+	}
+	else {
+		$('.user-profile-nav').removeClass('edit');
+	}
+}, 100);
+
+
+
