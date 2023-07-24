@@ -1405,21 +1405,22 @@
 			height: 80px;
 		}
 	}
-	.user-pic--edit {
-		@include transition(0.3s ease-out 0s);
+}
+.user-pic--edit {
+	@include transition(0.3s ease-out 0s);
+	svg {
+		max-width: 24px;
+		width: 100%;
+		height: 24px;
+		stroke: $grey;
+		fill: transparent;
+	}
+	&:hover {
 		svg {
-			max-width: 24px;
-			width: 100%;
-			height: 24px;
-			stroke: $grey;
+			stroke: $main-blue;
 		}
-		&:hover {
-			svg {
-				stroke: $main-blue;
-			}
-			span {
-				color: $main-blue;
-			}
+		span {
+			color: $main-blue;
 		}
 	}
 }
@@ -1624,13 +1625,18 @@
 		background: $light-blue;
 	}
 }
-.password-change--help-info {
+.password-change--help-info,
+.i-info-pic-content {
 	background: rgba(135, 135, 135, 0.1);
 	svg {
-		width: 24px;
+		max-width: 24px;
+		width: 100%;
 		height: 24px;
 		stroke: $grey;
 	}
+}
+.i-info-pic-content {
+	background: unset;
 }
 .i-info {
 	background: $blue;
@@ -1656,7 +1662,7 @@
 		color: $black;
 		font-weight: 500;
 		font-size: 12px;
-		line-height: 24px;
+		line-height: 18px;
 		max-width: 320px;
 		width: 100%;
 		padding: 4px 10px;
@@ -1807,6 +1813,575 @@
 						margin-top: -25px;
 					}
 				}
+			}
+		}
+	}
+}
+.form-osago-data-result {
+	.fields-choose-car {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 16px;
+		@include md-max {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.form-osago-data-result--car-number {
+	.fields-choose-car {
+		grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+		@include md-max {
+			grid-template-columns: 1fr 1fr;
+			.field-wrap {
+				&:nth-child(3) {
+					grid-column: 1 / span 2;
+				}
+			}
+		}
+	}
+}
+.calculation-data {
+	.form-wrap {
+		border: 1px solid $blue;
+	}
+}
+
+// calc-insurance-payment.html
+.filters-search {
+	.left-side {
+		// @include sm-max {
+		// 	width: 80%;
+		// }
+		.field-wrap {
+			width: 200px;
+			// @include sm-max {
+			// 	width: calc(50% - 5px);
+			// }
+		}
+	}
+	&.filters-search-mini-casco {
+		.left-side {
+			// @include sm-max {
+			// 	width: 100%;
+			// }
+			.field-wrap {
+				@include md-max {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+.filter-cards {
+	.filter-card {
+		border: 1px solid $blue;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+		@include md-max {
+			.mob {
+				display: none;
+			}
+			&.active {
+				.mob {
+					display: block;
+				}
+			}
+		}
+		.filter-car--pic {
+			max-width: 150px;
+		}
+		.filter-card--cost {
+			.i-info {
+				width: 24px;
+				height: 24px;
+			}
+		}
+		.filter-card--additional {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.5s ease-out;
+			&.filter-card--additional--desk {
+				@include md-max {
+					display: none;
+				}
+			}
+			&.active {
+				grid-template-rows: 1fr;
+			}
+			.inner {
+				overflow: hidden;
+			}
+			.filter-card--order-rating-pic {
+				max-width: 175px;
+			}
+			.list-quality {
+				li {
+					&:not(:last-child) {
+						margin-bottom: 20px;
+					}
+					.quality {
+						padding: 4px 16px;
+						border-radius: 5px;
+						width: max-content;
+						&.quality-perfect {
+							background: #b2ffbe;
+							color: #12893a;
+						}
+					}
+				}
+			}
+			.list-liability-limits {
+				li {
+					display: flex;
+					align-items: center;
+					&:not(:last-child) {
+						margin-bottom: 20px;
+					}
+					&::before {
+						content: "";
+						display: block;
+						width: 24px;
+						height: 24px;
+						margin-right: 8px;
+						position: relative;
+						background: url(../img/icons/icons.svg#i-check) no-repeat center;
+						background-size: cover;
+					}
+				}
+			}
+		}
+		.card-details {
+			.btn-more {
+				&.active {
+					display: none !important;
+				}
+			}
+		}
+		.btn-more {
+			display: flex;
+			align-items: center;
+			&::after {
+				content: "";
+				display: block;
+				width: 16px;
+				height: 16px;
+				position: relative;
+				background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+				background-size: cover;
+				margin-left: 10px;
+				@include transition(0.3s ease-out 0s);
+			}
+			&:hover {
+				&::after {
+					filter: brightness(0) saturate(100%) invert(44%) sepia(63%) saturate(1885%) hue-rotate(212deg)
+						brightness(95%) contrast(114%);
+				}
+			}
+		}
+		.company-name {
+			@include md-max {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				cursor: pointer;
+				&::after {
+					content: "";
+					display: block;
+					width: 24px;
+					height: 24px;
+					position: relative;
+					background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+					background-size: cover;
+					margin-left: 10px;
+					transform: rotate(0deg);
+					@include transition(0.3s ease-out 0s);
+				}
+				&.active {
+					&::after {
+						transform: rotate(90deg);
+						@include transition(0.3s ease-out 0s);
+					}
+				}
+			}
+		}
+	}
+}
+
+// calc-insurance-payment-step.html
+
+.progress-step--wrap {
+	border: 1px solid $blue;
+}
+
+.form-osago-step {
+	position: relative;
+	.btn-diia {
+		background: $white;
+		border: 1px solid $blue;
+	}
+	.buttons {
+		.btn {
+			@include lg-max {
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	.form-osago-data--help-info {
+		.car-number {
+			border-radius: 5px;
+			background: rgba(250, 250, 250, 0.52);
+			padding: 5px 10px;
+		}
+	}
+	/*progressbar*/
+	.progressbar {
+		border-radius: 100px;
+		border: 1px solid $blue;
+		display: flex;
+		overflow: hidden;
+		li {
+			width: calc(100% / 3);
+			position: relative;
+			padding: 10px 32px;
+			text-align: center;
+			background: $white;
+			@include lg-max {
+				padding: 10px 15px;
+			}
+			@include md-max {
+				font-size: 12px;
+				line-height: 18px;
+			}
+			&.active {
+				background: $main-blue;
+				color: $white;
+				border-left: unset !important;
+			}
+			&:not(:last-child) {
+				border-left: 1px solid $blue;
+			}
+		}
+	}
+	.passport-data-tab {
+		.nav-pills {
+			@include md-max {
+				justify-content: center;
+			}
+			.nav-item {
+				width: calc((100% - 16px * 2) / 3);
+				text-align: center;
+				@include md-max {
+					width: calc((100% - 16px) / 2);
+				}
+				&:nth-child(1) {
+					.nav-link {
+						@include xl-max {
+							padding-right: 5px;
+							padding-left: 5px;
+						}
+					}
+				}
+				.nav-link {
+					padding: 0.656rem 2rem;
+					border: 1.5px solid transparent;
+					border-color: $main-blue;
+					&.active {
+						border-color: $main-blue;
+						background: $main-blue;
+						color: $white;
+					}
+					&:hover {
+						border-color: $blue;
+					}
+				}
+			}
+		}
+	}
+	.buttons-social {
+		@include lg-min {
+			border-radius: 20px;
+			border: 1px solid $main-blue;
+		}
+	}
+	.choose-radio {
+		.custom-control-label {
+			.btn {
+				white-space: nowrap;
+				height: 100%;
+				@include md-max {
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+	}
+	.policy-additional {
+		.btn-more {
+			&:after {
+				content: "";
+				display: block;
+				width: 18px;
+				height: 18px;
+				position: relative;
+				background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+				background-size: cover;
+				margin-left: 10px;
+				transform: rotate(0deg);
+				@include transition(0.3s ease-out 0s);
+			}
+			&.active {
+				&:after {
+					transform: rotate(90deg);
+				}
+			}
+		}
+		.policy-additional--content-more {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.5s ease-out;
+			&.active {
+				grid-template-rows: 1fr;
+			}
+			.inner {
+				overflow: hidden;
+			}
+			~ .btn {
+				@include lg-max {
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+	}
+	.custom-checkbox--info--descr {
+		@include lg-max {
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+}
+
+/*Hide all except first fieldset*/
+.form-osago-step fieldset:not(:first-of-type) {
+	display: none;
+}
+.calc-insurance-payment-step-page {
+	.calculation-data {
+		.btn-collapse {
+			@include md-max {
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				&::after {
+					content: "";
+					display: block;
+					width: 24px;
+					height: 24px;
+					position: relative;
+					background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+					background-size: cover;
+					margin-left: 10px;
+					transform: rotate(0deg);
+					@include transition(0.3s ease-out 0s);
+				}
+				&.active {
+					&::after {
+						transform: rotate(90deg);
+						@include transition(0.3s ease-out 0s);
+					}
+				}
+			}
+		}
+		.electronic-policy--content {
+			@include md-max {
+				display: grid;
+				grid-template-rows: 0fr;
+				transition: grid-template-rows 0.5s ease-out;
+				&.active {
+					grid-template-rows: 1fr;
+				}
+				.inner {
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}
+.edit-data-result--item {
+	display: grid;
+	grid-template-columns: 30% 1fr max-content;
+	column-gap: 16px;
+	@include md-max {
+		grid-template-columns: 1fr max-content;
+	}
+	&.active {
+		grid-template-columns: 30% 1fr;
+		.edit-data-result--content-item {
+			display: grid !important;
+			grid-template-columns: 40% 1fr;
+		}
+		.user-pic--edit {
+			display: none;
+		}
+		.buttons {
+			display: block;
+		}
+	}
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+	.user-pic--edit {
+		height: max-content;
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.edit-data-result--content {
+		@include md-max {
+			grid-column: 1 / span 2;
+			grid-row: 2;
+			margin-top: 15px;
+		}
+		.edit-data-result--content-item {
+			gap: 5px;
+			.field-coating {
+				&.field-compete {
+					@include lg-min {
+						margin-left: -10px;
+					}
+				}
+			}
+		}
+		.val-title {
+			position: relative;
+			height: max-content;
+			width: max-content;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $black;
+			}
+		}
+	}
+	.buttons {
+		display: none;
+		.btn {
+			min-width: 100%;
+		}
+	}
+}
+.bonus-info-descr {
+	.bonus-info-descr-item {
+		min-height: 85px;
+		height: 100%;
+		border: 1px solid $blue;
+		@include lg-max {
+			min-height: auto;
+		}
+		.bonus-count {
+			border: 1px solid $blue;
+		}
+	}
+}
+.popup-step-number-verify {
+	.i-info-pic-content {
+		border-radius: 15px;
+		background: rgba(135, 135, 135, 0.1);
+	}
+}
+.popup-step-year-error {
+	.modal-content {
+		background: #f4dfdf;
+		border: 1.5px solid #f00;
+	}
+}
+
+//calc-mini-casco-insurance-payment-car-number.html
+.calc-mini-casco-page {
+	.filter-cards {
+		.choose-radio {
+			.custom-control {
+				&:not(:last-child) {
+					margin-bottom: 5px;
+				}
+			}
+		}
+		.card-details--list {
+			li {
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+			.true,
+			.false {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				&::before {
+					content: "";
+					max-width: 24px;
+					width: 100%;
+					height: 24px;
+					display: block;
+				}
+			}
+			.true {
+				&::before {
+					background: url(../img/icons/icons.svg#i-tick-check) no-repeat center;
+					background-size: cover;
+					filter: brightness(0) saturate(100%) invert(37%) sepia(85%) saturate(491%) hue-rotate(194deg)
+						brightness(109%) contrast(109%);
+				}
+			}
+			.false {
+				&::before {
+					background: url(../img/icons/icons.svg#i-close) no-repeat center;
+					background-size: cover;
+					filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg)
+						brightness(92%) contrast(85%);
+				}
+			}
+		}
+		.filter-card {
+			.btn-more {
+				border-radius: 10px;
+				background: #eaeaea;
+				color: $grey;
+				&.active {
+					display: flex !important;
+					&::after {
+						transform: rotate(-90deg);
+					}
+				}
+				&::after {
+					transform: rotate(90deg);
+					filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg)
+						brightness(92%) contrast(85%);
+				}
+			}
+			.company-name {
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+.calc-property-protection-page {
+	.calculation-data {
+		.currency {
+			.fstToggleBtn {
+				color: $main-blue !important;
 			}
 		}
 	}

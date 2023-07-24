@@ -250,6 +250,14 @@ input:-webkit-autofill:active {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+.buffer {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
 a {
   -webkit-transition: 0.3s ease-out 0s;
   -o-transition: 0.3s ease-out 0s;
@@ -266,6 +274,11 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
 }
 
 hr {
@@ -321,6 +334,11 @@ ul.list-circle li::before {
   top: 9.5px;
 }
 
+.line-pieces {
+  border-bottom: 2px solid #f3f5ff;
+  border-radius: 20px;
+}
+
 .btn.btn-text:hover {
   color: #5b75ff;
 }
@@ -372,9 +390,6 @@ ul.list-circle li::before {
   bottom: -2px;
   left: 0;
   width: 0;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
   height: 4px;
   background-color: #fafafa;
 }
@@ -540,6 +555,7 @@ ul.list-circle li::before {
   padding: 13px 23px;
   height: 100%;
   height: 48px;
+  min-width: 100%;
 }
 
 .field .form-control::-webkit-input-placeholder {
@@ -596,10 +612,32 @@ ul.list-circle li::before {
   border: 1px solid #dce2ff;
 }
 
+.field.field-compete .form-control {
+  border: unset !important;
+  padding: 0;
+  background: unset !important;
+  height: auto !important;
+  border-radius: 0;
+}
+
+.field.field-compete .form-control:active,
+.field.field-compete .form-control:hover,
+.field.field-compete .form-control:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
 .field textarea.form-control {
   border-radius: 20px;
   padding: 13px 24px;
   background: #fafafa;
+}
+
+.field .select-wrap .fstToggleBtn--inner {
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .field .select-wrap .fstElement {
@@ -799,6 +837,79 @@ ul.list-circle li::before {
 
 .custom-control.custom-checkbox-2 .custom-control-label span a:hover {
   color: #5b75ff;
+}
+
+.choose-radio .custom-control {
+  padding-left: 0;
+}
+
+.choose-radio .custom-control:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.choose-radio .custom-control-input {
+  cursor: pointer;
+}
+
+.choose-radio .custom-control-label {
+  padding-left: 48px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.choose-radio .custom-control-label:before,
+.choose-radio .custom-control-label:after {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: 0.3s ease-out 0s;
+  -o-transition: 0.3s ease-out 0s;
+  transition: 0.3s ease-out 0s;
+}
+
+.choose-radio .custom-control-label::after {
+  background: url(../img/icons/icons.svg#i-check-static) no-repeat center;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.choose-radio .custom-control-label::before {
+  background: url(../img/icons/icons.svg#i-check-empty-static) no-repeat center;
+  background-size: cover;
+  border-radius: unset;
+  border: unset;
+}
+
+.choose-radio .custom-control-input:checked ~ .custom-control-label::before {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.choose-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background: url(../img/icons/icons.svg#i-check-static) no-repeat center;
+  background-size: cover;
+  opacity: 1;
+  visibility: visible;
+}
+
+.choose-radio .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::before {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::after {
+  background: url(../img/icons/icons.svg#i-check-static) no-repeat center;
+  background-size: cover;
+  opacity: 1;
+  visibility: visible;
 }
 
 .slider-range .currency {
@@ -1296,14 +1407,16 @@ ul.list-circle li::before {
      object-position: top;
 }
 
-.card-review--star {
+.card-review--star,
+.card-star {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 6px;
 }
 
-.card-review--star .star::before {
+.card-review--star .star::before,
+.card-star .star::before {
   content: "";
   background: url(../img/icons/icons.svg#i-star) no-repeat center;
   background-size: cover;
@@ -1313,7 +1426,8 @@ ul.list-circle li::before {
   opacity: 0.2;
 }
 
-.card-review--star .star.star-paint::before {
+.card-review--star .star.star-paint::before,
+.card-star .star.star-paint::before {
   opacity: 1;
   -webkit-filter: invert(61%) sepia(79%) saturate(5740%) hue-rotate(217deg) brightness(103%) contrast(101%);
           filter: invert(61%) sepia(79%) saturate(5740%) hue-rotate(217deg) brightness(103%) contrast(101%);
@@ -1936,7 +2050,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .price-value,
 .minicasco-page .calculation-data .form-calculation-data .price-car .price-value,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .price-value {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .price-value,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .price-value {
   background: unset;
   border: unset;
   padding: 0;
@@ -1948,7 +2063,9 @@ ul.list-circle li::before {
 .minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
 .minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
-.eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button {
+.eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -1960,7 +2077,10 @@ ul.list-circle li::before {
 .minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number],
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
-.eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus {
+.eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number],
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]:focus {
   -webkit-appearance: none;
           appearance: none;
   -moz-appearance: textfield;
@@ -1968,7 +2088,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement {
   display: block;
   border: none;
   background: transparent;
@@ -1980,13 +2101,15 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive {
   border-radius: 0;
 }
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -1997,21 +2120,25 @@ ul.list-circle li::before {
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused,
 .eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused {
   background: #f3f5ff;
   color: #878787;
 }
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls {
   padding: 0;
   border: unset;
 }
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput {
   opacity: 0;
   height: 0;
   width: 0;
@@ -2021,7 +2148,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults {
   max-height: 200px;
   -webkit-box-shadow: unset;
           box-shadow: unset;
@@ -2037,7 +2165,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
   min-width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2052,7 +2181,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after {
   all: unset;
   content: "";
   display: block;
@@ -2077,7 +2207,9 @@ ul.list-circle li::before {
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
 .eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
   font-size: 16px;
   line-height: 24px;
   color: #2b2b2b;
@@ -2088,7 +2220,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
   border: 1px solid transparent;
   border-radius: 0;
   height: 100%;
@@ -2097,7 +2230,8 @@ ul.list-circle li::before {
 
 .casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
 .minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
+.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
   border-top: none;
   padding: 5px 10px;
 }
@@ -5825,24 +5959,25 @@ ul.list-circle li::before {
   overflow: hidden;
 }
 
-.my-profile .user-pic--edit {
+.user-pic--edit {
   -webkit-transition: 0.3s ease-out 0s;
   -o-transition: 0.3s ease-out 0s;
   transition: 0.3s ease-out 0s;
 }
 
-.my-profile .user-pic--edit svg {
+.user-pic--edit svg {
   max-width: 24px;
   width: 100%;
   height: 24px;
   stroke: #878787;
+  fill: transparent;
 }
 
-.my-profile .user-pic--edit:hover svg {
+.user-pic--edit:hover svg {
   stroke: #5b75ff;
 }
 
-.my-profile .user-pic--edit:hover span {
+.user-pic--edit:hover span {
   color: #5b75ff;
 }
 
@@ -6031,14 +6166,21 @@ ul.list-circle li::before {
   background: #f3f5ff;
 }
 
-.password-change--help-info {
+.password-change--help-info,
+.i-info-pic-content {
   background: rgba(135, 135, 135, 0.1);
 }
 
-.password-change--help-info svg {
-  width: 24px;
+.password-change--help-info svg,
+.i-info-pic-content svg {
+  max-width: 24px;
+  width: 100%;
   height: 24px;
   stroke: #878787;
+}
+
+.i-info-pic-content {
+  background: unset;
 }
 
 .i-info {
@@ -6064,7 +6206,7 @@ ul.list-circle li::before {
   color: #2b2b2b;
   font-weight: 500;
   font-size: 12px;
-  line-height: 24px;
+  line-height: 18px;
   max-width: 320px;
   width: 100%;
   padding: 4px 10px;
@@ -6172,6 +6314,442 @@ ul.list-circle li::before {
 
 .form-osago-data.otk-no .fields-choose-car .field-wrap:nth-child(6) {
   display: none;
+}
+
+.form-osago-data-result .fields-choose-car {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+
+.form-osago-data-result--car-number .fields-choose-car {
+  -ms-grid-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
+.calculation-data .form-wrap {
+  border: 1px solid #dce2ff;
+}
+
+.filters-search .left-side .field-wrap {
+  width: 200px;
+}
+
+.filter-cards .filter-card {
+  border: 1px solid #dce2ff;
+}
+
+.filter-cards .filter-card:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.filter-cards .filter-card .filter-car--pic {
+  max-width: 150px;
+}
+
+.filter-cards .filter-card .filter-card--cost .i-info {
+  width: 24px;
+  height: 24px;
+}
+
+.filter-cards .filter-card .filter-card--additional {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0fr;
+  grid-template-rows: 0fr;
+  -webkit-transition: grid-template-rows 0.5s ease-out;
+  -o-transition: grid-template-rows 0.5s ease-out;
+  transition: grid-template-rows 0.5s ease-out;
+  transition: grid-template-rows 0.5s ease-out, -ms-grid-rows 0.5s ease-out;
+}
+
+.filter-cards .filter-card .filter-card--additional.active {
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.filter-cards .filter-card .filter-card--additional .inner {
+  overflow: hidden;
+}
+
+.filter-cards .filter-card .filter-card--additional .filter-card--order-rating-pic {
+  max-width: 175px;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-quality li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-quality li .quality {
+  padding: 4px 16px;
+  border-radius: 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-quality li .quality.quality-perfect {
+  background: #b2ffbe;
+  color: #12893a;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-liability-limits li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-liability-limits li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.filter-cards .filter-card .filter-card--additional .list-liability-limits li::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  position: relative;
+  background: url(../img/icons/icons.svg#i-check) no-repeat center;
+  background-size: cover;
+}
+
+.filter-cards .filter-card .card-details .btn-more.active {
+  display: none !important;
+}
+
+.filter-cards .filter-card .btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter-cards .filter-card .btn-more::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+  background-size: cover;
+  margin-left: 10px;
+  -webkit-transition: 0.3s ease-out 0s;
+  -o-transition: 0.3s ease-out 0s;
+  transition: 0.3s ease-out 0s;
+}
+
+.filter-cards .filter-card .btn-more:hover::after {
+  -webkit-filter: brightness(0) saturate(100%) invert(44%) sepia(63%) saturate(1885%) hue-rotate(212deg) brightness(95%) contrast(114%);
+          filter: brightness(0) saturate(100%) invert(44%) sepia(63%) saturate(1885%) hue-rotate(212deg) brightness(95%) contrast(114%);
+}
+
+.progress-step--wrap {
+  border: 1px solid #dce2ff;
+}
+
+.form-osago-step {
+  position: relative;
+  /*progressbar*/
+}
+
+.form-osago-step .btn-diia {
+  background: #fafafa;
+  border: 1px solid #dce2ff;
+}
+
+.form-osago-step .form-osago-data--help-info .car-number {
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.52);
+  padding: 5px 10px;
+}
+
+.form-osago-step .progressbar {
+  border-radius: 100px;
+  border: 1px solid #dce2ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.form-osago-step .progressbar li {
+  width: 33.3333333333%;
+  position: relative;
+  padding: 10px 32px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.form-osago-step .progressbar li.active {
+  background: #5b75ff;
+  color: #fafafa;
+  border-left: unset !important;
+}
+
+.form-osago-step .progressbar li:not(:last-child) {
+  border-left: 1px solid #dce2ff;
+}
+
+.form-osago-step .passport-data-tab .nav-pills .nav-item {
+  width: calc((100% - 32px) / 3);
+  text-align: center;
+}
+
+.form-osago-step .passport-data-tab .nav-pills .nav-item .nav-link {
+  padding: 0.656rem 2rem;
+  border: 1.5px solid transparent;
+  border-color: #5b75ff;
+}
+
+.form-osago-step .passport-data-tab .nav-pills .nav-item .nav-link.active {
+  border-color: #5b75ff;
+  background: #5b75ff;
+  color: #fafafa;
+}
+
+.form-osago-step .passport-data-tab .nav-pills .nav-item .nav-link:hover {
+  border-color: #dce2ff;
+}
+
+.form-osago-step .choose-radio .custom-control-label .btn {
+  white-space: nowrap;
+  height: 100%;
+}
+
+.form-osago-step .policy-additional .btn-more:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+  background-size: cover;
+  margin-left: 10px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: 0.3s ease-out 0s;
+  -o-transition: 0.3s ease-out 0s;
+  transition: 0.3s ease-out 0s;
+}
+
+.form-osago-step .policy-additional .btn-more.active:after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.form-osago-step .policy-additional .policy-additional--content-more {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0fr;
+  grid-template-rows: 0fr;
+  -webkit-transition: grid-template-rows 0.5s ease-out;
+  -o-transition: grid-template-rows 0.5s ease-out;
+  transition: grid-template-rows 0.5s ease-out;
+  transition: grid-template-rows 0.5s ease-out, -ms-grid-rows 0.5s ease-out;
+}
+
+.form-osago-step .policy-additional .policy-additional--content-more.active {
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.form-osago-step .policy-additional .policy-additional--content-more .inner {
+  overflow: hidden;
+}
+
+/*Hide all except first fieldset*/
+
+.form-osago-step fieldset:not(:first-of-type) {
+  display: none;
+}
+
+.edit-data-result--item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 1fr -webkit-max-content;
+  -ms-grid-columns: 30% 1fr max-content;
+  grid-template-columns: 30% 1fr -webkit-max-content;
+  grid-template-columns: 30% 1fr max-content;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+
+.edit-data-result--item.active {
+  -ms-grid-columns: 30% 1fr;
+  grid-template-columns: 30% 1fr;
+}
+
+.edit-data-result--item.active .edit-data-result--content-item {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: 40% 1fr;
+  grid-template-columns: 40% 1fr;
+}
+
+.edit-data-result--item.active .user-pic--edit {
+  display: none;
+}
+
+.edit-data-result--item.active .buttons {
+  display: block;
+}
+
+.edit-data-result--item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.edit-data-result--item .user-pic--edit {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.edit-data-result--item .user-pic--edit svg {
+  width: 18px;
+  height: 18px;
+}
+
+.edit-data-result--item .edit-data-result--content .edit-data-result--content-item {
+  gap: 5px;
+}
+
+.edit-data-result--item .edit-data-result--content .val-title {
+  position: relative;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.edit-data-result--item .edit-data-result--content .val-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2b2b2b;
+}
+
+.edit-data-result--item .buttons {
+  display: none;
+}
+
+.edit-data-result--item .buttons .btn {
+  min-width: 100%;
+}
+
+.bonus-info-descr .bonus-info-descr-item {
+  min-height: 85px;
+  height: 100%;
+  border: 1px solid #dce2ff;
+}
+
+.bonus-info-descr .bonus-info-descr-item .bonus-count {
+  border: 1px solid #dce2ff;
+}
+
+.popup-step-number-verify .i-info-pic-content {
+  border-radius: 15px;
+  background: rgba(135, 135, 135, 0.1);
+}
+
+.popup-step-year-error .modal-content {
+  background: #f4dfdf;
+  border: 1.5px solid #f00;
+}
+
+.calc-mini-casco-page .filter-cards .choose-radio .custom-control:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.calc-mini-casco-page .filter-cards .card-details--list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.calc-mini-casco-page .filter-cards .card-details--list .true,
+.calc-mini-casco-page .filter-cards .card-details--list .false {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.calc-mini-casco-page .filter-cards .card-details--list .true::before,
+.calc-mini-casco-page .filter-cards .card-details--list .false::before {
+  content: "";
+  max-width: 24px;
+  width: 100%;
+  height: 24px;
+  display: block;
+}
+
+.calc-mini-casco-page .filter-cards .card-details--list .true::before {
+  background: url(../img/icons/icons.svg#i-tick-check) no-repeat center;
+  background-size: cover;
+  -webkit-filter: brightness(0) saturate(100%) invert(37%) sepia(85%) saturate(491%) hue-rotate(194deg) brightness(109%) contrast(109%);
+          filter: brightness(0) saturate(100%) invert(37%) sepia(85%) saturate(491%) hue-rotate(194deg) brightness(109%) contrast(109%);
+}
+
+.calc-mini-casco-page .filter-cards .card-details--list .false::before {
+  background: url(../img/icons/icons.svg#i-close) no-repeat center;
+  background-size: cover;
+  -webkit-filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+          filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+}
+
+.calc-mini-casco-page .filter-cards .filter-card .btn-more {
+  border-radius: 10px;
+  background: #eaeaea;
+  color: #878787;
+}
+
+.calc-mini-casco-page .filter-cards .filter-card .btn-more.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.calc-mini-casco-page .filter-cards .filter-card .btn-more.active::after {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.calc-mini-casco-page .filter-cards .filter-card .btn-more::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+          filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+}
+
+.calc-mini-casco-page .filter-cards .filter-card .company-name::after {
+  display: none;
+}
+
+.calc-property-protection-page .calculation-data .currency .fstToggleBtn {
+  color: #5b75ff !important;
 }
 
 .header {
@@ -6656,6 +7234,15 @@ ul.list-circle li::before {
     background: #ff0000;
   }
 
+  .form-osago-step .buttons-social {
+    border-radius: 20px;
+    border: 1px solid #5b75ff;
+  }
+
+  .edit-data-result--item .edit-data-result--content .edit-data-result--content-item .field-coating.field-compete {
+    margin-left: -10px;
+  }
+
   .navbar-toggler .menu-burger:hover {
     cursor: pointer;
   }
@@ -6899,6 +7486,11 @@ ul.list-circle li::before {
   .chat-bots .btn-chat-bot,
   .chat-bots .btn-underline {
     font-size: 11px;
+  }
+
+  .form-osago-step .passport-data-tab .nav-pills .nav-item:nth-child(1) .nav-link {
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -7313,6 +7905,29 @@ ul.list-circle li::before {
   .form-osago-data.otk-no .fields-choose-car {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .form-osago-step .buttons .btn {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .form-osago-step .progressbar li {
+    padding: 10px 15px;
+  }
+
+  .form-osago-step .policy-additional .policy-additional--content-more ~ .btn {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .form-osago-step .custom-checkbox--info--descr {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .bonus-info-descr .bonus-info-descr-item {
+    min-height: auto;
   }
 
   .header-top .header-top--others .list-inline-item:not(:last-child) {
@@ -7768,7 +8383,7 @@ ul.list-circle li::before {
   }
 
   .calculation-data .buttons .btn {
-    min-width: auto;
+    min-width: 100%;
     max-width: 100%;
   }
 
@@ -8493,6 +9108,172 @@ ul.list-circle li::before {
 
   .form-osago-data.otk-no .fields-choose-car .field-wrap:nth-child(5) {
     margin-top: -25px;
+  }
+
+  .form-osago-data-result .fields-choose-car {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .form-osago-data-result--car-number .fields-choose-car {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-osago-data-result--car-number .fields-choose-car .field-wrap:nth-child(3) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/span 2;
+  }
+
+  .filters-search.filters-search-mini-casco .left-side .field-wrap {
+    width: 100%;
+  }
+
+  .filter-cards .filter-card .mob {
+    display: none;
+  }
+
+  .filter-cards .filter-card.active .mob {
+    display: block;
+  }
+
+  .filter-cards .filter-card .filter-card--additional.filter-card--additional--desk {
+    display: none;
+  }
+
+  .filter-cards .filter-card .company-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .filter-cards .filter-card .company-name::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+    background-size: cover;
+    margin-left: 10px;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
+
+  .filter-cards .filter-card .company-name.active::after {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
+
+  .form-osago-step .progressbar li {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .form-osago-step .passport-data-tab .nav-pills {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .form-osago-step .passport-data-tab .nav-pills .nav-item {
+    width: calc((100% - 16px) / 2);
+  }
+
+  .form-osago-step .choose-radio .custom-control-label .btn {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .btn-collapse {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .btn-collapse::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+    background-size: cover;
+    margin-left: 10px;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .btn-collapse.active::after {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .electronic-policy--content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 0fr;
+    grid-template-rows: 0fr;
+    -webkit-transition: grid-template-rows 0.5s ease-out;
+    -o-transition: grid-template-rows 0.5s ease-out;
+    transition: grid-template-rows 0.5s ease-out;
+    transition: grid-template-rows 0.5s ease-out, -ms-grid-rows 0.5s ease-out;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .electronic-policy--content.active {
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .calc-insurance-payment-step-page .calculation-data .electronic-policy--content .inner {
+    overflow: hidden;
+  }
+
+  .edit-data-result--item {
+    -ms-grid-columns: 1fr -webkit-max-content;
+    -ms-grid-columns: 1fr max-content;
+    grid-template-columns: 1fr -webkit-max-content;
+    grid-template-columns: 1fr max-content;
+  }
+
+  .edit-data-result--item .edit-data-result--content {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/span 2;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    margin-top: 15px;
   }
 
   .header {

@@ -174,5 +174,77 @@ setInterval(function () {
 	}
 }, 100);
 
+//? btn-more //calc-insurance-payment.html
 
+$(".calc-insurance-payment-page .filter-cards .filter-card .card-details .btn-more").click(function () {
+	$(this).closest('.filter-cards .filter-card').find('.filter-card--additional').addClass("active");
+	$(this).addClass("active");
+});
+$(".calc-insurance-payment-page .filter-cards .filter-card .filter-card--additional .btn-more--close").click(function () {
+	$(this).closest('.filter-cards .filter-card').find('.filter-card--additional').removeClass("active");
+	$(this).closest('.filter-cards .filter-card').find('.card-details .btn-more').removeClass("active");
+});
 
+//? btn-collapse mobile //calc-insurance-payment.html
+$(".filter-cards .filter-card .company-name").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass("active");
+		$(this).closest('.filter-cards .filter-card').removeClass("active");
+	}
+	else {
+		$(this).addClass("active");
+		$(this).closest('.filter-cards .filter-card').addClass("active");
+		$(this).closest('.filter-cards .filter-card').find('.filter-card--additional').removeClass("active");
+		$(this).closest('.filter-cards .filter-card').find('.card-details .btn-more').removeClass("active");
+	}
+});
+
+//? btn-collapse mobile //calc-insurance-payment-step.html
+
+$(".calc-insurance-payment-step-page .calculation-data .btn-collapse").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass("active");
+		$(this).closest('.calculation-data').find('.electronic-policy--content').removeClass("active");
+	}
+	else {
+		$(this).addClass("active");
+		$(this).closest('.calculation-data').find('.electronic-policy--content').addClass("active");
+	}
+});
+
+//? btn-more mobile //calc-insurance-payment-step-2.html
+$(".calc-insurance-payment-step-page .policy-additional .btn-more").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active');
+		$(this).closest('.policy-additional').find('.policy-additional--content-more').removeClass("active");
+	}
+	else {
+		$(this).addClass('active');
+		$(this).closest('.policy-additional').find('.policy-additional--content-more').addClass("active");
+	}
+});
+
+//? btn edit //calc-insurance-payment-step-2.html
+$(".form-osago-step .edit-data-result .edit-data-result--item .user-pic--edit").click(function () {
+	$(this).addClass('active');
+	$(this).closest('.edit-data-result--item').addClass('active').find('input').removeAttr("readonly");
+	$(this).closest('.edit-data-result--item').find('.field').removeClass('field-compete')
+});
+
+//? btn save&reset //calc-insurance-payment-step-2.html
+$(".form-osago-step .edit-data-result .edit-data-result--item .buttons .btn").click(function () {
+	$(this).closest('.edit-data-result--item').removeClass('active').find('input').prop('readonly', true);
+	$(this).closest('.edit-data-result--item').find('.field').addClass('field-compete')
+});
+
+//? btn more //calc-mini-casco-insurance-payment-car-number
+$(".calc-mini-casco-page .filter-cards .btn-more").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active').text("Детальніше");
+		$(this).closest('.filter-card').find('.filter-card--additional').removeClass("active");
+	}
+	else {
+		$(this).addClass('active').text("Згорнути");
+		$(this).closest('.filter-card').find('.filter-card--additional').addClass("active");
+	}
+});

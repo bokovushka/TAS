@@ -14026,32 +14026,6 @@ span.flatpickr-weekday {
   }
 }
 
-.container {
-  width: 100%;
-  padding-right: 12px;
-  padding-left: 12px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -12px;
-  margin-left: -12px;
-}
-
-.row .row > .col,
-.row .row > [class*=col-] {
-  position: relative;
-  width: 100%;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
 .no-gutters {
   margin-right: 0 !important;
   margin-left: 0 !important;
@@ -14061,6 +14035,13 @@ span.flatpickr-weekday {
 .no-gutters [class*=col-] {
   padding-right: 0 !important;
   padding-left: 0 !important;
+}
+
+@media (min-width: 0px) {
+  .row .col-auto,
+  .row .row .col-auto {
+    width: auto;
+  }
 }
 
 @media (min-width: 576px) {
@@ -16837,6 +16818,11 @@ span.flatpickr-weekday {
   .text-sm-center {
     text-align: center !important;
   }
+
+  .row .col-sm-auto,
+  .row .row .col-sm-auto {
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -19410,6 +19396,11 @@ span.flatpickr-weekday {
 
   .text-md-center {
     text-align: center !important;
+  }
+
+  .row .col-md-auto,
+  .row .row > .col-md-auto {
+    width: auto;
   }
 }
 
@@ -21991,30 +21982,9 @@ span.flatpickr-weekday {
     text-align: center !important;
   }
 
-  .container {
-    width: 100%;
-    padding-right: 16px;
-    padding-left: 16px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin-right: -16px;
-    margin-left: -16px;
-  }
-
-  .row .row > .col,
-  .row .row > [class*=col-] {
-    position: relative;
-    width: 100%;
-    padding-right: 16px;
-    padding-left: 16px;
+  .row .col-lg-auto,
+  .row .row > .col-lg-auto {
+    width: auto;
   }
 }
 
@@ -24595,30 +24565,9 @@ span.flatpickr-weekday {
     text-align: center !important;
   }
 
-  .container {
-    width: 100%;
-    padding-right: 12px;
-    padding-left: 12px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin-right: -12px;
-    margin-left: -12px;
-  }
-
-  .row .row > .col,
-  .row .row > [class*=col-] {
-    position: relative;
-    width: 100%;
-    padding-right: 12px;
-    padding-left: 12px;
+  .row .col-xl-auto,
+  .row .row > .col-xl-auto {
+    width: auto;
   }
 }
 
@@ -27194,6 +27143,11 @@ span.flatpickr-weekday {
   .text-xxl-center {
     text-align: center !important;
   }
+
+  .row .col-xxl-auto,
+  .row .row .col-xxl-auto {
+    width: auto;
+  }
 }
 
 @media (max-width: 1399.98px) {
@@ -27293,6 +27247,88 @@ span.flatpickr-weekday {
   .navbar-expand-sm > .container-xs {
     padding-right: 0;
     padding-left: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+
+  .row .row > .col,
+  .row .row > [class*=col-] {
+    position: relative;
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+  .container {
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+
+  .row .row > .col,
+  .row .row > [class*=col-] {
+    position: relative;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .container {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+
+  .row .row > .col,
+  .row .row > [class*=col-] {
+    position: relative;
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
   }
 }
 

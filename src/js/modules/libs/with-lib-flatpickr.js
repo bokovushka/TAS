@@ -5,7 +5,7 @@ import { Ukrainian } from "flatpickr/dist/l10n/uk.js"
 
 flatpickr.localize(Ukrainian); //default
 
-flatpickr(".datepicker-birthday, .datepicker-issue-date", {
+flatpickr(".datepicker-birthday, .datepicker-issue-date, .datepicker-policy", {
 	minDate: "today",
 	dateFormat: "d/m/Y",
 	disableMobile: "true",

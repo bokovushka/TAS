@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Захист майна"
+})
+
+<body class="calc-property-protection-page">
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top my-8 mt-lg-11 mb-lg-8">
+					<div class="container mx-auto">
+						<div class="row">
+							<div class="col">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+									<ol class="breadcrumb mb-0">
+										<li class="breadcrumb-item"><a href="##">Головна</a></li>
+										<li class="breadcrumb-item"><a href="##">Для Вас</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Захист майна</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="calculation-data mb-16 mb-lg-24">
+					<div class="container">
+						<div class="row">
+							<div class="col col-lg-8 col-xl-6 mx-auto">
+								<div class="form-wrap rounded bg-light-blue px-3 px-lg-11 py-6 py-lg-8">
+									<form class="form-calculation-data rounded">
+										<div class="h3 font-m mb-5 mb-lg-6 text-center text-lg-left">Введіть дані для оформлення Захисту майна</div>
+										<div class="field-wrap mb-6">
+											<div class="field field-2">
+												<div class="field--help-info small-txt text-red mb-1">Введіть Ваше ім’я українськими літерами (кирилицею)</div>
+												<label for="name" class="small-txt text-black mb-1">Введіть Ім’я</label>
+												<input type="text" id="name" class="form-control" placeholder="Ім’я">
+											</div>
+										</div>
+										<div class="field-wrap mb-6">
+											<div class="field field-2">
+												<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш телефон </div>
+												<label for="phone" class="small-txt text-black mb-1">Введіть телефон</label>
+												<input type="text" id="phone" class="form-control" placeholder="Номер телефону">
+											</div>
+										</div>
+										<div class="bg-blue px-3 px-lg-6 py-7 py-lg-3 rounded mb-5">
+											<div class="row justify-content-center justify-content-lg-between align-items-center align-items-lg-end text-center">
+												<div class="col-12 col-lg-6">
+													<div>Орієнтовний страховий платіж складає:</div>
+												</div>
+												<div class="col-12 col-lg-auto">
+													<div class="h4 text-main-blue">50 000 грн</div>
+												</div>
+											</div>
+										</div>
+										<div class="custom-control custom-checkbox position-relative mb-5">
+											<input type="checkbox" class="custom-control-input" id="form-subscribe-check">
+											<label class="custom-control-label" for="form-subscribe-check">
+												<span class="custom-checkbox--info">Я погоджуюсь на обробку <a href="##" class="text-black">персональних даних</a></span>
+												<span class="custom-checkbox--help-info small-txt mt-1">Ваш дозвіл на обробку персональних даних необхідна для подальщого оформлення страхової послуги</span>
+											</label>
+										</div>
+										<div class="buttons">
+											<div class="row flex-column-reverse flex-lg-row justify-content-center">
+												<div class="col-auto col-lg-6">
+													<button type="button" class="btn btn-default btn-outline-main-blue">Назад</button>
+												</div>
+												<div class="col-auto col-lg-6 mb-5 mb-lg-0">
+													<a href="/calc-property-protection-completed.html" class="next btn btn-default btn-main-blue">Продовжити</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+	@@include('html/popup/mini-casco/popup-not-found-car.html',{})
+
+	@@include('html/scripts.html',{})
+</body>
+
+</html>

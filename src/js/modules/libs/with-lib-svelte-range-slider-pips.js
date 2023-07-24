@@ -91,3 +91,33 @@ if (window.location.pathname === "/eurocasco.html") { //добавляє вик�
 		PriceSliderEuroCasco.$set({ values: [PriceSliderEuroCascoValue.value] });
 	});
 }
+
+//? price-slider-property-protection 
+if (window.location.pathname === "/calc-property-protection.html" || window.location.pathname === "/calc-property-protection-2.html") {
+	var PriceSliderPropertyProtection = new RangeSlider({
+		target: document.getElementById("price-slider-property-protection"),
+		props: {
+			min: 0,
+			max: 50000,
+			values: [0],
+			step: 1,
+			range: "min",
+			float: true,
+			suffix: " $",
+			pushy: false,
+			pips: false,
+		}
+	});
+
+	var PriceSliderPropertyProtectionValue = document.querySelector(".calc-property-protection-page .calculation-data .price-car .price-value");
+
+	//змінює значення при використанні повзунка
+	PriceSliderPropertyProtection.$on('change', function (e) {
+		PriceSliderPropertyProtectionValue.value = e.detail.values[0];
+	});
+
+	//змінює значення в інпутах
+	PriceSliderPropertyProtectionValue.addEventListener("change", (e) => {
+		PriceSliderPropertyProtectionCasco.$set({ values: [PriceSliderPropertyProtectionValue.value] });
+	});
+}
