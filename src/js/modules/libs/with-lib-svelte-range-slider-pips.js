@@ -13,7 +13,7 @@ if (window.location.pathname === "/casco.html") { //добавляє викон�
 			step: 1,
 			range: "min",
 			float: true,
-			suffix: " $",
+			suffix: "",
 			pushy: false,
 			pips: false,
 		}
@@ -43,7 +43,7 @@ if (window.location.pathname === "/minicasco.html") { //добавляє вик�
 			step: 1,
 			range: "min",
 			float: true,
-			suffix: " $",
+			suffix: "",
 			pushy: false,
 			pips: false,
 		}
@@ -73,7 +73,7 @@ if (window.location.pathname === "/eurocasco.html") { //добавляє вик�
 			step: 1,
 			range: "min",
 			float: true,
-			suffix: " $",
+			suffix: "",
 			pushy: false,
 			pips: false,
 		}
@@ -83,7 +83,13 @@ if (window.location.pathname === "/eurocasco.html") { //добавляє вик�
 
 	//змінює значення при використанні повзунка
 	PriceSliderEuroCasco.$on('change', function (e) {
+		console.log('12123', e);
 		PriceSliderEuroCascoValue.value = e.detail.values[0];
+	});
+
+	PriceSliderEuroCascoValue.$on('change', function (e) {
+		console.log('EEEEE ', e);
+		// PriceSliderEuroCasco.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
@@ -93,17 +99,17 @@ if (window.location.pathname === "/eurocasco.html") { //добавляє вик�
 }
 
 //? price-slider-property-protection 
-if (window.location.pathname === "/calc-property-protection.html" || window.location.pathname === "/calc-property-protection-2.html") {
+if (window.location.pathname === "/calc-property-protection.html" || window.location.pathname === "/calc-property-protection-2.html" || window.location.pathname === "/calc-casco.html" || window.location.pathname === "/calc-casco-2.html" || window.location.pathname === "/calc-eurocasco.html") {
 	var PriceSliderPropertyProtection = new RangeSlider({
 		target: document.getElementById("price-slider-property-protection"),
 		props: {
 			min: 0,
-			max: 50000,
+			max: 500000,
 			values: [0],
-			step: 1,
+			step: 1000,
 			range: "min",
 			float: true,
-			suffix: " $",
+			suffix: "",
 			pushy: false,
 			pips: false,
 		}
@@ -113,11 +119,13 @@ if (window.location.pathname === "/calc-property-protection.html" || window.loca
 
 	//змінює значення при використанні повзунка
 	PriceSliderPropertyProtection.$on('change', function (e) {
+		console.log('EEEEE2222 ', e);
 		PriceSliderPropertyProtectionValue.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
 	PriceSliderPropertyProtectionValue.addEventListener("change", (e) => {
+		console.log(11111, e);
 		PriceSliderPropertyProtectionCasco.$set({ values: [PriceSliderPropertyProtectionValue.value] });
 	});
 }

@@ -28,6 +28,26 @@ $('#partners-tablist-nav--pills-tab a[data-toggle="pill"]').on('show.bs.tab', fu
 		.removeClass('active show')
 });
 
+
+$('#calculation-table--eurocasco--pills-tab .card-item[data-toggle="pill"]').on('show.bs.tab', function (e) {
+	let target = $(e.target).data('target');
+	$(target)
+		.addClass('active')
+		.siblings('.tab-pane.active')
+		.removeClass('active')
+});
+
+// $(function () {
+// 	$('.calculation-table--eurocasco .tab-content .table-row .table-col').hide().eq(0).show();
+// 	// $('#tabcontainer-2 .tabs').hide().eq(0).show();
+// 	$('.calculation-table--eurocasco .type-program .card-list .card-item').click(function () {
+// 		var num = $('.calculation-table--eurocasco .type-program .card-list .card-item').index(this);
+// 		$('.calculation-table--eurocasco .tab-content .table-row .table-col').hide().eq(num).show();
+// 		// $('#tabcontainer-2 .tabs').hide().eq(num).show();
+// 	});
+// });
+
+
 //? select-accordion tab mobile // user.html
 $('.select-accordion').on('change', function (e) {
 	$(this).closest(".user-profile-nav").find('.nav-pills .nav-item .nav-link').eq($(this).val()).tab('show');

@@ -15,7 +15,8 @@
 	"license": "ISC",
 	"dependencies": {
 		"gulp-cli": "^2.3.0",
-		"readmore-js": "^2.2.1"
+		"readmore-js": "^2.2.1",
+		"stream": "^0.0.2"
 	},
 	"devDependencies": {
 		"@fancyapps/ui": "^5.0.19",
@@ -48,6 +49,7 @@
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
 		"sass": "latest",
+		"select2": "^4.1.0-rc.0",
 		"svelte-range-slider-pips": "^2.1.1",
 		"swiper": "latest",
 		"vinyl-ftp": "latest",

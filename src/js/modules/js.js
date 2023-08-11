@@ -248,3 +248,45 @@ $(".calc-mini-casco-page .filter-cards .btn-more").click(function () {
 		$(this).closest('.filter-card').find('.filter-card--additional').addClass("active");
 	}
 });
+
+//? checkbox active //calc-travel-page
+// const toggle = () => document.querySelector('.calc-travel-page #policy-year').closest('.calc-travel-page .additional-param').classList.toggle('active');
+// document.querySelector('.calc-travel-page #policy-year').addEventListener('change', toggle);
+
+//? calc-travel-page .filters-search-buttons // active class
+$(".calc-travel-page .filters-search-buttons .btn").click(function () {
+	$('.calc-travel-page .filters-search-buttons .btn').removeClass('active');
+	$(this).addClass('active');
+});
+
+//? btn more //calc-mini-casco-insurance-payment-car-number
+$(".calc-travel-page .filter-cards .btn-more").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active').text("Детальніше");
+		$(this).closest('.filter-card').find('.filter-card--additional').removeClass("active");
+	}
+	else {
+		$(this).addClass('active').text("Згорнути");
+		$(this).closest('.filter-card').find('.filter-card--additional').addClass("active");
+	}
+});
+
+
+// const isChecked = () => {
+// 	if ($('#check-referral-bonus').is(':checked')) {
+// 		console.log('Checkedd!!');
+// 		// $('.bonus-info-descr').addClass('')
+// 		$('.bonus-info-descr').css('display', 'none')
+// 	} else {
+// 		$('.bonus-info-descr').css('display', 'block')
+// 	}
+// }
+// $(document).on('ready', () => {
+// 	isChecked() // перевиряти прі відкриті сторінки - поки не працює!
+// })
+
+$('#check-referral-bonus').on('click', (val) => {
+	const isChecked = val.currentTarget.checked
+	const displayValue = isChecked ? 'none' : 'block'
+	$('.bonus-info-descr').css('display', displayValue)
+})

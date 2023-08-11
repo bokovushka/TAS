@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Страхування КАСКО"
+})
+
+<body class="calc-casco-page calc-property-protection-page">
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top my-8 mt-lg-11 mb-lg-8">
+					<div class="container mx-auto">
+						<div class="row">
+							<div class="col">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+									<ol class="breadcrumb mb-0">
+										<li class="breadcrumb-item"><a href="##">Головна</a></li>
+										<li class="breadcrumb-item"><a href="##">Для Вас</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Страхування КАСКО</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="calculation-data mb-16 mb-lg-24">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
+									<div class="row">
+										<div class="col">
+											<div class="text-center">
+												<div class="h2 mb-5 mb-lg-8">Дізнайтеся, скільки коштуватиме<br class=" d-none d-lg-block"> Страхування КАСКО для Вашого авто</div>
+											</div>
+											<form class="form-calculation-data rounded">
+												<div class="row mb-8">
+													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+														<div class="mt-xl-0 mb-5 mb-lg-8">
+															<div class="field-wrap">
+																<div class="field field-2 field-program-type">
+																	<label for="select-program-type" class="text-black mb-1">Тип програми</label>
+																	<div class="select-wrap">
+																		<select class="select-program-type" name="select-program-type">
+																			<option value="0">Франшизи Пошкодження 0% Тотал/ Викрадення 5%</option>
+																			<option value="1">Франшизи Пошкодження 0,5%, Тотал/Викрадення 10%</option>
+																			<option value="2">Франшизи Пошкодження 1%, Тотал/Викрадення 15%</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="mt-xl-0 mb-5 mb-lg-0">
+															<div class="price-car d-flex align-items-center justify-content-between mb-5 mb-xl-0 ">
+																<label class="mr-3 mb-0 text-black">Вартість авто</label>
+																<div class="field-wrap">
+																	<div class="field field-2">
+																		<div class="form-control d-flex align-items-center">
+																			<div class="price mr-3"><input class="price-value" type="number" value="0" readonly></div>
+																			<div class="currency">USD</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div id="price-slider-property-protection" class="price-slider slider-range position-relative">
+																<div class="rangeBar-full"></div>
+																<div class="rangeBar-line-start"></div>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-lg-6 col-xl-4 offset-xl-1">
+														<div class="form-calculation-data-descr text-center ml-lg-3 ml-xl-0">
+															<p class="mb-0 text-main-blue bg-blue rounded d-flex align-items-center justify-content-center p-8 p-lg-12">Введіть дані, щоб розрахувати страховий платіж</p>
+														</div>
+													</div>
+												</div>
+												<div class="buttons">
+													<div class="row justify-content-center">
+														<div class="col-auto mb-5 mb-lg-0"><a href="/calc-casco-data.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+
+	@@include('html/scripts.html',{})
+</body>
+
+</html>

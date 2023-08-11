@@ -227,6 +227,10 @@ textarea {
   resize: none;
 }
 
+input {
+  min-width: 50px;
+}
+
 input::-ms-clear {
   display: none;
 }
@@ -303,6 +307,11 @@ h3,
   line-height: 39px;
 }
 
+.h3-m {
+  font-size: 24px;
+  line-height: 30px;
+}
+
 h4,
 .h4 {
   font-size: 22px;
@@ -312,6 +321,11 @@ h4,
 .small-txt {
   font-size: 12px;
   line-height: 18px;
+}
+
+.small-txt--descr {
+  font-size: 10px;
+  line-height: 14px;
 }
 
 ul.list-circle li {
@@ -352,7 +366,8 @@ ul.list-circle li::before {
 .subscribe .btn.btn-default:not(:disabled):hover,
 .invite-friend .btn.btn-default:not(:disabled):hover,
 .table-packages .btn.btn-default:not(:disabled):hover,
-.list-documents .btn.btn-default:not(:disabled):hover {
+.list-documents .btn.btn-default:not(:disabled):hover,
+.calc-travel-page .calculation-data .btn.btn-default:not(:disabled):hover {
   border-color: #5b75ff;
 }
 
@@ -505,11 +520,11 @@ ul.list-circle li::before {
   color: #878787;
 }
 
-.field.field-2 .select-wrap .fstElement {
+.field.field-2 .select2-container .select2-selection {
   border: 1px solid #dce2ff;
 }
 
-.field.field--error .select-wrap .fstElement {
+.field.field--error .select2-container .select2-selection {
   border: 1px solid #ff0000;
 }
 
@@ -633,65 +648,15 @@ ul.list-circle li::before {
   background: #fafafa;
 }
 
-.field .select-wrap .fstToggleBtn--inner {
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.field .select2-container {
+  width: 100% !important;
 }
 
-.field .select-wrap .fstElement {
-  display: block;
-  border: none;
-  background: #fafafa;
+.field .select2-container .select2-selection {
+  border: 1px solid transparent;
   border-radius: 30px;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-}
-
-.field .select-wrap .fstElement.fstActive {
-  border-radius: 20px 20px 0 0;
-}
-
-.field .select-wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.field .select-wrap .fstElement.fstActive .fstSelected,
-.field .select-wrap .fstElement.fstActive .fstFocused {
-  background: #f3f5ff;
-  color: #878787;
-}
-
-.field .select-wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-}
-
-.field .select-wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.field .select-wrap .fstElement .fstResults {
-  max-height: 200px;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: 0px;
-  right: 0px;
-  margin-top: 0;
-  border: 1px solid #dce2ff;
-  border-radius: 0 0 20px 20px;
-}
-
-.field .select-wrap .fstElement .fstToggleBtn {
-  min-width: auto;
+  height: 48px;
+  min-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -701,10 +666,27 @@ ul.list-circle li::before {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 16px;
+  line-height: 24px;
+  color: #878787;
+  padding: 13px 23px;
+  background: #fafafa;
 }
 
-.field .select-wrap .fstElement .fstToggleBtn:after {
+.field .select2-container .select2-selection .select2-selection__rendered {
+  padding-left: 0;
+  color: #878787;
+}
+
+.field .select2-container .select2-selection .select2-selection__arrow {
   all: unset;
+}
+
+.field .select2-container .select2-selection .select2-selection__arrow b {
+  all: unset;
+}
+
+.field .select2-container .select2-selection .select2-selection__arrow b::after {
   content: "";
   display: block;
   margin: 0;
@@ -720,8 +702,7 @@ ul.list-circle li::before {
   transition: 0.3s ease-out 0s;
 }
 
-.field .select-wrap .fstElement .fstToggleBtn,
-.field .select-wrap .fstElement .fstResultItem {
+.field .select2-container .select2-selection .select2-results__option {
   font-size: 16px;
   line-height: 24px;
   color: #878787;
@@ -729,14 +710,53 @@ ul.list-circle li::before {
   background: #fafafa;
 }
 
-.field .select-wrap .fstElement .fstToggleBtn {
-  border: 1px solid transparent;
-  border-radius: 30px;
-  height: 48px;
+.field .select2-container.select2-container--open.select2-container--below .select2-selection {
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid #dce2ff;
 }
 
-.field .select-wrap .fstElement .fstResultItem {
+.field .select2-container.select2-container--open.select2-container--below .select2-selection__arrow b::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.field .select2-container.select2-container--open.select2-container--above .select2-selection {
+  border-radius: 0 0 20px 20px;
+  border-top: 1px solid #dce2ff;
+}
+
+.field .select2-container.select2-container--open.select2-container--above .select2-selection__arrow b::after {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.select2-container .select2-dropdown.select2-dropdown--below {
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  border: none;
+  border: 1px solid #dce2ff;
   border-top: none;
+}
+
+.select2-container .select2-dropdown.select2-dropdown--above {
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  border: none;
+  border: 1px solid #dce2ff;
+  border-bottom: none;
+}
+
+.select2-container .select2-dropdown .select2-results__option {
+  color: #878787;
+  background: #fafafa;
+  padding: 13px 23px;
+}
+
+.select2-container .select2-dropdown .select2-results__option--selected,
+.select2-container .select2-dropdown .select2-results__option--highlighted.select2-results__option--selectable {
+  background: #f3f5ff;
 }
 
 .custom-control.custom-checkbox {
@@ -2038,6 +2058,10 @@ ul.list-circle li::before {
   max-width: max-content;
 }
 
+.calc-eurocasco-page .calculation-data .buttons .btn {
+  max-width: 100%;
+}
+
 .calculation-data .custom-control.custom-checkbox .custom-control-label::after,
 .calculation-data .custom-control.custom-checkbox .custom-control-label::before {
   -webkit-filter: unset;
@@ -2051,7 +2075,10 @@ ul.list-circle li::before {
 .casco-page .calculation-data .form-calculation-data .price-car .price-value,
 .minicasco-page .calculation-data .form-calculation-data .price-car .price-value,
 .eurocasco-page .calculation-data .form-calculation-data .price-car .price-value,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .price-value {
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car .price-value,
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car .price-value,
+.calc-casco-page .calculation-data .form-calculation-data .price-car .price-value,
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car .price-value {
   background: unset;
   border: unset;
   padding: 0;
@@ -2065,7 +2092,13 @@ ul.list-circle li::before {
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
 .calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button {
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
+.calc-casco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
+.calc-casco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button,
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-outer-spin-button,
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -2080,160 +2113,19 @@ ul.list-circle li::before {
 .eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
 .calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number],
 .calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]:focus {
+.calc-property-protection-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car input[type=number],
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
+.calc-minicasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
+.calc-casco-page .calculation-data .form-calculation-data .price-car input[type=number],
+.calc-casco-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
+.calc-casco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus,
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number],
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:hover,
+.calc-eurocasco-page .calculation-data .form-calculation-data .price-car input[type=number]:focus {
   -webkit-appearance: none;
           appearance: none;
   -moz-appearance: textfield;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement {
-  display: block;
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive {
-  border-radius: 0;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstSelected,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement.fstActive .fstFocused {
-  background: #f3f5ff;
-  color: #878787;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResults {
-  max-height: 200px;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: -9px;
-  right: 0px;
-  margin-top: 0;
-  border: 1px solid #dce2ff;
-  border-radius: 0;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn:after {
-  all: unset;
-  content: "";
-  display: block;
-  margin: 0;
-  border: none;
-  width: 16px;
-  height: 16px;
-  margin-left: 5px;
-  position: relative;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
-  background-size: cover;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
-  font-size: 16px;
-  line-height: 24px;
-  color: #2b2b2b;
-  padding: 0;
-  background: transparent;
-  text-transform: uppercase;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstToggleBtn {
-  border: 1px solid transparent;
-  border-radius: 0;
-  height: 100%;
-  min-height: auto;
-}
-
-.casco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.minicasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.eurocasco-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem,
-.calc-property-protection-page .calculation-data .form-calculation-data .price-car .currency .select-wrap .fstElement .fstResultItem {
-  border-top: none;
-  padding: 5px 10px;
 }
 
 .benefits-policy .card {
@@ -3273,114 +3165,6 @@ ul.list-circle li::before {
   gap: 24px;
 }
 
-.financial-info .reporting-documents .select-wrap .fstElement {
-  display: block;
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement.fstActive {
-  border-radius: 0;
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement.fstActive .fstSelected,
-.financial-info .reporting-documents .select-wrap .fstElement.fstActive .fstFocused {
-  background: #f3f5ff;
-  color: #878787;
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.financial-info .reporting-documents .select-wrap .fstElement .fstResults {
-  max-height: 200px;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: 1px;
-  right: 0px;
-  margin-top: 0;
-  border: 1px solid #dce2ff;
-  border-radius: 0;
-  width: calc(100% - 2px);
-}
-
-.financial-info .reporting-documents .select-wrap .fstToggleBtn,
-.financial-info .reporting-documents .select-wrap .fstResultItem {
-  font-size: 16px;
-  line-height: 24px;
-  color: #2b2b2b;
-  padding: 0;
-  background: transparent;
-  text-transform: uppercase;
-}
-
-.financial-info .reporting-documents .select-wrap .fstToggleBtn {
-  height: 100%;
-  min-height: auto;
-}
-
-.financial-info .reporting-documents .select-wrap .fstResultItem {
-  border-top: none;
-  padding: 5px 10px;
-}
-
-.financial-info .reporting-documents .select-wrap .fstToggleBtn {
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: #f3f5ff;
-  border: 1px solid #dce2ff;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-.financial-info .reporting-documents .select-wrap .fstToggleBtn:after {
-  all: unset;
-  content: "";
-  display: block;
-  margin: 0;
-  border: none;
-  width: 16px;
-  height: 16px;
-  margin-left: 5px;
-  position: relative;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
-  background-size: cover;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
-}
-
 .insurance-case-tablist-nav .nav-pills .nav-item .nav-link {
   padding: 12.5px 16px;
   color: #fafafa;
@@ -3402,119 +3186,6 @@ ul.list-circle li::before {
 
 .insurance-case-tablist-nav .nav-pills .nav-item:not(:last-child) {
   margin-bottom: 24px;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstElement {
-  display: block;
-  border: none;
-  border-radius: 20px;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-  background: #dce2ff;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.insurance-case-tablist-nav .select-wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  position: relative;
-  background: unset;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstElement .fstResults {
-  position: relative;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: 1px;
-  right: 0px;
-  border: 1px solid transparent;
-  border-radius: 0;
-  background: unset;
-  width: calc(100% - 2px);
-  padding: 13px 12px 13px 20px;
-  margin-top: -10px;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstToggleBtn,
-.insurance-case-tablist-nav .select-wrap .fstResultItem {
-  font-size: 16px;
-  line-height: 24px;
-  color: #2b2b2b;
-  padding: 0;
-  background: transparent;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstToggleBtn {
-  height: 100%;
-  min-height: auto;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstResultItem {
-  border-top: none;
-  padding: 0;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstResultItem:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstResultItem:hover {
-  color: #5b75ff;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstResultItem.fstSelected {
-  display: none;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstToggleBtn {
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 13px 12px 13px 20px;
-  font-weight: 500;
-}
-
-.insurance-case-tablist-nav .select-wrap .fstToggleBtn:after {
-  all: unset;
-  content: "";
-  display: block;
-  margin: 0;
-  border: none;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
-  background-size: cover;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
 }
 
 .leadership .row .row:nth-child(3) .wrap-img img {
@@ -3734,241 +3405,6 @@ ul.list-circle li::before {
   background: #5b75ff;
   color: #fafafa;
   font-weight: 500;
-}
-
-.news .select-wrap.select-year--wrap {
-  margin-right: -19px;
-}
-
-.news .select-wrap.select-year--wrap .fstElement {
-  display: block;
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.news .select-wrap.select-year--wrap .fstElement.fstActive {
-  border-radius: 0;
-}
-
-.news .select-wrap.select-year--wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.news .select-wrap.select-year--wrap .fstElement.fstActive .fstSelected,
-.news .select-wrap.select-year--wrap .fstElement.fstActive .fstFocused {
-  background: unset;
-  color: #5b75ff;
-}
-
-.news .select-wrap.select-year--wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-}
-
-.news .select-wrap.select-year--wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.news .select-wrap.select-year--wrap .fstElement .fstResults {
-  max-height: 200px;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: 1px;
-  right: 0px;
-  margin-top: 0;
-  border: 1px solid #dce2ff;
-  background: #fafafa;
-  border-radius: 0;
-  width: calc(100% - 21px);
-}
-
-.news .select-wrap.select-year--wrap .fstToggleBtn,
-.news .select-wrap.select-year--wrap .fstResultItem {
-  font-size: 16px;
-  line-height: 24px;
-  color: #2b2b2b;
-  padding: 0;
-  background: transparent;
-  text-transform: uppercase;
-}
-
-.news .select-wrap.select-year--wrap .fstToggleBtn {
-  height: 100%;
-  min-height: auto;
-}
-
-.news .select-wrap.select-year--wrap .fstResultItem {
-  border-top: none;
-  padding: 5px 10px;
-}
-
-.news .select-wrap.select-year--wrap .fstToggleBtn {
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: #fafafa;
-  border: 1px solid #fafafa;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 22px;
-  line-height: 28px;
-}
-
-.news .select-wrap.select-year--wrap .fstToggleBtn:after {
-  all: unset;
-  content: "";
-  display: block;
-  margin: 0;
-  border: none;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
-  background-size: cover;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement {
-  display: block;
-  border: none;
-  border-radius: 20px;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  padding: 0;
-  background: #dce2ff;
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement.fstActive {
-  border-radius: 20px 20px 0 0;
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement.fstActive .fstToggleBtn:after {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement .fstControls {
-  padding: 0;
-  border: unset;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  background: unset;
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement .fstControls .fstQueryInput {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  border: none;
-}
-
-.news .select-wrap.select-news-category--wrap .fstElement .fstResults {
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-  left: 1px;
-  right: 0px;
-  border: 1px solid transparent;
-  border-radius: 0;
-  background: #dce2ff;
-  width: calc(100% - 2px);
-  padding: 13px 12px 13px 20px;
-  margin-top: -10px;
-  border-radius: 0 0 20px 20px;
-  max-height: 200px;
-}
-
-.news .select-wrap.select-news-category--wrap .fstToggleBtn,
-.news .select-wrap.select-news-category--wrap .fstResultItem {
-  font-size: 16px;
-  line-height: 24px;
-  color: #2b2b2b;
-  padding: 0;
-  background: transparent;
-}
-
-.news .select-wrap.select-news-category--wrap .fstToggleBtn {
-  height: 100%;
-  min-height: auto;
-}
-
-.news .select-wrap.select-news-category--wrap .fstResultItem {
-  border-top: none;
-  padding: 0;
-}
-
-.news .select-wrap.select-news-category--wrap .fstResultItem:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.news .select-wrap.select-news-category--wrap .fstResultItem:hover {
-  color: #5b75ff;
-}
-
-.news .select-wrap.select-news-category--wrap .fstResultItem.fstSelected {
-  display: none;
-}
-
-.news .select-wrap.select-news-category--wrap .fstToggleBtn {
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 13px 12px 13px 20px;
-  font-weight: 500;
-}
-
-.news .select-wrap.select-news-category--wrap .fstToggleBtn:after {
-  all: unset;
-  content: "";
-  display: block;
-  margin: 0;
-  border: none;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
-  background-size: cover;
-  -webkit-transition: 0.3s ease-out 0s;
-  -o-transition: 0.3s ease-out 0s;
-  transition: 0.3s ease-out 0s;
 }
 
 .pagination {
@@ -6135,6 +5571,24 @@ ul.list-circle li::before {
   margin-right: 10px;
 }
 
+.btn-diia {
+  background: #5b75ff;
+  color: #fafafa;
+}
+
+.btn-diia:hover {
+  border-color: #dce2ff;
+  background: #dce2ff;
+  color: #5b75ff;
+}
+
+.btn-diia:active,
+.btn-diia:focus {
+  border-color: #3751d8;
+  background: #3751d8;
+  color: #fafafa;
+}
+
 .btn-diia::before {
   content: "";
   background: url(../img/diia.png) no-repeat center;
@@ -6275,6 +5729,7 @@ ul.list-circle li::before {
 }
 
 .form-osago-data.choose-car-1 .fields-choose-car .field-wrap:nth-child(2),
+.form-osago-data.choose-car-1 .fields-choose-car .field-wrap:nth-child(4),
 .form-osago-data.choose-car-1 .fields-choose-car .field-wrap:nth-last-child(-n+2) {
   display: none;
 }
@@ -6286,6 +5741,7 @@ ul.list-circle li::before {
 
 .form-osago-data.choose-car-2 .fields-choose-car .field-wrap:nth-child(2),
 .form-osago-data.choose-car-2 .fields-choose-car .field-wrap:nth-child(3),
+.form-osago-data.choose-car-2 .fields-choose-car .field-wrap:nth-child(4),
 .form-osago-data.choose-car-2 .fields-choose-car .field-wrap:nth-last-child(-n+2) {
   display: none;
 }
@@ -6299,11 +5755,27 @@ ul.list-circle li::before {
   grid-template-columns: 1fr 1fr 1fr 100px 140px;
 }
 
-.form-osago-data.choose-car-3 .fields-choose-car .field-wrap:nth-child(3) {
+.form-osago-data.choose-car-3 .fields-choose-car .field-wrap:nth-child(3),
+.form-osago-data.choose-car-3 .fields-choose-car .field-wrap:nth-child(4) {
   display: none;
 }
 
 .form-osago-data.choose-car-3 .checkbox--wrap {
+  display: none;
+}
+
+.form-osago-data.choose-car-4 .fields-choose-car {
+  -ms-grid-columns: 1fr 1fr 1fr 140px;
+  grid-template-columns: 1fr 1fr 1fr 140px;
+}
+
+.form-osago-data.choose-car-4 .fields-choose-car .field-wrap:nth-child(2),
+.form-osago-data.choose-car-4 .fields-choose-car .field-wrap:nth-child(3),
+.form-osago-data.choose-car-4 .fields-choose-car .field-wrap:nth-last-child(2) {
+  display: none;
+}
+
+.form-osago-data.choose-car-4 .checkbox--wrap {
   display: none;
 }
 
@@ -6463,7 +5935,6 @@ ul.list-circle li::before {
 }
 
 .form-osago-step .btn-diia {
-  background: #fafafa;
   border: 1px solid #dce2ff;
 }
 
@@ -6670,7 +6141,8 @@ ul.list-circle li::before {
   background: rgba(135, 135, 135, 0.1);
 }
 
-.popup-step-year-error .modal-content {
+.popup-step-year-error .modal-content,
+.popup-international-passport .modal-content {
   background: #f4dfdf;
   border: 1.5px solid #f00;
 }
@@ -6752,10 +6224,419 @@ ul.list-circle li::before {
   color: #5b75ff !important;
 }
 
+.calculation-table--eurocasco .tab-content:nth-child(2) .table-row .table-col:not(:first-child) {
+  border-top: 1px solid #5b75ff;
+}
+
+.calculation-table--eurocasco .tab-content:last-child .table-row .table-col:not(:first-child) {
+  border-bottom: 1px solid #5b75ff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.calculation-table--eurocasco .tab-content .table-row .table-col:not(:first-child) {
+  margin: 0 1px;
+}
+
+.calculation-table--eurocasco .tab-content .table-row .table-col:not(.active, :first-child) {
+  display: none;
+}
+
+.calculation-table--eurocasco .table-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6, 1fr);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item {
+  border-radius: unset;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 1px solid #dce2ff;
+  border-bottom: unset;
+  background: #5b75ff;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.06);
+  padding: 16px 14px;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .name {
+  color: #fafafa;
+  margin-bottom: 5px;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star {
+  margin-bottom: 16px;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star .star::before {
+  width: 14px;
+  height: 14px;
+  -webkit-filter: brightness(0) saturate(100%) invert(76%) sepia(41%) saturate(2121%) hue-rotate(191deg) brightness(97%) contrast(109%);
+          filter: brightness(0) saturate(100%) invert(76%) sepia(41%) saturate(2121%) hue-rotate(191deg) brightness(97%) contrast(109%);
+  opacity: 1;
+}
+
+.calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star .star.star-paint::before {
+  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(335deg) brightness(102%) contrast(102%);
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(335deg) brightness(102%) contrast(102%);
+}
+
+.calculation-table--eurocasco .table-row:nth-child(2) .table-col:not(:first-child) {
+  margin-top: -16px;
+}
+
+.calculation-table--eurocasco .table-row:last-child .table-col {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.calculation-table--eurocasco .table-row:not(:first-child) .table-col .content {
+  margin-bottom: 30px;
+}
+
+.calculation-table--eurocasco .table-row .table-col {
+  background: #fafafa;
+  padding: 16px 14px;
+}
+
+.calculation-table--eurocasco .table-row .table-col .true,
+.calculation-table--eurocasco .table-row .table-col .false,
+.calculation-table--eurocasco .table-row .table-col .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.calculation-table--eurocasco .table-row .table-col .true::after,
+.calculation-table--eurocasco .table-row .table-col .false::after {
+  content: "";
+  max-width: 24px;
+  width: 100%;
+  height: 24px;
+  display: block;
+}
+
+.calculation-table--eurocasco .table-row .table-col .true::after {
+  background: url(../img/icons/icons.svg#i-tick-check) no-repeat center;
+  background-size: cover;
+}
+
+.calculation-table--eurocasco .table-row .table-col .false::after {
+  background: url(../img/icons/icons.svg#i-close-check) no-repeat center;
+  background-size: cover;
+}
+
+.calculation-table--eurocasco .table-row .table-col .card-list .card-item {
+  background: #fafafa !important;
+}
+
+.calculation-table--eurocasco .table-row .table-col .card-list .card-item.active {
+  background: #5b75ff !important;
+}
+
+.calculation-table--eurocasco .table-row .table-col .card-list .card-item.active .name {
+  color: #fafafa !important;
+}
+
+.calculation-table--eurocasco .table-row .table-col .card-list .card-item:not(.card-item.active) {
+  cursor: pointer;
+}
+
+.calculation-table--eurocasco .table-row .table-col .card-list .card-item .name {
+  color: #2b2b2b !important;
+}
+
+.form-green-card-step .progressbar li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25%;
+}
+
+.form-green-card-step .progressbar li:last-child {
+  border-left: 1px solid #dce2ff;
+}
+
+.calc-travel-page .form-calculation-data .btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calc-travel-page .form-calculation-data .btn-more::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+  background-size: cover;
+  margin-left: 10px;
+  -webkit-transition: 0.3s ease-out 0s;
+  -o-transition: 0.3s ease-out 0s;
+  transition: 0.3s ease-out 0s;
+}
+
+.calc-travel-page .travel-result-search .filters-search-buttons .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px 16px;
+  border-radius: 20px;
+}
+
+.calc-travel-page .travel-result-search .filters-search-buttons .btn::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  background: url(../img/icons/icons.svg#i-arrows-up-and-down) no-repeat center;
+  background-size: cover;
+  margin-left: 10px;
+  -webkit-transition: 0.3s ease-out 0s;
+  -o-transition: 0.3s ease-out 0s;
+  transition: 0.3s ease-out 0s;
+}
+
+.calc-travel-page .travel-result-search .filters-search-buttons .btn:not(.active) {
+  color: #878787;
+}
+
+.calc-travel-page .travel-result-search .filters-search-buttons .btn:not(.active)::after {
+  -webkit-filter: brightness(0) saturate(100%) invert(63%) sepia(0%) saturate(163%) hue-rotate(146deg) brightness(84%) contrast(87%);
+          filter: brightness(0) saturate(100%) invert(63%) sepia(0%) saturate(163%) hue-rotate(146deg) brightness(84%) contrast(87%);
+}
+
+.calc-travel-page .travel-result-search .filters-search-buttons .btn.active {
+  background: #f3f5ff;
+  color: #5b75ff;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .main-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .main-title::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: url(../img/settings-icon.png) no-repeat center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .card-details--list li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .card-details--list li::before {
+  content: "";
+  max-width: 8px;
+  width: 100%;
+  height: 8px;
+  display: block;
+  background: url(../img/icons/icons.svg#i-tick-check) no-repeat center;
+  background-size: cover;
+  -webkit-filter: brightness(0) saturate(100%) invert(16%) sepia(63%) saturate(27%) hue-rotate(59deg) brightness(95%) contrast(99%);
+          filter: brightness(0) saturate(100%) invert(16%) sepia(63%) saturate(27%) hue-rotate(59deg) brightness(95%) contrast(99%);
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .card-details--list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .program-info {
+  background: #e9edff;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .btn-more {
+  border-radius: 10px;
+  background: #eaeaea;
+  color: #878787;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .btn-more.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .btn-more.active::after {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .btn-more::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+          filter: brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(0%) hue-rotate(187deg) brightness(92%) contrast(85%);
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 12% 12% 1fr;
+  grid-template-columns: 12% 12% 1fr;
+  -webkit-column-gap: 24px;
+     -moz-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .franshise,
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .coating {
+  text-align: center;
+  padding: 10px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr::before {
+  content: "";
+  max-width: 24px;
+  min-width: 24px;
+  height: 24px;
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr.true::before {
+  background: url(../img/icons/icons.svg#i-tick-check) no-repeat center;
+  background-size: cover;
+  -webkit-filter: brightness(0) saturate(100%) invert(55%) sepia(74%) saturate(2246%) hue-rotate(68deg) brightness(95%) contrast(87%);
+          filter: brightness(0) saturate(100%) invert(55%) sepia(74%) saturate(2246%) hue-rotate(68deg) brightness(95%) contrast(87%);
+}
+
+.calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr.false::before {
+  background: url(../img/icons/icons.svg#i-close) no-repeat center;
+  background-size: cover;
+  -webkit-filter: brightness(0) saturate(100%) invert(23%) sepia(68%) saturate(6806%) hue-rotate(354deg) brightness(102%) contrast(128%);
+          filter: brightness(0) saturate(100%) invert(23%) sepia(68%) saturate(6806%) hue-rotate(354deg) brightness(102%) contrast(128%);
+}
+
+.calc-travel-step-page .form-osago-step .progressbar {
+  border-radius: unset;
+  border: unset;
+  gap: 24px;
+}
+
+.calc-travel-step-page .form-osago-step .progressbar li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 20px 20px 20px;
+  border-radius: 30px;
+  width: auto;
+  border: unset;
+  background: #dce2ff;
+}
+
+.calc-travel-step-page .form-osago-step .progressbar li.active {
+  background: #5b75ff;
+}
+
+.calc-travel-step-page .form-osago-step .progressbar li.active svg {
+  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1017%) hue-rotate(183deg) brightness(110%) contrast(96%);
+          filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1017%) hue-rotate(183deg) brightness(110%) contrast(96%);
+}
+
+.calc-travel-step-page .form-osago-step .progressbar li .step-count {
+  font-size: 22px;
+  line-height: 28px;
+  margin-right: 14px;
+}
+
+.calc-travel-step-page .form-osago-step .progressbar li svg {
+  width: 48px;
+  height: 48px;
+}
+
+.calc-travel-step-page .form-osago-step .result-data-travel--item {
+  margin-bottom: 15px;
+}
+
+.calc-travel-step-page .form-osago-step .result-data-travel--item .content {
+  background: #e7ebff;
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
+}
+
 .header {
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.06);
-  z-index: 105;
+  z-index: 1060;
 }
 
 .header .nav-link {
@@ -7243,6 +7124,11 @@ ul.list-circle li::before {
     margin-left: -10px;
   }
 
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) {
+    padding: 0;
+    background: unset;
+  }
+
   .navbar-toggler .menu-burger:hover {
     cursor: pointer;
   }
@@ -7492,9 +7378,19 @@ ul.list-circle li::before {
     padding-right: 5px;
     padding-left: 5px;
   }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item {
+    -ms-grid-columns: 15% 15% 1fr;
+    grid-template-columns: 15% 15% 1fr;
+  }
 }
 
 @media (max-width: 1199px) {
+  .h3-m {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
   .flip-cards .flip-cards--inner {
     row-gap: 32px;
   }
@@ -7902,6 +7798,17 @@ ul.list-circle li::before {
     grid-column: 1;
   }
 
+  .form-osago-data.choose-car-4 .fields-choose-car {
+    -ms-grid-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .form-osago-data.choose-car-4 .fields-choose-car .field-wrap:nth-child(n) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/span 3;
+  }
+
   .form-osago-data.otk-no .fields-choose-car {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -7928,6 +7835,18 @@ ul.list-circle li::before {
 
   .bonus-info-descr .bonus-info-descr-item {
     min-height: auto;
+  }
+
+  .calculation-table--eurocasco .table-row:nth-child(2) .table-col:not(:first-child) {
+    padding: 16px 5px;
+  }
+
+  .calculation-table--eurocasco .table-row .table-col {
+    padding: 10px 14px;
+  }
+
+  .calculation-table--eurocasco .table-row .table-col:first-child {
+    padding: 16px 5px;
   }
 
   .header-top .header-top--others .list-inline-item:not(:last-child) {
@@ -9101,6 +9020,17 @@ ul.list-circle li::before {
     grid-column: 2;
   }
 
+  .form-osago-data.choose-car-4 .fields-choose-car {
+    -ms-grid-columns: 1fr 65%;
+    grid-template-columns: 1fr 65%;
+  }
+
+  .form-osago-data.choose-car-4 .fields-choose-car .field-wrap:nth-child(n) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/span 2;
+  }
+
   .form-osago-data.otk-no .fields-choose-car {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -9274,6 +9204,153 @@ ul.list-circle li::before {
     -ms-grid-row: 2;
     grid-row: 2;
     margin-top: 15px;
+  }
+
+  .calculation-table--eurocasco .tab-content .table-row .tab-pane {
+    padding: 16px;
+  }
+
+  .calculation-table--eurocasco .table-row {
+    -ms-grid-columns: 36% 1fr;
+    grid-template-columns: 36% 1fr;
+    -webkit-column-gap: 8px;
+       -moz-column-gap: 8px;
+            column-gap: 8px;
+  }
+
+  .calculation-table--eurocasco .table-row.type-program .table-col {
+    border: unset !important;
+  }
+
+  .calculation-table--eurocasco .table-row.type-program .table-col:not(:first-child, :last-child) {
+    display: none;
+  }
+
+  .calculation-table--eurocasco .table-row.type-program .table-col:first-child {
+    padding: 0;
+  }
+
+  .calculation-table--eurocasco .table-row.type-program .table-col:last-child .card-list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item {
+    padding: 16px 8px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .name {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star {
+    gap: 2px;
+    margin-bottom: 0;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star .star::before {
+    width: 8px;
+    height: 8px;
+  }
+
+  .calculation-table--eurocasco .table-row:nth-child(2) .table-col:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .calculation-table--eurocasco .table-row .table-col:not(:first-child) {
+    border-radius: 0;
+    border-left: 1px solid #5b75ff;
+    border-right: 1px solid #5b75ff;
+  }
+
+  .calculation-table--eurocasco .table-row .table-col:first-child {
+    background: unset;
+  }
+
+  .calculation-table--eurocasco .table-row .table-col .card-list .card-item:not(.card-item.active) .card-star .star::before {
+    -webkit-filter: brightness(0) saturate(100%) invert(83%) sepia(15%) saturate(590%) hue-rotate(197deg) brightness(103%) contrast(103%);
+            filter: brightness(0) saturate(100%) invert(83%) sepia(15%) saturate(590%) hue-rotate(197deg) brightness(103%) contrast(103%);
+  }
+
+  .calculation-table--eurocasco .table-row .table-col .card-list .card-item:not(.card-item.active) .card-star .star.star-paint::before {
+    -webkit-filter: brightness(0) saturate(100%) invert(50%) sepia(45%) saturate(6949%) hue-rotate(219deg) brightness(104%) contrast(101%);
+            filter: brightness(0) saturate(100%) invert(50%) sepia(45%) saturate(6949%) hue-rotate(219deg) brightness(104%) contrast(101%);
+  }
+
+  .calc-travel-page .travel-result-search .filters-search-buttons .btn {
+    padding: 4px 8px;
+  }
+
+  .calc-travel-page .travel-result-search .filters-search-buttons .btn:not(.active) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .card-details .card-content--item {
+    background: #e9edff;
+    padding: 4px 12px;
+    border-radius: 10px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .card-details--list--wrap .filter--pic {
+    max-width: 45px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .card-details--list--wrap .filter--pic img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item {
+    -ms-grid-columns: 25% 25% 1fr;
+    grid-template-columns: 25% 25% 1fr;
+    -webkit-column-gap: 12px;
+       -moz-column-gap: 12px;
+            column-gap: 12px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .descr::before {
+    max-width: 18px;
+    min-width: 18px;
+    height: 18px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar {
+    gap: 8px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar li {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 15px 10px;
+    border-radius: 10px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar li .step-count {
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 5px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar li svg {
+    width: 24px;
+    height: 24px;
   }
 
   .header {
@@ -9525,6 +9602,13 @@ ul.list-circle li::before {
   }
 }
 
+@media (max-width: 1023px) and (max-width: 1023px) {
+  .calculation-table--eurocasco .table-row.type-program .table-col:last-child {
+    padding: 0;
+    background: unset;
+  }
+}
+
 @media (max-width: 767px) {
   .header-top .socials svg {
     width: 18px;
@@ -9677,6 +9761,47 @@ ul.list-circle li::before {
 
   .service-bonuses .service-bonuses--item {
     width: calc((100% - 16px) / 2);
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item {
+    padding: 10px 4px;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .name {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .calculation-table--eurocasco .table-row:first-child .table-col:not(:first-child) .card-item .card-star .star::before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .form-green-card-step .progressbar li {
+    font-size: 10px;
+    line-height: 14px;
+    padding: 5px;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item {
+    -ms-grid-columns: 1fr 1fr 40%;
+    grid-template-columns: 1fr 1fr 40%;
+  }
+
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .franshise,
+  .calc-travel-page .travel-result-search .filter-cards .filter-card .filter-card--additional .filter-card--additional-table .filter-card--additional-table--item .coating {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar li {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .calc-travel-step-page .form-osago-step .progressbar li .step-count {
+    font-size: 8px;
+    line-height: 12px;
   }
 
   .header-top .header-top--nav .list-inline-item:not(:last-child) {

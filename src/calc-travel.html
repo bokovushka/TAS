@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Туристична страховка для виїзду за кордон"
+})
+
+<body class="calc-travel-page">
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main class="main">
+			<div class="content">
+				<section class="section-top my-8 mt-lg-11 mb-lg-8">
+					<div class="container mx-auto">
+						<div class="row">
+							<div class="col">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav">
+									<ol class="breadcrumb mb-0">
+										<li class="breadcrumb-item"><a href="##">Головна</a></li>
+										<li class="breadcrumb-item"><a href="##">Для Вас</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Туристична страховка для виїзду за кордон</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="calculation-data mb-16 mb-lg-24">
+					<div class="container">
+						<div class="row mb-12">
+							<div class="col">
+								<div class="form-wrap rounded bg-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
+									<div class="row">
+										<div class="col">
+											<div class="text-center">
+												<div class="h2 mb-5 mb-lg-8">Туристична страховка для виїзду за кордон</div>
+												<div class="h4 font-m mb-8"><a href="##" class="text-main-blue rounded-0 p-0">Порівняння та оформлення полісів страхування для виїзду за кордон</a></div>
+											</div>
+											<form class="form-calculation-data rounded">
+												<div class="additional-param row mb-lg-8">
+													<div class="col-12 col-xl-10 offset-xl-1">
+														<div class="row mb-5">
+															<div class="col-12 col-lg-4">
+																<div class="mb-5 mb-lg-0">
+																	<div class="field-wrap">
+																		<div class="field field-2 field-travel-direction">
+																			<label for="select-travel-direction" class="text-black mb-1">Напрямок подорожі</label>
+																			<div class="select-wrap">
+																				<select class="select-travel-direction" name="select-travel-direction">
+																					<option value="0">Європа (шенген)</option>
+																					<option value="1">Європа (1)</option>
+																					<option value="2">Європа (2)</option>
+																					<option value="2">Європа (3)</option>
+																				</select>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-12 col-lg-4">
+																<div class="field field-2 d-flex flex-column mb-5 mb-lg-0">
+																	<div class="field--help-info small-txt text-red mb-1">Виберіть період подорожі</div>
+																	<label for="datepicker-period-travel" class="text-black mb-1">Період подорожі</label>
+																	<div class="datepicker datepicker-period-travel">
+																		<input id="datepicker-period-travel" class="flatpickr-input form-control" type="text" placeholder="Виберіть дату" data-input>
+																		<a class="input-button" title="toggle" data-toggle>
+																			<svg>
+																				<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																			</svg>
+																		</a>
+																	</div>
+																</div>
+															</div>
+															<div class="col-12 col-lg-4">
+																<div class="mb-5 mb-lg-0">
+																	<div class="field-wrap">
+																		<div class="field field-2">
+																			<label for="select-count-tourists" class="text-black mb-1">Напрямок подорожі</label>
+																			<div class="select-wrap">
+																				<select class="select-count-tourists" name="select-count-tourists">
+																					<option value="0">1 людина</option>
+																					<option value="1">2 людини</option>
+																					<option value="2">3 людини</option>
+																					<option value="2">4 людини</option>
+																				</select>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-auto">
+																<div class="d-flex flex-column flex-lg-row align-items-lg-center mb-5 mb-lg-0">
+																	<button type="button" class="btn btn-more btn-text p-0 mr-5 mb-2 mb-lg-0">Додаткові параметри</button>
+																	<div class="custom-control custom-checkbox position-relative mb-0">
+																		<input type="checkbox" class="custom-control-input" id="policy-year">
+																		<label class="custom-control-label" for="policy-year">
+																			<span class="custom-checkbox--info">Поліс на рік</span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="buttons">
+													<div class="row justify-content-center">
+														<div class="col-auto mb-5 mb-lg-0"><a href="/calc-travel-step.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="travel-result-search">
+									<div class="row mb-5">
+										<div class="col">
+											<div class="h3 font-m text-center">Результати за напрямом “Європа (Шенген)” для 1 туриста</div>
+										</div>
+									</div>
+									<div class="row mb-6">
+										<div class="col">
+											<div class="filters-search-buttons d-flex">
+												<button type="button" class="btn btn-text mr-1 mr-lg-5 mb-2 mb-lg-0 active">За ціною</button>
+												<button type="button" class="btn btn-text mr-1 mr-lg-5 mb-2 mb-lg-0">За опціями</button>
+											</div>
+										</div>
+									</div>
+									<div class="filter-cards">
+										<div class="filter-card rounded bg-light-blue pt-6 pb-9 px-3 px-lg-0">
+											<div class="col-12 d-lg-none">
+												<div class="head mb-2 text-center mb-5">Програма Light</div>
+											</div>
+											<div class="row mb-6 d-none d-lg-flex">
+												<div class="col">
+													<div class="px-6">
+														<div class="main-title bg-main-blue rounded text-white py-2 px-4">Покриває лікування COVID-19</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12 col-lg-2 d-none d-lg-flex">
+													<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0 pl-6">
+														<div class="filter--pic mb-0 mb-lg-5 w-100 px-2">
+															<img src="img/logo.svg" alt="TAC">
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg card-details">
+													<div class="row">
+														<div class="col-12 col-lg-5 col-xl-6">
+															<div class="program-info rounded p-3 p-lg-2">
+																<div class="head mb-2 text-center d-none d-lg-block">Програма Light</div>
+																<div class="card-details--list--wrap d-flex justify-content-between align-items-end align-items-lg-start">
+																	<div class="card-details--list ul list-unstyled mb-0 mr-4 mr-lg-0">
+																		<li>Невідкладна амбулаторна допомога</li>
+																		<li>Невідкладна стаціонарна допомога</li>
+																		<li>Невідкладна медична допомога</li>
+																	</div>
+																	<div class="filter--pic d-lg-none">
+																		<img src="img/logo.svg" alt="TAC">
+																	</div>
+																</div>
+															</div>
+															<button type="button" class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0 mt-2 mt-lg-5">Детальніше</button>
+														</div>
+														<div class="col-12 d-lg-none">
+															<div class="filter-card--additional">
+																<div class="inner">
+																	<div class="row">
+																		<div class="col">
+																			@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col col-xl-6">
+															<div class="row mb-5 mbb-lg-0">
+																<div class="col col-lg-auto">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Страхова сума</p>
+																		<div class="h3-m">3 000 євро</div>
+																	</div>
+																</div>
+																<div class="col-auto text-center">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Всього опцій</p>
+																		<div class="h3-m">11</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg-4">
+													<div class="pr-lg-6 pl-lg-3">
+														<div class="filter-card--cost rounded bg-blue text-center px-4 py-3">
+															<div class="d-flex flex-column align-items-center justify-content-between">
+																<div class="d-flex flex-lg-column flex-xxl-row align-items-center justify-content-between mb-3 w-100">
+																	<div class="small-txt mr-3 mr-lg-0 mr-xxl-3 mb-lg-1 mb-xxl-0">Ціна за 1 туриста:</div>
+																	<div class="h4 font-weight-bold">375 євро</div>
+																</div>
+																<div class="d-flex flex-lg-column flex-xxl-row align-items-center justify-content-between rounded-sm bg-main-blue py-1 px-3 text-white mb-3 w-100">
+																	<div class="small-txt mr-3 mr-lg-0 mr-xxl-3 mb-lg-1 mb-xxl-0">За реферальною програмою:</div>
+																	<div class="h4">325 євро</div>
+																</div>
+															</div>
+															<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+																<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/google.svg" alt="google">
+																</div>
+																<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/pv-24.png" alt="privat bank 24">
+																</div>
+															</div>
+														</div>
+														<a href="/calc-travel-step.html" class="btn btn-default btn-block btn-outline-main-blue mt-5">Обрати</a>
+													</div>
+												</div>
+											</div>
+											<div class="filter-card--additional filter-card--additional--desk">
+												<div class="inner">
+													<div class="row mt-5">
+														<div class="col-10 offset-2">
+															<div class="small-txt mb-5">Базові опції</div>
+															<div class="row">
+																<div class="col">
+																	@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="filter-card rounded bg-light-blue pt-6 pb-9 px-3 px-lg-0">
+											<div class="col-12 d-lg-none">
+												<div class="head mb-2 text-center mb-5">Програма Light</div>
+											</div>
+											<div class="row mb-6 d-none d-lg-flex">
+												<div class="col">
+													<div class="px-6">
+														<div class="main-title bg-main-blue rounded text-white py-2 px-4">Покриває лікування COVID-19</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12 col-lg-2 d-none d-lg-flex">
+													<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0 pl-6">
+														<div class="filter--pic mb-0 mb-lg-5 w-100 px-2">
+															<img src="img/logo.svg" alt="TAC">
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg card-details">
+													<div class="row">
+														<div class="col-12 col-lg-5 col-xl-6">
+															<div class="program-info rounded p-3 p-lg-2">
+																<div class="head mb-2 text-center d-none d-lg-block">Програма Light</div>
+																<div class="card-details--list--wrap d-flex justify-content-between align-items-end align-items-lg-start">
+																	<div class="card-details--list ul list-unstyled mb-0 mr-4 mr-lg-0">
+																		<li>Невідкладна амбулаторна допомога</li>
+																		<li>Невідкладна стаціонарна допомога</li>
+																		<li>Невідкладна медична допомога</li>
+																	</div>
+																	<div class="filter--pic d-lg-none">
+																		<img src="img/logo.svg" alt="TAC">
+																	</div>
+																</div>
+															</div>
+															<button type="button" class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0 mt-2 mt-lg-5">Детальніше</button>
+														</div>
+														<div class="col col-xl-6">
+															<div class="row mb-5 mbb-lg-0">
+																<div class="col col-lg-auto">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Страхова сума</p>
+																		<div class="h3-m">3 000 євро</div>
+																	</div>
+																</div>
+																<div class="col-auto text-center">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Всього опцій</p>
+																		<div class="h3-m">11</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 d-lg-none">
+															<div class="filter-card--additional">
+																<div class="inner">
+																	<div class="row">
+																		<div class="col">
+																			@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg-4">
+													<div class="pr-lg-6 pl-lg-3">
+														<div class="filter-card--cost rounded bg-blue text-center px-4 py-3">
+															<div class="d-flex flex-column align-items-center justify-content-between">
+																<div class="d-flex flex-lg-column flex-xxl-row align-items-center justify-content-between mb-3 w-100">
+																	<div class="small-txt mr-3 mr-lg-0 mr-xxl-3 mb-lg-1 mb-xxl-0">Ціна за 1 туриста:</div>
+																	<div class="h4 font-weight-bold">375 євро</div>
+																</div>
+															</div>
+															<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+																<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/google.svg" alt="google">
+																</div>
+																<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/pv-24.png" alt="privat bank 24">
+																</div>
+															</div>
+														</div>
+														<a href="/calc-travel-step.html" class="btn btn-default btn-block btn-outline-main-blue mt-5">Обрати</a>
+													</div>
+												</div>
+											</div>
+											<div class="filter-card--additional filter-card--additional--desk">
+												<div class="inner">
+													<div class="row mt-5">
+														<div class="col-10 offset-2">
+															@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="filter-card rounded bg-light-blue pt-6 pb-9 px-3 px-lg-0">
+											<div class="col-12 d-lg-none">
+												<div class="head mb-2 text-center mb-5">Програма Light</div>
+											</div>
+											<div class="row mb-6 d-none d-lg-flex">
+												<div class="col">
+													<div class="px-6">
+														<div class="main-title bg-main-blue rounded text-white py-2 px-4">Покриває лікування COVID-19</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12 col-lg-2 d-none d-lg-flex">
+													<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0 pl-6">
+														<div class="filter--pic mb-0 mb-lg-5 w-100 px-2">
+															<img src="img/logo.svg" alt="TAC">
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg card-details">
+													<div class="row">
+														<div class="col-12 col-lg-5 col-xl-6">
+															<div class="program-info rounded p-3 p-lg-2">
+																<div class="head mb-2 text-center d-none d-lg-block">Програма Light</div>
+																<div class="card-details--list--wrap d-flex justify-content-between align-items-end align-items-lg-start">
+																	<div class="card-details--list ul list-unstyled mb-0 mr-4 mr-lg-0">
+																		<li>Невідкладна амбулаторна допомога</li>
+																		<li>Невідкладна стаціонарна допомога</li>
+																		<li>Невідкладна медична допомога</li>
+																	</div>
+																	<div class="filter--pic d-lg-none">
+																		<img src="img/logo.svg" alt="TAC">
+																	</div>
+																</div>
+															</div>
+															<button type="button" class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0 mt-2 mt-lg-5">Детальніше</button>
+														</div>
+														<div class="col col-xl-6">
+															<div class="row mb-5 mbb-lg-0">
+																<div class="col col-lg-auto">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Страхова сума</p>
+																		<div class="h3-m">3 000 євро</div>
+																	</div>
+																</div>
+																<div class="col-auto text-center">
+																	<div class="d-flex flex-lg-column align-items-center card-content--item">
+																		<p class="head font-m mb-0 mb-lg-3 mr-2 mr-lg-0">Всього опцій</p>
+																		<div class="h3-m">11</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 d-lg-none">
+															<div class="filter-card--additional">
+																<div class="inner">
+																	<div class="row">
+																		<div class="col">
+																			@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-lg-4">
+													<div class="pr-lg-6 pl-lg-3">
+														<div class="filter-card--cost rounded bg-blue text-center px-4 py-3">
+															<div class="d-flex flex-column align-items-center justify-content-between">
+																<div class="d-flex flex-lg-column flex-xxl-row align-items-center justify-content-between mb-3 w-100">
+																	<div class="small-txt mr-3 mr-lg-0 mr-xxl-3 mb-lg-1 mb-xxl-0">Ціна за 1 туриста:</div>
+																	<div class="h4 font-weight-bold">375 євро</div>
+																</div>
+															</div>
+															<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+																<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/google.svg" alt="google">
+																</div>
+																<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																	<img src="img/pv-24.png" alt="privat bank 24">
+																</div>
+															</div>
+														</div>
+														<a href="/calc-travel-step.html" class="btn btn-default btn-block btn-outline-main-blue mt-5">Обрати</a>
+													</div>
+												</div>
+											</div>
+											<div class="filter-card--additional filter-card--additional--desk">
+												<div class="inner">
+													<div class="row mt-5">
+														<div class="col-10 offset-2">
+															@@include('html/parts/travel-page/filter-card--additional-table.html',{})
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+
+	@@include('html/scripts.html',{})
+</body>
+
+</html>

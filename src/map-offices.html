@@ -1756,14 +1756,19 @@
 					position: { lat: 50.45853652359974, lng: 30.411489795412983 },
 					title: "Головний офіс СГ “ТАС” м.Київ",
 				},
+				{
+					position: { lat: 50.48814920913856, lng: 30.62191183329623 },
+					title: "Головний офіс СГ “ТАС” м.Київ",
+				},
 			];
 
 			const infoWindow = new google.maps.InfoWindow();
 
-			const mapMarkerPlace = document.createElement("div");
-			mapMarkerPlace.className = "map-marker-place";
-
 			tourStops.forEach(({ position, title }, i) => {
+
+				const mapMarkerPlace = document.createElement("div");
+				mapMarkerPlace.className = "map-marker-place";
+
 				const pinView = new google.maps.marker.PinView();
 				const marker = new google.maps.marker.AdvancedMarkerView({
 					position,

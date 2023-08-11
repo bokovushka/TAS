@@ -43,9 +43,9 @@
 																	<label for="select-property-type" class="text-black mb-1">Тип майна</label>
 																	<div class="select-wrap">
 																		<select class="select-property-type" name="select-property-type">
-																			<option value="0">Земельна ділянка</option>
-																			<option value="1">1</option>
-																			<option value="2">2</option>
+																			<option value="0">Квартира</option>
+																			<option value="1">Будинок</option>
+																			<option value="2">Земельна ділянка</option>
 																		</select>
 																	</div>
 																</div>
@@ -57,9 +57,9 @@
 																	<label for="select-program-type" class="text-black mb-1">Тип програми</label>
 																	<div class="select-wrap">
 																		<select class="select-program-type" name="select-program-type">
-																			<option value="0">Назва програми</option>
-																			<option value="1">1</option>
-																			<option value="2">2</option>
+																			<option value="0">Конструктивні елементи </option>
+																			<option value="1">Конструктивні елементи та оздоблення</option>
+																			<option value="2">Конструктивні елементи,  оздоблення та відповідальність перед сусідами</option>
 																		</select>
 																	</div>
 																</div>
@@ -67,20 +67,12 @@
 														</div>
 														<div class="mt-xl-0 mb-5 mb-lg-0">
 															<div class="price-car d-flex align-items-center justify-content-between mb-5 mb-xl-0 ">
-																<label class="mr-3 mb-0 text-black">Вартість авто</label>
+																<label class="mr-3 mb-0 text-black">Вартість майна</label>
 																<div class="field-wrap">
 																	<div class="field field-2">
 																		<div class="form-control d-flex align-items-center">
-																			<div class="price mr-3"><input class="price-value" type="number" value="0" min="0" max="10000" step="1" readonly></div>
-																			<div class="currency">
-																				<div class="select-wrap">
-																					<select class="select-currency" name="select-currency">
-																						<option value="currency1">Usd</option>
-																						<option value="currency2">грн</option>
-																						<option value="currency3">Euro</option>
-																					</select>
-																				</div>
-																			</div>
+																			<div class="price mr-3"><input class="price-value" type="number" value="0" readonly></div>
+																			<div class="currency">USD</div>
 																		</div>
 																	</div>
 																</div>
@@ -102,7 +94,7 @@
 												</div>
 												<div class="buttons">
 													<div class="row justify-content-center">
-														<div class="col-auto mb-5 mb-lg-0"><a href="/calc-property-protection-data.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+														<div class="col-auto mb-5 mb-lg-0"><a href="/calc-casco-data.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
 													</div>
 												</div>
 											</form>
@@ -117,7 +109,6 @@
 		</main>
 		@@include('html/footer.html',{})
 	</div>
-	@@include('html/popup/mini-casco/popup-not-found-car.html',{})
 
 	@@include('html/scripts.html',{})
 </body>
