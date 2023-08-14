@@ -4,20 +4,26 @@ import "../../../../node_modules/select2/dist/js/select2.js";
 //? select
 $(document).ready(function () {
 	$('.field select').select2({
-		// dropdownParent: $('.field'),
 		minimumResultsForSearch: -1,
 	});
 });
 
-$('#select-otk').select2({
-	data: ['Yes', 'No']
-})
+//footer
+$(document).ready(function () {
+	$('.select-city').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('#footer-select-city')
+	});
+});
 
+// $('.select-otk').select2({
+// 	data: ['Так', 'Ні']
+// })
 
+//avtotsyvilka-2.html
 $('.select-choose-car').change(function () {
-	// $('.select-otk').val(0)
-	// $('#select-otk').select2('val', 'Yes')
-	$('#select-otk').val('Yes').trigger('change');
+	// $('#select-otk').select2('val', 'Так')
+	$('.select-otk').val('0').trigger('change');
 	if ($(this).val() == '1') {
 		$('.form-osago-data').addClass("choose-car-2");
 		$('.form-osago-data').removeClass("choose-car-1");
@@ -39,7 +45,6 @@ $('.select-choose-car').change(function () {
 				$('.form-osago-data').removeClass("choose-car-2");
 				$('.form-osago-data').removeClass("choose-car-3");
 				$('.form-osago-data').removeClass("otk-no");
-
 			}
 			else {
 				$('.form-osago-data').addClass("choose-car-1");
@@ -52,12 +57,23 @@ $('.select-choose-car').change(function () {
 	}
 });
 
-
+//avtotsyvilka-2.html
 $('.select-otk').change(function () {
 	if ($(this).val() == '1') {
-		// $('.form-osago-data').addClass("otk-no");
+		$('.form-osago-data').addClass("otk-no");
 	}
 	else {
-		// $('.form-osago-data').removeClass("otk-no");
+		$('.form-osago-data').removeClass("otk-no");
+	}
+});
+
+//calc-property-protection.html
+// /calc-property-protection-2.html
+$('.select-property-type').change(function () {
+	if ($(this).val() == '2') {
+		$('.program-type--wrap').css('display', 'none')
+	}
+	else {
+		$('.program-type--wrap').css('display', 'block')
 	}
 });

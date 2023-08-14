@@ -8,4 +8,3 @@ import * as WithLibFlatpickr from "./modules/libs/with-lib-flatpickr.js";
 import * as WithLibSvelteRangeSliderPips from "./modules/libs/with-lib-svelte-range-slider-pips.js";
 import * as WithLibReadMore from "./modules/libs/with-lib-readmore.js";
 import * as WithLibSelect2 from "./modules/libs/with-lib-select2.js";
-// import * as WithLibSelect2Addition from "./modules/libs/with-lib-select2-addition.js";

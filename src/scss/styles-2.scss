@@ -1799,10 +1799,7 @@
 						grid-column: 1 / span 2;
 					}
 					&:nth-child(5) {
-						grid-column: 1;
-					}
-					&:nth-child(6) {
-						grid-column: 2;
+						margin-bottom: 0 !important;
 					}
 				}
 			}
@@ -1852,7 +1849,7 @@
 				grid-template-columns: 1fr;
 			}
 			.field-wrap {
-				&:nth-child(6) {
+				&:nth-child(7) {
 					display: none;
 				}
 				@include md-max {
@@ -1896,21 +1893,15 @@
 // calc-insurance-payment.html
 .filters-search {
 	.left-side {
-		// @include sm-max {
-		// 	width: 80%;
-		// }
 		.field-wrap {
 			width: 200px;
-			// @include sm-max {
-			// 	width: calc(50% - 5px);
-			// }
+			@include sm-max {
+				width: 100%;
+			}
 		}
 	}
 	&.filters-search-mini-casco {
 		.left-side {
-			// @include sm-max {
-			// 	width: 100%;
-			// }
 			.field-wrap {
 				@include md-max {
 					width: 100%;
@@ -2326,6 +2317,7 @@
 	}
 }
 .bonus-info-descr {
+	display: none;
 	.bonus-info-descr-item {
 		min-height: 85px;
 		height: 100%;
@@ -2990,5 +2982,25 @@
 				height: 100%;
 			}
 		}
+	}
+}
+.additional-param {
+	.btn-more {
+		&.active {
+			&::after {
+				transform: rotate(90deg);
+			}
+		}
+	}
+}
+.more-additional-param {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.5s ease-out;
+	&.active {
+		grid-template-rows: 1fr;
+	}
+	.inner {
+		overflow: hidden;
 	}
 }

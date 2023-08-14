@@ -119,13 +119,11 @@ if (window.location.pathname === "/calc-property-protection.html" || window.loca
 
 	//змінює значення при використанні повзунка
 	PriceSliderPropertyProtection.$on('change', function (e) {
-		console.log('EEEEE2222 ', e);
 		PriceSliderPropertyProtectionValue.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
 	PriceSliderPropertyProtectionValue.addEventListener("change", (e) => {
-		console.log(11111, e);
-		PriceSliderPropertyProtectionCasco.$set({ values: [PriceSliderPropertyProtectionValue.value] });
+		PriceSliderPropertyProtection.$set({ values: [PriceSliderPropertyProtectionValue.value] });
 	});
 }

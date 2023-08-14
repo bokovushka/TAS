@@ -272,6 +272,19 @@ $(".calc-travel-page .filter-cards .btn-more").click(function () {
 });
 
 
+//? btn more //calc-mini-casco-insurance-payment-car-number
+$(".calc-travel-page .form-calculation-data .additional-param .btn-more").click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active').text("Додаткові параметри");
+		$(this).closest('.additional-param').find('.more-additional-param').removeClass("active");
+	}
+	else {
+		$(this).addClass('active').text("Приховати дод. параметри");
+		$(this).closest('.additional-param').find('.more-additional-param').addClass("active");
+	}
+});
+
+
 // const isChecked = () => {
 // 	if ($('#check-referral-bonus').is(':checked')) {
 // 		console.log('Checkedd!!');
@@ -287,6 +300,6 @@ $(".calc-travel-page .filter-cards .btn-more").click(function () {
 
 $('#check-referral-bonus').on('click', (val) => {
 	const isChecked = val.currentTarget.checked
-	const displayValue = isChecked ? 'none' : 'block'
+	const displayValue = isChecked ? 'block' : 'none'
 	$('.bonus-info-descr').css('display', displayValue)
 })

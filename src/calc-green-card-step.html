@@ -417,16 +417,31 @@
 																		</div>
 																		<div class="tab-pane fade" id="passport-data--pills-3" role="tabpanel" aria-labelledby="passport-data--pills-3-tab">
 																			<div class="row">
-																				<div class="col-12 col-lg-6 mb-5">
+																				<div class="col-12 mb-5">
 																					<div class="field field-2">
-																						<label for="passport-series" class="text-black mb-1">Серія</label>
-																						<input type="text" id="passport-series" class="form-control" placeholder="Серія паспорта">
+																						<label for="passport-number" class="small-txt text-black mb-1">Номер</label>
+																						<input type="text" id="passport-number" class="form-control" placeholder="Номер паспорта">
 																					</div>
 																				</div>
-																				<div class="col-12 col-lg-6 mb-5">
+																			</div>
+																			<div class="row">
+																				<div class="col-12 col-xl-6 mb-5">
 																					<div class="field field-2">
-																						<label for="passport-number" class="text-black mb-1">Номер</label>
-																						<input type="text" id="passport-number" class="form-control" placeholder="Номер паспорта">
+																						<label for="issuing-authority" class="small-txt text-black mb-1">Ким виданий</label>
+																						<input type="text" id="issuing-authority" class="form-control" placeholder="Орган, що видав">
+																					</div>
+																				</div>
+																				<div class="col-12 col-xl-6 mb-5">
+																					<div class="field field-2 d-flex flex-column">
+																						<label for="datepicker-issue-date" class="small-txt text-black mb-1">Коли виданий</label>
+																						<div class="datepicker datepicker-issue-date">
+																							<input id="#datepicker-issue-date" class="flatpickr-input form-control" type="text" placeholder="Дата видачі" data-input>
+																							<a class="input-button" title="toggle" data-toggle>
+																								<svg>
+																									<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																								</svg>
+																							</a>
+																						</div>
 																					</div>
 																				</div>
 																			</div>
@@ -566,11 +581,15 @@
 															<label class="custom-control-label pl-6 pl-lg-12" for="check-referral-bonus">
 																<span class="custom-checkbox--info d-flex flex-column">
 																	<span class="font-weight-bold mb-2">Використати бонусні кошти з реферальної системи</span>
-																	<span class="small-txt custom-checkbox--info--descr">Бонусні кошти можуть складати не більше 30% вартості полісу.</span>
 																</span>
 															</label>
 														</div>
-														<div class="bonus-info-descr pl-6 pl-lg-12 mb-5">
+														<div class="bonus-info-descr pl-6 pl-lg-12 mt-n5 mb-7">
+															<div class="row mb-5">
+																<div class="col">
+																	<span class="small-text custom-checkbox--info--descr">Бонусні кошти можуть складати не більше 30% вартості полісу.</span>
+																</div>
+															</div>
 															<div class="row">
 																<div class="col-12 col-xxl-6 mb-5 mb-xxl-0">
 																	<div class="bonus-info-descr-item d-flex align-items-center bg-white rounded px-5 py-2">
@@ -579,18 +598,47 @@
 																</div>
 																<div class="col-12 col-xxl-6">
 																	<div class="bonus-info-descr-item d-flex align-items-center bg-white rounded px-5 py-2">
-																		<div class="d-xxl-inline d-flex flex-xxl-column align-items-center justify-content-between justify-content-xxl-start w-100">Хочу використати: <span class="bonus-count d-inline-block rounded-lg ml-1 py-2 px-5 mt-2 mt-xxl-0">356 б.</span></div>
+																		<div class="d-xxl-inline d-flex flex-xxl-column align-items-center justify-content-between justify-content-xxl-start w-100">Хочу використати:
+																			<div class="field">
+																				<input type="text" id="bonus-count" class="form-control bonus-count d-inline-block ml-1 py-2 px-5 mt-xxl-2" placeholder="" value="236">
+																			</div>
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-														<div class="custom-control custom-checkbox custom-checkbox-2 position-relative mb-8 mb-lg-12">
+														<div class="custom-control custom-checkbox custom-checkbox-2 position-relative mb-8 mt-n3 mb-lg-12">
 															<input type="checkbox" class="custom-control-input" id="check-agreement">
 															<label class="custom-control-label pl-6 pl-lg-12" for="check-agreement">
 																<span class="custom-checkbox--info small-txt">
 																	Ознайомлений/-на та погоджуюсь з <a href="##" target="_blank" class="btn btn-text p-0 text-main-blue small-txt">умовами договору</a>. Надаю згоду на обробку персональної інформації та підтверджую інформацію, надану для оформлення полісу страхування.
 																</span>
 															</label>
+														</div>
+														<div class="bg-blue px-6 py-3 rounded mb-5">
+															<div class="row justify-content-between align-items-center">
+																<div class="col mb-5">
+																	<div>Страховий платіж:</div>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-12 col-lg-6 mb-5 mb-lg-0">
+																	<div class="filter-card--cost rounded bg-light-blue p-3 h-100 d-flex align-items-center">
+																		<div class="d-flex align-items-center justify-content-between w-100">
+																			<div class="small-txt mr-6">Ціна за 1 туриста:</div>
+																			<div class="font-weight-bold">375 євро</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-12 col-lg-6">
+																	<div class="filter-card--cost rounded bg-main-blue p-3">
+																		<div class="d-flex align-items-center justify-content-between text-white">
+																			<div class="small-txt mr-6">За реферальною програмою:</div>
+																			<div class="h4 font-m font-weight-bold text-right">325 євро</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 													<div class="buttons">
