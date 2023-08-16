@@ -6146,8 +6146,7 @@ ul.list-circle li::before {
   background: rgba(135, 135, 135, 0.1);
 }
 
-.popup-step-year-error .modal-content,
-.popup-international-passport .modal-content {
+.popup-step-year-error .modal-content {
   background: #f4dfdf;
   border: 1.5px solid #f00;
 }
@@ -6638,7 +6637,32 @@ ul.list-circle li::before {
   height: 100%;
 }
 
-.additional-param .btn-more.active::after {
+.calc-travel-page .additional-param .additional-param--fields {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+
+.calc-travel-page .additional-param .additional-param--fields.active {
+  -ms-grid-columns: 1fr -webkit-max-content -webkit-max-content 1fr;
+  -ms-grid-columns: 1fr max-content max-content 1fr;
+  grid-template-columns: 1fr -webkit-max-content -webkit-max-content 1fr;
+  grid-template-columns: 1fr max-content max-content 1fr;
+}
+
+.calc-travel-page .additional-param .additional-param--fields.active .field-wrap:nth-child(3) {
+  display: block;
+}
+
+.calc-travel-page .additional-param .additional-param--fields .field-wrap:nth-child(3) {
+  display: none;
+}
+
+.calc-travel-page .additional-param .btn-more.active::after {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -9369,6 +9393,37 @@ ul.list-circle li::before {
   .calc-travel-step-page .form-osago-step .progressbar li svg {
     width: 24px;
     height: 24px;
+  }
+
+  .calc-travel-page .additional-param .additional-param--fields {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .calc-travel-page .additional-param .additional-param--fields.active {
+    -ms-grid-columns: 65% auto;
+    grid-template-columns: 65% auto;
+  }
+
+  .calc-travel-page .additional-param .additional-param--fields.active .field-wrap:nth-child(1),
+  .calc-travel-page .additional-param .additional-param--fields.active .field-wrap:nth-child(4) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/span 2;
+  }
+
+  .calc-travel-page .additional-param .additional-param--fields.active .field-wrap:nth-child(2) {
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+
+  .calc-travel-page .additional-param .additional-param--fields.active .field-wrap:nth-child(3) {
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column: 2;
+    grid-column: 2;
   }
 
   .header {

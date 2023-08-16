@@ -285,21 +285,25 @@ $(".calc-travel-page .form-calculation-data .additional-param .btn-more").click(
 });
 
 
-// const isChecked = () => {
-// 	if ($('#check-referral-bonus').is(':checked')) {
-// 		console.log('Checkedd!!');
-// 		// $('.bonus-info-descr').addClass('')
-// 		$('.bonus-info-descr').css('display', 'none')
-// 	} else {
-// 		$('.bonus-info-descr').css('display', 'block')
-// 	}
-// }
-// $(document).on('ready', () => {
-// 	isChecked() // перевиряти прі відкриті сторінки - поки не працює!
+// $('#check-referral-bonus').on('click', (val) => {
+// 	const isChecked = val.currentTarget.checked
+// 	const displayValue = isChecked ? 'block' : 'none'
+// 	$('.bonus-info-descr').css('display', displayValue)
 // })
 
-$('#check-referral-bonus').on('click', (val) => {
-	const isChecked = val.currentTarget.checked
-	const displayValue = isChecked ? 'block' : 'none'
-	$('.bonus-info-descr').css('display', displayValue)
-})
+$('#check-referral-bonus').on('click', function () {
+	if ($(this).is(':checked')) {
+		$('.bonus-info-descr').css('display', 'block')
+	} else {
+		$('.bonus-info-descr').css('display', 'none')
+	}
+});
+
+//calc-travel.html
+$('.calc-travel-page .additional-param #policy-year').on('click', function () {
+	if ($(this).is(':checked')) {
+		$('.additional-param--fields').addClass('active')
+	} else {
+		$('.additional-param--fields').removeClass('active')
+	}
+});

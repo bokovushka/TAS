@@ -2336,8 +2336,7 @@
 		background: rgba(135, 135, 135, 0.1);
 	}
 }
-.popup-step-year-error,
-.popup-international-passport {
+.popup-step-year-error {
 	.modal-content {
 		background: #f4dfdf;
 		border: 1.5px solid #f00;
@@ -2984,11 +2983,51 @@
 		}
 	}
 }
-.additional-param {
-	.btn-more {
-		&.active {
-			&::after {
-				transform: rotate(90deg);
+.calc-travel-page {
+	.additional-param {
+		.additional-param--fields {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: 16px;
+			@include md-max {
+				grid-template-columns: 1fr;
+			}
+			&.active {
+				grid-template-columns: 1fr max-content max-content 1fr;
+				@include md-max {
+					grid-template-columns: 65% auto;
+				}
+				.field-wrap {
+					&:nth-child(3) {
+						display: block;
+					}
+					@include md-max {
+						&:nth-child(1),
+						&:nth-child(4) {
+							grid-column: 1 / span 2;
+						}
+						&:nth-child(2) {
+							grid-row: 2;
+							grid-column: 1;
+						}
+						&:nth-child(3) {
+							grid-row: 2;
+							grid-column: 2;
+						}
+					}
+				}
+			}
+			.field-wrap {
+				&:nth-child(3) {
+					display: none;
+				}
+			}
+		}
+		.btn-more {
+			&.active {
+				&::after {
+					transform: rotate(90deg);
+				}
 			}
 		}
 	}

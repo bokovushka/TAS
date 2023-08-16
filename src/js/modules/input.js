@@ -1,4 +1,4 @@
-var input = document.querySelectorAll('.field input'),
+var input = document.querySelectorAll('.field-compete input'),
 	buffer = [];
 for (var i = 0; input.length > i; i++) {
 	console.log(input[i].value);

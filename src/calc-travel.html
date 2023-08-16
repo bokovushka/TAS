@@ -38,26 +38,19 @@
 											<form class="form-calculation-data rounded">
 												<div class="additional-param row mb-lg-8">
 													<div class="col-12 col-xl-10 offset-xl-1">
-														<div class="row mb-lg-5">
-															<div class="col-12 col-lg-4">
-																<div class="mb-5 mb-lg-0">
-																	<div class="field-wrap">
-																		<div class="field field-2 field-travel-direction">
-																			<label for="select-travel-direction" class="text-black mb-1">Напрямок подорожі</label>
-																			<div class="select-wrap">
-																				<select class="select-travel-direction" name="select-travel-direction">
-																					<option value="0">Європа (шенген)</option>
-																					<option value="1">Європа (1)</option>
-																					<option value="2">Європа (2)</option>
-																					<option value="2">Європа (3)</option>
-																				</select>
-																			</div>
-																		</div>
+														<div class="additional-param--fields mb-lg-5">
+															<div class="field-wrap mb-5 mb-lg-0">
+																<div class="field field-2 field-travel-direction">
+																	<label for="select-travel-direction" class="text-black mb-1">Напрямок подорожі</label>
+																	<div class="select-wrap">
+																		<select class="select-travel-direction" name="select-travel-direction">
+																			<option value="0">Європа (Шенген)</option>
+																		</select>
 																	</div>
 																</div>
 															</div>
-															<div class="col-12 col-lg-4">
-																<div class="field field-2 d-flex flex-column mb-5 mb-lg-0">
+															<div class="field-wrap mb-5 mb-lg-0">
+																<div class="field field-2 d-flex flex-column">
 																	<div class="field--help-info small-txt text-red mb-1">Виберіть період подорожі</div>
 																	<label for="datepicker-period-travel" class="text-black mb-1">Період подорожі</label>
 																	<div class="datepicker datepicker-period-travel">
@@ -70,20 +63,28 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col-12 col-lg-4">
-																<div class="mb-5 mb-lg-0">
-																	<div class="field-wrap">
-																		<div class="field field-2">
-																			<label for="select-count-tourists" class="text-black mb-1">Напрямок подорожі</label>
-																			<div class="select-wrap">
-																				<select class="select-count-tourists" name="select-count-tourists">
-																					<option value="0">1 людина</option>
-																					<option value="1">2 людини</option>
-																					<option value="2">3 людини</option>
-																					<option value="2">4 людини</option>
-																				</select>
-																			</div>
-																		</div>
+															<div class="field-wrap mb-5 mb-lg-0">
+																<div class="field field-2">
+																	<label for="select-count-day" class="text-black mb-1">К-ть днів</label>
+																	<div class="select-wrap">
+																		<select class="select-count-day" name="select-count-day">
+																			<option value="0">30</option>
+																			<option value="1">60</option>
+																			<option value="2">90</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="field-wrap mb-5 mb-lg-0">
+																<div class="field field-2">
+																	<label for="select-count-tourists" class="text-black mb-1">К-ть туристів</label>
+																	<div class="select-wrap">
+																		<select class="select-count-tourists" name="select-count-tourists">
+																			<option value="0">1 людина</option>
+																			<option value="1">2 людини</option>
+																			<option value="2">3 людини</option>
+																			<option value="2">4 людини</option>
+																		</select>
 																	</div>
 																</div>
 															</div>
@@ -111,10 +112,8 @@
 																					<label for="select-сoverage-limit" class="text-black mb-1">Ліміт покриття</label>
 																					<div class="select-wrap">
 																						<select class="select-сoverage-limit" name="select-сoverage-limit">
-																							<option value="0">50 000 USD</option>
-																							<option value="1">70 000 USD</option>
-																							<option value="2">90 000 USD</option>
-																							<option value="3">110 000 USD</option>
+																							<option value="0">30 000 €</option>
+																							<option value="1">50 000 €</option>
 																						</select>
 																					</div>
 																				</div>
@@ -128,9 +127,8 @@
 																					<label for="select-purpose-travel" class="text-black mb-1">Мета подорожі</label>
 																					<div class="select-wrap">
 																						<select class="select-purpose-travel" name="select-purpose-travel">
-																							<option value="0">Активний відпочинок</option>
-																							<option value="1">Пляжний відпочинок</option>
-																							<option value="2">Відпочинок у горах</option>
+																							<option value="0">Звичайний відпочинок</option>
+																							<option value="1">Активний відпочинок</option>
 																						</select>
 																					</div>
 																				</div>
