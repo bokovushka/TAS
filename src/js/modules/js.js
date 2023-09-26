@@ -307,3 +307,7 @@ $('.calc-travel-page .additional-param #policy-year').on('click', function () {
 		$('.additional-param--fields').removeClass('active')
 	}
 });
+
+$('.calc-travel-page .additional-param .people-block').on('click', function () {
+	$(this).closest(".people-block--wrap").toggleClass('active');
+});

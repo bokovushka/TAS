@@ -14,3 +14,5 @@ import * as ReadMore from "./modules/read-more.js";
 import * as MultiStep from "./modules/multi-step.js";
 import * as JS from "./modules/js.js";
 import * as Input from "./modules/input.js";
+import * as CountTourist from "./modules/count-tourist.js";
+

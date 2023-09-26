@@ -200,7 +200,7 @@ var AboutProgramPreviewSwiper = new Swiper('.about-program-preview--swiper', {
 var NewsCategorySwiper = new Swiper('.news-category--swiper', {
 	grabCursor: true,
 	spaceBetween: 16,
-	slidesPerView: 5,
+	slidesPerView: 4,
 	navigation: {
 		nextEl: ".news .swiper-buttons .button-slider-next",
 		prevEl: ".news .swiper-buttons .button-slider-prev",

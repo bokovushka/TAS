@@ -19,7 +19,7 @@ if (window.location.pathname === "/casco.html") { //добавляє викон�
 		}
 	});
 
-	var PriceSliderCascoValue = document.querySelector(".casco-page .calculation-data .price-car .price-value");
+	var PriceSliderCascoValue = document.querySelector(".casco-page .calculation-data .price-subject .price-value");
 
 	//змінює значення при використанні повзунка
 	PriceSliderCasco.$on('change', function (e) {
@@ -49,7 +49,7 @@ if (window.location.pathname === "/minicasco.html") { //добавляє вик�
 		}
 	});
 
-	let PriceSliderMiniCascoValue = document.querySelector(".minicasco-page .calculation-data .price-car .price-value");
+	let PriceSliderMiniCascoValue = document.querySelector(".minicasco-page .calculation-data .price-subject .price-value");
 
 	//змінює значення при використанні повзунка
 	PriceSliderMiniCasco.$on('change', function (e) {
@@ -79,17 +79,11 @@ if (window.location.pathname === "/eurocasco.html") { //добавляє вик�
 		}
 	});
 
-	let PriceSliderEuroCascoValue = document.querySelector(".eurocasco-page .calculation-data .price-car .price-value");
+	let PriceSliderEuroCascoValue = document.querySelector(".eurocasco-page .calculation-data .price-subject .price-value");
 
 	//змінює значення при використанні повзунка
 	PriceSliderEuroCasco.$on('change', function (e) {
-		console.log('12123', e);
 		PriceSliderEuroCascoValue.value = e.detail.values[0];
-	});
-
-	PriceSliderEuroCascoValue.$on('change', function (e) {
-		console.log('EEEEE ', e);
-		// PriceSliderEuroCasco.value = e.detail.values[0];
 	});
 
 	//змінює значення в інпутах
@@ -115,7 +109,7 @@ if (window.location.pathname === "/calc-property-protection.html" || window.loca
 		}
 	});
 
-	var PriceSliderPropertyProtectionValue = document.querySelector(".calc-property-protection-page .calculation-data .price-car .price-value");
+	var PriceSliderPropertyProtectionValue = document.querySelector(".calc-property-protection-page .calculation-data .price-subject .price-value");
 
 	//змінює значення при використанні повзунка
 	PriceSliderPropertyProtection.$on('change', function (e) {

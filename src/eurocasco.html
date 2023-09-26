@@ -29,7 +29,7 @@
 											<div class="col-12 col-lg-6 col-xxl-5">
 												<div class="section-top--content d-flex flex-column text-center text-lg-left">
 													<div class="section-top--info">
-														<div class="h2 font-m mb-5">Євро КАСКО</div>
+														<h1 class="h2 font-m mb-5">Євро КАСКО</h1>
 														<p class="mb-5">Ви страхуєте свою відповідальність за шкоду, заподіяну життю, здоров’ю або майну інших осіб внаслідок ДТП</p>
 														<div class="row">
 															<div class="col"><a href="##" class="btn-default btn btn-main-blue rounded-lg">Замовити по телефону</a></div>
@@ -71,34 +71,25 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
+								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
 									<div class="row">
 										<div class="col">
 											<div class="text-center">
-												<div class="h2 mb-5 mb-lg-8">Дізнайтеся, скільки коштуватиме <br class="d-none d-lg-block">Євро КАСКО для Вашого авто</div>
+												<div class="h2 mb-5 mb-lg-8">Дізнайтеся, скільки коштуватиме<br class=" d-none d-lg-block"> Євро КАСКО для Вашого авто</div>
 											</div>
 											<form class="form-calculation-data rounded">
-												<div class="row mb-8">
-													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-8 mb-lg-0">
-														<div class="mr-0">
-															<div class="field field-2 position-relative mb-5">
-																<div class="field--help-info text-red mb-1">Вкажіть тип програми</div>
-																<label class="mb-1 text-black">Тип програми</label>
-																<div class="select-wrap">
-																	<select class="select-program" name="select-program">
-																		<option value="p1">Програма 1</option>
-																		<option value="p2">Програма 2</option>
-																		<option value="p3">Програма 3</option>
-																		<option value="p4">Програма 4</option>
-																		<option value="p5">Програма 5</option>
-																	</select>
-																</div>
-															</div>
-															<div class="price-car d-flex justify-content-between">
+												<div class="row mb-8 mb-lg-0">
+													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+														<div class="mt-xl-0 mb-5 mb-lg-0">
+															<div class="price-subject d-flex align-items-center justify-content-between mb-5 mb-xl-0 ">
 																<label class="mr-3 mb-0 text-black">Вартість авто</label>
-																<div class="d-flex align-items-center">
-																	<div class="price mr-3"><input class="price-value" type="number" value="0" min="0" max="10000" step="1" readonly></div>
-																	<div class="currency">USD</div>
+																<div class="field-wrap">
+																	<div class="field field-2">
+																		<div class="form-control d-flex align-items-center">
+																			<div class="price mr-3"><input class="price-value" type="number" value="0"></div>
+																			<div class="currency">USD</div>
+																		</div>
+																	</div>
 																</div>
 															</div>
 															<div id="price-slider-eurocasco" class="price-slider slider-range position-relative">
@@ -109,13 +100,17 @@
 													</div>
 													<div class="col-12 col-lg-6 col-xl-4 offset-xl-1">
 														<div class="form-calculation-data-descr text-center ml-lg-3 ml-xl-0">
-															<p class="mb-0 text-main-blue bg-blue rounded h-100 d-flex align-items-center justify-content-center p-8 p-lg-12">Введіть дані, щоб розрахувати страховий платіж</p>
+															<p class="mb-0 text-main-blue bg-blue rounded d-flex align-items-center justify-content-center p-8 p-lg-12">Введіть дані, щоб розрахувати страховий платіж</p>
 														</div>
 													</div>
 												</div>
-												<div class="buttons">
-													<div class="row justify-content-center">
-														<div class="col-auto mb-5 mb-lg-0"><a href="##" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+												<div class="row mt-lg-n9">
+													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+														<div class="buttons">
+															<div class="row justify-content-center">
+																<div class="col mb-5 mb-lg-0"><a href="/calc-casco-data.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</form>

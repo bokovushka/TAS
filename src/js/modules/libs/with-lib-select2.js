@@ -3,10 +3,11 @@ import "../../../../node_modules/select2/dist/js/select2.js";
 
 //? select
 $(document).ready(function () {
-	$('.field select').select2({
+	$('.field .select-wrap select').select2({
 		minimumResultsForSearch: -1,
 	});
 });
+
 
 //footer
 $(document).ready(function () {
@@ -15,6 +16,30 @@ $(document).ready(function () {
 		dropdownParent: $('#footer-select-city')
 	});
 });
+
+//news.html
+$(document).ready(function () {
+	$('.select-news-category').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('.select-news-category--wrap')
+	});
+});
+
+$(document).ready(function () {
+	$('.select-year').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('.select-year--wrap')
+	});
+});
+
+$(document).ready(function () {
+	$('.select-accordion').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('.select-accordion--wrap')
+	});
+});
+
+
 
 // $('.select-otk').select2({
 // 	data: ['Так', 'Ні']
@@ -76,4 +101,22 @@ $('.select-property-type').change(function () {
 	else {
 		$('.program-type--wrap').css('display', 'block')
 	}
+});
+
+//calc-insurance-payment-step.html
+//calc-insurance-payment-step-2.html
+
+$('.select-additional-limit').select2({
+	minimumResultsForSearch: -1,
+	disabled: true,
+});
+
+$(".select-additional-limit--wrap .user-pic--edit").on("click", function () {
+	$(".select-additional-limit").prop("disabled", false);
+	$(".js-example-disabled-multi").prop("disabled", false);
+});
+
+$(".select-additional-limit--wrap .btn-default").on("click", function () {
+	$(".select-additional-limit").prop("disabled", true);
+	$(".select-additional-limit").prop("disabled", true);
 });

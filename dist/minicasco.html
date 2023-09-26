@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=440, maximum-scale=1.0, user-scalable=no">
 	<title>Міні КАСКО</title>
 	<link rel="shortcut icon" href="##" type="image/x-icon" />
-	<link rel="stylesheet" href="css/libs.min.css?_v=20230816151714">
-	<link rel="stylesheet" href="css/main.min.css?_v=20230816151714">
+	<link rel="stylesheet" href="css/libs.min.css?_v=20230926160510">
+	<link rel="stylesheet" href="css/main.min.css?_v=20230926160510">
 </head>
 
 <body class="minicasco-page">
@@ -464,7 +464,7 @@
 											<div class="col-12 col-lg-6 col-xxl-5">
 												<div class="section-top--content d-flex flex-column text-center text-lg-left">
 													<div class="section-top--info">
-														<div class="h2 font-m mb-5">Міні КАСКО</div>
+														<h1 class="h2 font-m mb-5">Міні КАСКО</h1>
 														<p class="mb-5">Ви страхуєте свою відповідальність за шкоду, заподіяну життю, здоров’ю або майну інших осіб внаслідок ДТП</p>
 														<div class="row">
 															<div class="col"><a href="##" class="btn-default btn btn-main-blue rounded-lg">Замовити по телефону</a></div>
@@ -506,39 +506,23 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
+								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
 									<div class="row">
 										<div class="col">
 											<div class="text-center">
-												<div class="h2 mb-5 mb-lg-8">Дізнайтеся, скільки коштуватиме <br class="d-none d-lg-block">Міні КАСКО для Вашого авто</div>
+												<div class="h2 mb-5 mb-lg-8">Дізнайтеся, скільки коштуватиме <br class=" d-none d-lg-block">Міні КАСКО для Вашого авто </div>
 											</div>
 											<form class="form-calculation-data rounded">
 												<div class="row mb-8">
-													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-8 mb-lg-0">
-														<div class="mr-0">
-															<div class="field field-2 position-relative mb-5">
-																<div class="field--help-info text-red mb-1">Вкажіть тип програми</div>
-																<label class="mb-1 text-black">Тип програми</label>
-																<div class="select-wrap">
-																	<select class="select-program" name="select-program">
-																		<option value="p1">Програма 1</option>
-																		<option value="p2">Програма 2</option>
-																		<option value="p3">Програма 3</option>
-																		<option value="p4">Програма 4</option>
-																		<option value="p5">Програма 5</option>
-																	</select>
-																</div>
+													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+														<div class="mr-lg-3 mt-xl-0 mb-5 mb-lg-0">
+															<div class="field field-2 mb-1">
+																<div class="field--help-info text-red mb-1">Введіть держ. номер</div>
+																<label for="car-number" class="mb-1 text-black">Державний номер авто</label>
+																<input type="text" id="car-number" class="form-control" placeholder="АА3456АА">
 															</div>
-															<div class="price-car d-flex justify-content-between">
-																<label class="mr-3 mb-0 text-black">Вартість авто</label>
-																<div class="d-flex align-items-center">
-																	<div class="price mr-3"><input class="price-value" type="number" value="0" min="0" max="10000" step="1" readonly></div>
-																	<div class="currency">USD</div>
-																</div>
-															</div>
-															<div id="price-slider-minicasco" class="price-slider slider-range position-relative">
-																<div class="rangeBar-full"></div>
-																<div class="rangeBar-line-start"></div>
+															<div class="d-flex">
+																<button type="button" class="btn btn-text small-txt p-0" data-toggle="modal" data-target="#popup-not-found-car">Не пам’ятаю державний номер</button>
 															</div>
 														</div>
 													</div>
@@ -550,7 +534,7 @@
 												</div>
 												<div class="buttons">
 													<div class="row justify-content-center">
-														<div class="col-auto mb-5 mb-lg-0"><a href="##" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
+														<div class="col-auto mb-5 mb-lg-0"><a href="/calc-mini-casco-insurance-payment-car-number.html" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати вартість</a></div>
 													</div>
 												</div>
 											</form>
@@ -1008,7 +992,7 @@
 										<span class="custom-checkbox--help-info small-txt mt-1">Ваш дозвіл на обробку персональних даних необхідна для подальщого оформлення страхової послуги</span>
 									</label>
 								</div>
-								<button type="button" class="btn btn-white btn-submit btn-default btn-block">Підтвердити</button>
+								<button type="button" class="btn btn-white btn-submit btn-default btn-block" data-toggle="modal" data-target="#popup-thank-you">Підтвердити</button>
 							</form>
 						</div>
 					</div>
@@ -1442,9 +1426,9 @@
 	</div>
 </div>
 
-	<script src="js/jquery.min.js?_v=20230816151714"></script>
-<script src="js/libs.min.js?_v=20230816151714"></script>
-<script src="js/main.min.js?_v=20230816151714"></script>
+	<script src="js/jquery.min.js?_v=20230926160510"></script>
+<script src="js/libs.min.js?_v=20230926160510"></script>
+<script src="js/main.min.js?_v=20230926160510"></script>
 </body>
 
 </html>

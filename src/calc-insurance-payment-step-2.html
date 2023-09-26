@@ -691,13 +691,19 @@
 																	<span>Редагувати</span>
 																</button>
 															</div>
-															<div class="edit-data-result--item">
+															<div class="edit-data-result--item select-additional-limit--wrap">
 																<div class="head text-main-blue">Додаткове покриття:</div>
 																<div class="edit-data-result--content">
-																	<div class="edit-data-result--content-item d-flex align-items-center flex-wrap mb-1">
-																		<div></div>
-																		<div class="field field-compete field-2 field-coating">
-																			<input type="text" class="form-control" placeholder="Покриття" value="3 000 грн" readonly>
+																	<div class="field-wrap">
+																		<div class="field field-2">
+																			<div class="select-wrap">
+																				<select class="select-additional-limit" name="select-additional-limit">
+																					<option value="0">0</option>
+																					<option value="1">250 000 грн (530грн)</option>
+																					<option value="2">500 000 грн (740грн)</option>
+																					<option value="3">1 000 000 грн (960грн)</option>
+																				</select>
+																			</div>
 																		</div>
 																	</div>
 																	<div class="buttons mt-5">
@@ -720,10 +726,10 @@
 															</div>
 														</div>
 														<div class="bg-blue px-6 py-3 rounded mb-8 mb-lg-12">
-															<div class="row justify-content-between">
+															<div class="row justify-content-between align-items-center">
 																<div class="col-12 col-xl-auto mb-3 mb-xl-0">
 																	<div class="d-flex align-items-center">
-																		<div class="text-main-blue mb-1">Дата початку дії полісу</div>
+																		<div class="text-main-blue">Дата початку дії полісу</div>
 																		<div class="i-info d-flex align-items-center justify-content-center ml-2 bg-light-blue" data-toggle="tooltip" title="" data-original-title="<span class='help'>Дата початку дії поліса не може бути раніше ніж завтра, та не пізніше ніж через 90 днів</span>">?</div>
 																	</div>
 																</div>
@@ -747,7 +753,7 @@
 																	<div>Страховий платіж:</div>
 																</div>
 																<div class="col-auto">
-																	<div class="h4 text-main-blue">952 грн</div>
+																	<div class="h4 text-main-blue mb-0">952 грн</div>
 																</div>
 															</div>
 														</div>
@@ -772,7 +778,7 @@
 																	</div>
 																</div>
 																<div class="col-12 col-xxl-6">
-																	<div class="bonus-info-descr-item d-flex align-items-center bg-white rounded px-5 py-2">
+																	<div class="bonus-info-descr-item bonus-use d-flex align-items-center bg-white rounded px-5 py-2">
 																		<div class="d-flex align-items-center justify-content-between w-100">
 																			<div class="mr-2">Хочу використати:</div>
 																			<div class="field">

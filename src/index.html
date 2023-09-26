@@ -22,7 +22,7 @@
 														<div class="col-12 col-lg-5">
 															<div class="section-top--content d-flex flex-column text-center text-lg-left">
 																<div class="section-top--info mb-8 mb-lg-20">
-																	<div class="h1 font-m mb-5">Страхування майна</div>
+																	<h1 class="font-m mb-5">Страхування майна</h1>
 																	<p class="mb-5">Захист життя та відповідальності</p>
 																	<a href="##" class="btn btn-main-blue btn-default rounded-lg">Розрахувати</a>
 																</div>
@@ -46,7 +46,7 @@
 														<div class="col-12 col-lg-5">
 															<div class="section-top--content d-flex flex-column text-center text-lg-left">
 																<div class="section-top--info mb-8 mb-lg-20">
-																	<div class="h1 font-m mb-5">Туристичне страхування</div>
+																	<h1 class="font-m mb-5">Туристичне страхування</h1>
 																	<p class="mb-5">Захист життя та відповідальності</p>
 																	<a href="##" class="btn btn-main-blue btn-default rounded-lg">Розрахувати</a>
 																</div>
@@ -70,7 +70,7 @@
 														<div class="col-12 col-lg-5">
 															<div class="section-top--content d-flex flex-column text-center text-lg-left">
 																<div class="section-top--info mb-8 mb-lg-20">
-																	<div class="h1 font-m mb-5">Інвестиційне страхування</div>
+																	<h1 class="font-m mb-5">Інвестиційне страхування</h1>
 																	<p class="mb-5">Захист життя та відповідальності</p>
 																	<a href="##" class="btn btn-main-blue btn-default rounded-lg">Розрахувати</a>
 																</div>
@@ -94,7 +94,7 @@
 														<div class="col-12 col-lg-5">
 															<div class="section-top--content d-flex flex-column text-center text-lg-left">
 																<div class="section-top--info mb-8 mb-lg-20">
-																	<div class="h1 font-m mb-5">Страхування автомобіля</div>
+																	<h1 class="font-m mb-5">Страхування автомобіля</h1>
 																	<p class="mb-5">Захист життя та відповідальності</p>
 																	<a href="##" class="btn btn-main-blue btn-default rounded-lg">Розрахувати</a>
 																</div>
@@ -388,7 +388,7 @@
 										</div>
 									</div>
 									<div class="w-100 text-center">
-										<button type="button" class="btn d-block mx-auto btn-main-blue btn-default">Підписатися</button>
+										<button type="button" class="btn d-block mx-auto btn-main-blue btn-default" data-toggle="modal" data-target="#popup-thank-you">Підписатися</button>
 									</div>
 								</form>
 							</div>
@@ -436,6 +436,7 @@
 	</div>
 	@@include('html/popup/popup-reviews-preview-card.html',{})
 	@@include('html/popup/popup-write-review.html',{})
+	@@include('html/popup/popup-thank-you.html',{})
 
 	@@include('html/scripts.html',{})
 </body>

@@ -32,7 +32,7 @@
 									<div class="row">
 										<div class="col">
 											<div class="text-center">
-												<div class="h2 mb-5 mb-lg-8">Туристична страховка для виїзду за кордон</div>
+												<h1 class="h2 mb-5 mb-lg-8">Туристична страховка для виїзду за кордон</h1>
 												<div class="h4 font-m mb-8"><a href="##" class="text-main-blue rounded-0 p-0">Порівняння та оформлення полісів страхування для виїзду за кордон</a></div>
 											</div>
 											<form class="form-calculation-data rounded">
@@ -78,14 +78,64 @@
 															<div class="field-wrap mb-5 mb-lg-0">
 																<div class="field field-2">
 																	<label for="select-count-tourists" class="text-black mb-1">К-ть туристів</label>
-																	<div class="select-wrap">
-																		<select class="select-count-tourists" name="select-count-tourists">
-																			<option value="0">1 людина</option>
-																			<option value="1">2 людини</option>
-																			<option value="2">3 людини</option>
-																			<option value="2">4 людини</option>
-																		</select>
+																	<div class="people-block--wrap">
+																		<div class="people-block">
+																			<span id="people_amount"> 0 </span> <span id="people_attribute">Людей</span>
+																		</div>
+																		<div class="people-block--additional-param">
+																			<div class="form-group">
+																				<label for="upTo1">Діти до 1 року</label>
+																				<div class="input-block">
+																					<button type="button" class="btn-count-down" inputId="upTo1">-</button>
+																					<input name="upTo1" min="0" max="4" type="number" class="form-control" id="upTo1" oninput="handleInput('upTo1', event)" value="0">
+																					<button type="button" class="btn-count-up" inputId="upTo1" class="increase">+</button>
+																				</div>
+																			</div>
+																			<div class="form-group">
+																				<label for="upTo3">Діти до 3 років </label>
+																				<div class="input-block">
+																					<button type="button" class="btn-count-down" inputId="upTo3">-</button>
+																					<input name="upTo3" min="0" max="4" type="number" class="form-control" id="upTo3" oninput="handleInput('upTo3', event)" value="0">
+																					<button type="button" class="btn-count-up" inputId="upTo3" class="increase">+</button>
+																				</div>
+																			</div>
+																			<div class="form-group">
+																				<label for="upTo18">Підлітки до 18 років</label>
+																				<div class="input-block">
+																					<button type="button" class="btn-count-down" inputId="upTo18">-</button>
+																					<input name="upTo18" min="0" max="4" type="number" class="form-control" id="upTo18" oninput="handleInput('upTo18', event)" value="0">
+																					<button type="button" class="btn-count-up" inputId="upTo18" class="increase">+</button>
+																				</div>
+																			</div>
+																			<div class="form-group">
+																				<label for="upTo69">Дорослі до 69 років</label>
+																				<div class="input-block">
+																					<button type="button" class="btn-count-down" inputId="upTo69">-</button>
+																					<input name="upTo69" min="0" max="4" type="number" class="form-control" id="upTo69" oninput="handleInput('upTo69', event)" value="0">
+																					<button type="button" class="btn-count-up" inputId="upTo69" class="increase">+</button>
+																				</div>
+																			</div>
+																			<div class="form-group">
+																				<label for="upTo80">Дорослі 70-80 років</label>
+																				<div class="input-block">
+																					<button type="button" class="btn-count-down" inputId="upTo80">-</button>
+																					<input name="upTo80" min="0" max="4" type="number" class="form-control" id="upTo80" oninput="handleInput('upTo80', event)" value="0">
+																					<button type="button" class="btn-count-up" inputId="upTo80" class="increase">+</button>
+																				</div>
+																			</div>
+																		</div>
 																	</div>
+																	<!-- <div class="field field-2">
+																			<label for="select-count-tourists" class="text-black mb-1">К-ть туристів</label>
+																			<div class="select-wrap">
+																				<select class="select-count-tourists" name="select-count-tourists">
+																					<option value="0">1 людина</option>
+																					<option value="1">2 людини</option>
+																					<option value="2">3 людини</option>
+																					<option value="2">4 людини</option>
+																				</select>
+																			</div>
+																		</div> -->
 																</div>
 															</div>
 														</div>
