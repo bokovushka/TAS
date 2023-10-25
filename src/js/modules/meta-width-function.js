@@ -61,4 +61,4 @@ function startOnSpecificBrowserInit() {
 	}
 }
 //viewport function resize
-adaptiveSizePageScaleInit(440);
+adaptiveSizePageScaleInit();
