@@ -15,6 +15,6 @@ import * as MultiStep from "./modules/multi-step.js";
 import * as JS from "./modules/js.js";
 import * as Input from "./modules/input.js";
 import * as CountTourist from "./modules/count-tourist.js";
-// import * as MetaWidthFunction from "./modules/meta-width-function.js";
+import * as MetaWidthFunction from "./modules/meta-width-function.js";
 
 

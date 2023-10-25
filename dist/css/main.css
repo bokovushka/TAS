@@ -191,6 +191,7 @@ body {
   height: 100%;
   width: 100%;
   min-width: 440px;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape & safari*/
 }
 
 .wrapper {
