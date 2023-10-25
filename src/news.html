@@ -52,33 +52,29 @@
 								<div class="row my-8 my-lg-12">
 									<div class="col-7 col-lg-10 col-xl-9">
 										<div class="news-category-wrap d-none d-lg-flex align-items-center pr-14 pr-xl-0">
-											<div class="swiper-buttons">
+											<!-- <div class="swiper-buttons">
 												<div class="button-slider-prev">
 													<svg>
 														<use xlink:href="img/icons/icons.svg#i-arrow-two-right"></use>
 													</svg>
 												</div>
-											</div>
-											<div class="news-category--swiper">
+											</div> -->
+											<div class="news-category--swiper w-100">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide active"><button type="button" class="btn btn-blue btn-default btn-indent">Усі новини</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Про важливе</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Корисне</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Послуги</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Продукти ТАС</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Про важливе</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Корисне</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Послуги</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Продукти ТАС</button></div>
 												</div>
 											</div>
-											<div class="swiper-buttons">
+											<!-- <div class="swiper-buttons">
 												<div class="button-slider-next">
 													<svg>
 														<use xlink:href="img/icons/icons.svg#i-arrow-two-right"></use>
 													</svg>
 												</div>
-											</div>
+											</div> -->
 										</div>
 										<div class="select-wrap select-news-category--wrap d-lg-none">
 											<select class="select-news-category" name="select-news-category">
@@ -330,7 +326,7 @@
 	</div>
 	@@include('html/popup/popup-reviews-preview-card.html',{})
 	@@include('html/popup/popup-write-review.html',{})
-
+	@@include('html/popup/popup-write-review-thank-you.html',{})
 	@@include('html/scripts.html',{})
 </body>
 

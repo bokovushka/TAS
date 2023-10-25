@@ -116,3 +116,38 @@ input[type="number"]::-webkit-outer-spin-button {
 		}
 	}
 }
+
+#btnTop {
+	display: inline-block;
+	background-color: $main-blue;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	@include transition(0.3s ease-out 0s);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+#btnTop.show {
+	opacity: 1;
+	visibility: visible;
+}
+// section {
+// 	.row {
+// 		min-width: 0;
+// 	}
+// 	.col {
+// 		min-width: 0;
+// 	}
+// }

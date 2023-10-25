@@ -95,15 +95,15 @@ function changeStarrt(num) {
 
 //? questions--inner click add active
 
-$('.questions--inner .btn-more').click(function () {
+$('.questions--inner .questions--title-m').click(function () {
 	if ($(this).closest(".questions--inner").hasClass("active")) {
 		$(this).closest(".questions--inner").removeClass("active");
 		$(this).closest(".questions--inner").find(".btn-link").addClass("collapsed").attr("aria-expanded", false);
 		$(this).closest(".questions--inner").find(".collapse").removeClass("show");
-		$(this).text("Детальніше");
+		$(this).closest(".questions--inner").find(".btn-more").text("Детальніше");
 	}
 	else {
-		$(this).text("Згорнути");
+		$(this).closest(".questions--inner").find(".btn-more").text("Згорнути");
 		$(this).closest(".questions--inner").addClass("active");
 	}
 });
@@ -300,13 +300,13 @@ $('#check-referral-bonus').on('click', function () {
 });
 
 //calc-travel.html
-$('.calc-travel-page .additional-param #policy-year').on('click', function () {
-	if ($(this).is(':checked')) {
-		$('.additional-param--fields').addClass('active')
-	} else {
-		$('.additional-param--fields').removeClass('active')
-	}
-});
+// $('.calc-travel-page .additional-param #policy-year').on('click', function () {
+// 	if ($(this).is(':checked')) {
+// 		$('.additional-param--fields').addClass('active')
+// 	} else {
+// 		$('.additional-param--fields').removeClass('active')
+// 	}
+// });
 
 $('.calc-travel-page .additional-param .people-block').on('click', function () {
 	$(this).closest(".people-block--wrap").toggleClass('active');

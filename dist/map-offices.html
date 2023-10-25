@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=440, maximum-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=440, maximum-scale=1.0, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Контакти</title>
 	<link rel="shortcut icon" href="##" type="image/x-icon" />
-	<link rel="stylesheet" href="css/libs.min.css?_v=20230926160510">
-	<link rel="stylesheet" href="css/main.min.css?_v=20230926160510">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
 <body class="contacts-page">
@@ -2308,11 +2309,16 @@
 		</div>
 	</div>
 </footer>
+<div id="btnTop" class="btn btn-arrow-up">
+	<svg>
+		<use xlink:href="img/icons/icons.svg#i-arrow-up"></use>
+	</svg>
+</div>
 	</div>
-	<script src="js/jquery.min.js?_v=20230926160510"></script>
-<script src="js/libs.min.js?_v=20230926160510"></script>
-<script src="js/main.min.js?_v=20230926160510"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgMBbn1eBSqj8V9kKOn6CqiwTZhoTQP6s&callback=initMap&libraries=marker&v=beta&_v=20230926160510" defer></script>
+	<script src="js/jquery.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgMBbn1eBSqj8V9kKOn6CqiwTZhoTQP6s&callback=initMap&libraries=marker&v=beta" defer></script>
 	<script>
 		function initMap() {
 			var centerMap = new google.maps.LatLng(50.45668411158, 30.50518209469263);
@@ -2341,11 +2347,23 @@
 
 			const tourStops = [
 				{
+					position: { lat: 51.64334524926339, lng: 32.82858348658312 },
+					title: "Головний офіс СГ “ТАС” м.Київ",
+				},
+				{
 					position: { lat: 50.45853652359974, lng: 30.411489795412983 },
 					title: "Головний офіс СГ “ТАС” м.Київ",
 				},
 				{
 					position: { lat: 50.48814920913856, lng: 30.62191183329623 },
+					title: "Головний офіс СГ “ТАС” м.Київ",
+				},
+				{
+					position: { lat: 48.978155851996775, lng: 29.09323192043089 },
+					title: "Головний офіс СГ “ТАС” м.Київ",
+				},
+				{
+					position: { lat: 49.70824179139913, lng: 37.46481396246768 },
 					title: "Головний офіс СГ “ТАС” м.Київ",
 				},
 			];

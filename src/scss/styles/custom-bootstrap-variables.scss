@@ -19,7 +19,7 @@ $colors: map-merge(
 		"blue": $blue,
 		"light-blue": $light-blue,
 		"grey": $grey,
-		"red": $red,
+		"red": $red
 	),
 	$colors
 );
@@ -34,7 +34,7 @@ $theme-colors: map-merge(
 		"blue": $blue,
 		"light-blue": $light-blue,
 		"grey": $grey,
-		"red": $red,
+		"red": $red
 	),
 	$theme-colors
 );
@@ -56,7 +56,7 @@ $grid-breakpoints: (
 	md: 768px,
 	lg: 1024px,
 	xl: 1200px,
-	xxl: 1400px,
+	xxl: 1400px
 ) !default;
 
 $grid-gutter-widths: (
@@ -93,81 +93,81 @@ $spacers: map-merge(
 	(
 		0: 0,
 		1: (
-			$spacer * 0.5,
+			$spacer * 0.5
 		),
 		2: $spacer,
 		3: (
-			$spacer * 1.5,
+			$spacer * 1.5
 		),
 		4: (
-			$spacer * 2,
+			$spacer * 2
 		),
 		5: (
-			$spacer * 2.5,
+			$spacer * 2.5
 		),
 		6: (
-			$spacer * 3,
+			$spacer * 3
 		),
 		7: (
-			$spacer * 3.5,
+			$spacer * 3.5
 		),
 		8: (
-			$spacer * 4,
+			$spacer * 4
 		),
 		9: (
-			$spacer * 4.5,
+			$spacer * 4.5
 		),
 		10: (
-			$spacer * 5,
+			$spacer * 5
 		),
 		11: (
-			$spacer * 5.5,
+			$spacer * 5.5
 		),
 		12: (
-			$spacer * 6,
+			$spacer * 6
 		),
 		13: (
-			$spacer * 6.5,
+			$spacer * 6.5
 		),
 		14: (
-			$spacer * 7,
+			$spacer * 7
 		),
 		15: (
-			$spacer * 7.5,
+			$spacer * 7.5
 		),
 		16: (
-			$spacer * 8,
+			$spacer * 8
 		),
 		17: (
-			$spacer * 8.5,
+			$spacer * 8.5
 		),
 		18: (
-			$spacer * 9,
+			$spacer * 9
 		),
 		19: (
-			$spacer * 9.5,
+			$spacer * 9.5
 		),
 		20: (
-			$spacer * 10,
+			$spacer * 10
 		),
 		21: (
-			$spacer * 10.5,
+			$spacer * 10.5
 		),
 		22: (
-			$spacer * 11,
+			$spacer * 11
 		),
 		23: (
-			$spacer * 11.5,
+			$spacer * 11.5
 		),
 		24: (
-			$spacer * 12,
+			$spacer * 12
 		),
 		25: (
-			$spacer * 12.5,
+			$spacer * 12.5
 		),
 		26: (
-			$spacer * 13,
-		),
+			$spacer * 13
+		)
 	),
 	$spacers
 );
@@ -177,7 +177,7 @@ $link-color: $black !default;
 // $link-hover-color: darken($silver-custom, 15%) !default;
 
 //list
-$list-inline-padding: 32px !default;
+$list-inline-padding: 26px !default;
 
 //btn
 $input-btn-padding-y: 0.656rem !default; //10.5px

@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=440, maximum-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=440, maximum-scale=1.0, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Новини</title>
 	<link rel="shortcut icon" href="##" type="image/x-icon" />
-	<link rel="stylesheet" href="css/libs.min.css?_v=20230926160510">
-	<link rel="stylesheet" href="css/main.min.css?_v=20230926160510">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
 <body>
@@ -487,33 +488,29 @@
 								<div class="row my-8 my-lg-12">
 									<div class="col-7 col-lg-10 col-xl-9">
 										<div class="news-category-wrap d-none d-lg-flex align-items-center pr-14 pr-xl-0">
-											<div class="swiper-buttons">
+											<!-- <div class="swiper-buttons">
 												<div class="button-slider-prev">
 													<svg>
 														<use xlink:href="img/icons/icons.svg#i-arrow-two-right"></use>
 													</svg>
 												</div>
-											</div>
-											<div class="news-category--swiper">
+											</div> -->
+											<div class="news-category--swiper w-100">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide active"><button type="button" class="btn btn-blue btn-default btn-indent">Усі новини</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Про важливе</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Корисне</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Послуги</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Продукти ТАС</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Про важливе</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Корисне</button></div>
 													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Послуги</button></div>
-													<div class="swiper-slide"><button type="button" class="btn btn-blue btn-default btn-indent">Продукти ТАС</button></div>
 												</div>
 											</div>
-											<div class="swiper-buttons">
+											<!-- <div class="swiper-buttons">
 												<div class="button-slider-next">
 													<svg>
 														<use xlink:href="img/icons/icons.svg#i-arrow-two-right"></use>
 													</svg>
 												</div>
-											</div>
+											</div> -->
 										</div>
 										<div class="select-wrap select-news-category--wrap d-lg-none">
 											<select class="select-news-category" name="select-news-category">
@@ -913,6 +910,11 @@
 		</div>
 	</div>
 </footer>
+<div id="btnTop" class="btn btn-arrow-up">
+	<svg>
+		<use xlink:href="img/icons/icons.svg#i-arrow-up"></use>
+	</svg>
+</div>
 	</div>
 	<div class="modal modal--custom modal--custom-2 popup-reviews-preview-card fade" id="popup-reviews-preview-card" data-keyboard="false" tabindex="-1" aria-labelledby="popup-reviews-preview-cardLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
@@ -1015,7 +1017,7 @@
 							</button>
 						</div>
 						<div class="col-12">
-							<button type="button" class="btn btn-block btn-main-blue btn-default">Надіслати відгук</button>
+							<button type="button" class="btn btn-block btn-main-blue btn-default" data-toggle="modal" data-target="#popup-write-review-thank-you" data-dismiss="modal" aria-label="Close">Надіслати відгук</button>
 						</div>
 					</div>
 				</form>
@@ -1023,10 +1025,35 @@
 		</div>
 	</div>
 </div>
-
-	<script src="js/jquery.min.js?_v=20230926160510"></script>
-<script src="js/libs.min.js?_v=20230926160510"></script>
-<script src="js/main.min.js?_v=20230926160510"></script>
+	<div class="modal modal--custom modal--custom-2 popup-write-review-thank-you fade" id="popup-write-review-thank-you" data-keyboard="false" tabindex="-1" aria-labelledby="popup-write-review-thank-youLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body p-3 pt-3 pb-10 px-lg-8">
+				<div class="d-flex align-items-start justify-content-between mb-8">
+					<div class="modal-title h3 font-m mb-0 pr-4"></div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#i-close"></use>
+							</svg>
+						</span>
+					</button>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<svg class="i-check-circle d-block mx-auto mb-3">
+							<use xlink:href="img/icons/icons.svg#i-check-circle"></use>
+						</svg>
+						<div class="text-center">Дякуємо! <br>Ваша заявка обробляється</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="js/jquery.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

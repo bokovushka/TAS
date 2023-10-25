@@ -2,7 +2,7 @@
 // import * as MoreBlocks from "./modules/more-blocks.js";
 // import * as Burger from "./modules/burger.js";
 
-// import * as AnimateScroll from "./modules/animate-scroll.js";
+import * as AnimateScroll from "./modules/animate-scroll.js";
 
 import * as Menu from "./modules/menu.js";
 import * as MultiLevelPushMenu from "./modules/multi-level-push-menu.js";
@@ -15,4 +15,6 @@ import * as MultiStep from "./modules/multi-step.js";
 import * as JS from "./modules/js.js";
 import * as Input from "./modules/input.js";
 import * as CountTourist from "./modules/count-tourist.js";
+import * as MetaWidthFunction from "./modules/meta-width-function.js";
+
 

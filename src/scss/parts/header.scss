@@ -94,15 +94,51 @@
 			&.i-phone {
 				width: 24px;
 				height: 24px;
+				margin-right: 8px;
 			}
 		}
-		&:hover,
+		@include xl-min {
+			&:hover {
+				.link-phone {
+					color: $white;
+					span {
+						color: $white;
+						&:hover {
+							color: $black;
+						}
+						a {
+							color: $white;
+							&:hover {
+								color: $black;
+							}
+						}
+					}
+				}
+				svg {
+					stroke: $white;
+					&.i-arrow-down {
+						transform: rotate(-90deg);
+					}
+				}
+				.submenu {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
 		&.active {
 			.link-phone {
 				color: $white;
 				span {
+					color: $white;
 					&:hover {
 						color: $black;
+					}
+					a {
+						color: $white;
+						&:hover {
+							color: $black;
+						}
 					}
 				}
 			}
@@ -138,11 +174,10 @@
 					}
 				}
 				&:not(:first-child) {
-					padding-left: 24px;
+					padding-left: 32px;
 				}
 			}
 		}
-		&:hover,
 		&.active {
 			.submenu {
 				opacity: 1;
@@ -275,13 +310,13 @@
 						display: block;
 						width: 100vw;
 						min-height: 516px;
-						top: 77px;
+						top: 62px;
 						left: 50%;
 						transform: translateX(-50%);
 						opacity: 0;
 						visibility: hidden;
 						z-index: 2;
-						@include transition(0.3s ease-out 0s);
+						@include transition(0.3s ease-out 0.3s);
 						& > .container {
 							min-height: inherit;
 						}
@@ -537,7 +572,6 @@
 								padding: 0.656rem 2rem;
 								border: 1px solid $blue;
 								transition: unset;
-								&:hover,
 								&.active {
 									padding: 0;
 									svg.i-arrow-down {
@@ -551,6 +585,23 @@
 									}
 									> .i-arrow-down {
 										display: none;
+									}
+								}
+								@include xl-min {
+									&:hover {
+										padding: 0;
+										svg.i-arrow-down {
+											transform: rotate(90deg);
+										}
+										.submenu {
+											display: block;
+										}
+										> .link-phone {
+											display: none !important;
+										}
+										> .i-arrow-down {
+											display: none;
+										}
 									}
 								}
 								svg.i-arrow-down {
