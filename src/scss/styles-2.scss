@@ -134,6 +134,9 @@ input[type="number"]::-webkit-outer-spin-button {
 	align-items: center;
 	justify-content: center;
 	padding: 0;
+	@media (max-width: 440px) {
+		display: none;
+	}
 	svg {
 		width: 24px;
 		height: 24px;
@@ -143,11 +146,3 @@ input[type="number"]::-webkit-outer-spin-button {
 	opacity: 1;
 	visibility: visible;
 }
-// section {
-// 	.row {
-// 		min-width: 0;
-// 	}
-// 	.col {
-// 		min-width: 0;
-// 	}
-// }

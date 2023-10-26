@@ -1073,6 +1073,7 @@ ul {
 	.why-we--content img {
 		max-height: 300px;
 		border-radius: 20px;
+		min-height: 192px;
 		@include lg-max {
 			max-height: 224px;
 		}
@@ -1084,6 +1085,9 @@ ul {
 		display: block;
 		height: 100%;
 		overflow: hidden;
+		@include md-max {
+			max-height: 472px;
+		}
 	}
 	.btn-read-more {
 		&::after {

@@ -1200,6 +1200,7 @@ ul.list-circle li::before {
 .why-we .why-we--content img {
   max-height: 300px;
   border-radius: 20px;
+  min-height: 192px;
 }
 @media (max-width: 1199px) {
   .why-we .why-we--box,
@@ -1214,6 +1215,11 @@ ul.list-circle li::before {
   display: block;
   height: 100%;
   overflow: hidden;
+}
+@media (max-width: 1023px) {
+  .why-we .why-we--box-pic {
+    max-height: 472px;
+  }
 }
 .why-we .btn-read-more::after {
   background: #5b75ff;
@@ -8171,6 +8177,11 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
   padding: 0;
+}
+@media (max-width: 440px) {
+  #btnTop {
+    display: none;
+  }
 }
 #btnTop svg {
   width: 24px;
