@@ -205,3 +205,13 @@ var NewsCategorySwiper = new Swiper('.news-category--swiper', {
 		prevEl: ".news .swiper-buttons .button-slider-prev",
 	},
 });
+
+//? news-category--swiper //news.html
+var PartnersCategorySwiper = new Swiper('.partners-category--swiper', {
+	grabCursor: true,
+	slidesPerView: "auto",
+	navigation: {
+		nextEl: ".partners-tablist-nav .swiper-buttons .button-slider-next",
+		prevEl: ".partners-tablist-nav .swiper-buttons .button-slider-prev",
+	},
+});

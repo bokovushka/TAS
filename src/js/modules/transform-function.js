@@ -1,40 +1,54 @@
 function adaptiveSizePageScaleInit(definedStartWidth) {
 	const page = document.documentElement;
-	let clientWidth = page.clientWidth;
-	let pageComputedWidth;
-	let resizeCoef;
-	let resizeCoefPercents;
+	const body = document.body;
 	let startWidth = definedStartWidth;
+
 	if (!(startWidth / 1)) {
-		let bodyMinWidthStr = getComputedStyle(document.body).minWidth;
-		let bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
+		const bodyMinWidthStr = getComputedStyle(body).minWidth;
+		const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
 		startWidth = bodyMinWidthNumber;
 	}
+
 	function scalePage(startWidth) {
-		clientWidth = page.clientWidth;
+		const clientWidth = page.clientWidth;
+
 		if (startWidth / 1 && clientWidth <= startWidth) {
-			pageComputedWidth = parseInt(getComputedStyle(page).width);
-			resizeCoef = clientWidth / pageComputedWidth;
-			resizeCoefPercents = 100 * resizeCoef;
-			page.style.transformOrigin = `top left`;
-			page.style.transform = `scale(${resizeCoef})`;
-			page.style.width = `${resizeCoefPercents}%`;
-			page.style.height = `${resizeCoefPercents}%`;
+			const pageComputedWidth = parseInt(getComputedStyle(page).width);
+			const resizeCoef = clientWidth / pageComputedWidth;
+			const resizeCoefPercents = 100 * resizeCoef;
+
+			// Перевірка, чи елемент Fancybox активний і вимкнення масштабування для інших елементів
+			if (!isFancyboxActive()) {
+				page.style.transformOrigin = "top left";
+				page.style.transform = `scale(${resizeCoef})`;
+				page.style.width = `${resizeCoefPercents}%`;
+				page.style.height = `${resizeCoefPercents}%`;
+			}
 		} else {
-			page.style.transform = ``;
-			page.style.transformOrigin = ``;
-			page.style.width = ``;
-			page.style.height = ``;
+			page.style.transform = "";
+			page.style.transformOrigin = "";
+			page.style.width = "";
+			page.style.height = "";
 		}
 	}
+
+	function isFancyboxActive() {
+		// Додайте код для перевірки активності Fancybox тут, якщо потрібно
+		// Поверніть true, якщо Fancybox активний, інакше false
+		return false;
+	}
+
 	window.addEventListener("resize", function () {
 		scalePage(startWidth);
 	});
+
 	scalePage(startWidth);
 }
-function startOnSpecificBrowserInit() {
-	let userAgent = window.navigator.userAgent.toLowerCase();
+
+function startOnSpecificBrowserInit(minWidth) {
+	const userAgent = window.navigator.userAgent.toLowerCase();
 	let browser;
+
 	switch (true) {
 		case userAgent.indexOf("edge") > -1:
 			browser = "msEdge";
@@ -60,12 +74,10 @@ function startOnSpecificBrowserInit() {
 		default:
 			browser = "other";
 	}
+
 	if (browser == "safari" || browser == "firefox") {
-		adaptiveSizePageScaleInit();
+		adaptiveSizePageScaleInit(minWidth);
 	}
 }
 
-startOnSpecificBrowserInit();
-
-//viewport function resize
-adaptiveSizePageScaleInit(440);
+startOnSpecificBrowserInit(440);

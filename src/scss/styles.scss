@@ -5008,24 +5008,38 @@ ul {
 }
 //partners-tablist-nav
 .partners-tablist-nav {
-	.nav-pills {
-		gap: 16px;
-		.nav-item {
+	.partners-category--swiper {
+		overflow-x: hidden;
+		.swiper-slide {
+			width: calc((100% - 80px) / 6);
+			@include xl-max {
+				width: calc((100% - 64px) / 5);
+			}
+			&:not(:last-child) {
+				margin-right: 16px;
+			}
 			.nav-link {
-				padding: 10px;
-				border-radius: 20px;
-				background: $light-blue;
-				width: 127px;
-				height: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				word-break: break-word;
+				width: 100%;
+				background: $blue;
+				border: 1px solid transparent;
+				hyphens: auto;
+				&:hover {
+					border-color: $main-blue;
+					border: 1px solid $main-blue;
+				}
 				&.active {
 					background: $main-blue;
+					color: $white;
 				}
 			}
+		}
+	}
+	.button-slider-prev,
+	.button-slider-next {
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: transparent;
 		}
 	}
 	.partner-item {
