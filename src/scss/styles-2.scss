@@ -146,10 +146,12 @@ input[type="number"]::-webkit-outer-spin-button {
 	opacity: 1;
 	visibility: visible;
 }
-
-@media (max-width: 439px) {
-}
-
 .fancybox__container {
 	z-index: 1070;
+}
+@media (max-width: 440px) {
+	.wrapper {
+		transform-origin: left top;
+		transform: scale(1);
+	}
 }

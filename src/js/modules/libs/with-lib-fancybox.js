@@ -23,8 +23,3 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 	},
 	Thumbs: false,
 });
-
-
-
-
-
