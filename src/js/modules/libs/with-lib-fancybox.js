@@ -2,7 +2,7 @@
 import { Fancybox } from "@fancyapps/ui";
 
 // //? single-wallpaper-gallery
-Fancybox.bind('[data-fancybox="gallery"]', {
+Fancybox.bind('.wrapper [data-fancybox="gallery"]', {
 	Toolbar: {
 		display: {
 			left: [],

@@ -8,19 +8,16 @@ html,
 body {
 	width: 100%;
 	height: 100%;
-	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape & safari*/
-}
-body {
 	min-width: 440px;
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape & safari*/
 }
 .wrapper {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	// overflow: hidden;
+	overflow: hidden;
 }
 main {
-	min-width: 440px;
 	flex: 1 1 auto;
 	@include md-max {
 		margin-top: 109px;
