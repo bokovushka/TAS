@@ -2,17 +2,8 @@
 .header {
 	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.06);
 	z-index: 1060;
-	@include md-max {
-		position: fixed;
-		width: 100%;
-		@include transition(0.3s ease-out 0s);
-		&.header--show {
-			top: 0;
-		}
-		&.header--hide {
-			top: -130px;
-		}
-	}
+	position: fixed;
+	width: 100%;
 	.nav-link {
 		font-size: 14px;
 		line-height: 17px;
@@ -25,6 +16,35 @@
 //header-top
 .header-top {
 	font-family: "SF UI Display";
+	@include transition(0.6s ease-out 0s);
+	&.header--show {
+		position: relative;
+		top: 0;
+		box-shadow: 0px 0px 12px #0000000f;
+	}
+	&.header--hide {
+		position: relative;
+		top: -77px;
+		overflow: hidden;
+		@include sm-max {
+			top: -64px;
+		}
+	}
+	&.search-active {
+		.header-top--nav {
+			display: none;
+		}
+		.search-main {
+			max-width: 100%;
+			&.active {
+				overflow: visible;
+				margin-left: unset;
+			}
+		}
+		.header-top--others {
+			min-width: max-content;
+		}
+	}
 	.nav-link {
 		color: $white;
 	}
@@ -193,6 +213,7 @@
 		width: 16px;
 		height: 16px;
 		cursor: pointer;
+		display: block;
 		.lines {
 			background-color: $black;
 			position: absolute;
@@ -247,6 +268,35 @@
 }
 //header-main
 .header-main {
+	width: 100%;
+	@include transition(0.3s ease-out 0s);
+	&.header--show,
+	&.header--hide {
+		position: fixed;
+		box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.06);
+	}
+	&.header--show {
+		top: 52px;
+		@include lg-max {
+			top: 61px;
+		}
+		@include md-max {
+			top: 52px;
+		}
+		@include sm-max {
+			top: 0px;
+		}
+	}
+	&.header--hide {
+		top: 0;
+		@include md-max {
+			.header-main--mob {
+				.navbar-nav-wrapper {
+					max-height: 630px;
+				}
+			}
+		}
+	}
 	.navbar-brand {
 		max-width: 86px;
 		width: 100%;
@@ -437,7 +487,7 @@
 			.navbar-nav-wrapper {
 				position: relative;
 				width: 100%;
-				max-height: 560px;
+				max-height: 575px;
 				height: calc(100vh - 140px);
 				overflow-y: auto;
 			}
@@ -615,6 +665,36 @@
 									height: auto;
 									li:not(:last-child) {
 										margin-bottom: 12px;
+									}
+								}
+							}
+							.header-top--socials {
+								ul {
+									display: inline-block;
+									padding: 0;
+									left: 0;
+									position: relative;
+									width: auto;
+									li {
+										width: auto;
+										margin-bottom: 0;
+										&:not(:last-child) {
+											margin-right: 15px;
+										}
+										> a {
+											padding: 0;
+										}
+									}
+								}
+								&.socials {
+									.i-instagram,
+									.i-facebook,
+									.i-facebook-2 {
+										fill: $main-blue;
+									}
+									.i-user {
+										stroke: $main-blue;
+										fill: transparent;
 									}
 								}
 							}

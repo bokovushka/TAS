@@ -3,7 +3,11 @@
 	height: 42px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 10px;
+	@media (max-width: 500px) {
+		height: 26px;
+	}
 	.select2-container {
 		height: 100%;
 		.select2-selection {
@@ -134,9 +138,6 @@ input[type="number"]::-webkit-outer-spin-button {
 	align-items: center;
 	justify-content: center;
 	padding: 0;
-	@media (max-width: 440px) {
-		display: none;
-	}
 	svg {
 		width: 24px;
 		height: 24px;
@@ -148,20 +149,252 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .fancybox__container {
 	z-index: 1070;
+	--fancybox-bg: rgb(38 42 71 / 90%);
 }
-// @media (max-width: 440px) {
-// 	.wrapper {
-// 		transform-origin: left top;
-// 		transform: scale(1);
+.search-main {
+	padding: 4px;
+	background: rgba(132, 132, 132, 0.5);
+	border-radius: 20px;
+	position: relative;
+	width: 100%;
+	margin-right: 22px;
+	max-width: 32px;
+	overflow: hidden;
+	margin-left: auto;
+	cursor: pointer;
+	@include sm-max {
+		max-width: 100%;
+		overflow: visible;
+	}
+	&.active {
+		border-radius: 15px 15px 0 0;
+		.results-search {
+			display: block;
+			border-radius: 0 0 15px 15px;
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+		.input-search {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+	.input-search {
+		position: relative;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: "";
+			display: block;
+			position: relative;
+			min-width: 24px;
+			width: 24px;
+			height: 24px;
+			background: url(../img/icons/icons.svg#i-search) no-repeat center;
+			filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg) brightness(102%)
+				contrast(100%);
+			opacity: 0.3;
+		}
+		.clear-icon {
+			display: none;
+			cursor: pointer;
+			&::before {
+				content: "";
+				display: block;
+				position: relative;
+				min-width: 24px;
+				width: 24px;
+				height: 24px;
+				background: url(../img/icons/icons.svg#i-close) no-repeat center;
+				margin-left: 12px;
+				filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg)
+					brightness(102%) contrast(100%);
+				opacity: 0.3;
+				@include sm-max {
+					filter: brightness(0) saturate(100%) invert(58%) sepia(5%) saturate(19%) hue-rotate(346deg)
+						brightness(92%) contrast(80%);
+					opacity: 0.9;
+				}
+			}
+		}
+		input {
+			background: unset;
+			width: 100%;
+			color: $white;
+			border: unset;
+			padding: 0;
+			padding-left: 4px;
+		}
+	}
+	.results-search {
+		position: absolute;
+		left: 0;
+		top: 31px;
+		padding: 4px;
+		background: rgb(87 87 87);
+		color: $white;
+		display: none;
+		z-index: 7;
+		overflow: scroll;
+		max-height: 250px;
+		.result-list {
+			.result-item {
+				color: $white;
+				padding-left: 32px;
+				display: block;
+				margin: 0 -4px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				&:nth-child(2n + 1) {
+					background: #3a3939;
+				}
+				.info-page {
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+		&.no-result-search {
+			padding-left: 32px;
+			padding-top: 4px;
+			padding-bottom: 4px;
+			@include md-max {
+				background: $white;
+				color: $black;
+			}
+		}
+	}
+}
+.search-main--wrap {
+	@include sm-max {
+		padding: 0 16px;
+		.search-main {
+			border: 1.5px solid $main-blue;
+			background: transparent;
+			margin-right: 0;
+			.input-search {
+				&::before {
+					filter: brightness(0) saturate(100%) invert(42%) sepia(76%) saturate(2781%) hue-rotate(216deg)
+						brightness(102%) contrast(102%);
+					opacity: 1;
+				}
+				input {
+					color: $black;
+					&::placeholder {
+						color: $main-blue;
+					}
+				}
+			}
+			.results-search {
+				width: calc(100% + 2px) !important;
+				border: 1.5px solid $main-blue;
+				left: -1px;
+				.result-list {
+					.result-item {
+						background: $light-blue;
+						color: $black;
+						&:nth-child(2n + 1) {
+							background: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//air-datepicker
+.air-datepicker {
+	--adp-width: 293px;
+	.air-datepicker--navigation {
+		.air-datepicker-nav {
+			.air-datepicker-nav--title {
+				width: 100%;
+				gap: 5px;
+				&:active,
+				&:hover {
+					background: none;
+				}
+				span {
+					width: 100%;
+					font-size: 14px;
+					padding: 4px 10px;
+					background: $light-blue;
+					border-radius: 5px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	.air-datepicker-body--day-name {
+		color: $black;
+		font-weight: 600;
+	}
+	.air-datepicker-nav--action {
+		&:hover {
+			background: $main-blue;
+			path {
+				stroke: $white;
+			}
+		}
+	}
+	.air-datepicker-cell {
+		&.-focus- {
+			background: $main-blue;
+			color: $white;
+			&.-disabled- {
+				background: $grey;
+				opacity: 0.3;
+			}
+		}
+		&.-year- {
+			&.-other-decade- {
+				color: $black;
+				&.-focus- {
+					color: $white;
+				}
+			}
+		}
+		&.-selected- {
+			background: $main-blue;
+			&.-range-from-,
+			&.-range-to- {
+				background: $dark-blue;
+			}
+		}
+		&.-range-from-,
+		&.-range-to- {
+			border: none;
+			background: $dark-blue;
+			color: $white;
+		}
+		&.-in-range- {
+			background: $main-blue;
+			color: $white;
+		}
+	}
+	.air-datepicker-body--cells {
+		&.-days- {
+			row-gap: 5px;
+		}
+		&.-years- {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		&.-months- {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+// .footer {
+// 	.select-wrapper {
+// 		position: absolute;
+// 		width: max-content;
+// 		margin-left: -10px;
+// 		border: 1px solid transparent;
+// 		z-index: 2;
+// 		background: #5b75ff;
+// 		transition: 0.3s ease-out 0s;
 // 	}
 // }
-
-.with-fancybox.reset-transform {
-	transform: unset !important;
-	transition: none;
-}
-.fancybox__container {
-	background: $main-blue;
-	opacity: 1;
-	transition: none;
-}

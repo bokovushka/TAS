@@ -14,12 +14,14 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"fuse.js": "^7.0.0",
 		"gulp-cli": "^2.3.0",
 		"readmore-js": "^2.2.1",
 		"stream": "^0.0.2"
 	},
 	"devDependencies": {
 		"@fancyapps/ui": "^5.0.19",
+		"air-datepicker": "^3.4.0",
 		"bootstrap": "^4.6.2",
 		"browser-sync": "latest",
 		"del": "latest",

@@ -9,7 +9,7 @@ $light-blue: #f3f5ff;
 $grey: #878787;
 $red: #ff0000;
 
-//reset style
+//reset style.modal-backdrop
 *:focus {
 	//відключення focus bootstrap
 	outline: none !important;
@@ -555,6 +555,9 @@ ul {
 			}
 			span {
 				display: block;
+				&.small-txt {
+					margin-top: 2px;
+				}
 				a {
 					color: $white;
 					&:hover {
@@ -897,7 +900,14 @@ ul {
 		transform: rotate(90deg);
 		@include transition(0.3s ease-out 0s);
 	}
-	&:hover,
+	&:hover {
+		@include xl-min {
+			color: $main-blue;
+			svg {
+				stroke: $main-blue;
+			}
+		}
+	}
 	&.active {
 		color: $main-blue;
 		svg {
@@ -934,7 +944,17 @@ ul {
 			}
 		}
 	}
-	&:hover,
+	&:hover {
+		@include xl-min {
+			.submenu {
+				opacity: 1;
+				visibility: visible;
+			}
+			svg {
+				transform: rotate(-90deg);
+			}
+		}
+	}
 	&.active {
 		.submenu {
 			opacity: 1;
@@ -1026,6 +1046,9 @@ ul {
 				background: $light-blue;
 				.card-title {
 					margin-bottom: 0;
+				}
+				.btn {
+					color: $black;
 				}
 				.card-img-top {
 					width: 90px;
@@ -1636,6 +1659,12 @@ ul {
 		@include md-max {
 			min-height: 100%;
 		}
+		// a {
+		// 	color: $main-blue !important;
+		// 	&:hover {
+		// 		color: $dark-blue !important;
+		// 	}
+		// }
 	}
 	.section-top--img {
 		@include md-max {
@@ -6201,6 +6230,7 @@ ul {
 		top: 50%;
 		transform: translateY(-50%);
 		right: 20px;
+		pointer-events: none;
 	}
 	#datepicker {
 		padding-right: 62px;
@@ -6213,6 +6243,16 @@ ul {
 	padding: 32px;
 	box-shadow: 0 0 25px rgba(34, 56, 97, 0.1);
 	border-radius: 20px;
+	@media (max-width: 500px) {
+		max-width: 310px;
+		width: 310px;
+		padding: 10px;
+	}
+	@media (max-width: 375px) {
+		max-width: 250px;
+		width: 250px;
+		padding: 5px;
+	}
 	.flatpickr-days {
 		width: 100%;
 		.dayContainer {
@@ -6230,6 +6270,10 @@ ul {
 				padding: 5px;
 				border-radius: 10px;
 				font-size: 16px;
+				@media (max-width: 500px) {
+					font-size: 14px;
+					line-height: 28px;
+				}
 				&.inRange {
 					box-shadow: none !important;
 					border-radius: unset;
@@ -6299,6 +6343,14 @@ ul {
 		.flatpickr-month {
 			height: 42px;
 			margin-bottom: 30px;
+			@media (max-width: 500px) {
+				height: 26px;
+				margin-top: 5px;
+				margin-bottom: 10px;
+			}
+			@media (max-width: 375px) {
+				margin-top: 10px;
+			}
 		}
 		.flatpickr-prev-month,
 		.flatpickr-next-month {
@@ -6307,6 +6359,12 @@ ul {
 			border-radius: 5px;
 			border: 1px solid #dbdeeb;
 			top: 30px;
+			@media (max-width: 500px) {
+				width: 26px;
+				height: 26px;
+				padding: 5px;
+				top: 14px;
+			}
 			svg {
 				vertical-align: top;
 				width: 10px;
@@ -6319,17 +6377,32 @@ ul {
 		}
 		.flatpickr-next-month {
 			right: 30px;
+			@media (max-width: 500px) {
+				right: 10px;
+			}
 		}
 		.flatpickr-prev-month {
 			left: 30px;
+			@media (max-width: 500px) {
+				left: 10px;
+			}
 		}
 	}
 	.flatpickr-monthDropdown-months {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
+		@media (max-width: 500px) {
+			font-size: 14px;
+			line-height: 17px;
+		}
 		&:hover {
 			background: $white;
+		}
+	}
+	.flatpickr-current-month .cur-year {
+		@media (max-width: 500px) {
+			font-size: 14px;
 		}
 	}
 	.numInput:hover {

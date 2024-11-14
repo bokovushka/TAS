@@ -18,17 +18,34 @@ $(document).mouseup(function (e) {
 	}
 });
 
-//? mobile menu lock body
+// //? mobile menu lock body
 $(document).ready(function () {
 	let body_lock = document.querySelector('body');
 	let menuBtn = document.querySelector('.navbar-toggler');
 	let bgBody = document.querySelector('.popup-bg-body');
+	let isMenuEnabled = true;
 
-	menuBtn.addEventListener('click', function () {
-		body_lock.classList.toggle('lock');
-		bgBody.classList.toggle('open')
-	})
+	menuBtn.addEventListener('click', function (event) {
+		if (!isMenuEnabled) {
+			event.preventDefault();
+		} else {
+			body_lock.classList.add('lock');
+			bgBody.classList.add('open')
+			isMenuEnabled = false;
+			setTimeout(function () {
+				isMenuEnabled = true;
+			}, 1000);
+		}
+	});
+
+	setInterval(function () {
+		if ($(bgBody).hasClass('collapsed')) {
+			body_lock.classList.remove('lock');
+			bgBody.classList.remove('open')
+		}
+	}, 100);
 });
+
 
 //?  закриття меню поза областю
 $(document).mouseup(function (e) {
@@ -46,7 +63,7 @@ setInterval(function () {
 			$('.navbar-toggler').click()
 		}
 	}
-}, 100);
+}, 1000);
 
 //? flip-cards //add class flipped
 // const boxes = document.querySelectorAll('.flip-cards .card-content');
@@ -310,4 +327,37 @@ $('#check-referral-bonus').on('click', function () {
 
 $('.calc-travel-page .additional-param .people-block').on('click', function () {
 	$(this).closest(".people-block--wrap").toggleClass('active');
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	var selectWrapper = document.querySelector('.select-wrapper');
+	var selectedOption = selectWrapper.querySelector('.selected-option');
+	var selectOptions = selectWrapper.querySelector('.select-options');
+
+	selectedOption.addEventListener('click', function () {
+		selectWrapper.classList.toggle('active');
+		selectOptions.classList.toggle('active');
+	});
+
+	selectOptions.addEventListener('click', function (event) {
+		var target = event.target;
+		if (target.tagName === 'a') {
+			var selectedCity = target.textContent;
+			selectedOption.textContent = selectedCity;
+			selectWrapper.classList.remove('active');
+			selectOptions.classList.remove('active');
+		}
+	});
+
+	document.addEventListener('click', function (event) {
+		var target = event.target;
+		if (!selectWrapper.contains(target)) {
+			selectWrapper.classList.remove('active');
+			selectOptions.classList.remove('active');
+		}
+	});
 });

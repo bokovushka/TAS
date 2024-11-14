@@ -67,3 +67,13 @@ $(function () {
 		// fallbackPlacement: [], // строго в заданому напрямку, не дає можливості при скролі позиціонувати в інші сторони
 	});
 });
+
+
+$('.accordion .card').on('show.bs.collapse', function () {
+	$(this).addClass('active');
+});
+
+$('.accordion .card').on('hide.bs.collapse', function () {
+	$(this).removeClass('active');
+});
+
