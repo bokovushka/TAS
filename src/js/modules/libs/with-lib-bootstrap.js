@@ -77,3 +77,11 @@ $('.accordion .card').on('hide.bs.collapse', function () {
 	$(this).removeClass('active');
 });
 
+
+
+$(document).ready(function () {
+	$('#accordion-strakhovi-produkty .collapse').on('show.bs.collapse', function () {
+		// Закриваємо всі вкладені акардеони
+		$('#accordion-strakhovi-produkty .collapse .collapse.show').collapse('hide');
+	});
+});

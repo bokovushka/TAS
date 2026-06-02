@@ -10,3 +10,7 @@ import * as WithLibReadMore from "./modules/libs/with-lib-readmore.js";
 import * as WithLibSelect2 from "./modules/libs/with-lib-select2.js";
 import * as WithLibFuse from "./modules/libs/with-lib-fuse.js";
 import * as WithLibAirDatepicker from "./modules/libs/with-lib-air-datepicker.js";
+import * as WithLibCanvas from "./modules/libs/with-lib-canvas.js";
+import * as WithLibOverlayscrollbars from "./modules/libs/with-lib-overlayscrollbars.js";
+
+

@@ -5,17 +5,21 @@
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
+
 	@media (max-width: 500px) {
 		height: 26px;
 	}
+
 	.select2-container {
 		height: 100%;
+
 		.select2-selection {
 			padding: 0;
 			height: auto;
 			border-radius: 5px;
 		}
 	}
+
 	.numInputWrapper {
 		min-width: 6ch;
 	}
@@ -24,6 +28,7 @@
 input[type="number"] {
 	-moz-appearance: textfield;
 }
+
 input[type="number"]:hover,
 input[type="number"]:focus {
 	-moz-appearance: number-input;
@@ -40,6 +45,7 @@ input[type="number"]::-webkit-outer-spin-button {
 		.field-wrap {
 			.people-block--wrap {
 				position: relative;
+
 				&.active {
 					.people-block--additional-param {
 						display: block;
@@ -50,11 +56,13 @@ input[type="number"]::-webkit-outer-spin-button {
 						border-top: unset;
 						margin-top: -1px;
 					}
+
 					.people-block {
 						border-radius: 30px 30px 0 0;
 						border: 1px solid $blue;
 					}
 				}
+
 				.people-block {
 					background: $white;
 					border-radius: 100px;
@@ -65,22 +73,27 @@ input[type="number"]::-webkit-outer-spin-button {
 					min-width: 100%;
 					cursor: pointer;
 				}
+
 				.people-block--additional-param {
 					background: $white;
 					padding: 20px;
 					border-radius: 0 0 30px 30px;
 					display: none;
+
 					.form-group {
 						display: flex;
 						justify-content: space-between;
 						gap: 10px;
+
 						&:last-child {
 							margin-bottom: 0;
 						}
 					}
+
 					.input:focus {
 						all: unset;
 					}
+
 					.input-block {
 						display: flex;
 						align-items: center;
@@ -90,6 +103,7 @@ input[type="number"]::-webkit-outer-spin-button {
 						padding: 2px 4px;
 						min-width: max-content;
 						height: 100%;
+
 						.form-control {
 							padding: 0;
 							min-width: auto;
@@ -98,6 +112,7 @@ input[type="number"]::-webkit-outer-spin-button {
 							height: auto;
 							text-align: center;
 						}
+
 						.btn-count-down,
 						.btn-count-up {
 							width: 36px;
@@ -110,6 +125,7 @@ input[type="number"]::-webkit-outer-spin-button {
 							align-items: center;
 							justify-content: center;
 							font-size: 14px;
+
 							&:disabled {
 								opacity: 0.5;
 							}
@@ -138,19 +154,23 @@ input[type="number"]::-webkit-outer-spin-button {
 	align-items: center;
 	justify-content: center;
 	padding: 0;
+
 	svg {
 		width: 24px;
 		height: 24px;
 	}
 }
+
 #btnTop.show {
 	opacity: 1;
 	visibility: visible;
 }
+
 .fancybox__container {
 	z-index: 1070;
 	--fancybox-bg: rgb(38 42 71 / 90%);
 }
+
 .search-main {
 	padding: 4px;
 	background: rgba(132, 132, 132, 0.5);
@@ -162,28 +182,34 @@ input[type="number"]::-webkit-outer-spin-button {
 	overflow: hidden;
 	margin-left: auto;
 	cursor: pointer;
+
 	@include sm-max {
 		max-width: 100%;
 		overflow: visible;
 	}
+
 	&.active {
 		border-radius: 15px 15px 0 0;
+
 		.results-search {
 			display: block;
 			border-radius: 0 0 15px 15px;
 			padding-bottom: 0;
 			padding-top: 0;
 		}
+
 		.input-search {
 			&::before {
 				opacity: 1;
 			}
 		}
 	}
+
 	.input-search {
 		position: relative;
 		display: flex;
 		align-items: center;
+
 		&::before {
 			content: "";
 			display: block;
@@ -192,13 +218,14 @@ input[type="number"]::-webkit-outer-spin-button {
 			width: 24px;
 			height: 24px;
 			background: url(../img/icons/icons.svg#i-search) no-repeat center;
-			filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg) brightness(102%)
-				contrast(100%);
+			filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg) brightness(102%) contrast(100%);
 			opacity: 0.3;
 		}
+
 		.clear-icon {
 			display: none;
 			cursor: pointer;
+
 			&::before {
 				content: "";
 				display: block;
@@ -208,16 +235,16 @@ input[type="number"]::-webkit-outer-spin-button {
 				height: 24px;
 				background: url(../img/icons/icons.svg#i-close) no-repeat center;
 				margin-left: 12px;
-				filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg)
-					brightness(102%) contrast(100%);
+				filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(154deg) brightness(102%) contrast(100%);
 				opacity: 0.3;
+
 				@include sm-max {
-					filter: brightness(0) saturate(100%) invert(58%) sepia(5%) saturate(19%) hue-rotate(346deg)
-						brightness(92%) contrast(80%);
+					filter: brightness(0) saturate(100%) invert(58%) sepia(5%) saturate(19%) hue-rotate(346deg) brightness(92%) contrast(80%);
 					opacity: 0.9;
 				}
 			}
 		}
+
 		input {
 			background: unset;
 			width: 100%;
@@ -227,6 +254,7 @@ input[type="number"]::-webkit-outer-spin-button {
 			padding-left: 4px;
 		}
 	}
+
 	.results-search {
 		position: absolute;
 		left: 0;
@@ -238,6 +266,7 @@ input[type="number"]::-webkit-outer-spin-button {
 		z-index: 7;
 		overflow: scroll;
 		max-height: 250px;
+
 		.result-list {
 			.result-item {
 				color: $white;
@@ -246,19 +275,23 @@ input[type="number"]::-webkit-outer-spin-button {
 				margin: 0 -4px;
 				padding-top: 4px;
 				padding-bottom: 4px;
+
 				&:nth-child(2n + 1) {
 					background: #3a3939;
 				}
+
 				.info-page {
 					font-size: 12px;
 					line-height: 18px;
 				}
 			}
 		}
+
 		&.no-result-search {
 			padding-left: 32px;
 			padding-top: 4px;
 			padding-bottom: 4px;
+
 			@include md-max {
 				background: $white;
 				color: $black;
@@ -266,34 +299,41 @@ input[type="number"]::-webkit-outer-spin-button {
 		}
 	}
 }
+
 .search-main--wrap {
 	@include sm-max {
 		padding: 0 16px;
+
 		.search-main {
 			border: 1.5px solid $main-blue;
 			background: transparent;
 			margin-right: 0;
+
 			.input-search {
 				&::before {
-					filter: brightness(0) saturate(100%) invert(42%) sepia(76%) saturate(2781%) hue-rotate(216deg)
-						brightness(102%) contrast(102%);
+					filter: brightness(0) saturate(100%) invert(42%) sepia(76%) saturate(2781%) hue-rotate(216deg) brightness(102%) contrast(102%);
 					opacity: 1;
 				}
+
 				input {
 					color: $black;
+
 					&::placeholder {
 						color: $main-blue;
 					}
 				}
 			}
+
 			.results-search {
 				width: calc(100% + 2px) !important;
 				border: 1.5px solid $main-blue;
 				left: -1px;
+
 				.result-list {
 					.result-item {
 						background: $light-blue;
 						color: $black;
+
 						&:nth-child(2n + 1) {
 							background: $white;
 						}
@@ -307,15 +347,18 @@ input[type="number"]::-webkit-outer-spin-button {
 //air-datepicker
 .air-datepicker {
 	--adp-width: 293px;
+
 	.air-datepicker--navigation {
 		.air-datepicker-nav {
 			.air-datepicker-nav--title {
 				width: 100%;
 				gap: 5px;
+
 				&:active,
 				&:hover {
 					background: none;
 				}
+
 				span {
 					width: 100%;
 					font-size: 14px;
@@ -327,60 +370,74 @@ input[type="number"]::-webkit-outer-spin-button {
 			}
 		}
 	}
+
 	.air-datepicker-body--day-name {
 		color: $black;
 		font-weight: 600;
 	}
+
 	.air-datepicker-nav--action {
 		&:hover {
 			background: $main-blue;
+
 			path {
 				stroke: $white;
 			}
 		}
 	}
+
 	.air-datepicker-cell {
 		&.-focus- {
 			background: $main-blue;
 			color: $white;
+
 			&.-disabled- {
 				background: $grey;
 				opacity: 0.3;
 			}
 		}
+
 		&.-year- {
 			&.-other-decade- {
 				color: $black;
+
 				&.-focus- {
 					color: $white;
 				}
 			}
 		}
+
 		&.-selected- {
 			background: $main-blue;
+
 			&.-range-from-,
 			&.-range-to- {
 				background: $dark-blue;
 			}
 		}
+
 		&.-range-from-,
 		&.-range-to- {
 			border: none;
 			background: $dark-blue;
 			color: $white;
 		}
+
 		&.-in-range- {
 			background: $main-blue;
 			color: $white;
 		}
 	}
+
 	.air-datepicker-body--cells {
 		&.-days- {
 			row-gap: 5px;
 		}
+
 		&.-years- {
 			grid-template-columns: repeat(4, 1fr);
 		}
+
 		&.-months- {
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -398,3 +455,204 @@ input[type="number"]::-webkit-outer-spin-button {
 // 		transition: 0.3s ease-out 0s;
 // 	}
 // }
+
+.chart-statistic {
+	.chart-marks {
+		ul {
+			li {
+				.chart-line {
+					display: block;
+					width: 32px;
+					height: 8px;
+					border-radius: 20px;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+}
+
+.canvasjs-chart-credit {
+	display: none;
+}
+
+.canvasjs-chart-toolbar {
+	display: none;
+}
+
+#DoughnutChart {
+	height: 636px;
+	width: 100%;
+
+	@include md-max {
+		height: 400px;
+	}
+}
+
+/* Селектор для тултіпів CanvasJS */
+.canvasjs-chart-tooltip {
+	border-radius: 15px !important;
+	/* Заокруглені краї */
+	border: 1px solid #ccc !important;
+	/* Сіра рамка */
+	padding: 10px !important;
+	/* Відступи всередині тултіпу */
+	background-color: #fff !important;
+	/* Білий фон */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+	/* Легка тінь */
+
+	>div:first-child {
+		border: unset !important;
+	}
+
+	.chart-item {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.chart-val {
+		color: $main-blue;
+	}
+}
+
+#accordion-strakhovi-produkty {
+	max-height: 700px;
+
+	.card {
+		border: unset;
+		border-radius: unset;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	.card-body {
+		margin-right: 40px;
+
+		@include md-max {
+			margin-right: 20px;
+		}
+	}
+
+	.card-header {
+		padding: 0;
+		background: unset;
+		border-bottom: unset;
+		margin-bottom: 0;
+
+		.btn-link {
+			width: 100%;
+			text-align: left;
+			border-radius: 20px;
+			padding: 14.5px 22px 14.5px 24px;
+			background: #E8ECFD;
+			color: $main-blue;
+			font-size: inherit;
+			line-height: inherit;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 34px;
+			font-size: 32px;
+			font-weight: 500;
+			line-height: 36px;
+
+			@include md-max {
+				font-size: 28px;
+			}
+
+			&::after {
+				content: "";
+				background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+				background-size: cover;
+				max-width: 24px;
+				width: 100%;
+				height: 24px;
+				display: block;
+				transform: rotate(-90deg);
+				filter: brightness(0) saturate(100%) invert(99%) sepia(54%) saturate(21%) hue-rotate(266deg) brightness(118%) contrast(96%);
+				@include transition(0.3s ease-out 0s);
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				background: $main-blue;
+				width: 44px;
+				height: 44px;
+				border-radius: 8px;
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transform: translateY(-50%);
+
+			}
+
+			&.collapsed {
+				background: #E8ECFD;
+				color: $main-blue;
+
+				&::after {
+					filter: brightness(0) saturate(100%) invert(99%) sepia(54%) saturate(21%) hue-rotate(266deg) brightness(118%) contrast(96%);
+					transform: rotate(90deg);
+				}
+			}
+
+			&:hover,
+			&:focus {
+				text-decoration: unset;
+			}
+		}
+	}
+
+	.card-body {
+		padding: 36px 0 0 0;
+		margin-top: 0;
+	}
+
+	.accordion {
+
+		.card-header {
+			.btn-link {
+				font-size: 22px;
+				font-weight: 500;
+				line-height: 24px;
+				padding-top: 20.5px;
+				padding-bottom: 20.5px;
+
+				@include md-max {
+					font-size: 24px;
+				}
+			}
+		}
+
+		.card {
+			&:not(:last-child) {
+				margin-bottom: 28px;
+			}
+
+			&:last-child {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	.documents {
+		margin-top: -8px;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+			height: 6px;
+			background-color: $light-blue;
+		}
+
+		.documents--item a::before {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}

@@ -8,6 +8,96 @@
 	<link rel="shortcut icon" href="##" type="image/x-icon" />
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
+	<script>
+		(function () {
+			try {
+				const settings = JSON.parse(localStorage.getItem('accessibilitySettings'));
+				const savedImageSettings = localStorage.getItem('imageSettings');
+				const root = document.documentElement;
+
+				const classes = [];
+
+				if (settings?.colorScheme) classes.push(settings.colorScheme);
+				if (savedImageSettings) classes.push(savedImageSettings);
+
+				if (classes.length) {
+					root.classList.add(...classes);
+				}
+			} catch (e) {
+				// тихо ігноруємо
+			}
+		})();
+	</script>
+
+	<script>
+		(function () {
+			const removeClasses = [
+				'scheme-default', 'scheme-white-black', 'scheme-black-white', 'scheme-blue',
+				'images-normal', 'images-black-white', 'images-hide'
+			];
+
+			function applyAccessibilitySettings() {
+				try {
+					const settings = JSON.parse(localStorage.getItem('accessibilitySettings'));
+					const savedImageSettings = localStorage.getItem('imageSettings');
+					const root = document.documentElement;
+
+					root.classList.remove(...removeClasses);
+					if (settings?.colorScheme) root.classList.add(settings.colorScheme);
+					if (savedImageSettings) root.classList.add(savedImageSettings);
+
+					const applyToBody = () => {
+						const body = document.body;
+						if (!body) return;
+
+						body.classList.remove(...removeClasses);
+						if (settings?.colorScheme) body.classList.add(settings.colorScheme);
+						if (savedImageSettings) body.classList.add(savedImageSettings);
+
+						updateButtons(settings?.colorScheme, savedImageSettings);
+					};
+
+					if (document.body) {
+						applyToBody();
+					} else {
+						new MutationObserver((_, obs) => {
+							if (document.body) {
+								applyToBody();
+								obs.disconnect();
+							}
+						}).observe(document.documentElement, { childList: true, subtree: true });
+					}
+				} catch (e) {
+					console.error('Error loading accessibility settings:', e);
+				}
+			}
+
+			function updateButtons(activeScheme, activeImages) {
+				const schemeButtons = document.querySelectorAll('[data-scheme]');
+				const imageButtons = document.querySelectorAll('[data-images]');
+
+				schemeButtons.forEach(btn => {
+					btn.classList.toggle('active', btn.dataset.scheme === activeScheme);
+				});
+
+				imageButtons.forEach(btn => {
+					btn.classList.toggle('active', btn.dataset.images === activeImages);
+				});
+			}
+
+			applyAccessibilitySettings();
+
+			// ❗️Ось це ключ — при поверненні з BFCache робимо повне перезавантаження
+			window.addEventListener('pageshow', function (event) {
+				if (event.persisted) {
+					window.location.reload();
+				}
+			});
+
+		})();
+	</script>
+
+
 </head>
 
 <body>
@@ -536,16 +626,27 @@
 											</div>
 											<ul class="nav nav-pills flex-column d-none d-lg-flex" id="pills-tab" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="user-profile-nav--pills-1-tab" data-toggle="pill" href="#user-profile-nav--pills-1" role="tab" aria-controls="user-profile-nav--pills-1" aria-selected="true">Покупки</a>
+													<a class="nav-link active" id="user-profile-nav--pills-1-tab" data-toggle="pill"
+														href="#user-profile-nav--pills-1" role="tab"
+														aria-controls="user-profile-nav--pills-1" aria-selected="true">Покупки</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="user-profile-nav--pills-2-tab" data-toggle="pill" href="#user-profile-nav--pills-2" role="tab" aria-controls="user-profile-nav--pills-2" aria-selected="false">Реферальна програма</a>
+													<a class="nav-link" id="user-profile-nav--pills-2-tab" data-toggle="pill"
+														href="#user-profile-nav--pills-2" role="tab"
+														aria-controls="user-profile-nav--pills-2" aria-selected="false">Реферальна
+														програма</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="user-profile-nav--pills-3-tab" data-toggle="pill" href="#user-profile-nav--pills-3" role="tab" aria-controls="user-profile-nav--pills-3" aria-selected="false">Страхові випадки</a>
+													<a class="nav-link" id="user-profile-nav--pills-3-tab" data-toggle="pill"
+														href="#user-profile-nav--pills-3" role="tab"
+														aria-controls="user-profile-nav--pills-3" aria-selected="false">Страхові
+														випадки</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="user-profile-nav--pills-4-tab" data-toggle="pill" href="#user-profile-nav--pills-4" role="tab" aria-controls="user-profile-nav--pills-4" aria-selected="false">Мій профіль</a>
+													<a class="nav-link" id="user-profile-nav--pills-4-tab" data-toggle="pill"
+														href="#user-profile-nav--pills-4" role="tab"
+														aria-controls="user-profile-nav--pills-4" aria-selected="false">Мій
+														профіль</a>
 												</li>
 												<li class="nav-item">
 													<a class="nav-link user-profile--close" href="/">Вихід</a>
@@ -563,14 +664,19 @@
 									</div>
 									<div class="col-12 col-lg-9">
 										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="user-profile-nav--pills-1" role="tabpanel" aria-labelledby="user-profile-nav--pills-1-tab">
+											<div class="tab-pane fade show active" id="user-profile-nav--pills-1" role="tabpanel"
+												aria-labelledby="user-profile-nav--pills-1-tab">
 												<div class="h2 font-m mb-6 d-none d-lg-block">Покупки</div>
 												<div class="user-ipn px-4 py-3 rounded mb-6">
 													<div class="d-flex align-items-center">
 														<svg>
 															<use xlink:href="img/icons/icons.svg#i-info"></use>
 														</svg>
-														<p class="font-m ml-3 mb-0"><span><button type="button" class="btn text-red p-0" data-toggle="modal" data-target="#popup-user-ipn"><u>Вкажіть РНОКПП (ІПН) тут</u></button></span>, щоб ми могли знайти детальну інформацію про Ваші покупки</p>
+														<p class="font-m ml-3 mb-0"><span><button type="button"
+																	class="btn text-red p-0" data-toggle="modal"
+																	data-target="#popup-user-ipn"><u>Вкажіть РНОКПП (ІПН)
+																		тут</u></button></span>, щоб ми могли знайти детальну інформацію
+															про Ваші покупки</p>
 													</div>
 												</div>
 												<div class="list-purchases">
@@ -582,204 +688,283 @@
 													</div>
 													<div class="accordion" id="accordion-list-purchases">
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-1">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-1" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-1">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-1">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-1"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-1">
 																	<div class="list-nubmer-val">#1</div>
 																	<div class="list-name-val">Автоцивілка</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-1" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-1" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-1" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-1"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-2">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-2" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-2">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-2">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-2"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-2">
 																	<div class="list-nubmer-val">#2</div>
 																	<div class="list-name-val">Страхування майна</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-2" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-2" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-2" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-2"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-3">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-3" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-3">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-3">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-3"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-3">
 																	<div class="list-nubmer-val">#3</div>
 																	<div class="list-name-val">Медичний захист</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-3" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-3" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-3" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-3"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-4">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-4" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-4">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-4">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-4"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-4">
 																	<div class="list-nubmer-val">#4</div>
 																	<div class="list-name-val">Автоцивілка</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-4" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-4" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-4" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-4"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-5">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-5" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-5">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-5">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-5"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-5">
 																	<div class="list-nubmer-val">#5</div>
 																	<div class="list-name-val">Страхування майна</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-5" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-5" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-5" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-5"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-6">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-6" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-6">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-6">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-6"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-6">
 																	<div class="list-nubmer-val">#6</div>
 																	<div class="list-name-val">Медичний захист</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-6" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-6" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-6" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-6"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-7">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-7" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-7">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-7">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-7"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-7">
 																	<div class="list-nubmer-val">#7</div>
 																	<div class="list-name-val">Страхування майна</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-7" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-7" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-7" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-7"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-purchases-question-8">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-purchases-question-8" aria-expanded="false" aria-controls="collapse-accordion-list-purchases-question-8">
+															<div class="card-header p-0"
+																id="heading-accordion-list-purchases-question-8">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-purchases-question-8"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-purchases-question-8">
 																	<div class="list-nubmer-val">#8</div>
 																	<div class="list-name-val">Страхування майна</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
-																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 - 12.02.2023</div>
+																	<div class="list-validity-period-val d-none d-lg-block">12.02.2023 -
+																		12.02.2023</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-purchases-question-8" class="collapse" aria-labelledby="heading-accordion-list-purchases-question-8" data-parent="#accordion-list-purchases">
+															<div id="collapse-accordion-list-purchases-question-8" class="collapse"
+																aria-labelledby="heading-accordion-list-purchases-question-8"
+																data-parent="#accordion-list-purchases">
 																<div class="card-body">
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-validity-period mr-2">Строк дії</div>
-																		<div class="list-validity-period-val text-grey">12.02.2023 - 12.02.2023</div>
+																		<div class="list-validity-period-val text-grey">12.02.2023 -
+																			12.02.2023</div>
 																	</div>
 																	<div class="d-flex d-lg-none small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
 																		<div class="list-date-val text-grey">12.02.2023</div>
 																	</div>
-																	<a href="##" class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
+																	<a href="##"
+																		class="purchases-document small-txt">Поліс_ОСЦПВ_договір_№З210087525</a>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="user-profile-nav--pills-2" role="tabpanel" aria-labelledby="user-profile-nav--pills-2-tab">
+											<div class="tab-pane fade" id="user-profile-nav--pills-2" role="tabpanel"
+												aria-labelledby="user-profile-nav--pills-2-tab">
 												<div class="referral-program">
 													<div class="h2 font-m mb-8 d-none d-lg-block">Реферальна програма:</div>
 													<div class="bg-light-blue rounded py-5 py-lg-6 px-3 px-lg-5 mb-8">
-														<div class="bonus-balance h4 d-flex align-items-center justify-content-between mb-5">
+														<div
+															class="bonus-balance h4 d-flex align-items-center justify-content-between mb-5">
 															<span>Поточний баланс:</span>
-															<div class="count-bonus text-main-blue ml-4"><span>2 680</span> бонусів</div>
+															<div class="count-bonus text-main-blue ml-4"><span>2 680</span> бонусів
+															</div>
 														</div>
 														<div class="d-flex flex-column flex-lg-row justify-content-end">
-															<button type="button" class="btn btn-default btn-outline-main-blue h-100 mb-5 mb-lg-0 mr-lg-5" data-toggle="modal" data-target="#popup-transaction-history">Історія операцій</button>
+															<button type="button"
+																class="btn btn-default btn-outline-main-blue h-100 mb-5 mb-lg-0 mr-lg-5"
+																data-toggle="modal" data-target="#popup-transaction-history">Історія
+																операцій</button>
 															<div class="d-flex flex-column">
-																<a href="##" class="btn btn-default btn-main-blue h-100 mb-2">Вивести кошти на платіжну картку</a>
+																<a href="##" class="btn btn-default btn-main-blue h-100 mb-2">Вивести
+																	кошти на платіжну картку</a>
 																<div class="small-txt text-right">*З вирахуванням ПДФО</div>
 															</div>
 														</div>
@@ -791,8 +976,10 @@
 																<div class="row">
 																	<div class="col-12 col-md-6 mb-5 mb-md-0">
 																		<div class="field field-2">
-																			<div class="field--help-info small-txt text-red mb-1">Оберіть послугу</div>
-																			<label for="сhoose-service" class="small-txt mb-1">Оберіть послугу</label>
+																			<div class="field--help-info small-txt text-red mb-1">Оберіть
+																				послугу</div>
+																			<label for="сhoose-service" class="small-txt mb-1">Оберіть
+																				послугу</label>
 																			<div class="select-wrap">
 																				<select class="select-service" name="select-service">
 																					<option value="0">Автострахування</option>
@@ -805,16 +992,21 @@
 																	</div>
 																	<div class="col-12 col-md-6">
 																		<div class="field field-2">
-																			<div class="field--help-info small-txt text-red mb-1">Введіть суму страхування</div>
-																			<label for="insurance-amount" class="small-txt mb-1">Введіть суму страхування</label>
-																			<input type="text" id="insurance-amount" class="form-control" placeholder="Введіть суму страхування">
+																			<div class="field--help-info small-txt text-red mb-1">Введіть
+																				суму страхування</div>
+																			<label for="insurance-amount" class="small-txt mb-1">Введіть
+																				суму страхування</label>
+																			<input type="text" id="insurance-amount" class="form-control"
+																				placeholder="Введіть суму страхування">
 																		</div>
 																	</div>
 																</div>
 															</div>
 															<div class="col-12 col-lg-4">
-																<div class="potential-income d-flex justify-content-between align-items-center d-lg-block bg-white rounded px-3 px-xl-6 py-5 ml-xl-10">
-																	<div class="small-txt mb-lg-2 mr-2 mr-md-4 mr-lg-0">Потенційний дохід з послуги:</div>
+																<div
+																	class="potential-income d-flex justify-content-between align-items-center d-lg-block bg-white rounded px-3 px-xl-6 py-5 ml-xl-10">
+																	<div class="small-txt mb-lg-2 mr-2 mr-md-4 mr-lg-0">Потенційний дохід
+																		з послуги:</div>
 																	<div class="count-bonus"><span>1 200</span> бонусів</div>
 																</div>
 															</div>
@@ -822,9 +1014,12 @@
 														<div class="row">
 															<div class="col">
 																<div class="d-lg-none mb-2">Ваша реферальне посилання:</div>
-																<div class="referal-link d-flex align-items-center justify-content-between">
+																<div
+																	class="referal-link d-flex align-items-center justify-content-between">
 																	<span class="d-none d-lg-flex">Ваша реферальне посилання:</span>
-																	<button type="button" class="link btn p-0 text-grey" data-toggle="modal" data-target="#popup-referral-program">https://sgtas.ua/куа=23463</button>
+																	<button type="button" class="link btn p-0 text-grey"
+																		data-toggle="modal"
+																		data-target="#popup-referral-program">https://sgtas.ua/куа=23463</button>
 																</div>
 															</div>
 														</div>
@@ -834,23 +1029,28 @@
 														<div class="service-bonuses">
 															<div class="service-bonuses--item p-3 bg-white rounded">
 																<div class="name mb-3"><span>ДМС</span></div>
-																<div class="count-bonus small-txt text-center"><span>250</span> бонусів</div>
+																<div class="count-bonus small-txt text-center"><span>250</span> бонусів
+																</div>
 															</div>
 															<div class="service-bonuses--item p-3 bg-white rounded">
 																<div class="name mb-3"><span>Автоцивілка</span></div>
-																<div class="count-bonus small-txt text-center"><span>250</span> бонусів</div>
+																<div class="count-bonus small-txt text-center"><span>250</span> бонусів
+																</div>
 															</div>
 															<div class="service-bonuses--item p-3 bg-white rounded">
 																<div class="name mb-3"><span>КАСКО</span></div>
-																<div class="count-bonus small-txt text-center"><span>250</span> бонусів</div>
+																<div class="count-bonus small-txt text-center"><span>250</span> бонусів
+																</div>
 															</div>
 															<div class="service-bonuses--item p-3 bg-white rounded">
 																<div class="name mb-3"><span>Майно</span></div>
-																<div class="count-bonus small-txt text-center"><span>250</span> бонусів</div>
+																<div class="count-bonus small-txt text-center"><span>250</span> бонусів
+																</div>
 															</div>
 															<div class="service-bonuses--item p-3 bg-white rounded">
 																<div class="name mb-3"><span>Туристичне страхування</span></div>
-																<div class="count-bonus small-txt text-center"><span>250</span> бонусів</div>
+																<div class="count-bonus small-txt text-center"><span>250</span> бонусів
+																</div>
 															</div>
 														</div>
 													</div>
@@ -864,15 +1064,22 @@
 														</div>
 														<div class="accordion mb-3" id="accordion-list-involved-users">
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-1">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-1" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-1">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-1">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-1"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-1">
 																		<div class="list-nubmer-val">#1</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Автоцивілка</div>
 																		<div class="list-bonus-val d-none d-lg-block">240 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-1" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-1" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-1"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-1"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -886,15 +1093,23 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-2">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-2" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-2">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-2">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-2"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-2">
 																		<div class="list-nubmer-val">#2</div>
 																		<div class="list-involved-user-val">+380993****34</div>
-																		<div class="list-name-val d-none d-lg-block">Страхування майна</div>
+																		<div class="list-name-val d-none d-lg-block">Страхування майна
+																		</div>
 																		<div class="list-bonus-val d-none d-lg-block">240 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-2" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-2" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-2"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-2"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -908,15 +1123,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-3">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-3" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-3">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-3">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-3"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-3">
 																		<div class="list-nubmer-val">#3</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Медичний захист</div>
 																		<div class="list-bonus-val d-none d-lg-block">380 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-3" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-3" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-3"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-3"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -930,15 +1152,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-4">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-4" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-4">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-4">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-4"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-4">
 																		<div class="list-nubmer-val">#4</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Автоцивілка</div>
 																		<div class="list-bonus-val d-none d-lg-block">400 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-4" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-4" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-4"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-4"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -952,14 +1181,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-5">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-5" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-5">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-5">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-5"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-5">
 																		<div class="list-nubmer-val">#5</div>
 																		<div class="list-involved-user-val">+380993****34</div>
-																		<div class="list-name-val d-none d-lg-block">Страхування майна</div>
+																		<div class="list-name-val d-none d-lg-block">Страхування майна
+																		</div>
 																		<div class="list-bonus-val d-none d-lg-block">240 бонусів</div>
 																	</div>
-																	<div id="collapse-accordion-list-involved-users-question-5" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-5" data-parent="#accordion-list-involved-users">
+																	<div id="collapse-accordion-list-involved-users-question-5"
+																		class="collapse d-lg-none"
+																		aria-labelledby="heading-accordion-list-involved-users-question-5"
+																		data-parent="#accordion-list-involved-users">
 																		<div class="card-body">
 																			<div class="d-flex align-items-center small-txt mb-2">
 																				<div class="list-name mr-2">Назва послуги:</div>
@@ -974,15 +1211,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-6">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-6" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-6">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-6">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-6"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-6">
 																		<div class="list-nubmer-val">#6</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Медичний захист</div>
 																		<div class="list-bonus-val d-none d-lg-block">500 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-6" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-6" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-6"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-6"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -996,15 +1240,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-7">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-7" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-7">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-7">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-7"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-7">
 																		<div class="list-nubmer-val">#7</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Медичний захист</div>
 																		<div class="list-bonus-val d-none d-lg-block">500 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-7" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-7" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-7"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-7"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -1018,15 +1269,22 @@
 																</div>
 															</div>
 															<div class="card">
-																<div class="card-header p-0" id="heading-accordion-list-involved-users-question-8">
-																	<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-involved-users-question-8" aria-expanded="false" aria-controls="collapse-accordion-list-involved-users-question-8">
+																<div class="card-header p-0"
+																	id="heading-accordion-list-involved-users-question-8">
+																	<div class="btn btn-link collapsed" data-toggle="collapse"
+																		data-target="#collapse-accordion-list-involved-users-question-8"
+																		aria-expanded="false"
+																		aria-controls="collapse-accordion-list-involved-users-question-8">
 																		<div class="list-nubmer-val">#8</div>
 																		<div class="list-involved-user-val">+380993****34</div>
 																		<div class="list-name-val d-none d-lg-block">Медичний захист</div>
 																		<div class="list-bonus-val d-none d-lg-block">500 бонусів</div>
 																	</div>
 																</div>
-																<div id="collapse-accordion-list-involved-users-question-8" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-involved-users-question-8" data-parent="#accordion-list-involved-users">
+																<div id="collapse-accordion-list-involved-users-question-8"
+																	class="collapse d-lg-none"
+																	aria-labelledby="heading-accordion-list-involved-users-question-8"
+																	data-parent="#accordion-list-involved-users">
 																	<div class="card-body">
 																		<div class="d-flex align-items-center small-txt mb-2">
 																			<div class="list-name mr-2">Назва послуги:</div>
@@ -1047,26 +1305,37 @@
 													</div>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="user-profile-nav--pills-3" role="tabpanel" aria-labelledby="user-profile-nav--pills-3-tab">
+											<div class="tab-pane fade" id="user-profile-nav--pills-3" role="tabpanel"
+												aria-labelledby="user-profile-nav--pills-3-tab">
 												<div class="h2 font-m mb-6 d-none d-lg-block">Страхові випадки</div>
 												<div class="list-insurance-case mb-6">
 													<div class="list-insurance-case--head bg-blue mb-3">
 														<div class="list-nubmer">№</div>
 														<div class="list-date d-none d-lg-block">Дата</div>
-														<div class="list-name">Назва <span class="d-lg-none">страхового випадку</span></div>
+														<div class="list-name">Назва <span class="d-lg-none">страхового випадку</span>
+														</div>
 														<div class="list-status d-none d-lg-block">Статус</div>
 													</div>
 													<div class="accordion" id="accordion-list-insurance-case">
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-1">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-1" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-1">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-1">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-1"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-1">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Автоцивілка</div>
-																	<div class="list-status-val list-status-val--completed d-none d-lg-flex">Завершений</div>
+																	<div
+																		class="list-status-val list-status-val--completed d-none d-lg-flex">
+																		Завершений</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-1" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-1" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-1"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-1"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1074,21 +1343,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--completed">Завершений</div>
+																		<div class="list-status-val list-status-val--completed">Завершений
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-2">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-2" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-2">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-2">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-2"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-2">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Страхування майна</div>
-																	<div class="list-status-val list-status-val--considered d-none d-lg-flex">На розгляді</div>
+																	<div
+																		class="list-status-val list-status-val--considered d-none d-lg-flex">
+																		На розгляді</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-2" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-2" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-2"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-2"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1096,21 +1375,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--considered">На розгляді</div>
+																		<div class="list-status-val list-status-val--considered">На
+																			розгляді</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-3">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-3" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-3">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-3">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-3"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-3">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Медичний захист</div>
-																	<div class="list-status-val list-status-val--completed d-none d-lg-flex">Завершений</div>
+																	<div
+																		class="list-status-val list-status-val--completed d-none d-lg-flex">
+																		Завершений</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-3" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-3" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-3"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-3"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1118,21 +1407,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--completed">Завершений</div>
+																		<div class="list-status-val list-status-val--completed">Завершений
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-4">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-4" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-4">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-4">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-4"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-4">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Автоцивілка</div>
-																	<div class="list-status-val list-status-val--request d-none d-lg-flex">Надіслано запит</div>
+																	<div
+																		class="list-status-val list-status-val--request d-none d-lg-flex">
+																		Надіслано запит</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-4" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-4" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-4"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-4"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1140,21 +1439,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--request">Надіслано запит</div>
+																		<div class="list-status-val list-status-val--request">Надіслано
+																			запит</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-5">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-5" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-5">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-5">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-5"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-5">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Страхування майна</div>
-																	<div class="list-status-val list-status-val--considered d-none d-lg-flex">На розгляді</div>
+																	<div
+																		class="list-status-val list-status-val--considered d-none d-lg-flex">
+																		На розгляді</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-5" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-5" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-5"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-5"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1162,21 +1471,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--considered">На розгляді</div>
+																		<div class="list-status-val list-status-val--considered">На
+																			розгляді</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-6">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-6" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-6">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-6">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-6"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-6">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Медичний захист</div>
-																	<div class="list-status-val list-status-val--considered d-none d-lg-flex">На розгляді</div>
+																	<div
+																		class="list-status-val list-status-val--considered d-none d-lg-flex">
+																		На розгляді</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-6" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-6" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-6"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-6"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1184,21 +1503,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--considered">На розгляді</div>
+																		<div class="list-status-val list-status-val--considered">На
+																			розгляді</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-7">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-7" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-7">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-7">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-7"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-7">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Страхування майна</div>
-																	<div class="list-status-val list-status-val--considered d-none d-lg-flex">На розгляді</div>
+																	<div
+																		class="list-status-val list-status-val--considered d-none d-lg-flex">
+																		На розгляді</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-7" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-7" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-7"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-7"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1206,21 +1535,31 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--considered">На розгляді</div>
+																		<div class="list-status-val list-status-val--considered">На
+																			розгляді</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="card">
-															<div class="card-header p-0" id="heading-accordion-list-insurance-case-question-8">
-																<div class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-accordion-list-insurance-case-question-8" aria-expanded="false" aria-controls="collapse-accordion-list-insurance-case-question-8">
+															<div class="card-header p-0"
+																id="heading-accordion-list-insurance-case-question-8">
+																<div class="btn btn-link collapsed" data-toggle="collapse"
+																	data-target="#collapse-accordion-list-insurance-case-question-8"
+																	aria-expanded="false"
+																	aria-controls="collapse-accordion-list-insurance-case-question-8">
 																	<div class="list-nubmer-val">248347</div>
 																	<div class="list-date-val d-none d-lg-block">12.02.2023</div>
 																	<div class="list-name-val">Страхування майна</div>
-																	<div class="list-status-val list-status-val--considered d-none d-lg-flex">На розгляді</div>
+																	<div
+																		class="list-status-val list-status-val--considered d-none d-lg-flex">
+																		На розгляді</div>
 																</div>
 															</div>
-															<div id="collapse-accordion-list-insurance-case-question-8" class="collapse d-lg-none" aria-labelledby="heading-accordion-list-insurance-case-question-8" data-parent="#accordion-list-insurance-case">
+															<div id="collapse-accordion-list-insurance-case-question-8"
+																class="collapse d-lg-none"
+																aria-labelledby="heading-accordion-list-insurance-case-question-8"
+																data-parent="#accordion-list-insurance-case">
 																<div class="card-body">
 																	<div class="d-flex align-items-center small-txt mb-2">
 																		<div class="list-date mr-2">Дата</div>
@@ -1228,16 +1567,20 @@
 																	</div>
 																	<div class="d-flex align-items-center small-txt">
 																		<div class="list-status mr-2">Статус</div>
-																		<div class="list-status-val list-status-val--considered">На розгляді</div>
+																		<div class="list-status-val list-status-val--considered">На
+																			розгляді</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<button type="button" class="btn btn-outline-main-blue btn-default" data-toggle="modal" data-target="#popup-add-insurance-case">Додати страховий випадок за номером</button>
+												<button type="button" class="btn btn-outline-main-blue btn-default"
+													data-toggle="modal" data-target="#popup-add-insurance-case">Додати страховий
+													випадок за номером</button>
 											</div>
-											<div class="tab-pane fade" id="user-profile-nav--pills-4" role="tabpanel" aria-labelledby="user-profile-nav--pills-4-tab">
+											<div class="tab-pane fade" id="user-profile-nav--pills-4" role="tabpanel"
+												aria-labelledby="user-profile-nav--pills-4-tab">
 												<div class="my-profile">
 													<div class="d-none d-md-flex align-items-center mb-2">
 														<div class="user-pic mr-3">
@@ -1259,35 +1602,44 @@
 													<div class="row mb-0 mb-md-5">
 														<div class="col-12 col-md-4 mb-5 mb-md-0">
 															<div class="field field-2">
-																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше прізвище українськими літерами (кирилицею)</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше
+																	прізвище українськими літерами (кирилицею)</div>
 																<label for="surname" class="small-txt mb-1">Прізвище</label>
-																<input type="text" id="surname" class="form-control" placeholder="Прізвище">
+																<input type="text" id="surname" class="form-control"
+																	placeholder="Прізвище">
 															</div>
 														</div>
 														<div class="col-12 col-md-4 mb-5 mb-md-0">
 															<div class="field field-2">
-																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше ім’я українськими літерами (кирилицею)</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше ім’я
+																	українськими літерами (кирилицею)</div>
 																<label for="name" class="small-txt mb-1">Ім’я</label>
 																<input type="text" id="name" class="form-control" placeholder="Ім’я">
 															</div>
 														</div>
 														<div class="col-12 col-md-4 mb-5 mb-md-0">
 															<div class="field field-2">
-																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше по-батькові українськими літерами (кирилицею)</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть Ваше
+																	по-батькові українськими літерами (кирилицею)</div>
 																<label for="patronymic" class="small-txt mb-1">По-батькові</label>
-																<input type="text" id="patronymic" class="form-control" placeholder="По-батькові">
+																<input type="text" id="patronymic" class="form-control"
+																	placeholder="По-батькові">
 															</div>
 														</div>
 													</div>
 													<div class="row mb-0 mb-md-5">
 														<div class="col-12 col-md-6 mb-5 mb-md-0">
 															<div class="field field-2 mb-2">
-																<div class="field--help-info small-txt text-red mb-2">Введіть коректний РНОКПП (ІПН)</div>
+																<div class="field--help-info small-txt text-red mb-2">Введіть коректний
+																	РНОКПП (ІПН)</div>
 																<label for="ipn" class="small-txt mb-1">РНОКПП (ІПН)</label>
-																<input type="text" id="ipn" class="form-control" placeholder="РНОКПП (ІПН)">
+																<input type="text" id="ipn" class="form-control"
+																	placeholder="РНОКПП (ІПН)">
 															</div>
-															<div class="custom-control custom-checkbox custom-checkbox-2 position-relative mb-0">
-																<input type="checkbox" class="custom-control-input" id="form-ipn-check-step-one">
+															<div
+																class="custom-control custom-checkbox custom-checkbox-2 position-relative mb-0">
+																<input type="checkbox" class="custom-control-input"
+																	id="form-ipn-check-step-one">
 																<label class="custom-control-label" for="form-ipn-check-step-one">
 																	<span class="custom-checkbox--info">У мене немає ІПН</span>
 																</label>
@@ -1295,7 +1647,8 @@
 														</div>
 														<div class="col-12 col-md-6 mb-5 mb-md-0">
 															<div class="field field-2">
-																<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш Email</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть коректно
+																	Ваш Email</div>
 																<label for="name" class="small-txt mb-1">Email</label>
 																<input type="text" id="name" class="form-control" placeholder="Email">
 															</div>
@@ -1304,22 +1657,27 @@
 													<div class="row mb-5 mb-0 mb-md-5">
 														<div class="col-12 col-md-6 mb-5 mb-md-0">
 															<div class="field field-2">
-																<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш телефон</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть коректно
+																	Ваш телефон</div>
 																<label for="name" class="small-txt mb-1">Телефон</label>
-																<input type="phone" id="name" class="form-control" placeholder="Телефон">
+																<input type="phone" id="name" class="form-control"
+																	placeholder="Телефон">
 															</div>
 														</div>
 														<div class="col-12 col-md-6 mb-5 mb-md-0">
 															<div class="field field-2 field-password mb-1">
-																<div class="field--help-info small-txt text-red mb-1">Введіть коректно Ваш пароль</div>
+																<div class="field--help-info small-txt text-red mb-1">Введіть коректно
+																	Ваш пароль</div>
 																<label for="password" class="small-txt mb-1">Пароль</label>
 																<div class="position-relative">
-																	<input type="password" id="password" class="form-control" placeholder="Пароль">
+																	<input type="password" id="password" class="form-control"
+																		placeholder="Пароль">
 																	<button type="button" class="btn p-0 btn-toggle-password"></button>
 																</div>
 															</div>
 															<div class="d-flex justify-content-end">
-																<button type="button" class="btn small-txt p-0" data-toggle="modal" data-target="#popup-password-change">Змінити пароль</button>
+																<button type="button" class="btn small-txt p-0" data-toggle="modal"
+																	data-target="#popup-password-change">Змінити пароль</button>
 															</div>
 														</div>
 													</div>
@@ -1329,26 +1687,39 @@
 															<div class="col-12 mb-5">
 																<ul class="nav nav-pills" id="passport-data--pills-tab" role="tablist">
 																	<li class="nav-item">
-																		<a class="nav-link active" id="passport-data--pills-1-tab" data-toggle="pill" href="#passport-data--pills-1" role="tab" aria-controls="passport-data--pills-1" aria-selected="true">Паспорт</a>
+																		<a class="nav-link active" id="passport-data--pills-1-tab"
+																			data-toggle="pill" href="#passport-data--pills-1" role="tab"
+																			aria-controls="passport-data--pills-1"
+																			aria-selected="true">Паспорт</a>
 																	</li>
 																	<li class="nav-item">
-																		<a class="nav-link" id="passport-data--pills-2-tab" data-toggle="pill" href="#passport-data--pills-2" role="tab" aria-controls="passport-data--pills-2" aria-selected="false">ID-картка</a>
+																		<a class="nav-link" id="passport-data--pills-2-tab"
+																			data-toggle="pill" href="#passport-data--pills-2" role="tab"
+																			aria-controls="passport-data--pills-2"
+																			aria-selected="false">ID-картка</a>
 																	</li>
 																</ul>
 															</div>
 															<div class="col-12">
 																<div class="tab-content" id="passport-data--pills-tabContent">
-																	<div class="tab-pane fade show active" id="passport-data--pills-1" role="tabpanel" aria-labelledby="passport-data--pills-1-tab">
+																	<div class="tab-pane fade show active" id="passport-data--pills-1"
+																		role="tabpanel" aria-labelledby="passport-data--pills-1-tab">
 																		<div class="row mb-md-5">
 																			<div class="col-12 col-md-6 mb-5 mb-md-0">
 																				<div class="field field-2 d-flex flex-column">
-																					<div class="field--help-info small-txt text-red mb-1">Виберіть дату народження</div>
-																					<label for="datepicker-birthday" class="small-txt mb-1">Дата народження</label>
+																					<div class="field--help-info small-txt text-red mb-1">
+																						Виберіть дату народження</div>
+																					<label for="datepicker-birthday"
+																						class="small-txt mb-1">Дата народження</label>
 																					<div class="datepicker datepicker-birthday">
-																						<input id="datepicker-birthday" class="flatpickr-input form-control" type="text" placeholder="Виберіть дату" data-input>
+																						<input id="datepicker-birthday"
+																							class="flatpickr-input form-control" type="text"
+																							placeholder="Виберіть дату" data-input>
 																						<a class="input-button" title="toggle" data-toggle>
 																							<svg>
-																								<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																								<use
+																									xlink:href="img/icons/icons.svg#i-calendar">
+																								</use>
 																							</svg>
 																						</a>
 																					</div>
@@ -1356,20 +1727,27 @@
 																			</div>
 																			<div class="col-12 col-md-6 mb-5 mb-md-0">
 																				<div class="field field-2">
-																					<label for="issuing-authority" class="small-txt mb-1">Орган, що видав</label>
-																					<input type="text" id="issuing-authority" class="form-control" placeholder="Орган, що видав">
+																					<label for="issuing-authority"
+																						class="small-txt mb-1">Орган, що видав</label>
+																					<input type="text" id="issuing-authority"
+																						class="form-control" placeholder="Орган, що видав">
 																				</div>
 																			</div>
 																		</div>
 																		<div class="row mb-md-5">
 																			<div class="col-12 col-md-6 mb-5 mb-md-0">
 																				<div class="field field-2 d-flex flex-column">
-																					<label for="datepicker-issue-date" class="small-txt mb-1">Дата видачі</label>
+																					<label for="datepicker-issue-date"
+																						class="small-txt mb-1">Дата видачі</label>
 																					<div class="datepicker datepicker-issue-date">
-																						<input id="#datepicker-issue-date" class="flatpickr-input form-control" type="text" placeholder="Дата видачі" data-input>
+																						<input id="#datepicker-issue-date"
+																							class="flatpickr-input form-control" type="text"
+																							placeholder="Дата видачі" data-input>
 																						<a class="input-button" title="toggle" data-toggle>
 																							<svg>
-																								<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																								<use
+																									xlink:href="img/icons/icons.svg#i-calendar">
+																								</use>
 																							</svg>
 																						</a>
 																					</div>
@@ -1377,35 +1755,48 @@
 																			</div>
 																			<div class="col-12 col-md-6 mb-5 mb-md-0">
 																				<div class="field field-2">
-																					<label for="passport-number" class="small-txt mb-1">Номер паспорта</label>
-																					<input type="text" id="passport-number" class="form-control" placeholder="Номер паспорта">
+																					<label for="passport-number" class="small-txt mb-1">Номер
+																						паспорта</label>
+																					<input type="text" id="passport-number"
+																						class="form-control" placeholder="Номер паспорта">
 																				</div>
 																			</div>
 																		</div>
 																		<div class="row">
 																			<div class="col-12">
 																				<div class="field field-2 mb-5">
-																					<label for="passport-series" class="small-txt mb-1">Серія паспорта</label>
-																					<input type="text" id="passport-series" class="form-control" placeholder="Серія паспорта">
+																					<label for="passport-series" class="small-txt mb-1">Серія
+																						паспорта</label>
+																					<input type="text" id="passport-series"
+																						class="form-control" placeholder="Серія паспорта">
 																				</div>
 																				<div class="field field-2">
-																					<div class="field--help-info small-txt text-red mb-1">Введіть місце реєстрації</div>
-																					<label for="registration-place" class="small-txt mb-1">Місце реєстрації</label>
-																					<input type="phone" id="registration-place" class="form-control" placeholder="Місце реєстрації">
+																					<div class="field--help-info small-txt text-red mb-1">
+																						Введіть місце реєстрації</div>
+																					<label for="registration-place"
+																						class="small-txt mb-1">Місце реєстрації</label>
+																					<input type="phone" id="registration-place"
+																						class="form-control" placeholder="Місце реєстрації">
 																				</div>
 																			</div>
 																		</div>
 																	</div>
-																	<div class="tab-pane fade" id="passport-data--pills-2" role="tabpanel" aria-labelledby="passport-data--pills-2-tab">
+																	<div class="tab-pane fade" id="passport-data--pills-2"
+																		role="tabpanel" aria-labelledby="passport-data--pills-2-tab">
 																		<div class="row">
 																			<div class="col-12 col-md-6 mb-5 mb-md-0">
 																				<div class="field field-2 d-flex flex-column">
-																					<label for="datepicker-issue-date" class="small-txt mb-1">Дата видачі</label>
+																					<label for="datepicker-issue-date"
+																						class="small-txt mb-1">Дата видачі</label>
 																					<div class="datepicker datepicker-issue-date">
-																						<input id="#datepicker-issue-date" class="flatpickr-input form-control" type="text" placeholder="Дата видачі" data-input>
+																						<input id="#datepicker-issue-date"
+																							class="flatpickr-input form-control" type="text"
+																							placeholder="Дата видачі" data-input>
 																						<a class="input-button" title="toggle" data-toggle>
 																							<svg>
-																								<use xlink:href="img/icons/icons.svg#i-calendar"></use>
+																								<use
+																									xlink:href="img/icons/icons.svg#i-calendar">
+																								</use>
 																							</svg>
 																						</a>
 																					</div>
@@ -1413,8 +1804,10 @@
 																			</div>
 																			<div class="col-12 col-md-6">
 																				<div class="field field-2">
-																					<label for="passport-number" class="small-txt mb-1">Номер паспорта</label>
-																					<input type="text" id="passport-number" class="form-control" placeholder="Номер паспорта">
+																					<label for="passport-number" class="small-txt mb-1">Номер
+																						паспорта</label>
+																					<input type="text" id="passport-number"
+																						class="form-control" placeholder="Номер паспорта">
 																				</div>
 																			</div>
 																		</div>
@@ -1431,7 +1824,8 @@
 																	<div class="list-info">
 																		<div class="list-nubmer-val">#1</div>
 																		<div class="list-contract-document--wrap">
-																			<div class="list-contract-document-val">Поліс_ОСЦПВ_договір_№З210087525</div>
+																			<div class="list-contract-document-val">
+																				Поліс_ОСЦПВ_договір_№З210087525</div>
 																		</div>
 																		<div class="list-date--wrap d-flex mt-2 mt-lg-0 mb-2 mb-lg-0">
 																			<div class="list-date d-lg-none mr-2">Дійсний до:</div>
@@ -1442,7 +1836,8 @@
 																			<div class="list-size-val">56,4 Кб</div>
 																		</div>
 																		<div class="btn--wrap d-flex justify-content-end">
-																			<button type="button" class="btn p-0 text-main-blue">Завантажити</button>
+																			<button type="button"
+																				class="btn p-0 text-main-blue">Завантажити</button>
 																		</div>
 																	</div>
 																</div>

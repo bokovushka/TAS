@@ -8,6 +8,7 @@
 // @import "../../node_modules/flatpickr/dist/flatpickr";
 @import "styles/air-datepicker";
 @import "../../node_modules/select2/src/scss/core";
+@import "styles/overlayscrollbars"; //import 'overlayscrollbars/overlayscrollbars.css';
 
 //? відступи
 .container {
@@ -17,14 +18,16 @@
 		}
 	}
 }
+
 .row {
 	@each $breakpoint, $gutter in $grid-gutter-widths {
 		@include media-breakpoint-only($breakpoint) {
 			@include make-row($gutter);
 		}
 	}
-	.row > .col,
-	.row > [class*="col-"] {
+
+	.row>.col,
+	.row>[class*="col-"] {
 		@each $breakpoint, $gutter in $grid-gutter-widths {
 			@include media-breakpoint-only($breakpoint) {
 				@include make-col-ready($gutter);
@@ -32,9 +35,11 @@
 		}
 	}
 }
+
 .no-gutters {
 	margin-right: 0 !important;
 	margin-left: 0 !important;
+
 	.col,
 	[class*="col-"] {
 		padding-right: 0 !important;
@@ -43,36 +48,47 @@
 }
 
 @include xxl-min {
+
 	.row .col-xxl-auto,
 	.row .row .col-xxl-auto {
 		width: auto;
 	}
 }
+
 @include xl-min {
+
 	.row .col-xl-auto,
-	.row .row > .col-xl-auto {
+	.row .row>.col-xl-auto {
 		width: auto;
 	}
 }
+
 @include lg-min {
+
 	.row .col-lg-auto,
-	.row .row > .col-lg-auto {
+	.row .row>.col-lg-auto {
 		width: auto;
 	}
 }
+
 @include md-min {
+
 	.row .col-md-auto,
-	.row .row > .col-md-auto {
+	.row .row>.col-md-auto {
 		width: auto;
 	}
 }
+
 @include sm-min {
+
 	.row .col-sm-auto,
 	.row .row .col-sm-auto {
 		width: auto;
 	}
 }
+
 @include xs-min {
+
 	.row .col-auto,
 	.row .row .col-auto {
 		width: auto;
