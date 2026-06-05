@@ -120,3 +120,19 @@ $(".select-additional-limit--wrap .btn-default").on("click", function () {
 	$(".select-additional-limit").prop("disabled", true);
 	$(".select-additional-limit").prop("disabled", true);
 });
+
+
+$(document).ready(function () {
+	$('.select-year-driver-form-calculation-data').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('.select-year-driver-form-calculation-data--wrap')
+	});
+});
+
+$(document).ready(function () {
+	$('.select-city-form-calculation-data').select2({
+		minimumResultsForSearch: -1,
+		dropdownParent: $('.select-city-form-calculation-data--wrap')
+	});
+});
+

@@ -9,34 +9,30 @@ $light-blue: #f3f5ff !default;
 $grey: #878787 !default;
 $red: #ff0000 !default;
 
-$colors: () !default;
-$colors: map-merge(
-	(
-		"white": $white,
-		"black": $black,
-		"dark-blue": $dark-blue,
-		"main-blue": $main-blue,
-		"blue": $blue,
-		"light-blue": $light-blue,
-		"grey": $grey,
-		"red": $red
-	),
-	$colors
+$colors: (
+	) !default;
+$colors: map-merge(("white": $white,
+			"black": $black,
+			"dark-blue": $dark-blue,
+			"main-blue": $main-blue,
+			"blue": $blue,
+			"light-blue": $light-blue,
+			"grey": $grey,
+			"red": $red),
+		$colors
 );
 
-$theme-colors: () !default;
-$theme-colors: map-merge(
-	(
-		"white": $white,
-		"black": $black,
-		"dark-blue": $dark-blue,
-		"main-blue": $main-blue,
-		"blue": $blue,
-		"light-blue": $light-blue,
-		"grey": $grey,
-		"red": $red
-	),
-	$theme-colors
+$theme-colors: (
+	) !default;
+$theme-colors: map-merge(("white": $white,
+			"black": $black,
+			"dark-blue": $dark-blue,
+			"main-blue": $main-blue,
+			"blue": $blue,
+			"light-blue": $light-blue,
+			"grey": $grey,
+			"red": $red),
+		$theme-colors
 );
 
 $body-bg: $white !default;
@@ -47,7 +43,8 @@ $container-max-widths: (
 	// sm: 576px,
 	// md: 768px,
 	// lg: 992px,
-	xs: 1304px
+	xs: 1304px,
+	// xxxl: 1695px,
 );
 
 $grid-breakpoints: (
@@ -56,17 +53,19 @@ $grid-breakpoints: (
 	md: 768px,
 	lg: 1024px,
 	xl: 1200px,
-	xxl: 1400px
-) !default;
+	xxl: 1400px,
+	xxxl: 1800px,
+	// xxxl:1920px,
+	) !default;
 
 $grid-gutter-widths: (
 	// xs: 20px,
 	xs: 24px,
 	lg: 32px,
-	xl: 24px
-) !default;
+	xl: 24px) !default;
 
-$grid-gutter-width: map-get($grid-gutter-widths, lg);
+$grid-gutter-width: map-get($grid-gutter-widths, lg
+);
 
 //typography
 $font-family-sans-serif: "Inter", sans-serif !default;
@@ -88,89 +87,37 @@ $input-btn-padding-x-sm: 26px !default;
 
 //spacer
 $spacer: 10px;
-$spacers: ();
-$spacers: map-merge(
-	(
-		0: 0,
-		1: (
-			$spacer * 0.5
-		),
-		2: $spacer,
-		3: (
-			$spacer * 1.5
-		),
-		4: (
-			$spacer * 2
-		),
-		5: (
-			$spacer * 2.5
-		),
-		6: (
-			$spacer * 3
-		),
-		7: (
-			$spacer * 3.5
-		),
-		8: (
-			$spacer * 4
-		),
-		9: (
-			$spacer * 4.5
-		),
-		10: (
-			$spacer * 5
-		),
-		11: (
-			$spacer * 5.5
-		),
-		12: (
-			$spacer * 6
-		),
-		13: (
-			$spacer * 6.5
-		),
-		14: (
-			$spacer * 7
-		),
-		15: (
-			$spacer * 7.5
-		),
-		16: (
-			$spacer * 8
-		),
-		17: (
-			$spacer * 8.5
-		),
-		18: (
-			$spacer * 9
-		),
-		19: (
-			$spacer * 9.5
-		),
-		20: (
-			$spacer * 10
-		),
-		21: (
-			$spacer * 10.5
-		),
-		22: (
-			$spacer * 11
-		),
-		23: (
-			$spacer * 11.5
-		),
-		24: (
-			$spacer * 12
-		),
-		25: (
-			$spacer * 12.5
-		),
-		26: (
-			$spacer * 13
-		)
-	),
-	$spacers
+$spacers: (
 );
+$spacers: map-merge((0: 0,
+			1: ($spacer * 0.5),
+			2: $spacer,
+			3: ($spacer * 1.5),
+			4: ($spacer * 2),
+			5: ($spacer * 2.5),
+			6: ($spacer * 3),
+			7: ($spacer * 3.5),
+			8: ($spacer * 4),
+			9: ($spacer * 4.5),
+			10: ($spacer * 5),
+			11: ($spacer * 5.5),
+			12: ($spacer * 6),
+			13: ($spacer * 6.5),
+			14: ($spacer * 7),
+			15: ($spacer * 7.5),
+			16: ($spacer * 8),
+			17: ($spacer * 8.5),
+			18: ($spacer * 9),
+			19: ($spacer * 9.5),
+			20: ($spacer * 10),
+			21: ($spacer * 10.5),
+			22: ($spacer * 11),
+			23: ($spacer * 11.5),
+			24: ($spacer * 12),
+			25: ($spacer * 12.5),
+			26: ($spacer * 13),
+			31: ($spacer * 13)),
+		$spacers);
 
 //link
 $link-color: $black !default;

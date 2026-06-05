@@ -361,3 +361,27 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+
+//? ===== calc-mini-casco-page =====
+
+document.addEventListener('DOMContentLoaded', () => {
+	const table = document.querySelector('.calculation-table--minicasco');
+	const btn = document.querySelector('.calculation-table--minicasco-buttons button');
+
+	if (!table || !btn) return;
+
+	const rows = table.querySelectorAll('.table-row.table-body');
+
+
+	if (rows.length <= 3) {
+		btn.style.display = 'none';
+		return;
+	}
+
+	btn.addEventListener('click', () => {
+		table.classList.toggle('expanded');
+		btn.textContent = table.classList.contains('expanded')
+			? 'Сховати'
+			: 'Розгорнути';
+	});
+});

@@ -32,35 +32,35 @@ if (window.location.pathname === "/casco.html") { //добавляє викон�
 	});
 }
 
-// //? price-slider-minicasco
-if (window.location.pathname === "/minicasco.html") { //добавляє виконання скрипту на сторінках з таким вмістом
-	let PriceSliderMiniCasco = new RangeSlider({
-		target: document.getElementById("price-slider-minicasco"),
-		props: {
-			min: 0,
-			max: 50000,
-			values: [0],
-			step: 1,
-			range: "min",
-			float: true,
-			suffix: "",
-			pushy: false,
-			pips: false,
-		}
-	});
+// // //? price-slider-minicasco
+// if (window.location.pathname === "/minicasco.html") { //добавляє виконання скрипту на сторінках з таким вмістом
+// 	let PriceSliderMiniCasco = new RangeSlider({
+// 		target: document.getElementById("price-slider-minicasco"),
+// 		props: {
+// 			min: 0,
+// 			max: 50000,
+// 			values: [0],
+// 			step: 1,
+// 			range: "min",
+// 			float: true,
+// 			suffix: "",
+// 			pushy: false,
+// 			pips: false,
+// 		}
+// 	});
 
-	let PriceSliderMiniCascoValue = document.querySelector(".minicasco-page .calculation-data .price-subject .price-value");
+// 	let PriceSliderMiniCascoValue = document.querySelector(".minicasco-page .calculation-data .price-subject .price-value");
 
-	//змінює значення при використанні повзунка
-	PriceSliderMiniCasco.$on('change', function (e) {
-		PriceSliderMiniCascoValue.value = e.detail.values[0];
-	});
+// 	//змінює значення при використанні повзунка
+// 	PriceSliderMiniCasco.$on('change', function (e) {
+// 		PriceSliderMiniCascoValue.value = e.detail.values[0];
+// 	});
 
-	//змінює значення в інпутах
-	PriceSliderMiniCascoValue.addEventListener("change", (e) => {
-		PriceSliderMiniCasco.$set({ values: [PriceSliderMiniCascoValue.value] });
-	});
-}
+// 	//змінює значення в інпутах
+// 	PriceSliderMiniCascoValue.addEventListener("change", (e) => {
+// 		PriceSliderMiniCasco.$set({ values: [PriceSliderMiniCascoValue.value] });
+// 	});
+// }
 
 //? price-slider-eurocasco 
 if (window.location.pathname === "/eurocasco.html") { //добавляє виконання скрипту лиш на певній сторінці
