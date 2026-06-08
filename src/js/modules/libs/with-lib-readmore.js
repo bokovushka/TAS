@@ -28,8 +28,8 @@ if (window.innerWidth < 1200) {
 $('.spoiler--minicasco--price').readmore({
 	speed: 75,
 	collapsedHeight: false,
-	moreLink: '<div class="row"><div class="col-10 offset-2"><button class="btn btn-more btn-text p-0 mb-3 mb-xxxl-6">Прайс виплат</button>',
-	lessLink: '<div class="row"><div class="col-10 offset-2"><button class="btn btn-more btn-text p-0 mt-5 mb-xxxl-6">Згорнути</button>'
+	moreLink: '<div class="row"><div class="col-12 col-lg-10 offset-lg-2"><button class="btn btn-more btn-text p-0 mb-3 mb-xxxl-6">Прайс виплат</button>',
+	lessLink: '<div class="row"><div class="col-12 col-lg-10 offset-lg-2"><button class="btn btn-more btn-text p-0 mt-5 mb-6">Згорнути</button>'
 
 });
 

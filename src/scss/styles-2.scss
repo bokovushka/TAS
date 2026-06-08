@@ -670,7 +670,8 @@ input[type="number"]::-webkit-outer-spin-button {
 //? ===== calc-mini-casco-page =====
 
 .calc-mini-casco-page,
-.minicasco-page {
+.minicasco-page,
+.calc-insurance-payment-page--minicasco {
 
 	.container {
 		@include xxxl-min {
@@ -698,6 +699,15 @@ input[type="number"]::-webkit-outer-spin-button {
 			font-size: 22px;
 			font-weight: 400;
 			line-height: 27px;
+		}
+
+		.buttons .btn {
+			@include xxxl-min {
+				font-size: 22px;
+				font-weight: 400;
+				line-height: 27px;
+				min-width: 326px;
+			}
 		}
 
 		.form-calculation-data {
@@ -794,6 +804,7 @@ input[type="number"]::-webkit-outer-spin-button {
 				}
 			}
 		}
+
 	}
 
 	//radio
@@ -955,7 +966,7 @@ input[type="number"]::-webkit-outer-spin-button {
 				line-height: 1.5;
 			}
 
-			@include lg-max {
+			@include xl-max {
 				column-gap: 20px;
 			}
 
@@ -976,15 +987,24 @@ input[type="number"]::-webkit-outer-spin-button {
 			}
 
 			&.table-body {
-				@include md-max {
+				grid-template-columns: 1fr minmax(420px, 1fr) 1fr;
+
+				@include xl-max {
+					grid-template-columns: 1fr minmax(370px, 1fr) 1fr;
+				}
+
+				@include lg-max {
 					grid-template-columns: repeat(1, 1fr);
 				}
 
 				&:not(:last-child) {
 					margin-bottom: 40px;
 
-					@include lg-max {
+					@include xl-max {
 						margin-bottom: 20px;
+					}
+
+					@include lg-max {
 						border: 1.57px solid rgb(220, 226, 255);
 						background: rgb(255, 255, 255);
 						padding: 15px;
@@ -997,7 +1017,7 @@ input[type="number"]::-webkit-outer-spin-button {
 					border-radius: 1.25rem;
 					padding: 20px;
 
-					@include md-max {
+					@include lg-max {
 						&:not(:last-child) {
 							margin-bottom: 20px;
 						}
@@ -1109,7 +1129,7 @@ input[type="number"]::-webkit-outer-spin-button {
 								line-height: 44px;
 							}
 
-							@include lg-max {
+							@include xl-max {
 								font-size: 32px;
 								line-height: 34px;
 								column-gap: 5px;
@@ -1149,6 +1169,13 @@ input[type="number"]::-webkit-outer-spin-button {
 	.calculation-table--minicasco-buttons {
 		.btn-main-blue {
 			width: 325px;
+
+			@include xxxl-min {
+				font-size: 22px;
+				font-weight: 400;
+				line-height: 27px;
+				min-width: 326px;
+			}
 		}
 	}
 }
@@ -1212,9 +1239,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .filter-cards {
 	&.filter-cards--minicasco {
-		.filter-card .filter-car--pic {
-			max-width: 196px;
-			width: 100%;
+		.filter-card {
+			.filter-car--pic {
+				max-width: 205px;
+				width: 100%;
+			}
+
+			.btn-more {
+				background: unset;
+			}
 		}
 	}
 }
@@ -1230,6 +1263,10 @@ input[type="number"]::-webkit-outer-spin-button {
 		.btn-add {
 			max-width: 185px;
 			width: 100%;
+
+			@include sm-max {
+				max-width: 100%;
+			}
 		}
 
 		.field-wrap {
@@ -1245,7 +1282,270 @@ input[type="number"]::-webkit-outer-spin-button {
 	overflow: hidden;
 	max-height: 1px;
 
+	.minicasco-payment-price {
+
+		.inner {
+			border-color: var(--light-blue);
+		}
+	}
+
+
 	&.is-open {
 		height: auto !important;
+	}
+}
+
+.spoiler--minicasco--price[aria-expanded="true"] {
+	.minicasco-payment-price {
+
+		.inner {
+			border-color: rgb(220, 226, 255);
+		}
+	}
+}
+
+.calc-insurance-payment-page--minicasco {
+	.filter-card {
+		.btn-outline-main-blue {
+			max-width: 220px;
+			margin: 0 auto;
+
+			@include xxl-min {
+				font-size: 23px;
+				line-height: 24px;
+			}
+
+			@include md-max {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.insurance-payment--minicasco--wrap {
+	.insurance-payment--minicasco {
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+
+		@include xxl-max {
+			bottom: 30px;
+		}
+
+		@include md-max {
+			bottom: 20px;
+		}
+
+		.small-txt {
+			font-size: 24px;
+			line-height: 26px;
+
+			@include xxl-max {
+				font-size: 18px;
+				line-height: 22px;
+			}
+		}
+	}
+
+	.price {
+		font-size: 59.59px;
+		font-weight: 500;
+		line-height: 72px;
+		color: var(--white);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		column-gap: 15px;
+
+		@include xxl-max {
+			font-size: 40px;
+			line-height: 44px;
+		}
+
+	}
+
+	.currency {
+		&::after {
+			content: "";
+			display: block;
+			position: relative;
+			width: 45.62px;
+			height: 54.54px;
+			background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
+			filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+
+			@include xxl-max {
+				width: 35px;
+				height: 45px;
+			}
+
+			@include xxl-max {
+				width: 25px;
+				height: 35px;
+			}
+		}
+	}
+
+	.wrap-img {
+		overflow: visible;
+		position: relative;
+		height: 287px;
+		width: 100%;
+
+		.bg-down {
+			z-index: 1;
+			object-fit: contain;
+
+			@include xxxl-min {
+				transform: translate(-50%, -50%) translate(-10px, 20px);
+			}
+		}
+	}
+}
+
+.filter-cards .filter-card {
+	@include xxxl-min {
+		font-size: 23px;
+		line-height: 24px;
+
+		.head {
+			font-size: 27px;
+			line-height: 29px;
+		}
+
+		.company-name {
+			font-size: 29px;
+			line-height: 32px;
+		}
+
+		.field-franchise,
+		.btn-more,
+		.btn-more--close,
+		.inner,
+		.field,
+		.field .select2-container .select2-selection {
+			font-size: 23px;
+			line-height: 24px;
+		}
+
+		.field .form-control {
+			@include xxxl-min {
+				height: 62px;
+
+				&::placeholder {
+					font-size: 23px;
+					line-height: 24px;
+				}
+
+			}
+		}
+
+		.filter-card--additional .list-liability-limits li:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
+		.select-wrap {
+			max-width: 468px;
+		}
+
+		.field .select2-container .select2-selection {
+			height: 62px;
+		}
+
+		.filter-card--cost {
+			max-width: 357px;
+			margin: 0 auto;
+			margin-top: 115px;
+
+			.small-txt {
+				font-size: 15.12px;
+				font-weight: 500;
+				line-height: 18px;
+			}
+
+			.h4 {
+				font-size: 26.45px;
+				font-weight: 500;
+				line-height: 32px;
+			}
+		}
+	}
+
+	.head {
+		@include md-max {
+			font-size: 22px;
+			line-height: 26px;
+		}
+	}
+}
+
+.select2-results__option,
+.field .select2-container .select2-selection {
+	@include xxxl-min {
+		font-size: 23px;
+		line-height: 24px;
+	}
+}
+
+.calc-minicasco-page--mini {
+
+	@include xxxl-min {
+		.filter-cards .filter-card .company-name {
+			font-size: 56px;
+			line-height: 60px;
+		}
+
+		.filter-cards .filter-card {
+			.btn-outline-main-blue {
+				height: 62px;
+				max-width: 220px;
+				font-size: 22.68px;
+				font-weight: 500;
+				line-height: 27px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto;
+				border-radius: 40px;
+			}
+
+			.filter-card--cost {
+				margin-top: 40px;
+			}
+		}
+	}
+
+	.filter-cards .filter-card .company-name {
+		@include lg-max {
+			font-size: 32px;
+			line-height: 36px;
+		}
+
+		@include md-max {
+			font-size: 24px;
+			line-height: 28px;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 24px;
+				height: 24px;
+				position: relative;
+				background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+				background-size: cover;
+				margin-left: 10px;
+				transform: rotate(0deg);
+				@include transition(0.3s ease-out 0s);
+			}
+
+			&.active {
+				&::after {
+					transform: rotate(90deg);
+					@include transition(0.3s ease-out 0s);
+				}
+			}
+		}
 	}
 }

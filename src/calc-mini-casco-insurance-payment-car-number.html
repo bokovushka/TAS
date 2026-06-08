@@ -4,7 +4,7 @@
 "title":"Міні КАСКО"
 })
 
-<body class="calc-mini-casco-page">
+<body class="calc-mini-casco-page calc-minicasco-page--mini">
 	<div class="wrapper">
 		@@include('html/header.html',{})
 		<main class="main">
@@ -29,483 +29,662 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xxl-0 py-6 py-lg-12 mb-8">
-									<div class="row">
-										<div class="col col-xxl-10 mx-auto">
-											<div class="text-center">
-												<h1 class="h2 mb-5 mb-lg-8">Розрахунок вартості міні КАСКО для:</h1>
-												<div class="h4 font-m mb-5">
-													<div class="text-main-blue rounded-0 p-0">TOYOTA LAND CRUISER 200 2018</div>
-												</div>
-											</div>
-											<div class="buttons">
-												<div class="row">
-													<div class="col col-lg-auto mb-0 mx-auto"><button type="button"
-															class="btn btn-text p-0">Змінити дані</button></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div
-									class="filters-search filters-search-mini-casco d-lg-flex justify-content-lg-between align-items-lg-center mb-8">
-									<div class="left-side row">
-										<div class="col-6 col-lg-auto order-1 mb-2 mb-lg-0">
-											<div class="field-wrap mr-1 mr-md-5">
-												<div class="field field-2 field-coverage-amount">
-													<label for="select-coverage-amount" class="text-black mb-1">Сума покриття</label>
-													<div class="select-wrap">
-														<select class="select-coverage-amount" name="select-coverage-amount">
-															<option value="0">Не вибрано</option>
-															<option value="1">50 000 грн</option>
-															<option value="2">100 000 грн</option>
-															<option value="2">150 000 грн</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6 col-lg-auto order-3 order-lg-2 ">
-											<div class="field-wrap mr-1 mr-md-5">
-												<div class="field field-2 field-considered-risks">
-													<label for="select-considered-risks" class="text-black mb-1">Враховані
-														ризики</label>
-													<div class="select-wrap">
-														<select class="select-considered-risks" name="select-considered-risks">
-															<option value="0">Не вибрано</option>
-															<option value="1">ДТП з вини водія</option>
-															<option value="2">ДТП з вини і без вини водія</option>
-															<option value="3">ДТП без вини водія</option>
-															<option value="4">Повне знищення внаслідок ДТП</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6 col-lg-auto order-4 order-lg-3">
-											<div class="field-wrap">
-												<div class="field field-2 field-sort-by">
-													<label for="select-sort-by" class="text-black mb-1">Вартість</label>
-													<div class="select-wrap">
-														<select class="select-sort-by" name="select-sort-by">
-															<option value="0">Не вибрано</option>
-															<option value="1">Спочатку дешевші</option>
-															<option value="2">Спочатку дорожчі</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6 col-lg-auto d-lg-none order-2 order-lg-4 mb-2 mb-lg-0">
-											<div class="d-flex align-items-center h-100">
-												<div class="field-wrap">
-													<div class="field field--reset text-right">
-														<button type="button" class="btn p-0 btn-text">Скинути</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row d-none d-lg-flex">
-										<div class="col-auto">
-											<div class="field-wrap">
-												<div class="field field--reset text-center">
-													<button type="button" class="btn p-0 btn-text">Скинути</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="filter-cards">
-									<div class="filter-card rounded bg-light-blue px-2 px-md-6 pt-6 pb-9">
+								<div class="filter-cards filter-cards--minicasco">
+									<div class="filter-card rounded bg-light-blue px-6 pt-6 pb-9">
 										<div class="row">
 											<div class="col-12 d-lg-none">
-												<div class="company-name h4 mb-5">Міні КАСКО стандарт</div>
+												<div class="company-name h4 mb-5">Міні-КАСКО від СГ ТАС</div>
 											</div>
 											<div class="col-12 col-lg-2">
 												<div
-													class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
-													<div class="filter-car--pic mb-0 mb-lg-5">
+													class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0 mt-lg-10 mt-xxl-22">
+													<div class="filter-car--pic ml-xxxl-4 mt-xxxl-n10">
 														<img src="img/logo.svg" alt="TAC">
 													</div>
-													<div class="rating-strip mr-3 mr-lg-0">
-														<div class="title mb-2">Рейтинг МТСБУ</div>
-														<div class="d-flex align-items-center">
-															<div class="card-star mr-1">
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star"></span>
-																<span class="star"></span>
+												</div>
+											</div>
+											<div class="col-12 col-lg card-details mob">
+												<div class="ml-xxxl-3">
+													<div class="company-name h2 font-m mb-6 mb-xxxl-10 d-none d-lg-block mt-xxxl-12">
+														Міні-КАСКО
+														від
+														СГ ТАС
+													</div>
+													<div class="field-wrap mb-3 mb-xxxl-8">
+														<div class="field field-2 field-dgo">
+															<div class="d-flex align-items-center mb-1">
+																<label for="select-mini-1" class="text-black mb-1">Страхування
+																	авто</label>
 															</div>
-															<div class="card-star--count">3</div>
+															<div class="select-wrap mr-lg-6">
+																<select class="select-mini" name="select-mini-1">
+																	<option value="0">0 грн</option>
+																	<option value="1" selected>250 000 грн</option>
+																	<option value="2">500 000 грн</option>
+																	<option value="3">1 000 000 грн</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="field-wrap mb-3 mb-xxxl-8">
+														<div class="field field-2 field-dgo">
+															<div class="d-flex align-items-center mb-1">
+																<label for="select-mini-2" class="text-black mb-1">Страхування
+																	водія</label>
+															</div>
+															<div class="select-wrap mr-lg-6">
+																<select class="select-mini" name="select-mini-2">
+																	<option value="0">0 грн</option>
+																	<option value="1" selected>100 000 грн</option>
+																	<option value="2">200 000 грн</option>
+																	<option value="3">300 000 грн</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="field-wrap mb-3">
+														<div class="field field-2 field-dgo">
+															<div class="d-flex align-items-center mb-1">
+																<label for="select-mini-3" class="text-black mb-1">Автоцивілка
+																	плюс</label>
+															</div>
+															<div class="select-wrap mr-lg-6">
+																<select class="select-mini" name="select-mini-3">
+																	<option value="0">0 грн</option>
+																	<option value="1">100 000 грн</option>
+																	<option value="2">500 000 грн</option>
+																	<option value="3" selected>1 000 000 грн</option>
+																</select>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-12 col-lg card-details">
-												<div class="company-name mb-5 d-none d-lg-block">Міні КАСКО стандарт</div>
-												<div class="row">
-													<div class="col-6 col-xl-4">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="choose-radio mb-5">
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-1"
-																	name="checkbox-group-1">
-																<label class="custom-control-label" for="checkbox-1">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">50 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-2"
-																	name="checkbox-group-1" checked="">
-																<label class="custom-control-label" for="checkbox-2">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">100 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-3"
-																	name="checkbox-group-1">
-																<label class="custom-control-label" for="checkbox-3">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">150 000 грн</span>
-																		</div>
-																	</div>
-																</label>
+											<div class="col-12 col-lg-4 col-xl-3 col-xxxl-4">
+												<div class="insurance-payment--minicasco--wrap">
+													<div class="wrap-img bg-wrap">
+														<div
+															class="insurance-payment--minicasco d-flex flex-column align-items-center justify-content-between mb-3 mb-lg-0">
+															<div class="small-txt mb-2 text-white">Страхова виплата</div>
+															<div class="h4 font-weight-bold mb-lg-3 text-white">
+																<div class="price">250&nbsp;000 <span class="currency"></span></div>
 															</div>
 														</div>
-														<button type="button"
-															class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0">Детальніше</button>
+														<img class="bg-down" src="img/minicasco/payment-security.png" alt="img">
 													</div>
-													<div class="col-6 col-xl-8">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="card-details--list ul list-unstyled mb-0">
-															<li class="true">Повне руйнування</li>
-															<li class="false">Пошкодження з провини власника</li>
-															<li class="true">Пошкодження без провини власника</li>
+												</div>
+												<div class="mr-xxxl-4 mt-5 mt-lg-0">
+													<div class="filter-card--cost rounded bg-blue text-center p-3">
+														<div
+															class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
+															<div class="small-txt mb-lg-2 text-main-blue">Вартість</div>
+															<div class="h4 font-weight-bold mb-lg-3 text-main-blue">5859 грн</div>
+														</div>
+														<div
+															class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+															<div class="i-info d-flex align-items-center justify-content-center mr-2"
+																data-toggle="tooltip"
+																title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																<img src="img/minicasco/bank-1.png" alt="google">
+															</div>
+															<div class="i-info d-flex align-items-center justify-content-center"
+																data-toggle="tooltip"
+																title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+																<img src="img/minicasco/bank-2.png" alt="privat bank 24">
+															</div>
 														</div>
 													</div>
-													<div class="col-12 d-lg-none">
-														<div class="filter-card--additional">
-															<div class="inner">
-																<div class="row">
-																	<div class="col">
-																		@@include('html/parts/filter-card--additional-table.html',{})
+												</div>
+												<div class="mr-xxxl-4">
+													<a href="../dist/calc-mini-casco-step.html"
+														class="btn btn-default btn-block btn-outline-main-blue mt-5 mt-xxxl-4">Оформити</a>
+												</div>
+											</div>
+										</div>
+										<div class="row mt-6 mt-lg-0">
+											<div class="col-12">
+												<div class="ml-xxxl-4">
+													<div class="spoiler--minicasco--price mx-n6 mx-lg-0">
+														<div class="minicasco-payment-price mt-xxxl-16">
+															<div class="row">
+																<div class="col-11 mx-auto">
+																	<div
+																		class="inner rounded px-lg-5 px-xxxl-20 py-lg-8 mx-xl-2 mx-xxxl-8">
+																		<div class="calculation-table--minicasco">
+																			<div class="table-row head rounded py-3 mb-8">
+																				<div class="table-col">
+																					<div class="name">Деталь</div>
+																				</div>
+																				<div class="table-col">
+																					<div class="name">Тип пошкодження (робіт по
+																						ремонту)</div>
+																				</div>
+																				<div class="table-col">
+																					<div class="name">Розмір виплати (грн)</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-1.png" alt="img">
+																					</div>
+																					<div class="name-detail">Бампер <br>(кожна
+																						одиниця)</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">13&nbsp;900 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1&nbsp;000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">10&nbsp;900 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">24&nbsp;900 <span
+																							class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-2.png" alt="img">
+																					</div>
+																					<div class="name-detail">Кришка капоту</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">12&nbsp;500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1&nbsp;200 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">12&nbsp;000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">25&nbsp;700 <span
+																							class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-3.png" alt="img">
+																					</div>
+																					<div class="name-detail">Крило</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">4&nbsp;600 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1&nbsp;000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">10&nbsp;000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">15&nbsp;600 <span
+																							class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-4.png" alt="img">
+																					</div>
+																					<div class="name-detail">Двері</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">16&nbsp;700 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1&nbsp;500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">11&nbsp;000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">29&nbsp;200 <span
+																							class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-5.png" alt="img">
+																					</div>
+																					<div class="name-detail">Боковина</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">21 500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">12 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">35 200 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-6.png" alt="img">
+																					</div>
+																					<div class="name-detail">Кришка <br>багажного
+																						відсіку</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">21 700 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">12 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">35 200 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-7.png" alt="img">
+																					</div>
+																					<div class="name-detail">Лобове скло</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">12 900 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">12 900 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-8.png" alt="img">
+																					</div>
+																					<div class="name-detail">Дзеркала <br>з
+																						пошкодженим корпусом</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">8 100 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">8 100 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-9.png" alt="img">
+																					</div>
+																					<div class="name-detail">Ліхтарі</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">5 300 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">5 300 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-10.png" alt="img">
+																					</div>
+																					<div class="name-detail">Фари</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">17 800 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">17 800 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-11.png" alt="img">
+																					</div>
+																					<div class="name-detail">Дах кузова</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">24 700 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">15 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">40 700 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-12.png" alt="img">
+																					</div>
+																					<div class="name-detail">Передня панель</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">6 800 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">3 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">10 800 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-13.png" alt="img">
+																					</div>
+																					<div class="name-detail">Лонжерон</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">8 400 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">2 500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">5 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">15 900 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-14.png" alt="img">
+																					</div>
+																					<div class="name-detail">А або В стійка</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">19 000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">5 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">25 000 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-15.png" alt="img">
+																					</div>
+																					<div class="name-detail">Поріг дверей</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">18 200 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">5 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">24 200 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-16.png" alt="img">
+																					</div>
+																					<div class="name-detail">Задня панель</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">6 600 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 500 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">5 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">13 100 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-17.png" alt="img">
+																					</div>
+																					<div class="name-detail">Панель підлоги</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">10 300 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Ремонт</div>
+																						<div class="price">1 000 грн</div>
+																					</div>
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">5 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">16 300 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-18.png" alt="img">
+																					</div>
+																					<div class="name-detail">Елементи зовнішнього
+																						<br>оздоблення
+																					</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Фарбування</div>
+																						<div class="price">1 000 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">1 000 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-19.png" alt="img">
+																					</div>
+																					<div class="name-detail">Подушки безпеки</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">19 300 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">19 300 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-20.png" alt="img">
+																					</div>
+																					<div class="name-detail">Диск</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Ремонт/ <br>заміна</div>
+																						<div class="price">2 500 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">2 500 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-21.png" alt="img">
+																					</div>
+																					<div class="name-detail">Радіатор</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">4 900 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">4 900 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="table-row table-body">
+																				<div class="table-col descrp-name">
+																					<div class="wrap-img"><img
+																							src="img/minicasco/detail/detail-22.png" alt="img">
+																					</div>
+																					<div class="name-detail">Підсилювач бамперу
+																					</div>
+																				</div>
+																				<div class="table-col descrp-price">
+																					<div class="item">
+																						<div class="name">Заміна</div>
+																						<div class="price">7 400 грн</div>
+																					</div>
+																				</div>
+																				<div class="table-col descrp-payment">
+																					<div class="price">7 400 <span class="currency"></span>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="calculation-table--minicasco-buttons">
+																				<div class="row justify-content-center">
+																					<div class="col-auto"><button type="button"
+																							class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розгорнути</button>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-12 col-lg-3">
-												<div class="filter-card--cost rounded bg-blue text-center p-3">
-													<div
-														class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
-														<div class="mb-lg-2">Вартість</div>
-														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
-													</div>
-													<div
-														class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
-														<div class="i-info d-flex align-items-center justify-content-center mr-2"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/google.svg" alt="google">
-														</div>
-														<div class="i-info d-flex align-items-center justify-content-center"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/pv-24.png" alt="privat bank 24">
-														</div>
-													</div>
-												</div>
-												<a href="../calc-mini-casco-step.html"
-													class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</a>
-											</div>
-										</div>
-										<div class="filter-card--additional filter-card--additional--desk">
-											<div class="inner">
-												<div class="row mt-5">
-													<div class="col-10 offset-2">
-														@@include('html/parts/filter-card--additional-table.html',{})
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="filter-card rounded bg-light-blue px-2 px-md-6 pt-6 pb-9">
-										<div class="row">
-											<div class="col-12 d-lg-none">
-												<div class="company-name h4 mb-5">Міні КАСКО стандарт</div>
-											</div>
-											<div class="col-12 col-lg-2">
-												<div
-													class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
-													<div class="filter-car--pic mb-0 mb-lg-5">
-														<img src="img/logo.svg" alt="TAC">
-													</div>
-													<div class="rating-strip mr-3 mr-lg-0">
-														<div class="title mb-2">Рейтинг МТСБУ</div>
-														<div class="d-flex align-items-center">
-															<div class="card-star mr-1">
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star"></span>
-																<span class="star"></span>
-															</div>
-															<div class="card-star--count">3</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-12 col-lg card-details">
-												<div class="company-name mb-5 d-none d-lg-block">Міні КАСКО стандарт</div>
-												<div class="row">
-													<div class="col-6 col-xl-4">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="choose-radio mb-5">
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-4"
-																	name="checkbox-group-2">
-																<label class="custom-control-label" for="checkbox-4">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">50 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-5"
-																	name="checkbox-group-2" checked="">
-																<label class="custom-control-label" for="checkbox-5">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">100 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-6"
-																	name="checkbox-group-2">
-																<label class="custom-control-label" for="checkbox-6">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">150 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-														</div>
-														<button type="button"
-															class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0">Детальніше</button>
-													</div>
-													<div class="col-6 col-xl-8">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="card-details--list ul list-unstyled mb-0">
-															<li class="true">Повне руйнування</li>
-															<li class="false">Пошкодження з провини власника</li>
-															<li class="true">Пошкодження без провини власника</li>
-														</div>
-													</div>
-													<div class="col-12 d-lg-none">
-														<div class="filter-card--additional">
-															<div class="inner">
-																<div class="row">
-																	<div class="col">
-																		@@include('html/parts/filter-card--additional-table.html',{})
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-12 col-lg-3">
-												<div class="filter-card--cost rounded bg-blue text-center p-3">
-													<div
-														class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
-														<div class="small-txt mb-lg-2">Ціна за 1 туриста:</div>
-														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
-													</div>
-													<div
-														class="d-flex flex-lg-column align-items-center justify-content-between rounded-sm bg-main-blue p-1 text-white mb-3">
-														<div class="small-txt mb-lg-2">За реферальною програмою:</div>
-														<div class="h4">325 євро</div>
-													</div>
-													<div
-														class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
-														<div class="i-info d-flex align-items-center justify-content-center mr-2"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/google.svg" alt="google">
-														</div>
-														<div class="i-info d-flex align-items-center justify-content-center"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/pv-24.png" alt="privat bank 24">
-														</div>
-													</div>
-												</div>
-												<a href="../calc-mini-casco-step.html"
-													class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</a>
-											</div>
-										</div>
-										<div class="filter-card--additional filter-card--additional--desk">
-											<div class="inner">
-												<div class="row mt-5">
-													<div class="col-10 offset-2">
-														@@include('html/parts/filter-card--additional-table.html',{})
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="filter-card rounded bg-light-blue px-2 px-md-6 pt-6 pb-9">
-										<div class="row">
-											<div class="col-12 d-lg-none">
-												<div class="company-name h4 mb-5">Міні КАСКО стандарт</div>
-											</div>
-											<div class="col-12 col-lg-2">
-												<div
-													class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
-													<div class="filter-car--pic mb-0 mb-lg-5">
-														<img src="img/logo.svg" alt="TAC">
-													</div>
-													<div class="rating-strip mr-3 mr-lg-0">
-														<div class="title mb-2">Рейтинг МТСБУ</div>
-														<div class="d-flex align-items-center">
-															<div class="card-star mr-1">
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star star-paint"></span>
-																<span class="star"></span>
-																<span class="star"></span>
-															</div>
-															<div class="card-star--count">3</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-12 col-lg card-details">
-												<div class="company-name mb-5 d-none d-lg-block">Міні КАСКО стандарт</div>
-												<div class="row">
-													<div class="col-6 col-xl-4">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="choose-radio mb-5">
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-7"
-																	name="checkbox-group-3">
-																<label class="custom-control-label" for="checkbox-7">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">50 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-8"
-																	name="checkbox-group-3" checked="">
-																<label class="custom-control-label" for="checkbox-8">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">100 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-															<div class="custom-control custom-radio">
-																<input type="radio" class="custom-control-input" id="checkbox-9"
-																	name="checkbox-group-3">
-																<label class="custom-control-label" for="checkbox-9">
-																	<div
-																		class="d-flex justify-content-between align-items-center align-items-lg-start">
-																		<div class="d-flex flex-column mr-3">
-																			<span class="mb-1">150 000 грн</span>
-																		</div>
-																	</div>
-																</label>
-															</div>
-														</div>
-														<button type="button"
-															class="btn btn-more btn-text px-2 py-1 mb-5 mb-lg-0">Детальніше</button>
-													</div>
-													<div class="col-6 col-xl-8">
-														<div class="head mb-3">Страхове покриття:</div>
-														<div class="card-details--list ul list-unstyled mb-0">
-															<li class="true">Повне руйнування</li>
-															<li class="false">Пошкодження з провини власника</li>
-															<li class="true">Пошкодження без провини власника</li>
-														</div>
-													</div>
-													<div class="col-12 d-lg-none">
-														<div class="filter-card--additional">
-															<div class="inner">
-																<div class="row">
-																	<div class="col">
-																		@@include('html/parts/filter-card--additional-table.html',{})
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-12 col-lg-3">
-												<div class="filter-card--cost rounded bg-blue text-center p-3">
-													<div
-														class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
-														<div class="small-txt mb-lg-2">Ціна за 1 туриста:</div>
-														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
-													</div>
-													<div
-														class="d-flex flex-lg-column align-items-center justify-content-between rounded-sm bg-main-blue p-1 text-white mb-3">
-														<div class="small-txt mb-lg-2">За реферальною програмою:</div>
-														<div class="h4">325 євро</div>
-													</div>
-													<div
-														class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
-														<div class="i-info d-flex align-items-center justify-content-center mr-2"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/google.svg" alt="google">
-														</div>
-														<div class="i-info d-flex align-items-center justify-content-center"
-															data-toggle="tooltip" title=""
-															data-original-title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
-															<img src="img/pv-24.png" alt="privat bank 24">
-														</div>
-													</div>
-												</div>
-												<a href="../calc-mini-casco-step.html"
-													class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</a>
-											</div>
-										</div>
-										<div class="filter-card--additional filter-card--additional--desk">
-											<div class="inner">
-												<div class="row mt-5">
-													<div class="col-10 offset-2">
-														@@include('html/parts/filter-card--additional-table.html',{})
 													</div>
 												</div>
 											</div>

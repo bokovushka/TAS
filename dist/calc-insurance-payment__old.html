@@ -100,7 +100,7 @@
 
 </head>
 
-<body>
+<body class="calc-insurance-payment-page">
 	<div class="wrapper">
 		<div class="popup-bg-body" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation"></div>
 <header class="header">
@@ -607,7 +607,7 @@
 					<div class="container mx-auto">
 						<div class="row">
 							<div class="col">
-								<nav aria-label="breadcrumb" class="breadcrumb-nav mb-9">
+								<nav aria-label="breadcrumb" class="breadcrumb-nav">
 									<ol class="breadcrumb mb-0">
 										<li class="breadcrumb-item"><a href="##">Головна</a></li>
 										<li class="breadcrumb-item"><a href="##">Для Вас</a></li>
@@ -623,79 +623,565 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xl-0 py-6 py-lg-12">
+								<div class="form-wrap rounded bg-light-blue px-3 px-lg-6 px-xxl-0 py-6 py-lg-12 mb-8">
 									<div class="row">
-										<div class="col">
+										<div class="col col-xxl-10 mx-auto">
 											<div class="text-center">
-												<h1 class="h2 mb-5 mb-lg-8">Оформлення електронного поліса <br> “Автоцивілки” №1
-												</h1>
-												<div class="h4 font-m mb-8"><a href="##"
-														class="text-main-blue rounded-0 p-0">Калькулятор автоцивілки - ОСЦПВ
-														онлайн</a></div>
+												<h1 class="h2 mb-5 mb-lg-8">Оформлення електронного поліса <br> “Автоцивілки” №1</h1>
+												<div class="h4 font-m mb-8">
+													<div class="text-main-blue rounded-0 p-0">Розрахування страхового платежу:</div>
+												</div>
 											</div>
-											<form class="form-calculation-data rounded">
-												<div class="row mb-8">
-													<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-														<div class="mr-lg-3 mt-xl-0">
-															<div class="field field-2 mb-5">
-																<div class="field--help-info text-red mb-1">Введіть держ. номер</div>
-																<label for="car-number" class="mb-1 text-black">Введіть держ.
-																	номер</label>
-																<input type="text" id="car-number" class="form-control mb-4"
-																	placeholder="АА3456АА">
-															</div>
-															<div class="custom-control custom-checkbox position-relative mb-5 mb-lg-3">
-																<input type="checkbox" class="custom-control-input"
-																	id="form-calculation-data-check">
-																<label class="custom-control-label" for="form-calculation-data-check">
-																	<span class="custom-checkbox--info">Є пільги</span>
-																	<span class="custom-checkbox--help-info small-txt mt-1">Ваш дозвіл на
-																		обробку персональних даних необхідна для подальщого оформлення
-																		страхової послуги</span>
-																</label>
-															</div>
-															<span class="form-regulation small-txt d-none d-lg-inline-block">На цьому
-																сайті застосовуються <a href="##" class="text-main-blue">Політика
-																	конфіденційності</a> та <a href="##" class="text-main-blue">Умови
-																	використання Google</a></span>
+											<form class="form-osago-data-result choose-car-1 rounded">
+												<div class="fields-choose-car mb-8">
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field-choose-car">
+															<label for="select-choose-car" class="font-weight-bold text-black mb-1">Транспортний засіб</label>
+															<div class="field-choose-result">Легковий автомобіль</div>
 														</div>
 													</div>
-													<div class="col-12 col-lg-6 col-xl-4 offset-xl-1">
-														<div class="form-calculation-data-descr text-center ml-lg-3 ml-xl-0">
-															<p
-																class="mb-0 text-main-blue bg-blue rounded h-100 d-flex align-items-center justify-content-center p-8 p-lg-12 mb-5 mb-lg-0">
-																Введіть дані, щоб розрахувати страховий платіж</p>
-															<span class="form-regulation d-inline-block small-txt d-lg-none">На цьому
-																сайті застосовуються <a href="##" class="text-main-blue">Політика
-																	конфіденційності</a> та <a href="##" class="text-main-blue">Умови
-																	використання Google</a></span>
+													<div class="mb-5 mb-xl-0 field-wrap">
+														<div class="field-engine-capacity">
+															<label for="select-engine-capacity" class="font-weight-bold text-black mb-1">Об’єм двигуна</label>
+															<div class="field-choose-result">до 1600 см^3 включно</div>
+														</div>
+													</div>
+													<div class="mb-0 field-wrap">
+														<div class="field-city">
+															<label for="city" class="font-weight-bold text-black mb-0">Місто реєстрації власника</label>
+															<div class="field-choose-result">Київ</div>
 														</div>
 													</div>
 												</div>
-												<!-- <div class="buttons">
-													<div class="row justify-content-center">
-														<div class="col-auto mb-5 mb-lg-0"><button type="button"
-																class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg"
-																data-toggle="modal" data-target="#popup-avtotsyvilka">Розрахувати
-																вартість</button></div>
-														<div class="col-auto"><a href="../dist/avtotsyvilka-2.html"
-																class="btn-default btn-indent btn btn-block btn-outline-main-blue  rounded-lg">Розрахувати
-																за параметрами</a></div>
-													</div>
-												</div> -->
 												<div class="buttons">
-													<div class="row justify-content-center">
-														<div class="col-auto mb-5 mb-lg-0">
-															<a href="../dist/calc-insurance-payment.html"
-																class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Розрахувати
-																вартість</a>
-														</div>
-														<div class="col-auto"><a href="../dist/calc-insurance-payment.html"
-																class="btn-default btn-indent btn btn-block btn-outline-main-blue rounded-lg">Розрахувати
-																за параметрами</a></div>
+													<div class="row">
+														<div class="col col-lg-auto mb-0 mx-auto"><button type="button" class="btn-default btn-indent btn btn-block btn-main-blue rounded-lg">Змінити дані</button></div>
 													</div>
 												</div>
 											</form>
+										</div>
+									</div>
+								</div>
+								<div class="filters-search d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-8">
+									<div class="left-side row d-flex mb-5">
+										<div class="col-6 col-md-auto">
+											<div class="field-wrap">
+												<div class="field field-2 field-additional-limit">
+													<label for="select-additional-limit" class="text-black mb-1">Додатковий ліміт</label>
+													<div class="select-wrap">
+														<select class="select-additional-limit" name="select-additional-limit">
+															<option value="0">Усі опції ДЦВ</option>
+															<option value="1">0 грн</option>
+															<option value="2">250 000 грн</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-6 col-md-auto">
+											<div class="field-wrap">
+												<div class="field field-2 field-sort-by">
+													<label for="select-sort-by" class="text-black mb-1">Сортувати за</label>
+													<div class="select-wrap">
+														<select class="select-sort-by" name="select-sort-by">
+															<option value="0">Спочатку дешевші</option>
+															<option value="1">Спочатку дорожчі</option>
+															<option value="2">Спочатку низький рейтинг</option>
+															<option value="3">Спочатку високий рейтинг</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row justify-content-end justify-content-md-start">
+										<div class="col-auto">
+											<div class="field-wrap">
+												<div class="field field--reset text-center">
+													<button type="button" class="btn p-0 btn-text">Скинути</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="filter-cards">
+									<div class="filter-card rounded bg-light-blue px-6 pt-6 pb-9">
+										<div class="row">
+											<div class="col-12 d-lg-none">
+												<div class="company-name h4 mb-5">ОСЦПВ від СГ ТАС</div>
+											</div>
+											<div class="col-12 col-lg-3">
+												<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
+													<div class="filter-car--pic">
+														<img src="img/logo.svg" alt="TAC">
+													</div>
+													<div class="rating-strip mr-3 mr-lg-0">
+														<div class="title mb-2">Рейтинг МТСБУ</div>
+														<div class="d-flex align-items-center">
+															<div class="card-star mr-1">
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star"></span>
+																<span class="star"></span>
+															</div>
+															<div class="card-star--count">3</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg card-details mob">
+												<div class="company-name mb-5 d-none d-lg-block">ОСЦПВ від СГ ТАС</div>
+												<div class="mb-5 field-wrap mr-5">
+													<div class="field field-2 field-franchise">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-franchise" class="text-black mb-1">Франшиза</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-franchise" name="select-franchise">
+																<option value="0">0</option>
+																<option value="1">1600 грн</option>
+																<option value="2" selected>3200 грн</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap mr-5 mb-3">
+													<div class="field field-2 field-dgo">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-dgo" class="text-black mb-1">Додаткове покриття</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-dgo" name="select-dgo">
+																<option value="0">0 грн</option>
+																<option value="1">250 000 грн (530грн)</option>
+																<option value="2" selected>500 000 грн (740грн)</option>
+																<option value="3">1 000 000 грн (960грн)</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-more btn-text p-0 mb-5 mb-lg-0">Детальніше</button>
+												<div class="filter-card--additional d-lg-none">
+													<div class="inner">
+														<div class="row mb-5">
+															<div class="filter-card--order-rating col-12 col-lg-3 mb-5 order-1">
+																<div class="filter-card--order-rating-pic mb-6">
+																	<img src="img/mtsby.png" alt="mtsby">
+																</div>
+																<ul class="list-quality list-unstyled mb-0">
+																	<li>
+																		<div class="head mb-1">Діяльність страховика</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Рівень скарг</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Якість врегулювання збитків</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-12 col-lg-4 mx-auto order-2">
+																<div class="mb-3">Ліміти відповідальності</div>
+																<ul class="list-liability-limits list-unstyled mb-0">
+																	<li>
+																		<div>16 000 грн за майно</div>
+																	</li>
+																	<li>
+																		<div>320 000 грн за життя і здоров’я</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-auto order-0 order-lg-3">
+																<button type="button" class="btn btn-more--close btn-text p-0 mb-3">Згорнути</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg-4 col-xl-3">
+												<div class="filter-card--cost rounded bg-blue text-center p-3">
+													<div class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
+														<div class="small-txt mb-lg-2">Ціна за 1 туриста:</div>
+														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
+													</div>
+													<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+														<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/google.svg" alt="google">
+														</div>
+														<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/pv-24.png" alt="privat bank 24">
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</button>
+											</div>
+										</div>
+										<div class="filter-card--additional filter-card--additional--desk">
+											<div class="inner">
+												<div class="row mt-6">
+													<div class="filter-card--order-rating col-3">
+														<div class="filter-card--order-rating-pic mb-6">
+															<img src="img/mtsby.png" alt="mtsby">
+														</div>
+														<ul class="list-quality list-unstyled mb-0">
+															<li>
+																<div class="head mb-1">Діяльність страховика</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Рівень скарг</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Якість врегулювання збитків</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-4 mx-auto">
+														<div class="mb-3">Ліміти відповідальності</div>
+														<ul class="list-liability-limits list-unstyled mb-0">
+															<li>
+																<div>16 000 грн за майно</div>
+															</li>
+															<li>
+																<div>320 000 грн за життя і здоров’я</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-auto">
+														<button type="button" class="btn btn-more--close btn-text p-0">Згорнути</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="filter-card rounded bg-light-blue px-6 pt-6 pb-9">
+										<div class="row">
+											<div class="col-12 d-lg-none">
+												<div class="company-name h4 mb-5">ОСЦПВ від СГ ТАС</div>
+											</div>
+											<div class="col-12 col-lg-3">
+												<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
+													<div class="filter-car--pic">
+														<img src="img/logo.svg" alt="TAC">
+													</div>
+													<div class="rating-strip mr-3 mr-lg-0">
+														<div class="title mb-2">Рейтинг МТСБУ</div>
+														<div class="d-flex align-items-center">
+															<div class="card-star mr-1">
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star"></span>
+																<span class="star"></span>
+															</div>
+															<div class="card-star--count">3</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg card-details mob">
+												<div class="company-name mb-5 d-none d-lg-block">ОСЦПВ від СГ ТАС</div>
+												<div class="mb-5 field-wrap mr-5">
+													<div class="field field-2 field-franchise">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-franchise" class="text-black mb-1">Франшиза</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-franchise" name="select-franchise">
+																<option value="0">0</option>
+																<option value="1">1600 грн</option>
+																<option value="2" selected>3200 грн</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap mr-5 mb-3">
+													<div class="field field-2 field-dgo">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-dgo" class="text-black mb-1">Додаткове покриття</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-dgo" name="select-dgo">
+																<option value="0">0 грн</option>
+																<option value="1">250 000 грн (530грн)</option>
+																<option value="2" selected>500 000 грн (740грн)</option>
+																<option value="3">1 000 000 грн (960грн)</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-more btn-text p-0 mb-5 mb-lg-0">Детальніше</button>
+												<div class="filter-card--additional d-lg-none">
+													<div class="inner">
+														<div class="row mb-5">
+															<div class="filter-card--order-rating col-12 col-lg-3 mb-5 order-1">
+																<div class="filter-card--order-rating-pic mb-6">
+																	<img src="img/mtsby.png" alt="mtsby">
+																</div>
+																<ul class="list-quality list-unstyled mb-0">
+																	<li>
+																		<div class="head mb-1">Діяльність страховика</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Рівень скарг</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Якість врегулювання збитків</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-12 col-lg-4 mx-auto order-2">
+																<div class="mb-3">Ліміти відповідальності</div>
+																<ul class="list-liability-limits list-unstyled mb-0">
+																	<li>
+																		<div>16 000 грн за майно</div>
+																	</li>
+																	<li>
+																		<div>320 000 грн за життя і здоров’я</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-auto order-0 order-lg-3">
+																<button type="button" class="btn btn-more--close btn-text p-0 mb-3">Згорнути</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg-4 col-xl-3">
+												<div class="filter-card--cost rounded bg-blue text-center p-3">
+													<div class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
+														<div class="small-txt mb-lg-2">Ціна за 1 туриста:</div>
+														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
+													</div>
+													<div class="d-flex flex-lg-column align-items-center justify-content-between rounded-sm bg-main-blue p-1 text-white mb-3">
+														<div class="small-txt mb-lg-2">За реферальною програмою:</div>
+														<div class="h4">325 євро</div>
+													</div>
+													<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+														<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/google.svg" alt="google">
+														</div>
+														<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/pv-24.png" alt="privat bank 24">
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</button>
+											</div>
+										</div>
+										<div class="filter-card--additional filter-card--additional--desk">
+											<div class="inner">
+												<div class="row mt-6">
+													<div class="filter-card--order-rating col-3">
+														<div class="filter-card--order-rating-pic mb-6">
+															<img src="img/mtsby.png" alt="mtsby">
+														</div>
+														<ul class="list-quality list-unstyled mb-0">
+															<li>
+																<div class="head mb-1">Діяльність страховика</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Рівень скарг</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Якість врегулювання збитків</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-4 mx-auto">
+														<div class="mb-3">Ліміти відповідальності</div>
+														<ul class="list-liability-limits list-unstyled mb-0">
+															<li>
+																<div>16 000 грн за майно</div>
+															</li>
+															<li>
+																<div>320 000 грн за життя і здоров’я</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-auto">
+														<button type="button" class="btn btn-more--close btn-text p-0">Згорнути</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="filter-card rounded bg-light-blue px-6 pt-6 pb-9">
+										<div class="row">
+											<div class="col-12 d-lg-none">
+												<div class="company-name h4 mb-5">ОСЦПВ від СГ ТАС</div>
+											</div>
+											<div class="col-12 col-lg-3">
+												<div class="d-flex flex-row-reverse flex-lg-column align-items-center align-items-lg-start justify-content-between justify-content-lg-start mb-5 mb-lg-0">
+													<div class="filter-car--pic">
+														<img src="img/logo.svg" alt="TAC">
+													</div>
+													<div class="rating-strip mr-3 mr-lg-0">
+														<div class="title mb-2">Рейтинг МТСБУ</div>
+														<div class="d-flex align-items-center">
+															<div class="card-star mr-1">
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star star-paint"></span>
+																<span class="star"></span>
+																<span class="star"></span>
+															</div>
+															<div class="card-star--count">3</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg card-details mob">
+												<div class="company-name mb-5 d-none d-lg-block">ОСЦПВ від СГ ТАС</div>
+												<div class="mb-5 field-wrap mr-5">
+													<div class="field field-2 field-franchise">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-franchise" class="text-black mb-1">Франшиза</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-franchise" name="select-franchise">
+																<option value="0">0</option>
+																<option value="1">1600 грн</option>
+																<option value="2" selected>3200 грн</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap mr-5 mb-3">
+													<div class="field field-2 field-dgo">
+														<div class="d-flex align-items-center mb-1">
+															<label for="select-dgo" class="text-black mb-1">Додаткове покриття</label>
+															<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Згідно з Законом України про ОСЦПВ. Пільгу можна застосувати на транспортні засоби з об’ємом двигуна до 2500 куб.см.</span>">?</div>
+														</div>
+														<div class="select-wrap">
+															<select class="select-dgo" name="select-dgo">
+																<option value="0">0 грн</option>
+																<option value="1">250 000 грн (530грн)</option>
+																<option value="2" selected>500 000 грн (740грн)</option>
+																<option value="3">1 000 000 грн (960грн)</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-more btn-text p-0 mb-5 mb-lg-0">Детальніше</button>
+												<div class="filter-card--additional d-lg-none">
+													<div class="inner">
+														<div class="row mb-5">
+															<div class="filter-card--order-rating col-12 col-lg-3 mb-5 order-1">
+																<div class="filter-card--order-rating-pic mb-6">
+																	<img src="img/mtsby.png" alt="mtsby">
+																</div>
+																<ul class="list-quality list-unstyled mb-0">
+																	<li>
+																		<div class="head mb-1">Діяльність страховика</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Рівень скарг</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																	<li>
+																		<div class="head mb-1">Якість врегулювання збитків</div>
+																		<div class="quality quality-perfect">Відмінно</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-12 col-lg-4 mx-auto order-2">
+																<div class="mb-3">Ліміти відповідальності</div>
+																<ul class="list-liability-limits list-unstyled mb-0">
+																	<li>
+																		<div>16 000 грн за майно</div>
+																	</li>
+																	<li>
+																		<div>320 000 грн за життя і здоров’я</div>
+																	</li>
+																</ul>
+															</div>
+															<div class="col-auto order-0 order-lg-3">
+																<button type="button" class="btn btn-more--close btn-text p-0 mb-3">Згорнути</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-lg-4 col-xl-3">
+												<div class="filter-card--cost rounded bg-blue text-center p-3">
+													<div class="d-flex flex-lg-column align-items-center justify-content-between mb-3 mb-lg-0">
+														<div class="small-txt mb-lg-2">Ціна за 1 туриста:</div>
+														<div class="h4 font-weight-bold mb-lg-3">375 євро</div>
+													</div>
+													<div class="d-flex flex-lg-column align-items-center justify-content-between rounded-sm bg-main-blue p-1 text-white mb-3">
+														<div class="small-txt mb-lg-2">За реферальною програмою:</div>
+														<div class="h4">325 євро</div>
+													</div>
+													<div class="description-img d-flex align-items-center justify-content-end justify-content-lg-center">
+														<div class="i-info d-flex align-items-center justify-content-center mr-2" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/google.svg" alt="google">
+														</div>
+														<div class="i-info d-flex align-items-center justify-content-center" data-toggle="tooltip" title="<span class='help'>На polis.ua безпечна оплата картами будь-якого банку України. Можна використовувати ApplePay, GooglePay або Приват24.</span>">
+															<img src="img/pv-24.png" alt="privat bank 24">
+														</div>
+													</div>
+												</div>
+												<button type="button" class="btn btn-default btn-block btn-outline-main-blue mt-5">Оформити</button>
+											</div>
+										</div>
+										<div class="filter-card--additional filter-card--additional--desk">
+											<div class="inner">
+												<div class="row mt-6">
+													<div class="filter-card--order-rating col-3">
+														<div class="filter-card--order-rating-pic mb-6">
+															<img src="img/mtsby.png" alt="mtsby">
+														</div>
+														<ul class="list-quality list-unstyled mb-0">
+															<li>
+																<div class="head mb-1">Діяльність страховика</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Рівень скарг</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+															<li>
+																<div class="head mb-1">Якість врегулювання збитків</div>
+																<div class="quality quality-perfect">Відмінно</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-4 mx-auto">
+														<div class="mb-3">Ліміти відповідальності</div>
+														<ul class="list-liability-limits list-unstyled mb-0">
+															<li>
+																<div>16 000 грн за майно</div>
+															</li>
+															<li>
+																<div>320 000 грн за життя і здоров’я</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-auto">
+														<button type="button" class="btn btn-more--close btn-text p-0">Згорнути</button>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -878,170 +1364,6 @@
 	</svg>
 </div>
 	</div>
-	<div class="modal modal--custom modal--custom-2 popup-avtotsyvilka fade" id="popup-avtotsyvilka" data-keyboard="false" tabindex="-1" aria-labelledby="popup-avtotsyvilkaLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content bg-light-blue">
-			<div class="modal-body px-4 py-8 px-lg-5">
-				<div class="d-flex align-items-start justify-content-between mb-6">
-					<div class="modal-title h3 font-m mb-0 pr-4">Увага!</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">
-							<svg>
-								<use xlink:href="img/icons/icons.svg#i-close"></use>
-							</svg>
-						</span>
-					</button>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<form action="" class="form-avtotsyvilka">
-							<div class="text-center">
-								<p class="mb-3">Номер не відповідає вимогам оформлення Електронного поліса встановленим МТСБУ (Моторно-транспортне страхове бюро України)</p>
-								<div class="h4 mb-3 text-main-blue">Будь ласка, перевірте правильність введення!</div>
-								<p class="mb-6">Якщо власник авто зареєстрований в іншій країні, виберіть відповідне місто реєстрації “ТЗ зареєстровано у іншій країні”</p>
-							</div>
-							<div class="row flex-column-reverse flex-lg-row">
-								<div class="col-12 col-lg-6">
-									<button type="button" class="btn-default btn btn-block btn-outline-main-blue" data-dismiss="modal" aria-label="Close">Відмінити</button>
-								</div>
-								<div class="col-12 col-lg-6 mb-3 mb-lg-0">
-									<button type="button" class="btn-default btn btn-block btn-main-blue px-2" data-toggle="modal" data-target="#popup-avtotsyvilka-car" data-dismiss="modal" aria-label="Close">Розрахувати за єврономером</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	<div class="modal modal--custom modal--custom-2 popup-avtotsyvilka-car fade" id="popup-avtotsyvilka-car" data-keyboard="false" tabindex="-1" aria-labelledby="popup-avtotsyvilka-carLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content bg-light-blue">
-			<div class="modal-body px-4 py-8 px-lg-5">
-				<div class="d-flex align-items-start justify-content-between mb-5">
-					<div class="modal-title h3 font-m mb-0 pr-4">Транспортний засіб</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">
-							<svg>
-								<use xlink:href="img/icons/icons.svg#i-close"></use>
-							</svg>
-						</span>
-					</button>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<form action="" class="form-avtotsyvilka-car">
-							<div class="p-5 bg-blue rounded mb-6 mx-5 mx-lg-10 text-center">
-								<div class="h4 font-m mb-3">TOYOTA LAND CRUISER 200 2018</div>
-								<p class="mb-3">Не Ваше авто?</p>
-								<a href="##" class="btn btn-text p-0 text-main-blue mb-0">Розрахувати за параметрами</a>
-							</div>
-							<div class="row flex-column-reverse flex-lg-row">
-								<div class="col-12 col-lg-6">
-									<button type="button" class="btn-default btn btn-block btn-outline-main-blue" data-toggle="modal" data-target="#popup-avtotsyvilka" data-dismiss="modal" aria-label="Close">Назад</button>
-								</div>
-								<div class="col-12 col-lg-6 mb-3 mb-lg-0">
-									<button type="button" class="btn-default btn btn-block btn-main-blue px-2" data-toggle="modal" data-target="#popup-avtotsyvilka-city" data-dismiss="modal" aria-label="Close">Продовжити</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	<div class="modal modal--custom modal--custom-2 popup-avtotsyvilka-city fade" id="popup-avtotsyvilka-city" data-keyboard="false" tabindex="-1" aria-labelledby="popup-avtotsyvilka-cityLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content bg-light-blue">
-			<div class="modal-body px-4 py-8 px-lg-5">
-				<div class="d-flex align-items-start justify-content-between mb-5">
-					<div class="modal-title h3 font-m mb-0 pr-4">Вкажіть місто реєстрації</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">
-							<svg>
-								<use xlink:href="img/icons/icons.svg#i-close"></use>
-							</svg>
-						</span>
-					</button>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<form action="" class="form-avtotsyvilka-city">
-							<div class="text-center mb-6"> Для Вашого авто <span class="text-main-blue">АА1234АА</span> не вдалося визначити місто реєстрації власника. Введіть назву міста.</div>
-							<div class="field field-2 mb-2">
-								<div class="d-flex align-items-center mb-2">
-									<div class="field--help-info text-red mb-0">Введіть коректно місто</div>
-									<label for="city" class="font-weight-bold text-black mb-0">Місто реєстрації власника</label>
-									<div class="i-info d-flex align-items-center justify-content-center ml-2" data-toggle="tooltip" title="<span class='help'>Місто прописки власника транспортного засобу по тех. паспорту</span>">?</div>
-								</div>
-								<div class="position-relative">
-									<input type="text" id="city" class="form-control" placeholder="Місто">
-								</div>
-							</div>
-							<div class="popular-city small-txt mb-3">
-								<div class="popular-city--item">Дніпро</div>
-								<div class="popular-city--item">Київ</div>
-								<div class="popular-city--item">Львів</div>
-								<div class="popular-city--item">Одеса</div>
-								<div class="popular-city--item">Харків</div>
-							</div>
-							<div class="custom-control custom-checkbox position-relative mb-6">
-								<input type="checkbox" class="custom-control-input" id="form-subscribe-check">
-								<label class="custom-control-label" for="form-subscribe-check">
-									<span class="custom-checkbox--info">На закордонних номерах</span>
-									<span class="custom-checkbox--help-info small-txt mt-1">Необхідний Ваш дозвіл</span>
-								</label>
-							</div>
-							<div class="row flex-column-reverse flex-lg-row">
-								<div class="col-12 col-lg-6">
-									<button type="button" class="btn-default btn btn-block btn-outline-main-blue" data-toggle="modal" data-target="#popup-avtotsyvilka-car" data-dismiss="modal" aria-label="Close">Назад</button>
-								</div>
-								<div class="col-12 col-lg-6 mb-3 mb-lg-0">
-									<button type="button" class="btn-default btn btn-block btn-main-blue px-2" data-toggle="modal" data-target="#popup-avtotsyvilka-additional-data" data-dismiss="modal" aria-label="Close">Продовжити</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	<div class="modal modal--custom modal--custom-2 popup-avtotsyvilka-additional-data fade" id="popup-avtotsyvilka-additional-data" data-keyboard="false" tabindex="-1" aria-labelledby="popup-avtotsyvilka-additional-dataLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content bg-light-blue">
-			<div class="modal-body px-4 py-8 px-lg-5">
-				<div class="d-flex align-items-start justify-content-between mb-6">
-					<div class="modal-title h3 font-m mb-0 pr-4">Додаткові дані</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">
-							<svg>
-								<use xlink:href="img/icons/icons.svg#i-close"></use>
-							</svg>
-						</span>
-					</button>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<form action="" class="form-avtotsyvilka-additional-data">
-							<div class="text-center mb-6">
-								<p class="mb-3">Для того, щоб розрахувати вартість для визначеного Вами типу ТЗ, необхідно вказати дані ОТК</p>
-								<p class="mb-0">На наступному кроці внесіть дані в поле “Дата наступного ОТК”</p>
-							</div>
-							<div class="row flex-column-reverse flex-lg-row">
-								<div class="col-12 col-lg-6 mx-auto">
-									<button type="button" class="btn-default btn btn-block btn-main-blue" data-dismiss="modal" aria-label="Close">Продовжити</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
 	<script src="js/jquery.min.js"></script>
 <script src="js/libs.min.js"></script>

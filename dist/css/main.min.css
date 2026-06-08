@@ -8646,13 +8646,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (min-width: 1600px) {
   .calc-mini-casco-page .container,
-  .minicasco-page .container {
+  .minicasco-page .container,
+  .calc-insurance-payment-page--minicasco .container {
     max-width: 1727px;
   }
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .container-wrap,
-  .minicasco-page .container-wrap {
+  .minicasco-page .container-wrap,
+  .calc-insurance-payment-page--minicasco .container-wrap {
     max-width: 1727px;
   }
 }
@@ -8660,7 +8662,9 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-mini-casco-page .h2,
   .calc-mini-casco-page .h2,
   .minicasco-page .h2,
-  .minicasco-page .h2 {
+  .minicasco-page .h2,
+  .calc-insurance-payment-page--minicasco .h2,
+  .calc-insurance-payment-page--minicasco .h2 {
     font-size: 56.69px;
     font-weight: 700;
     line-height: 69px;
@@ -8668,30 +8672,45 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data,
-  .minicasco-page .calculation-data {
+  .minicasco-page .calculation-data,
+  .calc-insurance-payment-page--minicasco .calculation-data {
     font-size: 22px;
     font-weight: 400;
     line-height: 27px;
   }
 }
+@media (min-width: 1600px) {
+  .calc-mini-casco-page .calculation-data .buttons .btn,
+  .minicasco-page .calculation-data .buttons .btn,
+  .calc-insurance-payment-page--minicasco .calculation-data .buttons .btn {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    min-width: 326px;
+  }
+}
 .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-descr,
-.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-descr {
+.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-descr,
+.calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-descr {
   height: auto;
 }
 @media (max-width: 1023px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .head,
-  .minicasco-page .calculation-data .form-calculation-data .head {
+  .minicasco-page .calculation-data .form-calculation-data .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.5;
   }
 }
 .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .form-calculation-data-limitation--item:not(:last-child),
-.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .form-calculation-data-limitation--item:not(:last-child) {
+.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .form-calculation-data-limitation--item:not(:last-child),
+.calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .form-calculation-data-limitation--item:not(:last-child) {
   margin-bottom: 30px;
 }
 .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
-.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
+.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+.calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
   font-size: 22.68px;
   font-weight: 500;
   line-height: 27px;
@@ -8700,32 +8719,37 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (max-width: 1023px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
-  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
   }
 }
 .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
-.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img {
+.minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+.calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation img {
   width: 116.99px;
   height: 116.99px;
   object-fit: contain;
 }
 @media (max-width: 1023px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
-  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img {
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation img {
     width: 80px;
     height: 80px;
   }
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .field .form-control,
-  .minicasco-page .calculation-data .field .form-control {
+  .minicasco-page .calculation-data .field .form-control,
+  .calc-insurance-payment-page--minicasco .calculation-data .field .form-control {
     height: 62px;
   }
   .calc-mini-casco-page .calculation-data .field .form-control::placeholder,
-  .minicasco-page .calculation-data .field .form-control::placeholder {
+  .minicasco-page .calculation-data .field .form-control::placeholder,
+  .calc-insurance-payment-page--minicasco .calculation-data .field .form-control::placeholder {
     font-size: 22px;
     font-weight: 400;
     line-height: 27px;
@@ -8733,7 +8757,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .field .select2-container .select2-selection,
-  .minicasco-page .calculation-data .field .select2-container .select2-selection {
+  .minicasco-page .calculation-data .field .select2-container .select2-selection,
+  .calc-insurance-payment-page--minicasco .calculation-data .field .select2-container .select2-selection {
     height: 62px;
     font-size: 22px;
     font-weight: 400;
@@ -8742,7 +8767,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .field .select2-results__option,
-  .minicasco-page .calculation-data .field .select2-results__option {
+  .minicasco-page .calculation-data .field .select2-results__option,
+  .calc-insurance-payment-page--minicasco .calculation-data .field .select2-results__option {
     font-size: 22px;
     font-weight: 400;
     line-height: 27px;
@@ -8750,38 +8776,46 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .head,
-  .minicasco-page .calculation-data .form-calculation-data .head {
+  .minicasco-page .calculation-data .form-calculation-data .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
     font-size: 33px;
     line-height: 40px;
   }
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .head span,
-  .minicasco-page .calculation-data .form-calculation-data .head span {
+  .minicasco-page .calculation-data .form-calculation-data .head span,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head span {
     font-weight: 800;
   }
 }
 .calc-mini-casco-page .choose-radio .custom-control,
-.minicasco-page .choose-radio .custom-control {
+.minicasco-page .choose-radio .custom-control,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control {
   padding-left: 0;
 }
 .calc-mini-casco-page .choose-radio .custom-control:not(:last-child),
-.minicasco-page .choose-radio .custom-control:not(:last-child) {
+.minicasco-page .choose-radio .custom-control:not(:last-child),
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control:not(:last-child) {
   margin-bottom: 0;
 }
 .calc-mini-casco-page .choose-radio .custom-control-input,
-.minicasco-page .choose-radio .custom-control-input {
+.minicasco-page .choose-radio .custom-control-input,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input {
   cursor: pointer;
 }
 .calc-mini-casco-page .choose-radio .custom-control-label,
-.minicasco-page .choose-radio .custom-control-label {
+.minicasco-page .choose-radio .custom-control-label,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-label {
   padding-left: 40px;
   width: 100%;
   cursor: pointer;
 }
 .calc-mini-casco-page .choose-radio .custom-control-label:before, .calc-mini-casco-page .choose-radio .custom-control-label:after,
 .minicasco-page .choose-radio .custom-control-label:before,
-.minicasco-page .choose-radio .custom-control-label:after {
+.minicasco-page .choose-radio .custom-control-label:after,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-label:before,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-label:after {
   position: absolute;
   left: 0;
   top: 1px;
@@ -8793,7 +8827,8 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0.3s ease-out 0s;
 }
 .calc-mini-casco-page .choose-radio .custom-control-label::after,
-.minicasco-page .choose-radio .custom-control-label::after {
+.minicasco-page .choose-radio .custom-control-label::after,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-label::after {
   background: url(../img/icons/icons.svg#i-check-minicasco) no-repeat center;
   background-size: cover;
   opacity: 0;
@@ -8804,35 +8839,41 @@ input[type=number]::-webkit-outer-spin-button {
   left: 9px;
 }
 .calc-mini-casco-page .choose-radio .custom-control-label::before,
-.minicasco-page .choose-radio .custom-control-label::before {
+.minicasco-page .choose-radio .custom-control-label::before,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-label::before {
   background-size: cover;
   border-radius: unset;
   border: 1.43px solid rgb(220, 226, 255);
   background: rgb(250, 250, 250);
 }
 .calc-mini-casco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::before,
-.minicasco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::before {
+.minicasco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::before,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input:checked ~ .custom-control-label::before {
   opacity: 1;
   visibility: visible;
 }
 .calc-mini-casco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::after,
-.minicasco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::after {
+.minicasco-page .choose-radio .custom-control-input:checked ~ .custom-control-label::after,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input:checked ~ .custom-control-label::after {
   background: url(../img/icons/icons.svg#i-check-minicasco) no-repeat center;
   background-size: cover;
   opacity: 1;
   visibility: visible;
 }
 .calc-mini-casco-page .choose-radio .custom-control-input:focus ~ .custom-control-label::before,
-.minicasco-page .choose-radio .custom-control-input:focus ~ .custom-control-label::before {
+.minicasco-page .choose-radio .custom-control-input:focus ~ .custom-control-label::before,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: none;
 }
 .calc-mini-casco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::before,
-.minicasco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::before {
+.minicasco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::before,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::before {
   opacity: 1;
   visibility: visible;
 }
 .calc-mini-casco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::after,
-.minicasco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::after {
+.minicasco-page .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::after,
+.calc-insurance-payment-page--minicasco .choose-radio .custom-control-input:hover:not(:checked) ~ .custom-control-label::after {
   background: url(../img/icons/icons.svg#i-check-minicasco) no-repeat center;
   background-size: cover;
   opacity: 1;
@@ -8896,7 +8937,7 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 1.5;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row {
     column-gap: 20px;
   }
@@ -8914,7 +8955,15 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--light-blue);
   text-align: center;
 }
-@media (max-width: 1023px) {
+.minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
+  grid-template-columns: 1fr minmax(420px, 1fr) 1fr;
+}
+@media (max-width: 1399px) {
+  .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
+    grid-template-columns: 1fr minmax(370px, 1fr) 1fr;
+  }
+}
+@media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -8922,9 +8971,13 @@ input[type=number]::-webkit-outer-spin-button {
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body:not(:last-child) {
   margin-bottom: 40px;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body:not(:last-child) {
     margin-bottom: 20px;
+  }
+}
+@media (max-width: 1199px) {
+  .minicasco-payment-price .calculation-table--minicasco .table-row.table-body:not(:last-child) {
     border: 1.57px solid rgb(220, 226, 255);
     background: rgb(255, 255, 255);
     padding: 15px;
@@ -8936,7 +8989,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 1.25rem;
   padding: 20px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -9044,7 +9097,7 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 44px;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment .price {
     font-size: 32px;
     line-height: 34px;
@@ -9073,6 +9126,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .minicasco-payment-price .calculation-table--minicasco-buttons .btn-main-blue {
   width: 325px;
+}
+@media (min-width: 1600px) {
+  .minicasco-payment-price .calculation-table--minicasco-buttons .btn-main-blue {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    min-width: 326px;
+  }
 }
 
 .popup-no-autocivil .modal-dialog,
@@ -9135,8 +9196,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .filter-cards.filter-cards--minicasco .filter-card .filter-car--pic {
-  max-width: 196px;
+  max-width: 205px;
   width: 100%;
+}
+.filter-cards.filter-cards--minicasco .filter-card .btn-more {
+  background: unset;
 }
 
 @media (min-width: 1600px) {
@@ -9148,6 +9212,11 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 185px;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .calc-insurance-payment-page .card-details .btn-add {
+    max-width: 100%;
+  }
+}
 .calc-insurance-payment-page .card-details .field-wrap .select-wrap {
   width: 100%;
 }
@@ -9157,8 +9226,240 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden;
   max-height: 1px;
 }
+.spoiler--minicasco--price .minicasco-payment-price .inner {
+  border-color: var(--light-blue);
+}
 .spoiler--minicasco--price.is-open {
   height: auto !important;
+}
+
+.spoiler--minicasco--price[aria-expanded=true] .minicasco-payment-price .inner {
+  border-color: rgb(220, 226, 255);
+}
+
+.calc-insurance-payment-page--minicasco .filter-card .btn-outline-main-blue {
+  max-width: 220px;
+  margin: 0 auto;
+}
+@media (min-width: 1400px) {
+  .calc-insurance-payment-page--minicasco .filter-card .btn-outline-main-blue {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 1023px) {
+  .calc-insurance-payment-page--minicasco .filter-card .btn-outline-main-blue {
+    max-width: 100%;
+  }
+}
+
+.insurance-payment--minicasco--wrap .insurance-payment--minicasco {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+@media (max-width: 1599px) {
+  .insurance-payment--minicasco--wrap .insurance-payment--minicasco {
+    bottom: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .insurance-payment--minicasco--wrap .insurance-payment--minicasco {
+    bottom: 20px;
+  }
+}
+.insurance-payment--minicasco--wrap .insurance-payment--minicasco .small-txt {
+  font-size: 24px;
+  line-height: 26px;
+}
+@media (max-width: 1599px) {
+  .insurance-payment--minicasco--wrap .insurance-payment--minicasco .small-txt {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+.insurance-payment--minicasco--wrap .price {
+  font-size: 59.59px;
+  font-weight: 500;
+  line-height: 72px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 15px;
+}
+@media (max-width: 1599px) {
+  .insurance-payment--minicasco--wrap .price {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+.insurance-payment--minicasco--wrap .currency::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 45.62px;
+  height: 54.54px;
+  background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+@media (max-width: 1599px) {
+  .insurance-payment--minicasco--wrap .currency::after {
+    width: 35px;
+    height: 45px;
+  }
+}
+@media (max-width: 1599px) {
+  .insurance-payment--minicasco--wrap .currency::after {
+    width: 25px;
+    height: 35px;
+  }
+}
+.insurance-payment--minicasco--wrap .wrap-img {
+  overflow: visible;
+  position: relative;
+  height: 287px;
+  width: 100%;
+}
+.insurance-payment--minicasco--wrap .wrap-img .bg-down {
+  z-index: 1;
+  object-fit: contain;
+}
+@media (min-width: 1600px) {
+  .insurance-payment--minicasco--wrap .wrap-img .bg-down {
+    transform: translate(-50%, -50%) translate(-10px, 20px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .filter-cards .filter-card {
+    font-size: 23px;
+    line-height: 24px;
+  }
+  .filter-cards .filter-card .head {
+    font-size: 27px;
+    line-height: 29px;
+  }
+  .filter-cards .filter-card .company-name {
+    font-size: 29px;
+    line-height: 32px;
+  }
+  .filter-cards .filter-card .field-franchise,
+  .filter-cards .filter-card .btn-more,
+  .filter-cards .filter-card .btn-more--close,
+  .filter-cards .filter-card .inner,
+  .filter-cards .filter-card .field,
+  .filter-cards .filter-card .field .select2-container .select2-selection {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 1600px) and (min-width: 1600px) {
+  .filter-cards .filter-card .field .form-control {
+    height: 62px;
+  }
+  .filter-cards .filter-card .field .form-control::placeholder {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 1600px) {
+  .filter-cards .filter-card .filter-card--additional .list-liability-limits li:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .filter-cards .filter-card .select-wrap {
+    max-width: 468px;
+  }
+  .filter-cards .filter-card .field .select2-container .select2-selection {
+    height: 62px;
+  }
+  .filter-cards .filter-card .filter-card--cost {
+    max-width: 357px;
+    margin: 0 auto;
+    margin-top: 115px;
+  }
+  .filter-cards .filter-card .filter-card--cost .small-txt {
+    font-size: 15.12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  .filter-cards .filter-card .filter-card--cost .h4 {
+    font-size: 26.45px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+}
+@media (max-width: 1023px) {
+  .filter-cards .filter-card .head {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .select2-results__option,
+  .field .select2-container .select2-selection {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .calc-minicasco-page--mini .filter-cards .filter-card .company-name {
+    font-size: 56px;
+    line-height: 60px;
+  }
+  .calc-minicasco-page--mini .filter-cards .filter-card .btn-outline-main-blue {
+    height: 62px;
+    max-width: 220px;
+    font-size: 22.68px;
+    font-weight: 500;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 40px;
+  }
+  .calc-minicasco-page--mini .filter-cards .filter-card .filter-card--cost {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1199px) {
+  .calc-minicasco-page--mini .filter-cards .filter-card .company-name {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 1023px) {
+  .calc-minicasco-page--mini .filter-cards .filter-card .company-name {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .calc-minicasco-page--mini .filter-cards .filter-card .company-name::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: url(../img/icons/icons.svg#i-arrow-two-right-static) no-repeat center;
+    background-size: cover;
+    margin-left: 10px;
+    transform: rotate(0deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -moz-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
+  .calc-minicasco-page--mini .filter-cards .filter-card .company-name.active::after {
+    transform: rotate(90deg);
+    -webkit-transition: 0.3s ease-out 0s;
+    -moz-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+  }
 }
 
 .modal-backdrop {
