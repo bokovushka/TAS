@@ -737,6 +737,16 @@ input[type="number"]::-webkit-outer-spin-button {
 					margin-top: 12px;
 					color: var(--white);
 
+					@include xxl-max {
+						font-size: 20px;
+						line-height: 24px;
+					}
+
+					@include xxl-max {
+						font-size: 16px;
+						line-height: 20px;
+					}
+
 					@include md-max {
 						font-size: 1rem;
 						font-weight: 400;
@@ -748,6 +758,17 @@ input[type="number"]::-webkit-outer-spin-button {
 					width: 116.99px;
 					height: 116.99px;
 					object-fit: contain;
+
+					@include xxl-max {
+						width: 100px;
+						height: 100px;
+					}
+
+					@include xxl-max {
+						width: 80px;
+						height: 80px;
+					}
+
 
 					@include md-max {
 						width: 80px;
@@ -795,6 +816,17 @@ input[type="number"]::-webkit-outer-spin-button {
 				@include xxxl-min {
 					font-size: 33px;
 					line-height: 40px;
+				}
+
+				@include xxl-max {
+					font-size: 28px;
+					line-height: 30px;
+					font-weight: 600;
+				}
+
+				@include md-max {
+					font-size: 22px;
+					line-height: 24px;
 				}
 
 				span {
@@ -1198,9 +1230,13 @@ input[type="number"]::-webkit-outer-spin-button {
 		line-height: 46px;
 		text-align: center;
 
+		@include xxl-max {
+			font-size: 30px;
+			line-height: 32px;
+		}
+
 		@include md-max {
 			font-size: 24px;
-			font-weight: 500;
 			line-height: 28px;
 		}
 	}
@@ -1224,9 +1260,15 @@ input[type="number"]::-webkit-outer-spin-button {
 		margin: 0 auto;
 		margin-bottom: 45px;
 
+		@include xxl-max {
+			width: 98.46px;
+			height: 88.96px;
+			margin-bottom: 25px;
+		}
+
 		@include md-max {
 			width: 80px;
-			height: 80px;
+			height: 70px;
 			margin-bottom: 25px;
 		}
 	}

@@ -8717,6 +8717,22 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 12px;
   color: var(--white);
 }
+@media (max-width: 1599px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 1599px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 @media (max-width: 1023px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
   .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
@@ -8732,6 +8748,22 @@ input[type=number]::-webkit-outer-spin-button {
   width: 116.99px;
   height: 116.99px;
   object-fit: contain;
+}
+@media (max-width: 1599px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 1599px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+  .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation img {
+    width: 80px;
+    height: 80px;
+  }
 }
 @media (max-width: 1023px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation img,
@@ -8780,6 +8812,23 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
     font-size: 33px;
     line-height: 40px;
+  }
+}
+@media (max-width: 1599px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .head,
+  .minicasco-page .calculation-data .form-calculation-data .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 1023px) {
+  .calc-mini-casco-page .calculation-data .form-calculation-data .head,
+  .minicasco-page .calculation-data .form-calculation-data .head,
+  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
+    font-size: 22px;
+    line-height: 24px;
   }
 }
 @media (min-width: 1600px) {
@@ -9151,11 +9200,17 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 46px;
   text-align: center;
 }
+@media (max-width: 1599px) {
+  .popup-no-autocivil .modal-title,
+  .popup-autocivil-60 .modal-title {
+    font-size: 30px;
+    line-height: 32px;
+  }
+}
 @media (max-width: 1023px) {
   .popup-no-autocivil .modal-title,
   .popup-autocivil-60 .modal-title {
     font-size: 24px;
-    font-weight: 500;
     line-height: 28px;
   }
 }
@@ -9181,11 +9236,19 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0 auto;
   margin-bottom: 45px;
 }
+@media (max-width: 1599px) {
+  .popup-no-autocivil .wrap-img,
+  .popup-autocivil-60 .wrap-img {
+    width: 98.46px;
+    height: 88.96px;
+    margin-bottom: 25px;
+  }
+}
 @media (max-width: 1023px) {
   .popup-no-autocivil .wrap-img,
   .popup-autocivil-60 .wrap-img {
     width: 80px;
-    height: 80px;
+    height: 70px;
     margin-bottom: 25px;
   }
 }
