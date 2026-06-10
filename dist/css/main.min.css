@@ -9246,8 +9246,8 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 1599px) {
   .popup-no-autocivil .wrap-img,
   .popup-autocivil-60 .wrap-img {
-    width: 98.46px;
-    height: 88.96px;
+    width: 88.46px;
+    height: 78.96px;
     margin-bottom: 25px;
   }
 }
@@ -9258,6 +9258,10 @@ input[type=number]::-webkit-outer-spin-button {
     height: 70px;
     margin-bottom: 25px;
   }
+}
+.popup-no-autocivil .wrap-img img,
+.popup-autocivil-60 .wrap-img img {
+  object-fit: contain;
 }
 .popup-no-autocivil .btn-main-blue,
 .popup-autocivil-60 .btn-main-blue {

@@ -1266,8 +1266,8 @@ input[type="number"]::-webkit-outer-spin-button {
 		margin-bottom: 45px;
 
 		@include xxl-max {
-			width: 98.46px;
-			height: 88.96px;
+			width: 88.46px;
+			height: 78.96px;
 			margin-bottom: 25px;
 		}
 
@@ -1275,6 +1275,10 @@ input[type="number"]::-webkit-outer-spin-button {
 			width: 80px;
 			height: 70px;
 			margin-bottom: 25px;
+		}
+
+		img {
+			object-fit: contain;
 		}
 	}
 
