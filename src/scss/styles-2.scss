@@ -989,7 +989,7 @@ input[type="number"]::-webkit-outer-spin-button {
 			grid-template-columns: repeat(3, 1fr);
 			column-gap: 40px;
 			font-size: 22.68px;
-			font-weight: 500;
+			font-weight: 400;
 			line-height: 27px;
 
 			@include xxl-max {
@@ -1019,9 +1019,9 @@ input[type="number"]::-webkit-outer-spin-button {
 			}
 
 			&.table-body {
-				grid-template-columns: 1fr minmax(420px, 1fr) 1fr;
+				grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
 
-				@include xl-max {
+				@include xxl-max {
 					grid-template-columns: 1fr minmax(370px, 1fr) 1fr;
 				}
 
@@ -1098,7 +1098,7 @@ input[type="number"]::-webkit-outer-spin-button {
 							display: flex;
 							align-items: center;
 							justify-content: space-between;
-							column-gap: 24px;
+							column-gap: 10px;
 
 							@include lg-max {
 								flex-direction: column;
@@ -1107,7 +1107,7 @@ input[type="number"]::-webkit-outer-spin-button {
 							}
 
 							&:not(:last-child) {
-								margin-bottom: 10px;
+								margin-bottom: 8px;
 							}
 						}
 
@@ -1136,7 +1136,7 @@ input[type="number"]::-webkit-outer-spin-button {
 					}
 
 					&.descrp-payment {
-						padding: 33px 28px;
+						padding: 43px 31px 31px 31px;
 						background: rgba(220, 226, 255, 1);
 
 						@include xxl-max {
@@ -1147,7 +1147,7 @@ input[type="number"]::-webkit-outer-spin-button {
 						.price {
 							font-size: 59.59px;
 							font-weight: 500;
-							line-height: 72px;
+							line-height: 58px;
 							color: var(--main-blue);
 							border: 1.71px solid rgba(91, 117, 255, 1);
 							background: rgba(255, 255, 255, 1);
@@ -1157,7 +1157,7 @@ input[type="number"]::-webkit-outer-spin-button {
 							display: flex;
 							align-items: center;
 							justify-content: flex-end;
-							column-gap: 15px;
+							column-gap: 8px;
 							width: 100%;
 
 							@include xxl-max {
@@ -1176,8 +1176,8 @@ input[type="number"]::-webkit-outer-spin-button {
 									content: "";
 									display: block;
 									position: relative;
-									width: 45.62px;
-									height: 54.54px;
+									width: 60px;
+									height: 60px;
 									background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
 
 									@include xxl-max {
@@ -1186,8 +1186,13 @@ input[type="number"]::-webkit-outer-spin-button {
 									}
 
 									@include xxl-max {
-										width: 25px;
+										width: 35px;
 										height: 35px;
+									}
+
+									@include lg-max {
+										width: 30px;
+										height: 30px;
 									}
 								}
 							}
@@ -1289,6 +1294,16 @@ input[type="number"]::-webkit-outer-spin-button {
 	.btn-main-blue {
 		max-width: 450px;
 		margin: 0 auto;
+
+		@include xxl-min {
+			font-size: 22.68px;
+			font-weight: 500;
+			line-height: 27px;
+			height: 55px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 }
 
@@ -1426,18 +1441,18 @@ input[type="number"]::-webkit-outer-spin-button {
 			content: "";
 			display: block;
 			position: relative;
-			width: 45.62px;
-			height: 54.54px;
+			width: 55px;
+			height: 55.54px;
 			background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
 			filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 
 			@include xxl-max {
-				width: 35px;
+				width: 45px;
 				height: 45px;
 			}
 
 			@include xxl-max {
-				width: 25px;
+				width: 35px;
 				height: 35px;
 			}
 		}

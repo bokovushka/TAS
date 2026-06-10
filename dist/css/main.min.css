@@ -8976,7 +8976,7 @@ input[type=number]::-webkit-outer-spin-button {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
   font-size: 22.68px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 27px;
 }
 @media (max-width: 1599px) {
@@ -9005,9 +9005,9 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
-  grid-template-columns: 1fr minmax(420px, 1fr) 1fr;
+  grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
 }
-@media (max-width: 1399px) {
+@media (max-width: 1599px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
     grid-template-columns: 1fr minmax(370px, 1fr) 1fr;
   }
@@ -9082,7 +9082,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 24px;
+  column-gap: 10px;
 }
 @media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-price .item {
@@ -9092,7 +9092,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-price .item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 @media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-price .name {
@@ -9118,7 +9118,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment {
-  padding: 33px 28px;
+  padding: 43px 31px 31px 31px;
   background: rgb(220, 226, 255);
 }
 @media (max-width: 1599px) {
@@ -9130,7 +9130,7 @@ input[type=number]::-webkit-outer-spin-button {
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment .price {
   font-size: 59.59px;
   font-weight: 500;
-  line-height: 72px;
+  line-height: 58px;
   color: var(--main-blue);
   border: 1.71px solid rgb(91, 117, 255);
   background: rgb(255, 255, 255);
@@ -9140,7 +9140,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  column-gap: 15px;
+  column-gap: 8px;
   width: 100%;
 }
 @media (max-width: 1599px) {
@@ -9160,8 +9160,8 @@ input[type=number]::-webkit-outer-spin-button {
   content: "";
   display: block;
   position: relative;
-  width: 45.62px;
-  height: 54.54px;
+  width: 60px;
+  height: 60px;
   background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
 }
 @media (max-width: 1599px) {
@@ -9172,8 +9172,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (max-width: 1599px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment .price .currency::after {
-    width: 25px;
+    width: 35px;
     height: 35px;
+  }
+}
+@media (max-width: 1199px) {
+  .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment .price .currency::after {
+    width: 30px;
+    height: 30px;
   }
 }
 .minicasco-payment-price .calculation-table--minicasco-buttons .btn-main-blue {
@@ -9270,6 +9276,18 @@ input[type=number]::-webkit-outer-spin-button {
 .popup-autocivil-60 .btn-main-blue {
   max-width: 450px;
   margin: 0 auto;
+}
+@media (min-width: 1400px) {
+  .popup-no-autocivil .btn-main-blue,
+  .popup-autocivil-60 .btn-main-blue {
+    font-size: 22.68px;
+    font-weight: 500;
+    line-height: 27px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .filter-cards.filter-cards--minicasco .filter-card .filter-car--pic {
@@ -9377,20 +9395,20 @@ input[type=number]::-webkit-outer-spin-button {
   content: "";
   display: block;
   position: relative;
-  width: 45.62px;
-  height: 54.54px;
+  width: 55px;
+  height: 55.54px;
   background: url(../img/icons/icons.svg#i-currency-minicasco) no-repeat center;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 @media (max-width: 1599px) {
   .insurance-payment--minicasco--wrap .currency::after {
-    width: 35px;
+    width: 45px;
     height: 45px;
   }
 }
 @media (max-width: 1599px) {
   .insurance-payment--minicasco--wrap .currency::after {
-    width: 25px;
+    width: 35px;
     height: 35px;
   }
 }
