@@ -8674,7 +8674,7 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-mini-casco-page .calculation-data,
   .minicasco-page .calculation-data,
   .calc-insurance-payment-page--minicasco .calculation-data {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 400;
     line-height: 27px;
   }
@@ -8711,7 +8711,7 @@ input[type=number]::-webkit-outer-spin-button {
 .calc-mini-casco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
 .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
 .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
-  font-size: 22.68px;
+  font-size: 23px;
   font-weight: 500;
   line-height: 27px;
   margin-top: 12px;
@@ -8782,7 +8782,7 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-mini-casco-page .calculation-data .field .form-control::placeholder,
   .minicasco-page .calculation-data .field .form-control::placeholder,
   .calc-insurance-payment-page--minicasco .calculation-data .field .form-control::placeholder {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 400;
     line-height: 27px;
   }
@@ -8975,7 +8975,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
-  font-size: 22.68px;
+  font-size: 23px;
   font-weight: 400;
   line-height: 27px;
 }
@@ -9280,7 +9280,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (min-width: 1400px) {
   .popup-no-autocivil .btn-main-blue,
   .popup-autocivil-60 .btn-main-blue {
-    font-size: 22.68px;
+    font-size: 23px;
     font-weight: 500;
     line-height: 27px;
     height: 55px;
@@ -9509,7 +9509,7 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-minicasco-page--mini .filter-cards .filter-card .btn-outline-main-blue {
     height: 62px;
     max-width: 220px;
-    font-size: 22.68px;
+    font-size: 23px;
     font-weight: 500;
     line-height: 27px;
     display: flex;

@@ -696,7 +696,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 	.calculation-data {
 		@include xxxl-min {
-			font-size: 22px;
+			font-size: 23px;
 			font-weight: 400;
 			line-height: 27px;
 		}
@@ -731,7 +731,7 @@ input[type="number"]::-webkit-outer-spin-button {
 				}
 
 				.head {
-					font-size: 22.68px;
+					font-size: 23px;
 					font-weight: 500;
 					line-height: 27px;
 					margin-top: 12px;
@@ -784,7 +784,7 @@ input[type="number"]::-webkit-outer-spin-button {
 					height: 62px;
 
 					&::placeholder {
-						font-size: 22px;
+						font-size: 23px;
 						font-weight: 400;
 						line-height: 27px;
 					}
@@ -988,7 +988,7 @@ input[type="number"]::-webkit-outer-spin-button {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			column-gap: 40px;
-			font-size: 22.68px;
+			font-size: 23px;
 			font-weight: 400;
 			line-height: 27px;
 
@@ -1296,7 +1296,7 @@ input[type="number"]::-webkit-outer-spin-button {
 		margin: 0 auto;
 
 		@include xxl-min {
-			font-size: 22.68px;
+			font-size: 23px;
 			font-weight: 500;
 			line-height: 27px;
 			height: 55px;
@@ -1571,7 +1571,7 @@ input[type="number"]::-webkit-outer-spin-button {
 			.btn-outline-main-blue {
 				height: 62px;
 				max-width: 220px;
-				font-size: 22.68px;
+				font-size: 23px;
 				font-weight: 500;
 				line-height: 27px;
 				display: flex;
