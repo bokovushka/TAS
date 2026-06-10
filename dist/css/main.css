@@ -9203,8 +9203,8 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 1599px) {
   .popup-no-autocivil .modal-title,
   .popup-autocivil-60 .modal-title {
-    font-size: 30px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 28px;
   }
 }
 @media (max-width: 1023px) {
