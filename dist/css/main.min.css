@@ -8712,7 +8712,7 @@ input[type=number]::-webkit-outer-spin-button {
 .minicasco-page .calculation-data .form-calculation-data .form-calculation-data-limitation .head,
 .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .form-calculation-data-limitation .head {
   font-size: 23px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 27px;
   margin-top: 12px;
   color: var(--white);
@@ -8995,7 +8995,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: var(--main-blue);
   grid-template-columns: 1fr max-content 1fr;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.head {
     display: none;
   }
@@ -9006,6 +9006,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
   grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
+}
+@media (min-width: 1600px) {
+  .filter-cards .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
+    grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
+  }
 }
 @media (max-width: 1599px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body {
@@ -9071,7 +9076,7 @@ input[type=number]::-webkit-outer-spin-button {
   object-fit: contain;
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-price {
-  padding: 11px 30px;
+  padding: 10px 28px;
   border: 1.43px solid rgb(220, 226, 255);
   background: rgb(250, 250, 250);
   display: flex;
@@ -9118,7 +9123,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col.descrp-payment {
-  padding: 38px 21px 40px 31px;
+  padding: 40px 30px 40px 32px;
   background: rgb(220, 226, 255);
 }
 @media (max-width: 1599px) {
@@ -9134,13 +9139,13 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--main-blue);
   border: 1.71px solid rgb(91, 117, 255);
   background: rgb(255, 255, 255);
-  padding: 20px 27px;
+  padding: 20px 22px;
   border-radius: 1.75rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  column-gap: 8px;
+  column-gap: 6px;
   width: 100%;
 }
 @media (max-width: 1599px) {
@@ -9445,8 +9450,8 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 24px;
   }
   .filter-cards .filter-card .head {
-    font-size: 27px;
-    line-height: 29px;
+    font-size: 23px;
+    line-height: 27px;
   }
   .filter-cards .filter-card .company-name {
     font-size: 29px;
@@ -9497,10 +9502,14 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 32px;
   }
 }
+.filter-cards .filter-card .head {
+  font-size: 22px;
+  line-height: 26px;
+}
 @media (max-width: 1599px) {
   .filter-cards .filter-card .head {
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 

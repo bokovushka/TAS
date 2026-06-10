@@ -732,7 +732,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 				.head {
 					font-size: 23px;
-					font-weight: 500;
+					font-weight: 400;
 					line-height: 27px;
 					margin-top: 12px;
 					color: var(--white);
@@ -1006,7 +1006,7 @@ input[type="number"]::-webkit-outer-spin-button {
 				background: var(--main-blue);
 				grid-template-columns: 1fr max-content 1fr;
 
-				@include md-max {
+				@include lg-max {
 					display: none;
 				}
 
@@ -1020,6 +1020,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 			&.table-body {
 				grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
+
+				.filter-cards & {
+					@include xxxl-min {
+						grid-template-columns: minmax(387px, 1fr) minmax(405px, 1fr) minmax(381px, 1fr);
+					}
+				}
 
 				@include xxl-max {
 					grid-template-columns: 1fr minmax(370px, 1fr) 1fr;
@@ -1087,7 +1093,7 @@ input[type="number"]::-webkit-outer-spin-button {
 					}
 
 					&.descrp-price {
-						padding: 11px 30px;
+						padding: 10px 28px;
 						border: 1.43px solid rgba(220, 226, 255, 1);
 						background: rgba(250, 250, 250, 1);
 						display: flex;
@@ -1136,7 +1142,7 @@ input[type="number"]::-webkit-outer-spin-button {
 					}
 
 					&.descrp-payment {
-						padding: 38px 21px 40px 31px;
+						padding: 40px 30px 40px 32px;
 						background: rgba(220, 226, 255, 1);
 
 						@include xxl-max {
@@ -1151,13 +1157,13 @@ input[type="number"]::-webkit-outer-spin-button {
 							color: var(--main-blue);
 							border: 1.71px solid rgba(91, 117, 255, 1);
 							background: rgba(255, 255, 255, 1);
-							padding: 20px 27px;
+							padding: 20px 22px;
 							border-radius: 1.75rem;
 							text-align: center;
 							display: flex;
 							align-items: center;
 							justify-content: flex-end;
-							column-gap: 8px;
+							column-gap: 6px;
 							width: 100%;
 
 							@include xxl-max {
@@ -1491,8 +1497,8 @@ input[type="number"]::-webkit-outer-spin-button {
 		line-height: 24px;
 
 		.head {
-			font-size: 27px;
-			line-height: 29px;
+			font-size: 23px;
+			line-height: 27px;
 		}
 
 		.company-name {
@@ -1554,9 +1560,13 @@ input[type="number"]::-webkit-outer-spin-button {
 	}
 
 	.head {
+
+		font-size: 22px;
+		line-height: 26px;
+
 		@include xxl-max {
-			font-size: 22px;
-			line-height: 26px;
+			font-size: 18px;
+			line-height: 20px;
 		}
 	}
 }
