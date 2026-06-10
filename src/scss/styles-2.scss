@@ -1037,10 +1037,14 @@ input[type="number"]::-webkit-outer-spin-button {
 					}
 
 					@include lg-max {
-						border: 1.57px solid rgb(220, 226, 255);
+						border: 1.57px solid var(--light-blue);
 						background: rgb(255, 255, 255);
 						padding: 15px;
 						border-radius: 1.25rem;
+
+						.spoiler--minicasco--price[aria-expanded="true"] & {
+							border-color: rgb(220, 226, 255);
+						}
 					}
 				}
 

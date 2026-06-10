@@ -9027,10 +9027,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (max-width: 1199px) {
   .minicasco-payment-price .calculation-table--minicasco .table-row.table-body:not(:last-child) {
-    border: 1.57px solid rgb(220, 226, 255);
+    border: 1.57px solid var(--light-blue);
     background: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 1.25rem;
+  }
+  .spoiler--minicasco--price[aria-expanded=true] .minicasco-payment-price .calculation-table--minicasco .table-row.table-body:not(:last-child) {
+    border-color: rgb(220, 226, 255);
   }
 }
 .minicasco-payment-price .calculation-table--minicasco .table-row.table-body .table-col {
