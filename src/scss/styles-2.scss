@@ -1145,7 +1145,7 @@ input[type="number"]::-webkit-outer-spin-button {
 						}
 
 						.price {
-							font-size: 59.59px;
+							font-size: 58px;
 							font-weight: 500;
 							line-height: 58px;
 							color: var(--main-blue);
@@ -1333,6 +1333,16 @@ input[type="number"]::-webkit-outer-spin-button {
 		.btn-add {
 			max-width: 185px;
 			width: 100%;
+
+			@include xxl-min {
+				font-size: 23px;
+				font-weight: 500;
+				height: 55px;
+				line-height: 27px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
 			@include sm-max {
 				max-width: 100%;
@@ -1527,7 +1537,7 @@ input[type="number"]::-webkit-outer-spin-button {
 		.filter-card--cost {
 			max-width: 357px;
 			margin: 0 auto;
-			margin-top: 115px;
+			margin-top: 105px;
 
 			.small-txt {
 				font-size: 15.12px;
