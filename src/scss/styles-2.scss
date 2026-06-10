@@ -1247,6 +1247,11 @@ input[type="number"]::-webkit-outer-spin-button {
 		line-height: 32px;
 		text-align: center;
 
+		@include xxl-max {
+			font-size: 22px;
+			line-height: 24px;
+		}
+
 		@include md-max {
 			font-size: 18px;
 			font-weight: 500;
