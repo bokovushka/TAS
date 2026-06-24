@@ -8806,36 +8806,26 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 27px;
   }
 }
-@media (min-width: 1600px) {
-  .calc-mini-casco-page .calculation-data .form-calculation-data .head,
-  .minicasco-page .calculation-data .form-calculation-data .head,
-  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
-    font-size: 33px;
-    line-height: 40px;
-  }
+.calc-mini-casco-page .calculation-data .form-calculation-data .head,
+.minicasco-page .calculation-data .form-calculation-data .head,
+.calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
+  font-size: 23px;
+  line-height: 27px;
+  font-weight: 500;
 }
 @media (max-width: 1599px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .head,
   .minicasco-page .calculation-data .form-calculation-data .head,
   .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
-    font-size: 28px;
-    line-height: 30px;
-    font-weight: 600;
-  }
-}
-@media (max-width: 1023px) {
-  .calc-mini-casco-page .calculation-data .form-calculation-data .head,
-  .minicasco-page .calculation-data .form-calculation-data .head,
-  .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 @media (min-width: 1600px) {
   .calc-mini-casco-page .calculation-data .form-calculation-data .head span,
   .minicasco-page .calculation-data .form-calculation-data .head span,
   .calc-insurance-payment-page--minicasco .calculation-data .form-calculation-data .head span {
-    font-weight: 800;
+    font-weight: 700;
   }
 }
 .calc-mini-casco-page .choose-radio .custom-control,
@@ -9312,7 +9302,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 185px;
   width: 100%;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .calc-insurance-payment-page .card-details .btn-add {
     font-size: 23px;
     font-weight: 500;
@@ -9352,7 +9342,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 220px;
   margin: 0 auto;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .calc-insurance-payment-page--minicasco .filter-card .btn-outline-main-blue {
     font-size: 23px;
     line-height: 24px;
@@ -9580,6 +9570,23 @@ input[type=number]::-webkit-outer-spin-button {
     -o-transition: 0.3s ease-out 0s;
     transition: 0.3s ease-out 0s;
   }
+}
+
+.filter-cards .filter-card .subhead {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+}
+@media (max-width: 1023px) {
+  .filter-cards .filter-card .subhead {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.calc-mini-casco-page .progress-step--wrap .btn-main-blue {
+  max-width: 390px;
+  width: 100%;
 }
 
 .modal-backdrop {

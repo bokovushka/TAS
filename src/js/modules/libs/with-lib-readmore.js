@@ -25,11 +25,12 @@ if (window.innerWidth < 1200) {
 	});
 }
 
+//? ==== minicasco ===
 $('.spoiler--minicasco--price').readmore({
 	speed: 75,
 	collapsedHeight: false,
 	moreLink: '<div class="row"><div class="col-12 col-lg-10 offset-lg-2"><button class="btn btn-more btn-text p-0 mb-3 mb-xxxl-6 ml-xxxl-12">Прайс виплат</button>',
-	lessLink: '<div class="row"><div class="col-12 col-lg-10 offset-lg-2"><button class="btn btn-more btn-text p-0 mt-5 mb-6 ml-xxxl-12">Згорнути</button>'
+	lessLink: '<div class="row"><div class="col-12 col-lg-10 offset-lg-2"><button class="btn btn-more btn-text p-0 mt-5 mb-6 ">Згорнути</button>'
 
 });
 
