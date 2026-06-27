@@ -385,3 +385,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			: 'Розгорнути';
 	});
 });
+
+
+document.querySelector('.btn-additional-setting-minicasco')
+	.addEventListener('click', function () {
+		document
+			.querySelector('.additional-setting-minicasco')
+			.classList.toggle('active');
+	});

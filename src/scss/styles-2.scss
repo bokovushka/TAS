@@ -1485,6 +1485,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .filter-cards .filter-card {
+	.select-wrap {
+		.calc-minicasco-page--mini & {
+			max-width: 685px;
+		}
+	}
+
 	@include xxxl-min {
 		font-size: 23px;
 		line-height: 24px;
@@ -1527,6 +1533,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 		.select-wrap {
 			max-width: 468px;
+
+			.calc-minicasco-page--mini & {
+				max-width: 685px;
+			}
 		}
 
 		.field .select2-container .select2-selection {
@@ -1659,4 +1669,17 @@ input[type="number"]::-webkit-outer-spin-button {
 			width: 100%;
 		}
 	}
+}
+
+.additional-setting-minicasco {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.additional-setting-minicasco.active {
+	max-height: 500px;
+	/* постав більше, ніж реальна висота */
+	opacity: 1;
 }

@@ -9434,6 +9434,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+.calc-minicasco-page--mini .filter-cards .filter-card .select-wrap {
+  max-width: 685px;
+}
 @media (min-width: 1600px) {
   .filter-cards .filter-card {
     font-size: 23px;
@@ -9472,6 +9475,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .filter-cards .filter-card .select-wrap {
     max-width: 468px;
+  }
+  .calc-minicasco-page--mini .filter-cards .filter-card .select-wrap {
+    max-width: 685px;
   }
   .filter-cards .filter-card .field .select2-container .select2-selection {
     height: 62px;
@@ -9587,6 +9593,19 @@ input[type=number]::-webkit-outer-spin-button {
 .calc-mini-casco-page .progress-step--wrap .btn-main-blue {
   max-width: 390px;
   width: 100%;
+}
+
+.additional-setting-minicasco {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.additional-setting-minicasco.active {
+  max-height: 500px;
+  /* постав більше, ніж реальна висота */
+  opacity: 1;
 }
 
 .modal-backdrop {
