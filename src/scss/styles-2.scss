@@ -1505,14 +1505,19 @@ input[type="number"]::-webkit-outer-spin-button {
 			line-height: 32px;
 		}
 
+		.btn-more {
+			font-size: 23px;
+			line-height: 26px;
+		}
+
 		.field-franchise,
-		.btn-more,
 		.btn-more--close,
+		.card-details .btn-more,
 		.inner,
 		.field,
 		.field .select2-container .select2-selection {
-			font-size: 23px;
-			line-height: 24px;
+			font-size: 26px;
+			line-height: 32px;
 		}
 
 		.field .form-control {
@@ -1546,7 +1551,7 @@ input[type="number"]::-webkit-outer-spin-button {
 		.filter-card--cost {
 			max-width: 357px;
 			margin: 0 auto;
-			margin-top: 105px;
+			margin-top: 115px;
 
 			.small-txt {
 				font-size: 15.12px;
@@ -1655,9 +1660,10 @@ input[type="number"]::-webkit-outer-spin-button {
 		font-weight: 500;
 		line-height: 21px;
 
-		@include md-max {
+		@include xxl-max {
 			font-size: 14px;
 			line-height: 16px;
+			font-weight: 400;
 		}
 	}
 }

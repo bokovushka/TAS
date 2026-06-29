@@ -9450,14 +9450,18 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 29px;
     line-height: 32px;
   }
+  .filter-cards .filter-card .btn-more {
+    font-size: 23px;
+    line-height: 26px;
+  }
   .filter-cards .filter-card .field-franchise,
-  .filter-cards .filter-card .btn-more,
   .filter-cards .filter-card .btn-more--close,
+  .filter-cards .filter-card .card-details .btn-more,
   .filter-cards .filter-card .inner,
   .filter-cards .filter-card .field,
   .filter-cards .filter-card .field .select2-container .select2-selection {
-    font-size: 23px;
-    line-height: 24px;
+    font-size: 26px;
+    line-height: 32px;
   }
 }
 @media (min-width: 1600px) and (min-width: 1600px) {
@@ -9485,7 +9489,7 @@ input[type=number]::-webkit-outer-spin-button {
   .filter-cards .filter-card .filter-card--cost {
     max-width: 357px;
     margin: 0 auto;
-    margin-top: 105px;
+    margin-top: 115px;
   }
   .filter-cards .filter-card .filter-card--cost .small-txt {
     font-size: 15.12px;
@@ -9583,10 +9587,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 500;
   line-height: 21px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1599px) {
   .filter-cards .filter-card .subhead {
     font-size: 14px;
     line-height: 16px;
+    font-weight: 400;
   }
 }
 
