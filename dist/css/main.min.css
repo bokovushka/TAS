@@ -9463,14 +9463,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 26px;
     line-height: 32px;
   }
+  .filter-cards .filter-card .field .form-control {
+    font-size: 26px;
+    line-height: 32px;
+    color: #878787;
+  }
 }
 @media (min-width: 1600px) and (min-width: 1600px) {
   .filter-cards .filter-card .field .form-control {
     height: 62px;
   }
   .filter-cards .filter-card .field .form-control::placeholder {
-    font-size: 23px;
-    line-height: 24px;
+    font-size: 26px;
+    line-height: 32px;
   }
 }
 @media (min-width: 1600px) {
@@ -9511,6 +9516,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 18px;
     line-height: 20px;
   }
+}
+.filter-cards .filter-card .head-label {
+  font-size: 26px;
+  line-height: 32px;
 }
 
 @media (min-width: 1600px) {

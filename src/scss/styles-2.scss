@@ -1521,12 +1521,16 @@ input[type="number"]::-webkit-outer-spin-button {
 		}
 
 		.field .form-control {
+			font-size: 26px;
+			line-height: 32px;
+			color: $grey;
+
 			@include xxxl-min {
 				height: 62px;
 
 				&::placeholder {
-					font-size: 23px;
-					line-height: 24px;
+					font-size: 26px;
+					line-height: 32px;
 				}
 
 			}
@@ -1576,6 +1580,11 @@ input[type="number"]::-webkit-outer-spin-button {
 			font-size: 18px;
 			line-height: 20px;
 		}
+	}
+
+	.head-label {
+		font-size: 26px;
+		line-height: 32px;
 	}
 }
 
