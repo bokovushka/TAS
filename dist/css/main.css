@@ -9518,8 +9518,14 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .filter-cards .filter-card .head-label {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (min-width: 1600px) {
+  .filter-cards .filter-card .head-label {
+    font-size: 26px;
+    line-height: 32px;
+  }
 }
 
 @media (min-width: 1600px) {

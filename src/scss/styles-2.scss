@@ -1583,8 +1583,14 @@ input[type="number"]::-webkit-outer-spin-button {
 	}
 
 	.head-label {
-		font-size: 26px;
-		line-height: 32px;
+		@include xxxl-min {
+			font-size: 26px;
+			line-height: 32px;
+		}
+
+		font-size: 1rem;
+		line-height: 1.5;
+
 	}
 }
 
